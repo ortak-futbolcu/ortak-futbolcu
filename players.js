@@ -114,6 +114,471 @@ const playerPool = {
             "BRAGA"
         ]
     },
+        "Lionel Messi": {
+        nationality: "ARJANTIN",
+        teams: [
+            "BARCELONA",
+            "PSG",
+            "INTER MIAMI"
+        ]
+    },
+
+    "Xavi": {
+        nationality: "ISPANYA",
+        teams: [
+            "BARCELONA",
+            "AL SADD"
+        ]
+    },
+
+    "Andres Iniesta": {
+        nationality: "ISPANYA",
+        teams: [
+            "BARCELONA",
+            "VISSEL KOBE",
+            "EMIRATES CLUB"
+        ]
+    },
+
+    "Sergio Busquets": {
+        nationality: "ISPANYA",
+        teams: [
+            "BARCELONA",
+            "INTER MIAMI"
+        ]
+    },
+
+    "Gerard Pique": {
+        nationality: "ISPANYA",
+        teams: [
+            "MANCHESTER UNITED",
+            "ZARAGOZA",
+            "BARCELONA"
+        ]
+    },
+
+    "Carles Puyol": {
+        nationality: "ISPANYA",
+        teams: [
+            "BARCELONA"
+        ]
+    },
+
+    "Victor Valdes": {
+        nationality: "ISPANYA",
+        teams: [
+            "BARCELONA",
+            "MANCHESTER UNITED",
+            "STANDARD LIEGE",
+            "MIDDLESBROUGH"
+        ]
+    },
+
+    "Iker Casillas": {
+        nationality: "ISPANYA",
+        teams: [
+            "REAL MADRID",
+            "PORTO"
+        ]
+    },
+
+    "Sergio Ramos": {
+        nationality: "ISPANYA",
+        teams: [
+            "SEVILLA",
+            "REAL MADRID",
+            "PSG",
+            "MONTERREY"
+        ]
+    },
+
+    "Marcelo": {
+        nationality: "BREZILYA",
+        teams: [
+            "FLUMINENSE",
+            "REAL MADRID",
+            "OLYMPIACOS"
+        ]
+    },
+
+    "Xabi Alonso": {
+        nationality: "ISPANYA",
+        teams: [
+            "REAL SOCIEDAD",
+            "EIBAR",
+            "LIVERPOOL",
+            "REAL MADRID",
+            "BAYERN MUNIH"
+        ]
+    },
+
+    "Toni Kroos": {
+        nationality: "ALMANYA",
+        teams: [
+            "BAYERN MUNIH",
+            "BAYER LEVERKUSEN",
+            "REAL MADRID"
+        ]
+    },
+
+    "Mesut Ozil": {
+        nationality: "ALMANYA",
+        teams: [
+            "SCHALKE 04",
+            "WERDER BREMEN",
+            "REAL MADRID",
+            "ARSENAL",
+            "FENERBAHCE",
+            "ISTANBUL BASAKSEHIR"
+        ]
+    },
+
+    "Karim Benzema": {
+        nationality: "FRANSA",
+        teams: [
+            "LYON",
+            "REAL MADRID",
+            "AL ITTIHAD"
+        ]
+    },
+
+    "Angel Di Maria": {
+        nationality: "ARJANTIN",
+        teams: [
+            "ROSARIO CENTRAL",
+            "BENFICA",
+            "REAL MADRID",
+            "MANCHESTER UNITED",
+            "PSG",
+            "JUVENTUS"
+        ]
+    },
+
+    "Gonzalo Higuain": {
+        nationality: "ARJANTIN",
+        teams: [
+            "RIVER PLATE",
+            "REAL MADRID",
+            "NAPOLI",
+            "JUVENTUS",
+            "MILAN",
+            "CHELSEA",
+            "INTER MIAMI"
+        ]
+    },
+
+    "Samuel Eto'o": {
+        nationality: "KAMERUN",
+        teams: [
+            "REAL MADRID",
+            "MALLORCA",
+            "BARCELONA",
+            "INTER",
+            "ANZHI",
+            "CHELSEA",
+            "EVERTON",
+            "SAMPDORIA",
+            "ANTALYASPOR",
+            "KONYASPOR"
+        ]
+    },
+
+    "David Villa": {
+        nationality: "ISPANYA",
+        teams: [
+            "SPORTING GIJON",
+            "ZARAGOZA",
+            "VALENCIA",
+            "BARCELONA",
+            "ATLETICO MADRID",
+            "MELBOURNE CITY",
+            "NEW YORK CITY",
+            "VISSEL KOBE"
+        ]
+    },
+
+    "Fernando Torres": {
+        nationality: "ISPANYA",
+        teams: [
+            "ATLETICO MADRID",
+            "LIVERPOOL",
+            "CHELSEA",
+            "MILAN",
+            "SAGAN TOSU"
+        ]
+    },
+
+    "David Silva": {
+        nationality: "ISPANYA",
+        teams: [
+            "VALENCIA",
+            "EIBAR",
+            "CELTA VIGO",
+            "MANCHESTER CITY",
+            "REAL SOCIEDAD"
+        ]
+    },
+
+    "Cesc Fabregas": {
+        nationality: "ISPANYA",
+        teams: [
+            "ARSENAL",
+            "BARCELONA",
+            "CHELSEA",
+            "MONACO",
+            "COMO"
+        ]
+    },
+
+    "Vincent Kompany": {
+        nationality: "BELCIKA",
+        teams: [
+            "ANDERLECHT",
+            "HAMBURG",
+            "MANCHESTER CITY",
+            "BAYERN MUNIH"
+        ]
+    },
+
+    "Fernandinho": {
+        nationality: "BREZILYA",
+        teams: [
+            "ATLETICO PARANAENSE",
+            "SHAKHTAR DONETSK",
+            "MANCHESTER CITY"
+        ]
+    },
+
+    "James Milner": {
+        nationality: "INGILTERE",
+        teams: [
+            "LEEDS UNITED",
+            "NEWCASTLE UNITED",
+            "ASTON VILLA",
+            "MANCHESTER CITY",
+            "LIVERPOOL",
+            "BRIGHTON"
+        ]
+    },
+
+    "Sadio Mane": {
+        nationality: "SENEGAL",
+        teams: [
+            "METZ",
+            "RED BULL SALZBURG",
+            "SOUTHAMPTON",
+            "LIVERPOOL",
+            "BAYERN MUNIH",
+            "AL NASSR"
+        ]
+    },
+
+    "Roberto Firmino": {
+        nationality: "BREZILYA",
+        teams: [
+            "FIGUEIRENSE",
+            "HOFFENHEIM",
+            "LIVERPOOL",
+            "AL AHLI"
+        ]
+    },
+
+    "Virgil van Dijk": {
+        nationality: "HOLLANDA",
+        teams: [
+            "GRONINGEN",
+            "CELTIC",
+            "SOUTHAMPTON",
+            "LIVERPOOL"
+        ]
+    },
+
+    "Alisson": {
+        nationality: "BREZILYA",
+        teams: [
+            "INTERNACIONAL",
+            "ROMA",
+            "LIVERPOOL"
+        ]
+    },
+
+    "Thibaut Courtois": {
+        nationality: "BELCIKA",
+        teams: [
+            "GENK",
+            "ATLETICO MADRID",
+            "CHELSEA",
+            "REAL MADRID"
+        ]
+    },
+
+    "David De Gea": {
+        nationality: "ISPANYA",
+        teams: [
+            "ATLETICO MADRID",
+            "MANCHESTER UNITED",
+            "FIORENTINA"
+        ]
+    },
+
+    "Koke": {
+        nationality: "ISPANYA",
+        teams: [
+            "ATLETICO MADRID"
+        ]
+    },
+
+    "Gabi": {
+        nationality: "ISPANYA",
+        teams: [
+            "ATLETICO MADRID",
+            "ZARAGOZA",
+            "GETAFE",
+            "AL SADD"
+        ]
+    },
+
+    "Diego Godin": {
+        nationality: "URUGUAY",
+        teams: [
+            "CERRO",
+            "NACIONAL",
+            "VILLARREAL",
+            "ATLETICO MADRID",
+            "INTER",
+            "CAGLIARI",
+            "VELEZ SARSFIELD"
+        ]
+    },
+
+    "Ivan Rakitic": {
+        nationality: "HIRVATISTAN",
+        teams: [
+            "BASEL",
+            "SCHALKE 04",
+            "SEVILLA",
+            "BARCELONA",
+            "HAJDUK SPLIT"
+        ]
+    },
+
+    "Casemiro": {
+        nationality: "BREZILYA",
+        teams: [
+            "SAO PAULO",
+            "REAL MADRID",
+            "PORTO",
+            "MANCHESTER UNITED"
+        ]
+    },
+
+    "Vinicius Junior": {
+        nationality: "BREZILYA",
+        teams: [
+            "FLAMENGO",
+            "REAL MADRID"
+        ]
+    },
+
+    "Rodrygo": {
+        nationality: "BREZILYA",
+        teams: [
+            "SANTOS",
+            "REAL MADRID"
+        ]
+    },
+
+    "Bukayo Saka": {
+        nationality: "INGILTERE",
+        teams: [
+            "ARSENAL"
+        ]
+    },
+
+    "Phil Foden": {
+        nationality: "INGILTERE",
+        teams: [
+            "MANCHESTER CITY"
+        ]
+    },
+
+    "Cole Palmer": {
+        nationality: "INGILTERE",
+        teams: [
+            "MANCHESTER CITY",
+            "CHELSEA"
+        ]
+    },
+
+    "Mason Mount": {
+        nationality: "INGILTERE",
+        teams: [
+            "CHELSEA",
+            "VITESSE",
+            "DERBY COUNTY",
+            "MANCHESTER UNITED"
+        ]
+    },
+
+    "Kai Havertz": {
+        nationality: "ALMANYA",
+        teams: [
+            "BAYER LEVERKUSEN",
+            "CHELSEA",
+            "ARSENAL"
+        ]
+    },
+
+    "N'Golo Kante": {
+        nationality: "FRANSA",
+        teams: [
+            "BOULOGNE",
+            "CAEN",
+            "LEICESTER CITY",
+            "CHELSEA",
+            "AL ITTIHAD"
+        ]
+    },
+
+    "Lautaro Martinez": {
+        nationality: "ARJANTIN",
+        teams: [
+            "RACING CLUB",
+            "INTER"
+        ]
+    },
+
+    "Mauro Icardi": {
+        nationality: "ARJANTIN",
+        teams: [
+            "SAMPDORIA",
+            "INTER",
+            "PSG",
+            "GALATASARAY"
+        ]
+    },
+
+    "Heung Min Son": {
+        nationality: "GUNEY KORE",
+        teams: [
+            "HAMBURG",
+            "BAYER LEVERKUSEN",
+            "TOTTENHAM",
+            "LOS ANGELES FC"
+        ]
+    },
+
+    "Keylor Navas": {
+        nationality: "KOSTA RIKA",
+        teams: [
+            "SAPRISSA",
+            "ALBACETE",
+            "LEVANTE",
+            "REAL MADRID",
+            "PSG",
+            "NOTTINGHAM FOREST"
+        ]
+    },
 
     "Rui Patricio": {
         nationality: "PORTEKIZ",
@@ -1152,7 +1617,8 @@ const playerPool = {
         nationality: "FRANSA",
         teams: [
             "LYON",
-            "ARSENAL"
+            "ARSENAL",
+            "NEOM"
         ]
     },
 
@@ -1192,16 +1658,9 @@ const playerPool = {
         teams: [
             "CANNES",
             "ARSENAL",
-            "MANCHESTER CITY"
-        ]
-    },
-
-    "Samir Nasri": {
-        nationality: "FRANSA",
-        teams: [
-            "MARSEILLE",
-            "ARSENAL",
-            "MANCHESTER CITY"
+            "MANCHESTER CITY",
+            "ISTANBUL BASAKSEHIR",
+            "SERVETTE"
         ]
     },
 
@@ -1213,7 +1672,8 @@ const playerPool = {
             "ARSENAL",
             "MANCHESTER CITY",
             "REAL MADRID",
-            "TOTTENHAM"
+            "TOTTENHAM",
+            "ISTANBUL BASAKSEHIR"
         ]
     },
 
@@ -1572,6 +2032,262 @@ const playerPool = {
             "PERTH GLORY"
         ]
     },
+    // =====================================================
+// KULLANICININ VERDİĞİ YENİ OYUNCULAR
+// =====================================================
+
+"Milot Rashica": {
+    nationality: "KOSOVA",
+    teams: [
+        "VUSHtrRIA",
+        "VITESSE",
+        "WERDER BREMEN",
+        "NORWICH",
+        "GALATASARAY",
+        "BESIKTAS"
+    ]
+},
+
+"Arda Turan": {
+    nationality: "TURKIYE",
+    teams: [
+        "GALATASARAY",
+        "MANISASPOR",
+        "ATLETICO MADRID",
+        "BARCELONA",
+        "ISTANBUL BASAKSEHIR"
+    ]
+},
+
+"Arda Guler": {
+    nationality: "TURKIYE",
+    teams: [
+        "FENERBAHCE",
+        "REAL MADRID"
+    ]
+},
+
+"Rustu Recber": {
+    nationality: "TURKIYE",
+    teams: [
+        "ANTALYASPOR",
+        "FENERBAHCE",
+        "BARCELONA",
+        "BESIKTAS"
+    ]
+},
+
+"Ernest Muci": {
+    nationality: "ARNAVUTLUK",
+    teams: [
+        "TIRANA",
+        "LEGIA WARSZAWA",
+        "BESIKTAS",
+        "TRABZONSPOR"
+    ]
+},
+
+"Dusan Vlahovic": {
+    nationality: "SIRBISTAN",
+    teams: [
+        "PARTIZAN",
+        "FIORENTINA",
+        "JUVENTUS",
+        "BESIKTAS"
+    ]
+},
+
+"Leandro Trossard": {
+    nationality: "BELCIKA",
+    teams: [
+        "GENK",
+        "LOMMEL",
+        "WESTERLO",
+        "BRIGHTON",
+        "ARSENAL",
+        "BESIKTAS"
+    ]
+},
+
+"Orkun Kokcu": {
+    nationality: "TURKIYE",
+    teams: [
+        "FEYENOORD",
+        "BENFICA",
+        "BESIKTAS"
+    ]
+},
+
+"Mert Gunok": {
+    nationality: "TURKIYE",
+    teams: [
+        "FENERBAHCE",
+        "BURSASPOR",
+        "ISTANBUL BASAKSEHIR",
+        "BESIKTAS"
+    ]
+},
+
+"Alexander Nubel": {
+    nationality: "ALMANYA",
+    teams: [
+        "PADERBORN",
+        "SCHALKE 04",
+        "BAYERN MUNIH",
+        "MONACO",
+        "STUTTGART",
+        "BESIKTAS"
+    ]
+},
+
+"Tiago Djalo": {
+    nationality: "PORTEKIZ",
+    teams: [
+        "SPORTING CP",
+        "MILAN",
+        "LILLE",
+        "JUVENTUS",
+        "PORTO",
+        "BESIKTAS"
+    ]
+},
+
+"Emirhan Topcu": {
+    nationality: "TURKIYE",
+    teams: [
+        "CAYKUR RIZESPOR",
+        "MENEMENSPOR",
+        "BESIKTAS"
+    ]
+},
+
+"Ridvan Yilmaz": {
+    nationality: "TURKIYE",
+    teams: [
+        "BESIKTAS",
+        "RANGERS"
+    ]
+},
+
+"Amir Murillo": {
+    nationality: "PANAMA",
+    teams: [
+        "SAN FRANCISCO",
+        "NEW YORK RED BULLS",
+        "ANDERLECHT",
+        "MARSEILLE",
+        "BESIKTAS"
+    ]
+},
+
+"Felix Uduokhai": {
+    nationality: "ALMANYA",
+    teams: [
+        "1860 MUNIH",
+        "WOLFSBURG",
+        "AUGSBURG",
+        "BESIKTAS"
+    ]
+},
+
+"Vaclav Cerny": {
+    nationality: "CEKYA",
+    teams: [
+        "AJAX",
+        "UTRECHT",
+        "TWENTE",
+        "WOLFSBURG",
+        "RANGERS",
+        "BESIKTAS"
+    ]
+},
+
+"Salih Ozcan": {
+    nationality: "TURKIYE",
+    teams: [
+        "KOLN",
+        "WOLFSBURG",
+        "BORUSSIA DORTMUND",
+        "BESIKTAS"
+    ]
+},
+
+"Amir Hadziahmetovic": {
+    nationality: "BOSNA HERSEK",
+    teams: [
+        "ZELJEZNICAR",
+        "KONYASPOR",
+        "BESIKTAS",
+        "CAYKUR RIZESPOR"
+    ]
+},
+
+"Mario Gomez": {
+    nationality: "ALMANYA",
+    teams: [
+        "STUTTGART",
+        "BAYERN MUNIH",
+        "FIORENTINA",
+        "BESIKTAS",
+        "WOLFSBURG"
+    ]
+},
+
+"Tolga Zengin": {
+    nationality: "TURKIYE",
+    teams: [
+        "TRABZONSPOR",
+        "BESIKTAS"
+    ]
+},
+
+"Necip Uysal": {
+    nationality: "TURKIYE",
+    teams: [
+        "BESIKTAS"
+    ]
+},
+
+"Marcelo Guedes": {
+    nationality: "BREZILYA",
+    teams: [
+        "SANTOS",
+        "WISLA KRAKOW",
+        "PSV",
+        "HANNOVER 96",
+        "BESIKTAS",
+        "LYON",
+        "BORDEAUX",
+        "FLUMINENSE"
+    ]
+},
+
+"Tolgay Arslan": {
+    nationality: "TURKIYE",
+    teams: [
+        "HAMBURG",
+        "ALEMANNIA AACHEN",
+        "BESIKTAS",
+        "FENERBAHCE",
+        "UDINESE",
+        "MELBOURNE CITY",
+        "SANFRECCE HIROSHIMA"
+    ]
+},
+
+"Cenk Tosun": {
+    nationality: "TURKIYE",
+    teams: [
+        "EINTRACHT FRANKFURT",
+        "GAZIANTEPSPOR",
+        "BESIKTAS",
+        "EVERTON",
+        "CRYSTAL PALACE",
+        "FENERBAHCE",
+        "KASIMPASA",
+        "KARAGUMRUK"
+    ]
+},
 
     "Mohamed Salah": {
         nationality: "MISIR",
@@ -1581,7 +2297,8 @@ const playerPool = {
             "CHELSEA",
             "FIORENTINA",
             "ROMA",
-            "LIVERPOOL"
+            "LIVERPOOL",
+            "TRABZONSPOR"
         ]
     },
 
@@ -3299,21 +4016,13 @@ const playerPool = {
 // Mevcut playerPool'a eklenebilir
 // =====================================================
 
-    "Cesc Fabregas": {
-        nationality: "ISPANYA",
-        teams: [
-            "ARSENAL",
-            "BARCELONA",
-            "CHELSEA"
-        ]
-    },
-
     "Robin van Persie": {
         nationality: "HOLLANDA",
         teams: [
             "ARSENAL",
             "MANCHESTER UNITED",
-            "FENERBAHCE"
+            "FENERBAHCE",
+            "FEYENOORD"
         ]
     },
 
@@ -3321,25 +4030,9 @@ const playerPool = {
         nationality: "FILDISI SAHILI",
         teams: [
             "BARCELONA",
-            "MANCHESTER CITY"
-        ]
-    },
-
-    "Sergio Aguero": {
-        nationality: "ARJANTIN",
-        teams: [
-            "ATLETICO MADRID",
             "MANCHESTER CITY",
-            "BARCELONA"
-        ]
-    },
-
-    "Carlos Tevez": {
-        nationality: "ARJANTIN",
-        teams: [
-            "MANCHESTER CITY",
-            "JUVENTUS",
-            "MANCHESTER UNITED"
+            "OLYMPIAKOS",
+            "MONACO"
         ]
     },
 
@@ -3401,24 +4094,14 @@ const playerPool = {
         ]
     },
 
-    "Gonzalo Higuain": {
-        nationality: "ARJANTIN",
-        teams: [
-            "REAL MADRID",
-            "NAPOLI",
-            "JUVENTUS",
-            "MILAN",
-            "CHELSEA"
-        ]
-    },
-
     "Miralem Pjanic": {
         nationality: "BOSNA HERSEK",
         teams: [
             "LYON",
             "ROMA",
             "JUVENTUS",
-            "BARCELONA"
+            "BARCELONA",
+            "BESIKTAS"
         ]
     },
 
@@ -3464,31 +4147,7 @@ const playerPool = {
         ]
     },
 
-    "David Villa": {
-        nationality: "ISPANYA",
-        teams: [
-            "BARCELONA",
-            "ATLETICO MADRID"
-        ]
-    },
-
-    "Javier Mascherano": {
-        nationality: "ARJANTIN",
-        teams: [
-            "LIVERPOOL",
-            "BARCELONA"
-        ]
-    },
-
     "Gael Clichy": {
-        nationality: "FRANSA",
-        teams: [
-            "ARSENAL",
-            "MANCHESTER CITY"
-        ]
-    },
-
-    "Bacary Sagna": {
         nationality: "FRANSA",
         teams: [
             "ARSENAL",
@@ -3511,16 +4170,6 @@ const playerPool = {
             "MARSEILLE",
             "ARSENAL",
             "MANCHESTER CITY"
-        ]
-    },
-
-    "Emmanuel Adebayor": {
-        nationality: "TOGO",
-        teams: [
-            "MONACO",
-            "ARSENAL",
-            "MANCHESTER CITY",
-            "REAL MADRID"
         ]
     },
 
@@ -3622,18 +4271,6 @@ const playerPool = {
         ]
     },
 
-    "Gonzalo Higuain": {
-        nationality: "ARJANTIN",
-        teams: [
-            "RIVER PLATE",
-            "REAL MADRID",
-            "NAPOLI",
-            "JUVENTUS",
-            "MILAN",
-            "CHELSEA"
-        ]
-    },
-
     "Romelu Lukaku": {
         nationality: "BELCIKA",
         teams: [
@@ -3655,26 +4292,6 @@ const playerPool = {
         ]
     },
 
-    "David Villa": {
-        nationality: "ISPANYA",
-        teams: [
-            "SPORTING GIJON",
-            "VALENCIA",
-            "BARCELONA",
-            "ATLETICO MADRID"
-        ]
-    },
-
-    "Javier Mascherano": {
-        nationality: "ARJANTIN",
-        teams: [
-            "RIVER PLATE",
-            "CORINTHIANS",
-            "LIVERPOOL",
-            "BARCELONA"
-        ]
-    },
-
     "Samuel Eto'o": {
         nationality: "KAMERUN",
         teams: [
@@ -3683,16 +4300,6 @@ const playerPool = {
             "BARCELONA",
             "INTER",
             "CHELSEA"
-        ]
-    },
-
-    "Carlos Tevez": {
-        nationality: "ARJANTIN",
-        teams: [
-            "BOCA JUNIORS",
-            "MANCHESTER UNITED",
-            "MANCHESTER CITY",
-            "JUVENTUS"
         ]
     },
 
@@ -3771,14 +4378,6 @@ const playerPool = {
             "REAL MADRID",
             "ARSENAL",
             "FENERBAHCE"
-        ]
-    },
-
-    "David Silva": {
-        nationality: "ISPANYA",
-        teams: [
-            "VALENCIA",
-            "MANCHESTER CITY"
         ]
     },
 
