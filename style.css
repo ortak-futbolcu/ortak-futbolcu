@@ -1,0 +1,736 @@
+/* ========================================
+   GENEL SAYFA
+======================================== */
+
+body {
+    background-color: #0b1f17;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   ANA SAYFA
+======================================== */
+
+#home-screen {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: #061d14;
+
+    z-index: 9999;
+
+    text-align: center;
+}
+
+
+/* ========================================
+   ANA SAYFA BAŞLIK
+======================================== */
+
+#home-screen h1 {
+    font-size: 96px;
+    font-weight: 900;
+
+    margin: 0 0 20px 0;
+
+    color: white;
+
+    letter-spacing: 4px;
+}
+
+
+/* ========================================
+   ANA SAYFA ALT YAZI
+======================================== */
+
+.home-subtitle {
+    font-size: 24px;
+
+    color: white;
+
+    margin: 0 0 50px 0;
+}
+
+
+/* ========================================
+   OYUNA BAŞLA
+======================================== */
+
+#start-button {
+    padding: 18px 55px;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 12px;
+
+    background: #2ecc71;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+#start-button:hover {
+    transform: scale(1.05);
+
+    background: #27ae60;
+}
+
+
+#start-button:active {
+    transform: scale(0.98);
+}
+
+
+/* ========================================
+   OYUN BAŞLIĞI
+======================================== */
+
+h1 {
+    margin-top: 60px;
+
+    font-size: 42px;
+}
+
+
+/* ========================================
+   SKOR
+======================================== */
+
+.score {
+    font-size: 22px;
+
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   SORU NUMARASI
+======================================== */
+
+#question-number {
+    font-size: 18px;
+
+    margin-top: 10px;
+}
+
+
+/* ========================================
+   OYUN ALANI
+======================================== */
+
+.game-area {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 40px;
+
+    margin-top: 100px;
+
+    position: relative;
+}
+
+
+/* ========================================
+   TAKIM KUTULARI
+======================================== */
+
+.team {
+    background-color: #163d2d;
+
+    padding: 30px 50px;
+
+    border-radius: 15px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    width: 300px;
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    transition:
+        opacity 0.25s,
+        transform 0.25s;
+}
+
+
+/* ========================================
+   VS ALANI
+======================================== */
+
+.vs {
+    width: 120px;
+
+    min-width: 120px;
+
+    height: 120px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   3 - 2 - 1 GERİ SAYIM
+======================================== */
+
+#countdown {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 180px;
+
+    height: 140px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 90px;
+
+    font-weight: 900;
+
+    color: white;
+
+    line-height: 1;
+
+    z-index: 9999;
+
+    pointer-events: none;
+
+    text-align: center;
+
+    text-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+
+/* ========================================
+   VS
+======================================== */
+
+#vs-text {
+    font-size: 34px;
+
+    font-weight: 900;
+
+    color: white;
+
+    line-height: 1;
+
+    display: none;
+
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+
+/* ========================================
+   GERİ SAYIM ANİMASYONU
+======================================== */
+
+#countdown.countdown-pop {
+    animation: countdownPop 0.8s ease;
+}
+
+
+@keyframes countdownPop {
+
+    0% {
+        transform:
+            translate(-50%, -50%)
+            scale(0.5);
+
+        opacity: 0;
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.15);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* ========================================
+   BAŞLA YAZISI
+======================================== */
+
+#countdown.start-text {
+
+    font-size: 42px;
+
+    color: #2ecc71;
+
+    text-shadow:
+        0 0 10px rgba(46, 204, 113, 0.7),
+        0 0 25px rgba(46, 204, 113, 0.5);
+
+}
+
+
+/* ========================================
+   SÜRE BARI
+======================================== */
+
+.timer-container {
+    width: 500px;
+
+    height: 15px;
+
+    background-color: #1c3b2f;
+
+    border-radius: 10px;
+
+    margin: 20px auto;
+
+    overflow: hidden;
+}
+
+
+#timer-bar {
+    width: 100%;
+
+    height: 100%;
+
+    background-color: #2ecc71;
+
+    border-radius: 10px;
+
+    transition:
+        width 1s linear;
+}
+
+
+/* ========================================
+   CEVAP ALANI
+======================================== */
+
+.answer-area {
+    margin-top: 80px;
+}
+
+
+.answer-area input {
+    padding: 15px;
+
+    width: 300px;
+
+    font-size: 18px;
+
+    border-radius: 8px;
+
+    border: none;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+
+.answer-area input:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+}
+
+
+.answer-area button {
+    padding: 15px 25px;
+
+    margin-left: 10px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.15s,
+        opacity 0.15s;
+}
+
+
+.answer-area button:hover {
+    transform: scale(1.03);
+}
+
+
+.answer-area button:disabled {
+    opacity: 0.5;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ========================================
+   OYUNCU ÖNERİLERİ
+======================================== */
+
+#player-suggestions {
+    width: 330px;
+
+    margin: 8px auto 0 auto;
+
+    text-align: left;
+
+    position: relative;
+
+    z-index: 1000;
+}
+
+
+.player-suggestion {
+    background-color: #163d2d;
+
+    color: white;
+
+    padding: 12px 15px;
+
+    font-size: 17px;
+
+    border-bottom: 1px solid #285a45;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.15s;
+}
+
+
+.player-suggestion:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+
+.player-suggestion:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+
+.player-suggestion:hover {
+    background-color: #245c43;
+}
+
+
+/* ========================================
+   CEVAP SONUCU
+======================================== */
+
+#result {
+    margin-top: 25px;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    min-height: 35px;
+}
+
+
+/* ========================================
+   OYUN BİTİŞ EKRANI
+======================================== */
+
+.game-over {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color:
+        rgba(0, 0, 0, 0.75);
+
+    z-index: 9999;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+/* ========================================
+   OYUN BİTİŞ KUTUSU
+======================================== */
+
+.game-over-box {
+    width: 500px;
+
+    max-width: 85%;
+
+    background-color: #163d2d;
+
+    padding: 50px 40px;
+
+    border-radius: 25px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.6);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+/* ========================================
+   KUPA
+======================================== */
+
+.trophy {
+    font-size: 65px;
+
+    margin-bottom: 10px;
+}
+
+
+/* ========================================
+   OYUN BİTTİ BAŞLIK
+======================================== */
+
+.game-over h2 {
+    font-size: 42px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+
+/* ========================================
+   FİNAL SKORU
+======================================== */
+
+#final-score {
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   FİNAL MESAJI
+======================================== */
+
+#final-message {
+    font-size: 20px;
+
+    margin-bottom: 35px;
+}
+
+
+/* ========================================
+   TEKRAR OYNA
+======================================== */
+
+#restart-button {
+    padding: 16px 40px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    background-color: white;
+
+    color: #0b1f17;
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+
+#restart-button:hover {
+    transform: scale(1.05);
+
+    opacity: 0.9;
+}
+
+
+/* ========================================
+   MOBİL UYUMLULUK
+======================================== */
+
+@media (max-width: 700px) {
+
+    #home-screen h1 {
+        font-size: 60px;
+    }
+
+
+    .home-subtitle {
+        font-size: 18px;
+
+        padding: 0 20px;
+    }
+
+
+    #start-button {
+        font-size: 20px;
+
+        padding: 16px 40px;
+    }
+
+
+    h1 {
+        font-size: 32px;
+    }
+
+
+    .game-area {
+        gap: 10px;
+
+        margin-top: 60px;
+    }
+
+
+    .team {
+        width: 250px;
+
+        padding: 25px 20px;
+
+        font-size: 22px;
+    }
+
+
+    .vs {
+        width: 70px;
+
+        min-width: 70px;
+
+        height: 100px;
+    }
+
+
+    #countdown {
+        font-size: 60px;
+
+        width: 100px;
+
+        height: 100px;
+    }
+
+
+    #vs-text {
+        font-size: 24px;
+    }
+
+
+    .timer-container {
+        width: 80%;
+    }
+
+
+    .answer-area {
+        margin-top: 50px;
+    }
+
+
+    .answer-area input {
+        width: 70%;
+    }
+
+
+    .answer-area button {
+        margin-left: 0;
+
+        margin-top: 15px;
+    }
+
+
+    #player-suggestions {
+        width: 70%;
+    }
+
+
+    .game-over-box {
+        padding: 40px 25px;
+    }
+
+
+    .game-over h2 {
+        font-size: 34px;
+    }
+
+
+    #final-score {
+        font-size: 26px;
+    }
+
+}
