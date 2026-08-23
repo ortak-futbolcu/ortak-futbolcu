@@ -15,12 +15,10 @@ body {
 }
 
 body {
-    background-color: #050807;
+    background-color: #0b1f17;
     color: white;
     font-family: Arial, sans-serif;
     text-align: center;
-    min-height: 100vh;
-    overflow-x: hidden;
 }
 
 
@@ -32,163 +30,39 @@ body {
     position: fixed;
     inset: 0;
 
+    width: 100vw;
+    height: 100vh;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    overflow: hidden;
+    /*
+       ÖNEMLİ:
+       home-bg.png 4:3 oranında.
 
-    background:
-        radial-gradient(
-            circle at 50% 35%,
-            rgba(53, 255, 0, 0.08) 0%,
-            rgba(53, 255, 0, 0.025) 25%,
-            transparent 50%
-        ),
-        linear-gradient(
-            180deg,
-            #020405 0%,
-            #050908 45%,
-            #020403 100%
-        );
+       100% 100% KULLANMIYORUZ.
+       Çünkü bu görseli esnetiyordu.
+
+       cover:
+       - Görselin oranını korur.
+       - Ekranı tamamen doldurur.
+       - 3-2-1'in oranını bozmaz.
+    */
+
+    background-image: url("home-bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    background-color: #020604;
 
     z-index: 9999;
 
     text-align: center;
-}
 
-
-/* ========================================
-   STADYUM ATMOSFERİ
-======================================== */
-
-/*
-   Alt tarafta stadyum zemini hissi
-*/
-
-#home-screen::before {
-    content: "";
-
-    position: absolute;
-
-    left: -10%;
-    right: -10%;
-    bottom: -20%;
-
-    height: 55%;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(255, 255, 255, 0.08) 0%,
-            rgba(255, 255, 255, 0.025) 28%,
-            transparent 65%
-        );
-
-    transform: perspective(500px) rotateX(55deg);
-
-    opacity: 0.7;
-
-    pointer-events: none;
-}
-
-
-/*
-   Stadyum çizgileri
-*/
-
-#home-screen::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -22%;
-
-    width: 850px;
-    height: 320px;
-
-    transform: translateX(-50%) perspective(500px) rotateX(58deg);
-
-    border-top: 2px solid rgba(255, 255, 255, 0.13);
-    border-radius: 50%;
-
-    box-shadow:
-        0 -35px 0 rgba(255, 255, 255, 0.025),
-        0 -70px 0 rgba(255, 255, 255, 0.018);
-
-    pointer-events: none;
-}
-
-
-/* ========================================
-   SOL PROJEKTÖR IŞIĞI
-======================================== */
-
-#home-screen h1::before {
-    content: "";
-
-    position: absolute;
-
-    left: -38vw;
-    top: 18vh;
-
-    width: 42vw;
-    height: 55vh;
-
-    background: linear-gradient(
-        110deg,
-        rgba(255, 255, 255, 0.16),
-        rgba(255, 255, 255, 0.04) 30%,
-        transparent 65%
-    );
-
-    filter: blur(12px);
-
-    transform: rotate(-8deg);
-
-    pointer-events: none;
-}
-
-
-/* ========================================
-   SAĞ PROJEKTÖR IŞIĞI
-======================================== */
-
-#home-screen h1::after {
-    content: "";
-
-    position: absolute;
-
-    right: -38vw;
-    top: 18vh;
-
-    width: 42vw;
-    height: 55vh;
-
-    background: linear-gradient(
-        70deg,
-        rgba(255, 255, 255, 0.16),
-        rgba(255, 255, 255, 0.04) 30%,
-        transparent 65%
-    );
-
-    filter: blur(12px);
-
-    transform: rotate(8deg);
-
-    pointer-events: none;
-}
-
-
-/* ========================================
-   ANA SAYFA İÇERİĞİNİN ÖNE ÇIKMASI
-======================================== */
-
-#home-screen > * {
-    position: relative;
-    z-index: 5;
+    overflow: hidden;
 }
 
 
@@ -196,153 +70,116 @@ body {
    ANA SAYFA BAŞLIK
 ======================================== */
 
-#home-screen h1 {
-    position: relative;
-
-    font-size: clamp(72px, 9vw, 140px);
-
-    font-weight: 900;
-
-    margin: 0 0 12px 0;
-
-    color: #ffffff;
-
-    letter-spacing: 8px;
-
-    line-height: 0.9;
-
-    text-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.9),
-        0 0 20px rgba(255, 255, 255, 0.12);
-
-    user-select: none;
-}
-
-
 /*
-   3-2-1 içindeki orta rakamı yeşil yapmak için
-   HTML değiştirmeden mümkün değil.
-   Bu yüzden başlık genel olarak beyaz tutuluyor.
+   3-2-1 zaten home-bg.png'nin içerisinde.
+   HTML'deki başlığı göstermiyoruz.
 */
+
+#home-screen h1 {
+    display: none;
+}
 
 
 /* ========================================
    ANA SAYFA ALT YAZI
 ======================================== */
 
+/*
+   Görselde olmadığı için gizli.
+*/
+
 .home-subtitle {
-    font-size: clamp(16px, 2vw, 24px);
-
-    font-weight: 500;
-
-    color: rgba(255, 255, 255, 0.9);
-
-    margin: 0 0 42px 0;
-
-    letter-spacing: 0.5px;
-
-    text-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.8);
+    display: none;
 }
 
 
 /* ========================================
-   OYUNA BAŞLA BUTONU
+   OYUNA BAŞLA
 ======================================== */
 
+/*
+   Görselin içinde zaten OYUNA BAŞLA butonu var.
+
+   HTML'deki butonu görünmez yapıyoruz,
+   fakat tıklanabilir alan olarak bırakıyoruz.
+*/
+
 #start-button {
-    position: relative;
+    position: absolute;
 
-    padding: 18px 58px;
+    /*
+       Butonun konumu.
+       Görselin orta-alt bölümündeki
+       gerçek butonla eşleştirildi.
+    */
 
-    min-width: 270px;
+    left: 50%;
+    top: 69.5%;
 
-    font-size: 23px;
-    font-weight: 800;
+    transform: translate(-50%, -50%);
 
-    letter-spacing: 1px;
+    /*
+       Responsive genişlik.
+    */
 
-    border: 1px solid rgba(120, 255, 70, 0.8);
+    width: min(36vw, 650px);
 
-    border-radius: 14px;
+    /*
+       Butonun yüksekliği ekranla birlikte
+       orantılı değişsin.
+    */
 
-    background:
-        linear-gradient(
-            180deg,
-            #55d91c 0%,
-            #35a914 100%
-        );
+    height: min(15vh, 160px);
 
-    color: white;
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+
+    color: transparent;
+
+    font-size: 0;
 
     cursor: pointer;
 
-    box-shadow:
-        0 0 12px rgba(76, 255, 35, 0.35),
-        0 0 35px rgba(76, 255, 35, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.35);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-
-    overflow: hidden;
+    z-index: 10;
 }
 
 
-/*
-   Butonun üstündeki parlama
-*/
-
-#start-button::before {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 80%;
-    height: 100%;
-
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-    );
-
-    transform: skewX(-20deg);
-
-    transition: left 0.5s ease;
-}
-
+/* ========================================
+   ANA SAYFA BUTON HOVER
+======================================== */
 
 #start-button:hover {
-    transform: scale(1.06);
+    transform:
+        translate(-50%, -50%)
+        scale(1.02);
 
-    background:
-        linear-gradient(
-            180deg,
-            #65eb25 0%,
-            #3bbd17 100%
-        );
+    background: rgba(
+        46,
+        204,
+        113,
+        0.08
+    );
+
+    border-radius: 25px;
 
     box-shadow:
-        0 0 18px rgba(76, 255, 35, 0.55),
-        0 0 50px rgba(76, 255, 35, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-}
-
-
-#start-button:hover::before {
-    left: 130%;
+        0 0 25px
+        rgba(
+            46,
+            204,
+            113,
+            0.35
+        );
 }
 
 
 #start-button:active {
-    transform: scale(0.98);
+    transform:
+        translate(-50%, -50%)
+        scale(0.99);
 }
 
 
@@ -352,6 +189,30 @@ body {
 
 #game-content {
     min-height: 100vh;
+
+    width: 100%;
+
+    /*
+       ANA SAYFA GÖRSELİ BURAYA GELMEZ.
+
+       Oyun ekranındaki mevcut koyu yeşil
+       tasarımı aynen koruyoruz.
+    */
+
+    background:
+        radial-gradient(
+            circle at center top,
+            rgba(28, 75, 54, 0.45),
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            #0b2419 0%,
+            #0b1f17 50%,
+            #081811 100%
+        );
+
+    padding-top: 1px;
 }
 
 
@@ -359,10 +220,12 @@ body {
    OYUN BAŞLIĞI
 ======================================== */
 
-#game-content > h1 {
+h1 {
     margin-top: 60px;
 
     font-size: 42px;
+
+    font-weight: 900;
 }
 
 
@@ -437,6 +300,10 @@ body {
     transition:
         opacity 0.25s,
         transform 0.25s;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.25);
 }
 
 
@@ -474,7 +341,8 @@ body {
 
     top: 50%;
 
-    transform: translate(-50%, -50%);
+    transform:
+        translate(-50%, -50%);
 
     width: 180px;
 
@@ -501,8 +369,11 @@ body {
     text-align: center;
 
     text-shadow:
-        0 4px 10px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(255, 255, 255, 0.4);
+        0 4px 10px
+        rgba(0, 0, 0, 0.8),
+
+        0 0 20px
+        rgba(255, 255, 255, 0.4);
 }
 
 
@@ -522,7 +393,8 @@ body {
     display: none;
 
     text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.4);
+        0 0 10px
+        rgba(255, 255, 255, 0.4);
 }
 
 
@@ -531,7 +403,8 @@ body {
 ======================================== */
 
 #countdown.countdown-pop {
-    animation: countdownPop 0.8s ease;
+    animation:
+        countdownPop 0.8s ease;
 }
 
 
@@ -560,7 +433,6 @@ body {
 
         opacity: 1;
     }
-
 }
 
 
@@ -575,9 +447,11 @@ body {
     color: #2ecc71;
 
     text-shadow:
-        0 0 10px rgba(46, 204, 113, 0.7),
-        0 0 25px rgba(46, 204, 113, 0.5);
+        0 0 10px
+        rgba(46, 204, 113, 0.7),
 
+        0 0 25px
+        rgba(46, 204, 113, 0.5);
 }
 
 
@@ -708,7 +582,8 @@ body {
 
     font-size: 17px;
 
-    border-bottom: 1px solid #285a45;
+    border-bottom:
+        1px solid #285a45;
 
     cursor: pointer;
 
@@ -718,12 +593,14 @@ body {
 
 
 .player-suggestion:first-child {
-    border-radius: 8px 8px 0 0;
+    border-radius:
+        8px 8px 0 0;
 }
 
 
 .player-suggestion:last-child {
-    border-radius: 0 0 8px 8px;
+    border-radius:
+        0 0 8px 8px;
 }
 
 
@@ -793,10 +670,12 @@ body {
     box-sizing: border-box;
 
     box-shadow:
-        0 15px 50px rgba(0, 0, 0, 0.6);
+        0 15px 50px
+        rgba(0, 0, 0, 0.6);
 
     border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid
+        rgba(255, 255, 255, 0.08);
 }
 
 
@@ -888,30 +767,53 @@ body {
 
 @media (max-width: 700px) {
 
-    #home-screen h1 {
-        font-size: 60px;
+    /* ------------------------------------
+       ANA SAYFA
+    ------------------------------------ */
 
-        letter-spacing: 4px;
+    #home-screen {
+
+        /*
+           Mobilde de görsel ASLA esnetilmiyor.
+
+           cover sayesinde:
+           - 3-2-1 oranı korunuyor
+           - görsel ekranı dolduruyor
+           - yatay/dikey esneme olmuyor
+        */
+
+        background-size: cover;
+
+        background-position: center center;
     }
 
 
-    .home-subtitle {
-        font-size: 18px;
-
-        padding: 0 20px;
-    }
-
+    /*
+       Mobilde butonun tıklama alanını
+       ekran genişliğine göre ayarlıyoruz.
+    */
 
     #start-button {
-        font-size: 20px;
 
-        padding: 16px 40px;
+        width: 65vw;
 
-        min-width: 230px;
+        height: 15vh;
+
+        left: 50%;
+
+        top: 69%;
+
+        transform:
+            translate(-50%, -50%);
     }
 
 
-    #game-content > h1 {
+    /* ------------------------------------
+       OYUN EKRANI
+       MEVCUT TASARIM KORUNUYOR
+    ------------------------------------ */
+
+    h1 {
         font-size: 32px;
     }
 
@@ -995,5 +897,43 @@ body {
     #final-score {
         font-size: 26px;
     }
+}
 
+
+/* ========================================
+   ÇOK DAR TELEFONLAR
+======================================== */
+
+@media (max-width: 400px) {
+
+    #start-button {
+        width: 70vw;
+
+        height: 14vh;
+
+        top: 69%;
+    }
+}
+
+
+/* ========================================
+   YATAY TELEFON / TABLET
+======================================== */
+
+@media (max-height: 600px) and (orientation: landscape) {
+
+    #home-screen {
+        background-size: cover;
+
+        background-position: center center;
+    }
+
+
+    #start-button {
+        width: 38vw;
+
+        height: 17vh;
+
+        top: 70%;
+    }
 }
