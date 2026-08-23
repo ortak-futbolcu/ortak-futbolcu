@@ -21,9 +21,9 @@ body {
     background:
         linear-gradient(
             180deg,
-            #071a12 0%,
-            #0a2118 50%,
-            #06140e 100%
+            #06150f 0%,
+            #092218 50%,
+            #04100b 100%
         );
 
     color: #ffffff;
@@ -38,7 +38,7 @@ body {
 
 
 /* =========================================================
-   ANA SAYFA
+   ANA SAYFA — PREMIUM FUTBOL ARCADE
 ========================================================= */
 
 #home-screen {
@@ -53,41 +53,106 @@ body {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     background:
 
+        /* Üst merkezde hafif yeşil ışık */
         radial-gradient(
-            circle at 50% 38%,
-            rgba(54, 205, 119, 0.16),
-            transparent 25%
+            ellipse at 50% 42%,
+            rgba(42, 190, 112, 0.16) 0%,
+            rgba(24, 120, 72, 0.08) 28%,
+            transparent 58%
         ),
 
+        /* Alt saha ışığı */
         radial-gradient(
-            circle at 50% 100%,
-            rgba(39, 145, 83, 0.18),
-            transparent 45%
+            ellipse at 50% 100%,
+            rgba(35, 170, 96, 0.18) 0%,
+            transparent 52%
         ),
 
+        /* Koyu ana zemin */
         linear-gradient(
             180deg,
-            #020705 0%,
-            #04130d 48%,
-            #071d13 100%
+            #020806 0%,
+            #03120b 42%,
+            #061b12 100%
         );
 
-    z-index: 9999;
+    background-image:
+        radial-gradient(
+            ellipse at 50% 42%,
+            rgba(42, 190, 112, 0.16) 0%,
+            rgba(24, 120, 72, 0.08) 28%,
+            transparent 58%
+        ),
+        radial-gradient(
+            ellipse at 50% 100%,
+            rgba(35, 170, 96, 0.18) 0%,
+            transparent 52%
+        ),
+        linear-gradient(
+            180deg,
+            #020806 0%,
+            #03120b 42%,
+            #061b12 100%
+        );
 
     overflow: hidden;
+
+    z-index: 9999;
 }
 
 
 /* =========================================================
-   ANA SAYFA STADYUM IŞIK EFEKTİ
+   ANA SAYFA — SAHA ATMOSFERİ
 ========================================================= */
 
+/* Ortadaki saha çizgisi */
 #home-screen::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -15%;
+
+    width: 120%;
+    height: 48%;
+
+    transform:
+        translateX(-50%)
+        perspective(500px)
+        rotateX(58deg);
+
+    border-top:
+        1px solid
+        rgba(86, 220, 140, 0.14);
+
+    border-radius: 50%;
+
+    box-shadow:
+
+        0 -35px 0
+        rgba(86, 220, 140, 0.035),
+
+        0 -70px 0
+        rgba(86, 220, 140, 0.025);
+
+    pointer-events: none;
+
+    opacity: 0.8;
+}
+
+
+/* İnce yatay saha çizgileri */
+#home-screen::after {
 
     content: "";
 
@@ -97,23 +162,21 @@ body {
 
     background:
 
-        radial-gradient(
-            ellipse at 5% 25%,
-            rgba(255,255,255,0.15),
-            transparent 10%
-        ),
-
-        radial-gradient(
-            ellipse at 95% 25%,
-            rgba(255,255,255,0.15),
-            transparent 10%
-        ),
-
         linear-gradient(
-            165deg,
-            transparent 35%,
-            rgba(53, 206, 117, 0.035) 50%,
-            transparent 65%
+            90deg,
+            transparent 0%,
+            rgba(60, 190, 110, 0.045) 49.9%,
+            rgba(60, 190, 110, 0.12) 50%,
+            rgba(60, 190, 110, 0.045) 50.1%,
+            transparent 100%
+        ),
+
+        repeating-linear-gradient(
+            0deg,
+            transparent 0px,
+            transparent 70px,
+            rgba(73, 190, 116, 0.025) 71px,
+            transparent 72px
         );
 
     pointer-events: none;
@@ -121,53 +184,16 @@ body {
 
 
 /* =========================================================
-   ANA SAYFA ALT SAHA IŞIĞI
+   ANA SAYFA İÇERİĞİNİ ÖNE AL
 ========================================================= */
 
-#home-screen::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -30%;
-
-    width: 100%;
-    height: 60%;
-
-    transform: translateX(-50%);
-
-    background:
-        radial-gradient(
-            ellipse,
-            rgba(47, 201, 112, 0.17),
-            transparent 65%
-        );
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   ANA SAYFA İÇERİK
-========================================================= */
-
-.home-content {
+#home-screen h1,
+#home-screen .home-subtitle,
+#home-screen #start-button {
 
     position: relative;
 
-    z-index: 5;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
+    z-index: 10;
 }
 
 
@@ -175,158 +201,305 @@ body {
    3-2-1 LOGO
 ========================================================= */
 
-.home-logo {
+#home-screen h1 {
 
-    display: flex;
+    display: block;
 
-    align-items: center;
-    justify-content: center;
+    margin: 0;
 
-    gap: 4px;
+    position: relative;
 
-    margin-bottom: 18px;
+    font-size: clamp(
+        120px,
+        13vw,
+        230px
+    );
 
-    filter:
-        drop-shadow(
-            0 12px 25px
-            rgba(0, 0, 0, 0.65)
-        );
-}
-
-
-.logo-number {
-
-    font-size: clamp(100px, 12vw, 190px);
-
-    line-height: 0.82;
+    line-height: 0.78;
 
     font-weight: 1000;
 
     font-style: italic;
 
-    letter-spacing: -12px;
+    letter-spacing: -0.09em;
 
-    transform: skewX(-7deg);
+    transform:
+        skewX(-7deg);
 
-    text-shadow:
-        0 5px 0 rgba(0,0,0,0.35),
-        0 15px 30px rgba(0,0,0,0.45);
-}
-
-
-.logo-number.white {
-    color: #f5f7f6;
-}
-
-
-.logo-number.green {
-
-    color: #53d52f;
-
-    text-shadow:
-
-        0 0 12px
-        rgba(83, 213, 47, 0.25),
-
-        0 5px 0
-        rgba(0,0,0,0.3),
-
-        0 15px 30px
-        rgba(0,0,0,0.45);
-}
-
-
-/* =========================================================
-   ANA SAYFA AYIRICI
-========================================================= */
-
-.home-line {
-
-    width: 210px;
-
-    height: 2px;
-
-    margin-bottom: 30px;
+    color: transparent;
 
     background:
+
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(77, 215, 112, 0.75),
-            transparent
+            180deg,
+            #ffffff 0%,
+            #e9eeeb 27%,
+            #aab5af 58%,
+            #ffffff 100%
         );
 
-    box-shadow:
-        0 0 12px
-        rgba(62, 214, 108, 0.35);
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    text-shadow:
+
+        0 5px 0
+        rgba(0, 0, 0, 0.65),
+
+        0 12px 25px
+        rgba(0, 0, 0, 0.55),
+
+        0 0 35px
+        rgba(255, 255, 255, 0.08);
+
+    user-select: none;
+}
+
+
+/* 2 rakamına yeşil vurgu */
+#home-screen h1::first-letter {
+
+    color: transparent;
+}
+
+
+/*
+   h1'in içindeki "2"yi ayrı seçemediğimiz için
+   başlığın arkasına yeşil ışık ekliyoruz.
+*/
+#home-screen h1::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 39%;
+
+    top: 28%;
+
+    width: 19%;
+
+    height: 38%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            rgba(48, 220, 120, 0.50),
+            rgba(40, 190, 105, 0.15) 45%,
+            transparent 72%
+        );
+
+    filter: blur(15px);
+
+    z-index: -1;
+
+    pointer-events: none;
 }
 
 
 /* =========================================================
-   OYUNA BAŞLA BUTONU
+   ALT BAŞLIK
 ========================================================= */
 
-#start-button {
+#home-screen .home-subtitle {
 
-    width: 360px;
+    display: block;
 
-    max-width: 80vw;
+    margin:
 
-    height: 72px;
+        28px
+        0
+        0;
+
+    font-size:
+        clamp(
+            12px,
+            1.15vw,
+            18px
+        );
+
+    font-weight: 800;
+
+    letter-spacing:
+        clamp(
+            4px,
+            0.55vw,
+            9px
+        );
+
+    text-transform: uppercase;
+
+    color:
+        rgba(
+            222,
+            238,
+            229,
+            0.72
+        );
+
+    text-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   ANA SAYFA BUTONU
+========================================================= */
+
+#home-screen #start-button {
+
+    position: relative;
+
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    margin-top: 52px;
+
+    width: clamp(
+        280px,
+        25vw,
+        460px
+    );
+
+    height: clamp(
+        62px,
+        5.2vw,
+        82px
+    );
+
+    aspect-ratio: auto;
+
+    padding: 0 30px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    gap: 18px;
-
-    padding: 0 35px;
-
-    border-radius: 14px;
-
-    border:
-        1px solid
-        rgba(120, 255, 132, 0.65);
+    gap: 17px;
 
     background:
 
         linear-gradient(
             135deg,
-            #68df31 0%,
-            #3fae27 50%,
-            #2b8c20 100%
+            #1fae67 0%,
+            #2bd27d 48%,
+            #1eae64 100%
         );
+
+    border:
+        1px solid
+        rgba(125, 255, 177, 0.7);
+
+    border-radius: 13px;
+
+    outline: none;
 
     color: #ffffff;
 
-    font-size: 24px;
+    font-size:
+        clamp(
+            17px,
+            1.4vw,
+            24px
+        );
 
-    font-weight: 900;
+    font-weight: 1000;
 
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 
     cursor: pointer;
 
-    box-shadow:
+    appearance: none;
 
-        0 0 25px
-        rgba(76, 214, 49, 0.25),
+    -webkit-appearance: none;
+
+    box-shadow:
 
         0 12px 30px
         rgba(0, 0, 0, 0.45),
 
+        0 0 25px
+        rgba(38, 211, 120, 0.22),
+
         inset 0 1px 0
-        rgba(255,255,255,0.35);
+        rgba(255, 255, 255, 0.35),
+
+        inset 0 -4px 8px
+        rgba(0, 80, 40, 0.16);
 
     transition:
-        transform 0.2s ease,
-        filter 0.2s ease,
-        box-shadow 0.2s ease;
+
+        transform 0.18s ease,
+
+        box-shadow 0.18s ease,
+
+        filter 0.18s ease;
 }
 
 
-#start-button:hover {
+/* Play ikonu */
+#home-screen #start-button::before {
+
+    content: "";
+
+    width: 0;
+    height: 0;
+
+    border-top:
+        9px solid transparent;
+
+    border-bottom:
+        9px solid transparent;
+
+    border-left:
+        14px solid #ffffff;
+
+    filter:
+        drop-shadow(
+            0 2px 3px
+            rgba(0, 0, 0, 0.25)
+        );
+
+    flex-shrink: 0;
+}
+
+
+/* Üst parlama */
+#home-screen #start-button::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12%;
+
+    top: 1px;
+
+    width: 76%;
+
+    height: 1px;
+
+    background:
+        rgba(255, 255, 255, 0.55);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   BUTON HOVER
+========================================================= */
+
+#home-screen #start-button:hover {
 
     transform:
         translateY(-4px)
@@ -337,40 +510,52 @@ body {
 
     box-shadow:
 
-        0 0 35px
-        rgba(76, 214, 49, 0.35),
+        0 17px 35px
+        rgba(0, 0, 0, 0.48),
 
-        0 16px 35px
-        rgba(0, 0, 0, 0.5);
-}
+        0 0 40px
+        rgba(38, 211, 120, 0.32),
 
+        inset 0 1px 0
+        rgba(255, 255, 255, 0.4),
 
-#start-button:active {
-
-    transform:
-        translateY(0)
-        scale(0.98);
-
-    filter:
-        brightness(0.95);
+        inset 0 -4px 8px
+        rgba(0, 80, 40, 0.12);
 }
 
 
 /* =========================================================
-   OYUN BUTONU OK İKONU
+   BUTON ACTIVE
 ========================================================= */
 
-.play-icon {
+#home-screen #start-button:active {
 
-    font-size: 27px;
-
-    line-height: 1;
+    transform:
+        translateY(1px)
+        scale(0.985);
 
     filter:
-        drop-shadow(
-            0 2px 2px
-            rgba(0,0,0,0.25)
-        );
+        brightness(0.96);
+
+    box-shadow:
+
+        0 7px 17px
+        rgba(0, 0, 0, 0.4),
+
+        0 0 20px
+        rgba(38, 211, 120, 0.2);
+}
+
+
+/* =========================================================
+   ANA SAYFAYA VİNYET
+========================================================= */
+
+#home-screen {
+
+    box-shadow:
+        inset 0 0 160px
+        rgba(0, 0, 0, 0.65);
 }
 
 
@@ -445,28 +630,6 @@ body {
 
 
 /* =========================================================
-   NORMAL H1
-========================================================= */
-
-#game-content > h1 {
-
-    margin-top: 48px;
-
-    margin-bottom: 0;
-
-    font-size: 42px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.5px;
-
-    text-shadow:
-        0 4px 15px
-        rgba(0,0,0,0.45);
-}
-
-
-/* =========================================================
    SKOR
 ========================================================= */
 
@@ -494,8 +657,7 @@ body {
 
     font-weight: 500;
 
-    color:
-        rgba(255,255,255,0.82);
+    color: rgba(255, 255, 255, 0.82);
 }
 
 
@@ -514,11 +676,11 @@ body {
     margin: 20px auto 0;
 
     background:
-        rgba(255,255,255,0.07);
+        rgba(255, 255, 255, 0.07);
 
     border:
         1px solid
-        rgba(255,255,255,0.05);
+        rgba(255, 255, 255, 0.05);
 
     border-radius: 999px;
 
@@ -526,7 +688,7 @@ body {
 
     box-shadow:
         inset 0 1px 4px
-        rgba(0,0,0,0.35);
+        rgba(0, 0, 0, 0.35);
 }
 
 
@@ -547,11 +709,12 @@ body {
 
     transition:
         width 1s linear,
+
         background 0.25s ease;
 
     box-shadow:
         0 0 10px
-        rgba(46,204,113,0.25);
+        rgba(46, 204, 113, 0.25);
 }
 
 
@@ -589,8 +752,8 @@ body {
 
         linear-gradient(
             145deg,
-            rgba(24,69,50,0.96),
-            rgba(10,32,23,0.98)
+            rgba(24, 69, 50, 0.98),
+            rgba(17, 55, 40, 0.98)
         );
 
     width: 300px;
@@ -599,7 +762,7 @@ body {
 
     padding: 24px 30px;
 
-    border-radius: 17px;
+    border-radius: 16px;
 
     display: flex;
 
@@ -609,27 +772,23 @@ body {
 
     justify-content: center;
 
-    gap: 12px;
+    gap: 11px;
 
     border:
         1px solid
-        rgba(82,224,125,0.14);
+        rgba(255, 255, 255, 0.045);
 
     box-shadow:
 
-        0 14px 35px
-        rgba(0,0,0,0.32),
+        0 12px 30px
+        rgba(0, 0, 0, 0.25),
 
         inset 0 1px 0
-        rgba(255,255,255,0.04),
-
-        0 0 20px
-        rgba(46,204,113,0.035);
+        rgba(255, 255, 255, 0.035);
 
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease,
-        border-color 0.25s ease,
         opacity 0.25s ease;
 
     overflow: hidden;
@@ -645,68 +804,40 @@ body {
     inset: 0;
 
     background:
-
         radial-gradient(
             circle at 50% 0%,
-            rgba(46,204,113,0.12),
-            transparent 60%
+            rgba(46, 204, 113, 0.08),
+            transparent 55%
         );
 
     pointer-events: none;
 }
 
 
-.team::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 12%;
-    right: 12%;
-    bottom: 0;
-
-    height: 1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(70,218,118,0.55),
-            transparent
-        );
-
-    opacity: 0.65;
-}
-
-
 .team:hover {
 
     transform:
-        translateY(-4px);
-
-    border-color:
-        rgba(82,224,125,0.28);
+        translateY(-3px);
 
     box-shadow:
 
-        0 18px 40px
-        rgba(0,0,0,0.38),
+        0 16px 35px
+        rgba(0, 0, 0, 0.30),
 
-        0 0 25px
-        rgba(46,204,113,0.08);
+        0 0 0 1px
+        rgba(46, 204, 113, 0.08);
 }
 
 
 /* =========================================================
-   LOGO WRAPPER
+   LOGO
 ========================================================= */
 
 .team-logo-wrapper {
 
-    width: 95px;
+    width: 86px;
 
-    height: 95px;
+    height: 86px;
 
     display: flex;
 
@@ -717,33 +848,8 @@ body {
     position: relative;
 
     z-index: 2;
-
-    border-radius: 50%;
 }
 
-
-.team-logo-wrapper::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(255,255,255,0.045),
-            transparent 68%
-        );
-}
-
-
-/* =========================================================
-   TAKIM LOGOSU
-========================================================= */
 
 .team-logo {
 
@@ -759,14 +865,10 @@ body {
 
     flex-shrink: 0;
 
-    position: relative;
-
-    z-index: 2;
-
     filter:
         drop-shadow(
-            0 6px 9px
-            rgba(0,0,0,0.42)
+            0 5px 8px
+            rgba(0, 0, 0, 0.35)
         );
 }
 
@@ -799,12 +901,12 @@ body {
 
     text-shadow:
         0 3px 7px
-        rgba(0,0,0,0.5);
+        rgba(0, 0, 0, 0.45);
 }
 
 
 /* =========================================================
-   VS ALANI
+   VS
 ========================================================= */
 
 .vs {
@@ -826,11 +928,6 @@ body {
     flex-shrink: 0;
 }
 
-
-/* =========================================================
-   GERİ SAYIM
-   ÇİRKİN YUVARLAK TAMAMEN KALDIRILDI
-========================================================= */
 
 #countdown {
 
@@ -866,38 +963,15 @@ body {
 
     text-align: center;
 
-    background: transparent !important;
-
-    border: none !important;
-
-    border-radius: 0 !important;
-
-    box-shadow: none !important;
-
-    outline: none !important;
-
     text-shadow:
 
         0 5px 12px
-        rgba(0,0,0,0.75),
+        rgba(0, 0, 0, 0.75),
 
         0 0 25px
-        rgba(255,255,255,0.25);
+        rgba(255, 255, 255, 0.25);
 }
 
-
-#countdown::before,
-#countdown::after {
-
-    display: none !important;
-
-    content: none !important;
-}
-
-
-/* =========================================================
-   VS
-========================================================= */
 
 #vs-text {
 
@@ -914,15 +988,15 @@ body {
     text-shadow:
 
         0 4px 10px
-        rgba(0,0,0,0.55),
+        rgba(0, 0, 0, 0.55),
 
         0 0 15px
-        rgba(255,255,255,0.18);
+        rgba(255, 255, 255, 0.18);
 }
 
 
 /* =========================================================
-   GERİ SAYIM ANİMASYONU
+   GERİ SAYIM
 ========================================================= */
 
 #countdown.countdown-pop {
@@ -942,8 +1016,8 @@ body {
     0% {
 
         transform:
-            translate(-50%,-50%)
-            scale(0.45);
+            translate(-50%, -50%)
+            scale(0.35);
 
         opacity: 0;
     }
@@ -951,8 +1025,8 @@ body {
     45% {
 
         transform:
-            translate(-50%,-50%)
-            scale(1.15);
+            translate(-50%, -50%)
+            scale(1.18);
 
         opacity: 1;
     }
@@ -960,7 +1034,7 @@ body {
     100% {
 
         transform:
-            translate(-50%,-50%)
+            translate(-50%, -50%)
             scale(1);
 
         opacity: 1;
@@ -982,7 +1056,7 @@ body {
 
     justify-content: center;
 
-    align-items: flex-end;
+    align-items: flex-start;
 
     gap: 10px;
 
@@ -990,48 +1064,13 @@ body {
 }
 
 
-/* =========================================================
-   INPUT WRAPPER
-========================================================= */
-
 .answer-input-wrapper {
 
     width: 300px;
 
     position: relative;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: stretch;
 }
 
-
-/* =========================================================
-   FUTBOLCU ADINI GİR
-========================================================= */
-
-.answer-label {
-
-    margin-bottom: 9px;
-
-    font-size: 12px;
-
-    font-weight: 900;
-
-    letter-spacing: 2px;
-
-    color:
-        rgba(255,255,255,0.58);
-
-    text-align: center;
-}
-
-
-/* =========================================================
-   INPUT
-========================================================= */
 
 .answer-area input {
 
@@ -1049,164 +1088,59 @@ body {
         Helvetica,
         sans-serif;
 
-    color: #14251d;
+    color: #15251d;
 
-    background:
-        rgba(255,255,255,0.94);
+    background: #ffffff;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     border:
         1px solid
-        rgba(255,255,255,0.14);
+        rgba(255, 255, 255, 0.15);
 
     outline: none;
 
     box-shadow:
-
         0 7px 20px
-        rgba(0,0,0,0.2);
+        rgba(0, 0, 0, 0.18);
 
     transition:
         border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+        box-shadow 0.2s ease;
 }
 
 
 .answer-area input::placeholder {
 
-    color:
-        #777;
+    color: #777;
 }
 
 
 .answer-area input:focus {
 
     border-color:
-        rgba(67,215,113,0.75);
+        rgba(46, 204, 113, 0.65);
 
     box-shadow:
 
         0 0 0 3px
-        rgba(46,204,113,0.10),
+        rgba(46, 204, 113, 0.10),
 
-        0 8px 22px
-        rgba(0,0,0,0.22);
+        0 7px 20px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+.answer-area input:disabled {
+
+    opacity: 0.55;
+
+    cursor: not-allowed;
 }
 
 
 /* =========================================================
-   YEŞİL ÇİZGİYİ TAMAMEN KALDIR
-========================================================= */
-
-.answer-input-wrapper::before,
-.answer-input-wrapper::after {
-
-    display: none !important;
-
-    content: none !important;
-}
-
-
-#player-suggestions::before,
-#player-suggestions::after {
-
-    display: none !important;
-
-    content: none !important;
-}
-
-
-#player-suggestions {
-
-    width: 300px;
-
-    position: absolute;
-
-    left: 0;
-
-    top: 78px;
-
-    text-align: left;
-
-    z-index: 1000;
-
-    overflow: hidden;
-
-    border-radius: 10px;
-
-    border: none !important;
-
-    box-shadow:
-        0 12px 28px
-        rgba(0,0,0,0.4);
-}
-
-
-/* Boş öneri alanı hiçbir şey göstermesin */
-
-#player-suggestions:empty {
-
-    display: none !important;
-}
-
-
-/* =========================================================
-   ÖNERİLER
-========================================================= */
-
-.player-suggestion {
-
-    background:
-        linear-gradient(
-            135deg,
-            #163d2d,
-            #102f23
-        );
-
-    color: #ffffff;
-
-    padding:
-        12px 15px;
-
-    font-size: 16px;
-
-    font-weight: 600;
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.07);
-
-    cursor: pointer;
-
-    transition:
-        background 0.15s ease,
-        padding-left 0.15s ease;
-}
-
-
-.player-suggestion:last-child {
-
-    border-bottom: none;
-}
-
-
-.player-suggestion:hover {
-
-    background:
-        linear-gradient(
-            135deg,
-            #245c43,
-            #174b35
-        );
-
-    padding-left: 19px;
-}
-
-
-/* =========================================================
-   CEVAPLA BUTONU
+   CEVAPLA
 ========================================================= */
 
 .answer-area button {
@@ -1220,27 +1154,19 @@ body {
 
     font-weight: 900;
 
-    letter-spacing: 0.5px;
-
-    border-radius: 10px;
+    border-radius: 9px;
 
     border: none;
 
     cursor: pointer;
 
-    color: #092017;
+    color: #0a2118;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #dfe9e4
-        );
+    background: #ffffff;
 
     box-shadow:
-
         0 7px 20px
-        rgba(0,0,0,0.2);
+        rgba(0, 0, 0, 0.18);
 
     transition:
         transform 0.15s ease,
@@ -1255,8 +1181,8 @@ body {
         translateY(-2px);
 
     box-shadow:
-        0 10px 24px
-        rgba(0,0,0,0.28);
+        0 10px 23px
+        rgba(0, 0, 0, 0.25);
 }
 
 
@@ -1278,12 +1204,76 @@ body {
 
     box-shadow:
         0 5px 12px
-        rgba(0,0,0,0.12);
+        rgba(0, 0, 0, 0.12);
 }
 
 
 /* =========================================================
-   CEVAP SONUCU
+   OYUNCU ÖNERİLERİ
+========================================================= */
+
+#player-suggestions {
+
+    width: 300px;
+
+    position: absolute;
+
+    left: 0;
+
+    top: 61px;
+
+    text-align: left;
+
+    z-index: 1000;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0, 0, 0, 0.35);
+}
+
+
+.player-suggestion {
+
+    background:
+        #163d2d;
+
+    color: #ffffff;
+
+    padding:
+        12px 15px;
+
+    font-size: 16px;
+
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease;
+}
+
+
+.player-suggestion:last-child {
+
+    border-bottom: none;
+}
+
+
+.player-suggestion:hover {
+
+    background:
+        #245c43;
+}
+
+
+/* =========================================================
+   SONUÇ
 ========================================================= */
 
 #result {
@@ -1344,10 +1334,6 @@ body {
 }
 
 
-/* =========================================================
-   DOĞRU CEVAP
-========================================================= */
-
 #result.correct {
 
     color: #ffffff;
@@ -1355,30 +1341,25 @@ body {
     background:
         linear-gradient(
             135deg,
-            #169153,
-            #2fc979
+            rgba(29, 155, 89, 0.95),
+            rgba(35, 190, 108, 0.95)
         );
 
     padding:
-        10px 23px;
+        9px 22px;
 
-    min-width: 190px;
+    min-width: 170px;
 
     border-radius: 999px;
 
     box-shadow:
-
         0 7px 25px
-        rgba(46,204,113,0.22),
+        rgba(46, 204, 113, 0.18),
 
         inset 0 1px 0
-        rgba(255,255,255,0.18);
+        rgba(255, 255, 255, 0.15);
 }
 
-
-/* =========================================================
-   YANLIŞ CEVAP
-========================================================= */
 
 #result.wrong {
 
@@ -1387,30 +1368,25 @@ body {
     background:
         linear-gradient(
             135deg,
-            #a93232,
-            #dc4b4b
+            rgba(180, 55, 55, 0.95),
+            rgba(215, 70, 70, 0.95)
         );
 
     padding:
-        10px 23px;
+        9px 22px;
 
-    min-width: 190px;
+    min-width: 170px;
 
     border-radius: 999px;
 
     box-shadow:
-
         0 7px 25px
-        rgba(220,70,70,0.22),
+        rgba(220, 70, 70, 0.18),
 
         inset 0 1px 0
-        rgba(255,255,255,0.15);
+        rgba(255, 255, 255, 0.12);
 }
 
-
-/* =========================================================
-   SÜRE DOLDU
-========================================================= */
 
 #result.timeout {
 
@@ -1419,12 +1395,12 @@ body {
     background:
         linear-gradient(
             135deg,
-            #a9792d,
-            #d29c39
+            rgba(170, 125, 45, 0.95),
+            rgba(205, 155, 55, 0.95)
         );
 
     padding:
-        10px 23px;
+        9px 22px;
 
     min-width: 190px;
 
@@ -1432,12 +1408,12 @@ body {
 
     box-shadow:
         0 7px 25px
-        rgba(205,155,55,0.18);
+        rgba(205, 155, 55, 0.16);
 }
 
 
 /* =========================================================
-   OYUN BİTİŞ EKRANI
+   OYUN BİTİŞ
 ========================================================= */
 
 .game-over {
@@ -1453,13 +1429,13 @@ body {
     height: 100dvh;
 
     background:
-        rgba(2,10,7,0.84);
+        rgba(2, 10, 7, 0.82);
 
     backdrop-filter:
-        blur(7px);
+        blur(5px);
 
     -webkit-backdrop-filter:
-        blur(7px);
+        blur(5px);
 
     z-index: 9999;
 
@@ -1468,10 +1444,6 @@ body {
     align-items: center;
 }
 
-
-/* =========================================================
-   OYUN BİTİŞ KUTUSU
-========================================================= */
 
 .game-over-box {
 
@@ -1487,25 +1459,22 @@ body {
         linear-gradient(
             145deg,
             #174531,
-            #0b281c
+            #102f22
         );
 
-    border-radius: 24px;
+    border-radius: 22px;
 
     border:
         1px solid
-        rgba(83,213,119,0.16);
+        rgba(255, 255, 255, 0.07);
 
     box-shadow:
 
         0 25px 70px
-        rgba(0,0,0,0.6),
-
-        0 0 35px
-        rgba(46,204,113,0.06),
+        rgba(0, 0, 0, 0.55),
 
         inset 0 1px 0
-        rgba(255,255,255,0.05);
+        rgba(255, 255, 255, 0.04);
 
     animation:
         gameOverIn 0.35s ease;
@@ -1520,7 +1489,7 @@ body {
 
         transform:
             translateY(20px)
-            scale(0.94);
+            scale(0.96);
     }
 
     to {
@@ -1534,151 +1503,91 @@ body {
 }
 
 
-/* =========================================================
-   KUPA
-========================================================= */
-
-.trophy,
 .game-over-icon {
 
-    font-size: 58px;
+    font-size: 60px;
 
     margin-bottom: 10px;
 
     filter:
         drop-shadow(
-            0 6px 10px
-            rgba(0,0,0,0.35)
+            0 5px 10px
+            rgba(0, 0, 0, 0.3)
         );
 }
 
 
-/* =========================================================
-   OYUN TAMAMLANDI
-========================================================= */
-
 .game-over h2 {
 
     margin:
-        0 0 22px;
+        0 0 25px;
 
-    font-size: 36px;
+    font-size: 38px;
 
     font-weight: 900;
-
-    letter-spacing: 0.5px;
 }
 
 
-/* =========================================================
-   FINAL SKOR
-========================================================= */
-
 .final-score-label {
 
-    font-size: 12px;
+    font-size: 13px;
 
-    font-weight: 900;
+    font-weight: 700;
 
     letter-spacing: 2px;
 
     color:
-        rgba(255,255,255,0.52);
+        rgba(255, 255, 255, 0.55);
 
-    margin-bottom: 3px;
+    margin-bottom: 5px;
 }
 
 
 #final-score {
 
-    font-size: 52px;
+    font-size: 48px;
 
-    font-weight: 1000;
+    font-weight: 900;
 
-    color: #42d982;
+    color: #32d981;
 
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 
     text-shadow:
-
-        0 0 22px
-        rgba(46,204,113,0.2);
+        0 0 20px
+        rgba(46, 204, 113, 0.18);
 }
 
-
-/* =========================================================
-   FINAL MESAJ
-========================================================= */
 
 #final-message {
 
     font-size: 18px;
 
-    font-weight: 800;
-
     color:
-        rgba(255,255,255,0.85);
+        rgba(255, 255, 255, 0.8);
 
     margin-bottom: 30px;
 }
 
 
-/* =========================================================
-   AYIRICI
-========================================================= */
-
-.game-over-box::after {
-
-    content: "";
-
-    display: block;
-
-    width: 120px;
-
-    height: 1px;
-
-    margin:
-        -18px auto 25px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(74,216,116,0.5),
-            transparent
-        );
-}
-
-
-/* =========================================================
-   TEKRAR OYNA
-========================================================= */
-
 #restart-button {
 
-    height: 54px;
+    height: 52px;
 
     padding:
-        0 35px;
+        0 32px;
 
     font-size: 16px;
 
     font-weight: 900;
 
-    letter-spacing: 0.5px;
-
     border: none;
 
-    border-radius: 10px;
+    border-radius: 9px;
 
     cursor: pointer;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffffff,
-            #e0eae5
-        );
+    background: #ffffff;
 
     color: #0b2419;
 
@@ -1694,8 +1603,8 @@ body {
         translateY(-2px);
 
     box-shadow:
-        0 10px 25px
-        rgba(0,0,0,0.28);
+        0 9px 22px
+        rgba(0, 0, 0, 0.25);
 }
 
 
@@ -1715,9 +1624,19 @@ body {
 and
 (max-width: 1200px) {
 
-    #start-button {
+    #home-screen h1 {
 
-        width: 380px;
+        font-size:
+            clamp(
+                110px,
+                16vw,
+                180px
+            );
+    }
+
+    #home-screen #start-button {
+
+        width: 38vw;
     }
 
     .game-area {
@@ -1743,53 +1662,62 @@ and
 
 @media (max-width: 700px) {
 
-    /* ANA SAYFA */
+    #home-screen {
 
-    .home-logo {
-
-        margin-bottom: 15px;
+        justify-content: center;
     }
 
 
-    .logo-number {
+    #home-screen h1 {
 
-        font-size: 25vw;
+        font-size:
+            clamp(
+                92px,
+                26vw,
+                150px
+            );
 
-        letter-spacing: -6px;
+        letter-spacing: -0.1em;
     }
 
 
-    .home-line {
+    #home-screen .home-subtitle {
 
-        width: 150px;
+        margin-top: 22px;
 
-        margin-bottom: 25px;
+        font-size: 10px;
+
+        letter-spacing: 3px;
     }
 
 
-    #start-button {
+    #home-screen #start-button {
 
-        width: 72vw;
+        width: 74vw;
 
-        max-width: 350px;
+        max-width: 360px;
 
-        height: 60px;
+        height: 58px;
 
-        font-size: 19px;
+        margin-top: 42px;
 
-        gap: 12px;
+        font-size: 16px;
 
-        border-radius: 12px;
+        border-radius: 11px;
     }
 
 
-    .play-icon {
+    #home-screen #start-button::before {
 
-        font-size: 22px;
+        border-top-width: 8px;
+
+        border-bottom-width: 8px;
+
+        border-left-width: 12px;
     }
 
 
-    /* HEADER */
+    /* OYUN HEADER */
 
     .game-header {
 
@@ -1797,11 +1725,9 @@ and
     }
 
 
-    #game-content > h1 {
+    .game-header h1 {
 
         font-size: 30px;
-
-        margin-top: 35px;
     }
 
 
@@ -1926,7 +1852,7 @@ and
 
     .answer-input-wrapper {
 
-        width: 78%;
+        width: 70%;
     }
 
 
@@ -1938,19 +1864,11 @@ and
     }
 
 
-    .answer-label {
-
-        font-size: 11px;
-
-        margin-bottom: 8px;
-    }
-
-
     #player-suggestions {
 
         width: 100%;
 
-        top: 72px;
+        top: 58px;
     }
 
 
@@ -1959,7 +1877,7 @@ and
         height: 50px;
 
         padding:
-            0 30px;
+            0 27px;
     }
 
 
@@ -1979,28 +1897,19 @@ and
             38px 25px;
 
         max-width: 88%;
-
-        border-radius: 20px;
     }
 
 
     .game-over h2 {
 
-        font-size: 30px;
+        font-size: 32px;
     }
 
 
     #final-score {
 
-        font-size: 44px;
+        font-size: 42px;
     }
-
-
-    #final-message {
-
-        font-size: 16px;
-    }
-
 }
 
 
@@ -2010,21 +1919,25 @@ and
 
 @media (max-width: 400px) {
 
-    .logo-number {
+    #home-screen h1 {
 
-        font-size: 27vw;
-
-        letter-spacing: -5px;
+        font-size: 88px;
     }
 
 
-    #start-button {
+    #home-screen .home-subtitle {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    #home-screen #start-button {
 
         width: 78vw;
 
-        height: 57px;
-
-        font-size: 18px;
+        margin-top: 38px;
     }
 
 
@@ -2078,18 +1991,13 @@ and
     #countdown {
 
         font-size: 50px;
-
-        width: 75px;
-
-        height: 75px;
     }
 
 
     .answer-input-wrapper {
 
-        width: 82%;
+        width: 78%;
     }
-
 }
 
 
@@ -2102,33 +2010,34 @@ and
 and
 (orientation: landscape) {
 
-    .home-logo {
+    #home-screen h1 {
 
-        margin-bottom: 8px;
+        font-size:
+            clamp(
+                80px,
+                18vh,
+                145px
+            );
     }
 
 
-    .logo-number {
+    #home-screen .home-subtitle {
 
-        font-size: 17vh;
+        margin-top: 16px;
 
-        letter-spacing: -7px;
+        font-size: 9px;
     }
 
 
-    .home-line {
-
-        margin-bottom: 12px;
-    }
-
-
-    #start-button {
+    #home-screen #start-button {
 
         width: 300px;
 
         height: 50px;
 
-        font-size: 17px;
+        margin-top: 28px;
+
+        font-size: 15px;
     }
 
 
@@ -2138,7 +2047,7 @@ and
     }
 
 
-    #game-content > h1 {
+    .game-header h1 {
 
         font-size: 27px;
     }
@@ -2187,5 +2096,4 @@ and
 
         margin-top: 25px;
     }
-
 }
