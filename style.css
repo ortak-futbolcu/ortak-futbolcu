@@ -40,16 +40,10 @@ body {
     justify-content: center;
 
     background-image: url("home-bg.png");
-    background-repeat: no-repeat;
-
-    /*
-       16:9 görsel ekranı orantısını
-       bozmadan doldurur.
-    */
-    background-size: cover;
-    background-position: center center;
-
-    background-color: #020604;
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 100% 100%;
+background-color: #020604;
 
     z-index: 9999;
 
