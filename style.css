@@ -28,6 +28,7 @@ body {
 
 #home-screen {
     position: fixed;
+
     inset: 0;
 
     width: 100vw;
@@ -39,22 +40,32 @@ body {
     justify-content: center;
 
     /*
-       ÖNEMLİ:
-       home-bg.png 4:3 oranında.
+       HOME-BG.PNG 4:3 ORANINDA.
 
-       100% 100% KULLANMIYORUZ.
-       Çünkü bu görseli esnetiyordu.
+       contain kullanıyoruz.
 
-       cover:
-       - Görselin oranını korur.
-       - Ekranı tamamen doldurur.
-       - 3-2-1'in oranını bozmaz.
+       Böylece:
+       - Görsel ASLA esnetilmez.
+       - Görsel ASLA oranını kaybetmez.
+       - Bilgisayarda oran korunur.
+       - Telefonda oran korunur.
+       - Dikey telefonda da oran korunur.
+       - Görselin tamamı ekranda görünür.
     */
 
     background-image: url("home-bg.png");
+
     background-repeat: no-repeat;
+
     background-position: center center;
-    background-size: cover;
+
+    background-size: contain;
+
+    /*
+       Görselin dışında kalan alan.
+       Home-bg'nin siyah arka planıyla
+       bütünleşmesi için koyu renk.
+    */
 
     background-color: #020604;
 
@@ -63,6 +74,13 @@ body {
     text-align: center;
 
     overflow: hidden;
+
+    /*
+       Mobil cihazlarda dokunmatik davranışı
+       daha düzgün hale getirir.
+    */
+
+    touch-action: manipulation;
 }
 
 
@@ -71,7 +89,7 @@ body {
 ======================================== */
 
 /*
-   3-2-1 zaten home-bg.png'nin içerisinde.
+   3-2-1 zaten home-bg.png'nin içinde.
    HTML'deki başlığı göstermiyoruz.
 */
 
@@ -85,7 +103,8 @@ body {
 ======================================== */
 
 /*
-   Görselde olmadığı için gizli.
+   Yazı görselin içinde olmadığı için
+   HTML'deki açıklamayı göstermiyoruz.
 */
 
 .home-subtitle {
@@ -98,40 +117,79 @@ body {
 ======================================== */
 
 /*
-   Görselin içinde zaten OYUNA BAŞLA butonu var.
+   ÖNEMLİ DEĞİŞİKLİK:
 
-   HTML'deki butonu görünmez yapıyoruz,
-   fakat tıklanabilir alan olarak bırakıyoruz.
+   Görselin içerisindeki gerçek yeşil
+   "OYUNA BAŞLA" alanının tamamını
+   kapsayan şeffaf bir tıklama alanı
+   oluşturuyoruz.
+
+   Bu buton artık sadece ortadaki
+   küçük bir bölgeden değil,
+   yeşil butonun tamamından tıklanabilecek.
+
+   Ayrıca boyutlar ekranın kendisine değil,
+   4:3 görselin gerçek ekrandaki boyutuna
+   göre hesaplanıyor.
 */
 
+
 #start-button {
+
     position: absolute;
 
     /*
-       Butonun konumu.
-       Görselin orta-alt bölümündeki
-       gerçek butonla eşleştirildi.
+       4:3 görsel contain olarak gösterildiği için
+       görselin genişliği:
+
+       min(100vw, 133.333vh)
+
+       şeklinde hesaplanıyor.
+
+       Buton genişliğini görsel genişliğinin
+       yaklaşık %50'si yapıyoruz.
+    */
+
+    width: min(50vw, 66.666vh);
+
+    /*
+       Buton yüksekliği de 4:3 görselin
+       yüksekliğine göre hesaplanıyor.
+
+       Yaklaşık %20.
+    */
+
+    height: min(15vw, 20vh);
+
+    /*
+       Görselin tam ortasına yatay olarak
+       yerleştiriyoruz.
     */
 
     left: 50%;
-    top: 69.5%;
+
+    /*
+       Görselin 4:3 oranı korunurken
+       butonu görselin alt bölümündeki
+       gerçek yerine yerleştiriyoruz.
+
+       Görselin merkezi + yaklaşık %20
+       görsel yüksekliği.
+    */
+
+    top: calc(
+        50% + min(15vw, 20vh)
+    );
 
     transform: translate(-50%, -50%);
 
-    /*
-       Responsive genişlik.
-    */
-
-    width: min(36vw, 650px);
-
-    /*
-       Butonun yüksekliği ekranla birlikte
-       orantılı değişsin.
-    */
-
-    height: min(15vh, 160px);
-
     padding: 0;
+
+    /*
+       Görselde buton zaten bulunduğu için
+       HTML butonunu tamamen şeffaf
+       tutuyoruz.
+    */
 
     background: transparent;
 
@@ -141,27 +199,64 @@ body {
 
     font-size: 0;
 
+    /*
+       Tıklanabilir olduğunu gösterir.
+    */
+
     cursor: pointer;
 
-    z-index: 10;
+    /*
+       Görselin üzerinde olduğundan emin oluyoruz.
+    */
+
+    z-index: 10000;
+
+    /*
+       Mobil cihazlarda dokunmayı iyileştirir.
+    */
+
+    touch-action: manipulation;
+
+    /*
+       Telefonlarda dokununca çıkan
+       mavi/turuncu varsayılan efekti kaldırır.
+    */
+
+    -webkit-tap-highlight-color: transparent;
+
+    /*
+       Kullanıcının metni seçmesini engeller.
+    */
+
+    user-select: none;
 }
 
 
 /* ========================================
-   ANA SAYFA BUTON HOVER
+   BUTON HOVER
 ======================================== */
 
+/*
+   Bilgisayarda fare butonun üzerine geldiğinde
+   hafif bir parlama gösteriyoruz.
+
+   Mobilde hover olmadığı için dokunmayı
+   etkilemez.
+*/
+
 #start-button:hover {
+
     transform:
         translate(-50%, -50%)
         scale(1.02);
 
-    background: rgba(
-        46,
-        204,
-        113,
-        0.08
-    );
+    background:
+        rgba(
+            46,
+            204,
+            113,
+            0.08
+        );
 
     border-radius: 25px;
 
@@ -176,7 +271,12 @@ body {
 }
 
 
+/* ========================================
+   BUTON BASILIYKEN
+======================================== */
+
 #start-button:active {
+
     transform:
         translate(-50%, -50%)
         scale(0.99);
@@ -196,7 +296,7 @@ body {
        ANA SAYFA GÖRSELİ BURAYA GELMEZ.
 
        Oyun ekranındaki mevcut koyu yeşil
-       tasarımı aynen koruyoruz.
+       tasarım aynen korunuyor.
     */
 
     background:
@@ -767,41 +867,59 @@ h1 {
 
 @media (max-width: 700px) {
 
-    /* ------------------------------------
+    /*
        ANA SAYFA
-    ------------------------------------ */
+
+       4:3 görsel contain ile korunuyor.
+       Burada tekrar background-size değiştirmiyoruz.
+
+       Böylece masaüstü ve telefon aynı
+       mantıkla çalışıyor.
+    */
 
     #home-screen {
+        background-size: contain;
 
-        /*
-           Mobilde de görsel ASLA esnetilmiyor.
+        background-position:
+            center center;
 
-           cover sayesinde:
-           - 3-2-1 oranı korunuyor
-           - görsel ekranı dolduruyor
-           - yatay/dikey esneme olmuyor
-        */
-
-        background-size: cover;
-
-        background-position: center center;
+        background-color: #020604;
     }
 
 
     /*
-       Mobilde butonun tıklama alanını
-       ekran genişliğine göre ayarlıyoruz.
+       BUTON:
+
+       4:3 görselin gerçek boyutuna göre
+       otomatik hesaplanıyor.
+
+       Yeşil butonun tamamını kapsıyor.
     */
 
     #start-button {
 
-        width: 65vw;
+        width:
+            min(
+                50vw,
+                66.666vh
+            );
 
-        height: 15vh;
+        height:
+            min(
+                15vw,
+                20vh
+            );
 
         left: 50%;
 
-        top: 69%;
+        top:
+            calc(
+                50% +
+                min(
+                    15vw,
+                    20vh
+                )
+            );
 
         transform:
             translate(-50%, -50%);
@@ -810,7 +928,8 @@ h1 {
 
     /* ------------------------------------
        OYUN EKRANI
-       MEVCUT TASARIM KORUNUYOR
+       BURADAN SONRASI MEVCUT TASARIM
+       OLDUĞU GİBİ KORUNDU.
     ------------------------------------ */
 
     h1 {
@@ -906,12 +1025,35 @@ h1 {
 
 @media (max-width: 400px) {
 
+    /*
+       Buton yine görselin oranına göre
+       hesaplanıyor.
+
+       Ayrı bir yanlış top değeri kullanmıyoruz.
+    */
+
     #start-button {
-        width: 70vw;
 
-        height: 14vh;
+        width:
+            min(
+                52vw,
+                69.333vh
+            );
 
-        top: 69%;
+        height:
+            min(
+                15.6vw,
+                20.8vh
+            );
+
+        top:
+            calc(
+                50% +
+                min(
+                    15.6vw,
+                    20.8vh
+                )
+            );
     }
 }
 
@@ -923,17 +1065,42 @@ h1 {
 @media (max-height: 600px) and (orientation: landscape) {
 
     #home-screen {
-        background-size: cover;
 
-        background-position: center center;
+        background-size: contain;
+
+        background-position:
+            center center;
     }
 
 
+    /*
+       Yatay telefonda da 4:3 görselin
+       oranını bozmuyoruz.
+    */
+
     #start-button {
-        width: 38vw;
 
-        height: 17vh;
+        width:
+            min(
+                50vw,
+                66.666vh
+            );
 
-        top: 70%;
+        height:
+            min(
+                15vw,
+                20vh
+            );
+
+        left: 50%;
+
+        top:
+            calc(
+                50% +
+                min(
+                    15vw,
+                    20vh
+                )
+            );
     }
 }
