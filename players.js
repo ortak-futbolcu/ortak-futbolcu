@@ -1258,7 +1258,8 @@ const playerPool = {
         "KARACABEY BELEDIYESPOR",
         "24 ERZINCANSPOR",
         "GALATASARAY",
-        "BENFICA"
+        "BENFICA",
+        "FENERBAHCE"
     ]
 },
 
@@ -1285,7 +1286,224 @@ const playerPool = {
         "VALLADOLID",
         "GETAFE",
         "BOURNEMOUTH"
-    ]
+    ],
+
+    "Emmanuel Agbadou": {
+
+        teams: [
+            "US MONASTIR",
+            "EUPEN",
+            "REIMS",
+            "WOLVES",
+            "BESIKTAS"
+        ]
+
+    },
+
+    "Alessandro Bastoni": {
+
+        teams: [
+            "ATALANTA",
+            "PARMA",
+            "INTER"
+        ]
+
+    },
+
+    "Ersin Destanoğlu": {
+
+        teams: [
+            "BESIKTAS"
+        ]
+
+    },
+
+    "Altay Bayındır": {
+
+        teams: [
+            "ANKARAGUCU",
+            "FENERBAHCE",
+            "MANCHESTER UNITED"
+        ]
+
+    },
+
+    "Wilfried Zaha": {
+
+        teams: [
+            "CRYSTAL PALACE",
+            "MANCHESTER UNITED",
+            "CARDIFF CITY",
+            "GALATASARAY",
+            "LYON",
+            "CHARLOTTE FC"
+        ]
+
+    },
+
+    "Nihat Kahveci": {
+
+        teams: [
+            "BESIKTAS",
+            "REAL SOCIEDAD",
+            "VILLARREAL"
+        ]
+
+    },
+
+    "Mehmet Zeki Çelik": {
+
+        teams: [
+            "BURSASPOR",
+            "KARACABEYSPOR",
+            "ISTANBULSPOR",
+            "LILLE",
+            "ROMA"
+        ]
+
+    },
+
+    "Eduardo Quaresma": {
+
+        teams: [
+            "SPORTING CP",
+            "TONDELA",
+            "HOFFENHEIM"
+        ]
+
+    },
+
+    "Simão Sabrosa": {
+
+        teams: [
+            "SPORTING CP",
+            "BARCELONA",
+            "BENFICA",
+            "ATLETICO MADRID",
+            "BESIKTAS",
+            "ESPANYOL"
+        ]
+
+    },
+
+    "Pape Matar Sarr": {
+
+        teams: [
+            "METZ",
+            "TOTTENHAM"
+        ]
+
+    },
+
+    "Mathys Tel": {
+
+        teams: [
+            "RENNES",
+            "BAYERN MUNIH",
+            "TOTTENHAM"
+        ]
+
+    },
+
+    "Günay Güvenç": {
+
+        teams: [
+            "STUTTGART",
+            "DENIZLISPOR",
+            "GOZTEPE",
+            "GAZIANTEP",
+            "KASIMPASA",
+            "GALATASARAY",
+            "BESIKTAS"
+        ]
+
+    },
+
+    "Şenol Güneş": {
+
+        teams: [
+            "TRABZONSPOR"
+        ]
+
+    },
+
+    "Eljif Elmas": {
+
+        teams: [
+            "RABOTNICKI",
+            "FENERBAHCE",
+            "NAPOLI",
+            "RB LEIPZIG",
+            "TORINO"
+        ]
+
+    },
+
+    "Gedson Fernandes": {
+
+        teams: [
+            "BENFICA",
+            "GALATASARAY",
+            "TOTTENHAM",
+            "BESIKTAS"
+        ]
+
+    },
+
+    "Aleksey Batrakov": {
+
+        teams: [
+            "LOKOMOTIV MOSCOW",
+            "GALATASARAY"
+        ]
+
+    },
+
+    "Youri Tielemans": {
+
+        teams: [
+            "ANDERLECHT",
+            "MONACO",
+            "LEICESTER",
+            "ASTON VILLA",
+            "MANCHESTER UNITED"
+        ]
+
+    },
+
+    "Garry Rodrigues": {
+
+        teams: [
+            "ADO DEN HAAG",
+            "DORDRECHT",
+            "ELCHE",
+            "PAOK",
+            "GALATASARAY",
+            "FENERBAHCE",
+            "AL ITTIHAD",
+            "OLYMPIACOS",
+            "ANKARAGUCU"
+        ]
+
+    },
+
+    "Burak Yılmaz": {
+
+        teams: [
+            "ANTALYASPOR",
+            "BESIKTAS",
+            "MANISASPOR",
+            "FENERBAHCE",
+            "ESKISEHIRSPOR",
+            "TRABZONSPOR",
+            "GALATASARAY",
+            "BEIJING GUOAN",
+            "LILLE",
+            "FORTUNA SITTARD"
+        ]
+
+    }
+
 },
 
 "Okay Yokuslu": {
@@ -5910,18 +6128,6 @@ const playerPool = {
         teams: [
             "REAL MADRID",
             "ATLETICO MADRID"
-        ]
-    },
-
-    "Diego Godin": {
-        nationality: "URUGUAY",
-        teams: [
-            "CERRO",
-            "NACIONAL",
-            "VILLARREAL",
-            "ATLETICO MADRID",
-            "INTER",
-            "BESIKTAS"
         ]
     },
 
