@@ -1,14 +1,6 @@
 // =====================================================
 // 3-2-1 ORTAK FUTBOLCU OYUNU
 // =====================================================
-//
-// Oyuncu verileri:
-// players.js -> playerPool
-//
-// index.html içinde sıra:
-// 1. players.js
-// 2. script.js
-// =====================================================
 
 
 // =====================================================
@@ -63,7 +55,7 @@ const playableTeams = [
 
 
 // =====================================================
-// TAKIM -> LOGO EŞLEŞTİRMESİ
+// TAKIM LOGOLARI
 // =====================================================
 
 const teamLogos = {
@@ -83,7 +75,6 @@ const teamLogos = {
     "TRABZONSPOR":
         "logos/trabzonspor.svg",
 
-
     "PSG":
         "logos/psg.svg",
 
@@ -95,7 +86,6 @@ const teamLogos = {
 
     "MARSEILLE":
         "logos/marseille.svg",
-
 
     "LIVERPOOL":
         "logos/liverpool.svg",
@@ -115,7 +105,6 @@ const teamLogos = {
     "ARSENAL":
         "logos/arsenal.svg",
 
-
     "BARCELONA":
         "logos/barcelona.svg",
 
@@ -125,13 +114,11 @@ const teamLogos = {
     "ATLETICO MADRID":
         "logos/atletico-madrid.svg",
 
-
     "BAYERN MUNIH":
         "logos/bayern-munich.svg",
 
     "BORUSSIA DORTMUND":
         "logos/borussia-dortmund.svg",
-
 
     "INTER":
         "logos/inter.svg",
@@ -147,7 +134,6 @@ const teamLogos = {
 
     "ROMA":
         "logos/roma.svg",
-
 
     "PORTO":
         "logos/porto.svg",
@@ -179,26 +165,27 @@ if (
 
 
 // =====================================================
-// SADECE OYUNCU HAVUZUNDA BULUNAN TAKIMLAR
+// AKTİF TAKIMLAR
 // =====================================================
 
-const teams = playableTeams.filter(team => {
+const teams =
+    playableTeams.filter(team => {
 
-    return Object.values(playerPool).some(player => {
+        return Object.values(playerPool).some(player => {
 
-        return (
-            player &&
-            Array.isArray(player.teams) &&
-            player.teams.includes(team)
-        );
+            return (
+                player &&
+                Array.isArray(player.teams) &&
+                player.teams.includes(team)
+            );
+
+        });
 
     });
 
-});
-
 
 // =====================================================
-// ORTAK FUTBOLCULARI BUL
+// ORTAK FUTBOLCULAR
 // =====================================================
 
 function findCommonPlayers(teamA, teamB) {
@@ -222,16 +209,9 @@ function findCommonPlayers(teamA, teamB) {
         }
 
 
-        const hasTeamA =
-            playerData.teams.includes(teamA);
-
-        const hasTeamB =
-            playerData.teams.includes(teamB);
-
-
         if (
-            hasTeamA &&
-            hasTeamB
+            playerData.teams.includes(teamA) &&
+            playerData.teams.includes(teamB)
         ) {
 
             commonPlayers.push(playerName);
@@ -247,15 +227,23 @@ function findCommonPlayers(teamA, teamB) {
 
 
 // =====================================================
-// GEÇERLİ TAKIM ÇİFTLERİNİ OLUŞTUR
+// GEÇERLİ TAKIM ÇİFTLERİ
 // =====================================================
 
 const validTeamPairs = [];
 
 
-for (let i = 0; i < teams.length; i++) {
+for (
+    let i = 0;
+    i < teams.length;
+    i++
+) {
 
-    for (let j = i + 1; j < teams.length; j++) {
+    for (
+        let j = i + 1;
+        j < teams.length;
+        j++
+    ) {
 
         const teamA =
             teams[i];
@@ -271,7 +259,9 @@ for (let i = 0; i < teams.length; i++) {
             );
 
 
-        if (commonPlayers.length > 0) {
+        if (
+            commonPlayers.length > 0
+        ) {
 
             validTeamPairs.push({
 
@@ -382,19 +372,9 @@ let questionAnswered = false;
 
 let timer = null;
 
-
-// =====================================================
-// SÜRE
-// =====================================================
-
 let timeLeft = 15;
 
 const questionTime = 15;
-
-
-// =====================================================
-// SORU AYARLARI
-// =====================================================
 
 let questionNumber = 0;
 
@@ -402,16 +382,11 @@ const totalQuestions = 10;
 
 let usedQuestions = [];
 
-
-// =====================================================
-// OYUN VERSİYONU
-// =====================================================
-
 let gameVersion = 0;
 
 
 // =====================================================
-// BAŞLANGIÇ DURUMU
+// BAŞLANGIÇ
 // =====================================================
 
 if (homeScreen) {
@@ -434,7 +409,7 @@ if (gameOver) {
 
 
 // =====================================================
-// TAKIM LOGOSUNU GÜNCELLE
+// TAKIM GÖRÜNTÜLEME
 // =====================================================
 
 function updateTeamDisplay(
@@ -471,20 +446,12 @@ function updateTeamDisplay(
     }
     else {
 
-        logoElement.removeAttribute(
-            "src"
-        );
+        logoElement.removeAttribute("src");
 
-        logoElement.alt =
-            "";
+        logoElement.alt = "";
 
         logoElement.style.display =
             "none";
-
-        console.warn(
-            "Logo bulunamadı:",
-            team
-        );
 
     }
 
@@ -537,7 +504,7 @@ function normalizeText(text) {
 
 
 // =====================================================
-// OYUNCU ADINI KELİMELERE AYIR
+// OYUNCU İSMİ
 // =====================================================
 
 function getPlayerNameWords(playerName) {
@@ -550,10 +517,13 @@ function getPlayerNameWords(playerName) {
 
 
 // =====================================================
-// TAKIM ÇİFTİ ANAHTARI
+// SORU ANAHTARI
 // =====================================================
 
-function getQuestionKey(teamA, teamB) {
+function getQuestionKey(
+    teamA,
+    teamB
+) {
 
     return [
         teamA,
@@ -573,7 +543,8 @@ function clearPlayerSuggestions() {
 
     if (playerSuggestions) {
 
-        playerSuggestions.innerHTML = "";
+        playerSuggestions.innerHTML =
+            "";
 
     }
 
@@ -581,7 +552,7 @@ function clearPlayerSuggestions() {
 
 
 // =====================================================
-// OYUNCU ADININ BAŞLANGICINI KONTROL ET
+// OYUNCU ARAMA
 // =====================================================
 
 function playerNameStartsWithSearch(
@@ -669,14 +640,11 @@ function showPlayerSuggestions() {
     const matchingPlayers =
         [...suggestionPool]
             .filter(
-                playerName => {
-
-                    return playerNameStartsWithSearch(
+                playerName =>
+                    playerNameStartsWithSearch(
                         playerName,
                         searchText
-                    );
-
-                }
+                    )
             );
 
 
@@ -692,55 +660,54 @@ function showPlayerSuggestions() {
     }
 
 
-    matchingPlayers.forEach(
-        playerName => {
+    matchingPlayers
+        .slice(0, 8)
+        .forEach(
+            playerName => {
 
-            const suggestion =
-                document.createElement(
-                    "div"
+                const suggestion =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                suggestion.className =
+                    "player-suggestion";
+
+
+                suggestion.textContent =
+                    playerName;
+
+
+                suggestion.addEventListener(
+                    "mousedown",
+                    event => {
+
+                        event.preventDefault();
+
+                        answerInput.value =
+                            playerName;
+
+                        clearPlayerSuggestions();
+
+                        answerInput.focus();
+
+                    }
                 );
 
 
-            suggestion.className =
-                "player-suggestion";
+                playerSuggestions.appendChild(
+                    suggestion
+                );
 
-
-            suggestion.textContent =
-                playerName;
-
-
-            suggestion.addEventListener(
-                "mousedown",
-                event => {
-
-                    event.preventDefault();
-
-
-                    answerInput.value =
-                        playerName;
-
-
-                    clearPlayerSuggestions();
-
-
-                    answerInput.focus();
-
-                }
-            );
-
-
-            playerSuggestions.appendChild(
-                suggestion
-            );
-
-        }
-    );
+            }
+        );
 
 }
 
 
 // =====================================================
-// OYUNCU ARAMA EVENTLERİ
+// ARAMA EVENTLERİ
 // =====================================================
 
 if (answerInput) {
@@ -762,12 +729,8 @@ if (answerInput) {
         () => {
 
             setTimeout(
-                () => {
-
-                    clearPlayerSuggestions();
-
-                },
-                300
+                clearPlayerSuggestions,
+                250
             );
 
         }
@@ -777,7 +740,72 @@ if (answerInput) {
 
 
 // =====================================================
-// 3 - 2 - 1 GERİ SAYIM
+// SONUÇ MESAJINI GÖSTER
+// =====================================================
+
+function showResult(
+    type,
+    message
+) {
+
+    if (!result) {
+
+        return;
+
+    }
+
+
+    result.classList.remove(
+        "correct",
+        "wrong",
+        "timeout",
+        "result-visible"
+    );
+
+
+    void result.offsetWidth;
+
+
+    result.textContent =
+        message;
+
+
+    result.classList.add(
+        type,
+        "result-visible"
+    );
+
+}
+
+
+// =====================================================
+// SONUÇ MESAJINI TEMİZLE
+// =====================================================
+
+function clearResult() {
+
+    if (!result) {
+
+        return;
+
+    }
+
+
+    result.classList.remove(
+        "correct",
+        "wrong",
+        "timeout",
+        "result-visible"
+    );
+
+
+    result.textContent = "";
+
+}
+
+
+// =====================================================
+// 3 - 2 - 1
 // =====================================================
 
 function startCountdown(version) {
@@ -940,8 +968,7 @@ async function newQuestion() {
         "";
 
 
-    result.textContent =
-        "";
+    clearResult();
 
 
     clearPlayerSuggestions();
@@ -969,10 +996,8 @@ async function newQuestion() {
                     );
 
 
-                return (
-                    !usedQuestions.includes(
-                        key
-                    )
+                return !usedQuestions.includes(
+                    key
                 );
 
             }
@@ -1045,10 +1070,6 @@ async function newQuestion() {
         ];
 
 
-    // ================================================
-    // TAKIMLARI VE LOGOLARI YÜKLE
-    // ================================================
-
     updateTeamDisplay(
         selectedPair.teamA,
         team1Logo,
@@ -1110,25 +1131,11 @@ async function newQuestion() {
         currentVersion
     );
 
-
-    console.log(
-        "SORU:",
-        selectedPair.teamA,
-        "VS",
-        selectedPair.teamB
-    );
-
-
-    console.log(
-        "ORTAK OYUNCULAR:",
-        currentQuestionPlayers
-    );
-
 }
 
 
 // =====================================================
-// 15 SANİYELİK TIMER
+// 15 SANİYELİK SÜRE
 // =====================================================
 
 function startTimer(version) {
@@ -1197,8 +1204,10 @@ function startTimer(version) {
                     clearPlayerSuggestions();
 
 
-                    result.textContent =
-                        "SÜRE DOLDU! ⏰";
+                    showResult(
+                        "timeout",
+                        "SÜRE DOLDU"
+                    );
 
 
                     setTimeout(
@@ -1213,7 +1222,7 @@ function startTimer(version) {
                             }
 
                         },
-                        1000
+                        1100
                     );
 
                 }
@@ -1233,14 +1242,12 @@ function normalizeAnswerForComparison(
     text
 ) {
 
-    return normalizeText(
-        text
-    )
-    .replace(
-        /\s+/g,
-        " "
-    )
-    .trim();
+    return normalizeText(text)
+        .replace(
+            /\s+/g,
+            " "
+        )
+        .trim();
 
 }
 
@@ -1311,12 +1318,12 @@ function checkAnswer() {
         );
 
 
-    if (
-        !userAnswer
-    ) {
+    if (!userAnswer) {
 
-        result.textContent =
-            "Bir futbolcu adı yaz!";
+        showResult(
+            "wrong",
+            "✕  BİR FUTBOLCU ADI YAZ"
+        );
 
         return;
 
@@ -1333,13 +1340,11 @@ function checkAnswer() {
         );
 
 
-    // ================================================
+    // =================================================
     // DOĞRU
-    // ================================================
+    // =================================================
 
-    if (
-        correctPlayer
-    ) {
+    if (correctPlayer) {
 
         score += 10;
 
@@ -1347,10 +1352,6 @@ function checkAnswer() {
         scoreText.textContent =
             "Puan: " +
             score;
-
-
-        result.textContent =
-            "DOĞRU! 🎉";
 
 
         questionAnswered =
@@ -1370,9 +1371,9 @@ function checkAnswer() {
         clearPlayerSuggestions();
 
 
-        console.log(
-            "DOĞRU CEVAP:",
-            correctPlayer
+        showResult(
+            "correct",
+            "✓  DOĞRU!"
         );
 
 
@@ -1391,12 +1392,14 @@ function checkAnswer() {
     }
 
 
-    // ================================================
+    // =================================================
     // YANLIŞ
-    // ================================================
+    // =================================================
 
-    result.textContent =
-        "YANLIŞ! ❌";
+    showResult(
+        "wrong",
+        "✕  YANLIŞ!"
+    );
 
 }
 
@@ -1497,8 +1500,7 @@ function endGame() {
         "";
 
 
-    result.textContent =
-        "";
+    clearResult();
 
 
     timerBar.style.width =
@@ -1506,7 +1508,6 @@ function endGame() {
 
 
     finalScore.textContent =
-        "Final Skoru: " +
         score;
 
 
@@ -1579,9 +1580,7 @@ function resetGame() {
 
     clearPlayerSuggestions();
 
-
-    result.textContent =
-        "";
+    clearResult();
 
 
     timerBar.style.width =
@@ -1597,7 +1596,7 @@ function resetGame() {
 
 
     answerArea.style.display =
-        "block";
+        "flex";
 
 
     timerContainer.style.display =
@@ -1661,7 +1660,7 @@ if (restartButton) {
 
 
 // =====================================================
-// ANA SAYFA - OYUNA BAŞLA
+// ANA SAYFA → OYUN
 // =====================================================
 
 if (startButton) {
