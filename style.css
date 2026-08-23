@@ -40,10 +40,10 @@ body {
     justify-content: center;
 
     background-image: url("home-bg.png");
-background-repeat: no-repeat;
-background-position: center center;
-background-size: 100% 100%;
-background-color: #020604;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    background-color: #020604;
 
     z-index: 9999;
 
@@ -56,11 +56,6 @@ background-color: #020604;
 /* ========================================
    ANA SAYFA BAŞLIK
 ======================================== */
-
-/*
-   3-2-1 görselin içerisinde.
-   HTML'deki yazıyı göstermiyoruz.
-*/
 
 #home-screen h1 {
     display: none;
@@ -80,41 +75,16 @@ background-color: #020604;
    OYUNA BAŞLA BUTONU
 ======================================== */
 
-/*
-   Görselin içinde gerçek yeşil buton bulunuyor.
-
-   HTML'deki butonu görünmez yapıyoruz.
-   Ancak buton hâlâ tıklanabilir.
-
-   Tıklama alanı sadece görseldeki
-   yeşil butonun olduğu bölge.
-*/
-
 #start-button {
     position: absolute;
 
-    /*
-       16:9 görseldeki yeşil butonun
-       yaklaşık yatay konumu.
-    */
     left: 50%;
     top: 67%;
 
     transform: translate(-50%, -50%);
 
-    /*
-       GERÇEK TIKLAMA ALANI
-
-       Önceki sürümde çok büyüktü.
-
-       Şimdi görseldeki yeşil butona
-       çok daha yakın bir alan kullanıyoruz.
-    */
     width: 45vw;
 
-    /*
-       Buton yaklaşık 4:1 oranında.
-    */
     aspect-ratio: 4 / 1;
 
     height: auto;
@@ -135,10 +105,6 @@ background-color: #020604;
 
     z-index: 20;
 
-    /*
-       Butonun kendi varsayılan görünümünü
-       tamamen kaldırıyoruz.
-    */
     appearance: none;
     -webkit-appearance: none;
 }
@@ -152,11 +118,6 @@ background-color: #020604;
     transform:
         translate(-50%, -50%)
         scale(1.01);
-
-    /*
-       Çok hafif geri bildirim.
-       Büyük yeşil kutu oluşturmuyoruz.
-    */
 
     background: transparent;
 
@@ -271,23 +232,23 @@ h1 {
 .team {
     background-color: #163d2d;
 
-    padding: 30px 50px;
+    width: 300px;
+
+    min-height: 190px;
+
+    padding: 25px 30px;
 
     border-radius: 15px;
 
-    font-size: 28px;
-
-    font-weight: bold;
-
-    width: 300px;
-
-    min-height: 45px;
-
     display: flex;
+
+    flex-direction: column;
 
     align-items: center;
 
     justify-content: center;
+
+    gap: 12px;
 
     box-sizing: border-box;
 
@@ -298,6 +259,46 @@ h1 {
     box-shadow:
         0 8px 25px
         rgba(0, 0, 0, 0.25);
+}
+
+
+/* ========================================
+   TAKIM LOGOSU
+======================================== */
+
+.team-logo {
+    width: 80px;
+
+    height: 80px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+
+    flex-shrink: 0;
+}
+
+
+/* ========================================
+   TAKIM ADI
+======================================== */
+
+.team-name {
+    display: block;
+
+    width: 100%;
+
+    font-size: 24px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    white-space: normal;
 }
 
 
@@ -488,6 +489,8 @@ h1 {
 
 .answer-area {
     margin-top: 80px;
+
+    position: relative;
 }
 
 
@@ -770,10 +773,6 @@ h1 {
         height: 100%;
         height: 100dvh;
 
-        /*
-           Telefon ekranında görsel oranını
-           bozmadan ekranı doldur.
-        */
         background-size: cover;
 
         background-position: center center;
@@ -786,10 +785,6 @@ h1 {
 
     #start-button {
 
-        /*
-           Telefon için daha küçük ve
-           gerçek yeşil butona yakın alan.
-        */
         width: 72vw;
 
         aspect-ratio: 4 / 1;
@@ -798,9 +793,6 @@ h1 {
 
         left: 50%;
 
-        /*
-           Görseldeki butonun konumu.
-        */
         top: 68%;
 
         transform:
@@ -833,25 +825,39 @@ h1 {
 
 
     .game-area {
-        gap: 10px;
+        gap: 8px;
 
         margin-top: 60px;
     }
 
 
     .team {
-        width: 250px;
+        width: 145px;
 
-        padding: 25px 20px;
+        min-height: 165px;
 
-        font-size: 22px;
+        padding: 20px 10px;
+
+        gap: 10px;
+    }
+
+
+    .team-logo {
+        width: 65px;
+
+        height: 65px;
+    }
+
+
+    .team-name {
+        font-size: 17px;
     }
 
 
     .vs {
-        width: 70px;
+        width: 55px;
 
-        min-width: 70px;
+        min-width: 55px;
 
         height: 100px;
     }
@@ -911,6 +917,7 @@ h1 {
     #final-score {
         font-size: 26px;
     }
+
 }
 
 
@@ -930,6 +937,35 @@ h1 {
 
         top: 68%;
     }
+
+
+    .team {
+        width: 125px;
+
+        min-height: 150px;
+
+        padding: 15px 8px;
+    }
+
+
+    .team-logo {
+        width: 58px;
+
+        height: 58px;
+    }
+
+
+    .team-name {
+        font-size: 15px;
+    }
+
+
+    .vs {
+        width: 45px;
+
+        min-width: 45px;
+    }
+
 }
 
 
@@ -957,6 +993,29 @@ h1 {
 
         top: 68%;
     }
+
+
+    .game-area {
+        margin-top: 40px;
+    }
+
+
+    .team {
+        min-height: 130px;
+    }
+
+
+    .team-logo {
+        width: 55px;
+
+        height: 55px;
+    }
+
+
+    .answer-area {
+        margin-top: 30px;
+    }
+
 }
 
 
@@ -976,4 +1035,5 @@ h1 {
 
         top: 67%;
     }
+
 }

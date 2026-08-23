@@ -63,6 +63,105 @@ const playableTeams = [
 
 
 // =====================================================
+// TAKIM -> LOGO EŞLEŞTİRMESİ
+// =====================================================
+
+const teamLogos = {
+
+    "BESIKTAS":
+        "logos/besiktas.svg",
+
+    "FENERBAHCE":
+        "logos/fenerbahce.svg",
+
+    "GALATASARAY":
+        "logos/galatasaray.svg",
+
+    "ISTANBUL BASAKSEHIR":
+        "logos/istanbul-basaksehir.svg",
+
+    "TRABZONSPOR":
+        "logos/trabzonspor.svg",
+
+
+    "PSG":
+        "logos/psg.svg",
+
+    "LILLE":
+        "logos/lille.svg",
+
+    "LYON":
+        "logos/lyon.svg",
+
+    "MARSEILLE":
+        "logos/marseille.svg",
+
+
+    "LIVERPOOL":
+        "logos/liverpool.svg",
+
+    "MANCHESTER CITY":
+        "logos/manchester-city.svg",
+
+    "MANCHESTER UNITED":
+        "logos/manchester-united.svg",
+
+    "TOTTENHAM":
+        "logos/tottenham.svg",
+
+    "CHELSEA":
+        "logos/chelsea.svg",
+
+    "ARSENAL":
+        "logos/arsenal.svg",
+
+
+    "BARCELONA":
+        "logos/barcelona.svg",
+
+    "REAL MADRID":
+        "logos/real-madrid.svg",
+
+    "ATLETICO MADRID":
+        "logos/atletico-madrid.svg",
+
+
+    "BAYERN MUNIH":
+        "logos/bayern-munich.svg",
+
+    "BORUSSIA DORTMUND":
+        "logos/borussia-dortmund.svg",
+
+
+    "INTER":
+        "logos/inter.svg",
+
+    "NAPOLI":
+        "logos/napoli.svg",
+
+    "MILAN":
+        "logos/milan.svg",
+
+    "JUVENTUS":
+        "logos/juventus.svg",
+
+    "ROMA":
+        "logos/roma.svg",
+
+
+    "PORTO":
+        "logos/porto.svg",
+
+    "SPORTING CP":
+        "logos/sporting-cp.svg",
+
+    "BENFICA":
+        "logos/benfica.svg"
+
+};
+
+
+// =====================================================
 // PLAYERPOOL KONTROLÜ
 // =====================================================
 
@@ -216,6 +315,18 @@ const team1 =
 const team2 =
     document.getElementById("team2");
 
+const team1Logo =
+    document.getElementById("team1-logo");
+
+const team2Logo =
+    document.getElementById("team2-logo");
+
+const team1Name =
+    document.getElementById("team1-name");
+
+const team2Name =
+    document.getElementById("team2-name");
+
 const answerInput =
     document.getElementById("answerInput");
 
@@ -323,6 +434,68 @@ if (gameOver) {
 
 
 // =====================================================
+// TAKIM LOGOSUNU GÜNCELLE
+// =====================================================
+
+function updateTeamDisplay(
+    team,
+    logoElement,
+    nameElement
+) {
+
+    if (
+        !logoElement ||
+        !nameElement
+    ) {
+
+        return;
+
+    }
+
+
+    const logoPath =
+        teamLogos[team];
+
+
+    if (logoPath) {
+
+        logoElement.src =
+            logoPath;
+
+        logoElement.alt =
+            team;
+
+        logoElement.style.display =
+            "block";
+
+    }
+    else {
+
+        logoElement.removeAttribute(
+            "src"
+        );
+
+        logoElement.alt =
+            "";
+
+        logoElement.style.display =
+            "none";
+
+        console.warn(
+            "Logo bulunamadı:",
+            team
+        );
+
+    }
+
+
+    nameElement.textContent =
+        team;
+
+}
+
+
+// =====================================================
 // METİN NORMALLEŞTİRME
 // =====================================================
 
@@ -334,7 +507,6 @@ function normalizeText(text) {
             .toLocaleLowerCase("tr-TR");
 
 
-    // Türkçe karakterleri standartlaştır
     value = value
         .replace(/ı/g, "i")
         .replace(/İ/g, "i")
@@ -345,7 +517,6 @@ function normalizeText(text) {
         .replace(/ç/g, "c");
 
 
-    // Nokta, apostrof ve tireleri boşluk kabul et
     value =
         value.replace(
             /[.'’`-]/g,
@@ -353,7 +524,6 @@ function normalizeText(text) {
         );
 
 
-    // Fazla boşlukları temizle
     value =
         value.replace(
             /\s+/g,
@@ -413,21 +583,6 @@ function clearPlayerSuggestions() {
 // =====================================================
 // OYUNCU ADININ BAŞLANGICINI KONTROL ET
 // =====================================================
-//
-// Örnek:
-//
-// Cristiano Ronaldo
-//
-// "cri"   -> ✅
-// "ron"   -> ✅
-// "crist" -> ✅
-//
-// "tiano" -> ❌
-// "aldo"  -> ❌
-// "sti"   -> ❌
-//
-// Sadece isim veya soyadının başlangıcı eşleşir.
-// =====================================================
 
 function playerNameStartsWithSearch(
     playerName,
@@ -453,18 +608,6 @@ function playerNameStartsWithSearch(
 // =====================================================
 // OYUNCU ÖNERİLERİ
 // =====================================================
-//
-// DOĞRU VE YANLIŞ BÜTÜN OYUNCULAR ÖNERİLEBİLİR.
-//
-// Örnek:
-//
-// "hen" -> Thierry Henry
-// "henry" -> Thierry Henry
-// "thi" -> Thierry Henry
-// "ron" -> Cristiano Ronaldo
-//
-// Kelimenin ortasındaki eşleşmeler gösterilmez.
-// =====================================================
 
 function showPlayerSuggestions() {
 
@@ -478,7 +621,6 @@ function showPlayerSuggestions() {
     }
 
 
-    // Input kapalıysa önerileri temizle
     if (
         answerInput.disabled
     ) {
@@ -496,7 +638,6 @@ function showPlayerSuggestions() {
         );
 
 
-    // En az 2 karakter
     if (
         searchText.length < 2
     ) {
@@ -507,16 +648,6 @@ function showPlayerSuggestions() {
 
     }
 
-
-    // =================================================
-    // TÜM OYUNCULAR
-    // =================================================
-    //
-    // Önce playerPool'daki bütün oyuncuları alıyoruz.
-    //
-    // Ayrıca o anki sorunun ortak oyuncularını da
-    // garanti olarak ekliyoruz.
-    // =================================================
 
     const suggestionPool =
         new Set(
@@ -535,10 +666,6 @@ function showPlayerSuggestions() {
     );
 
 
-    // =================================================
-    // ARAMA
-    // =================================================
-
     const matchingPlayers =
         [...suggestionPool]
             .filter(
@@ -553,11 +680,9 @@ function showPlayerSuggestions() {
             );
 
 
-    // Eski önerileri temizle
     clearPlayerSuggestions();
 
 
-    // Sonuç yok
     if (
         matchingPlayers.length === 0
     ) {
@@ -566,10 +691,6 @@ function showPlayerSuggestions() {
 
     }
 
-
-    // =================================================
-    // ÖNERİ KUTULARINI OLUŞTUR
-    // =================================================
 
     matchingPlayers.forEach(
         playerName => {
@@ -738,7 +859,6 @@ function startCountdown(version) {
                 countdown.textContent =
                     "";
 
-
                 countdown.classList.remove(
                     "countdown-pop"
                 );
@@ -827,7 +947,6 @@ async function newQuestion() {
     clearPlayerSuggestions();
 
 
-    // 10 soru bittiyse
     if (
         questionNumber >= totalQuestions
     ) {
@@ -839,7 +958,6 @@ async function newQuestion() {
     }
 
 
-    // Kullanılmamış sorular
     let availableQuestions =
         validTeamPairs.filter(
             pair => {
@@ -861,7 +979,6 @@ async function newQuestion() {
         );
 
 
-    // Tüm çiftler kullanıldıysa
     if (
         availableQuestions.length === 0
     ) {
@@ -874,7 +991,6 @@ async function newQuestion() {
     }
 
 
-    // Soru yoksa
     if (
         availableQuestions.length === 0
     ) {
@@ -888,7 +1004,6 @@ async function newQuestion() {
     }
 
 
-    // Rastgele takım çifti
     const randomIndex =
         Math.floor(
             Math.random() *
@@ -914,7 +1029,6 @@ async function newQuestion() {
     );
 
 
-    // Soru numarası
     questionNumber++;
 
 
@@ -925,19 +1039,28 @@ async function newQuestion() {
         totalQuestions;
 
 
-    // Bu sorunun bütün ortak oyuncuları
     currentQuestionPlayers =
         [
             ...selectedPair.players
         ];
 
 
-    // Takımlar
-    team1.textContent =
-        selectedPair.teamA;
+    // ================================================
+    // TAKIMLARI VE LOGOLARI YÜKLE
+    // ================================================
 
-    team2.textContent =
-        selectedPair.teamB;
+    updateTeamDisplay(
+        selectedPair.teamA,
+        team1Logo,
+        team1Name
+    );
+
+
+    updateTeamDisplay(
+        selectedPair.teamB,
+        team2Logo,
+        team2Name
+    );
 
 
     team1.style.visibility =
@@ -959,7 +1082,6 @@ async function newQuestion() {
         "100%";
 
 
-    // Geri sayım
     await startCountdown(
         currentVersion
     );
@@ -974,7 +1096,6 @@ async function newQuestion() {
     }
 
 
-    // Cevap alanını aç
     answerInput.disabled =
         false;
 
@@ -985,13 +1106,11 @@ async function newQuestion() {
     answerInput.focus();
 
 
-    // Timer
     startTimer(
         currentVersion
     );
 
 
-    // Konsol bilgileri
     console.log(
         "SORU:",
         selectedPair.teamA,
@@ -1147,7 +1266,6 @@ function isPlayerAnswerCorrect(
         );
 
 
-    // Tam isim
     if (
         user === correct
     ) {
@@ -1157,7 +1275,6 @@ function isPlayerAnswerCorrect(
     }
 
 
-    // İsim veya soyadı tek başına
     const playerWords =
         getPlayerNameWords(
             playerName
@@ -1206,7 +1323,6 @@ function checkAnswer() {
     }
 
 
-    // Bu sorunun bütün ortak oyuncularını kontrol et
     const correctPlayer =
         currentQuestionPlayers.find(
             playerName =>
@@ -1217,7 +1333,10 @@ function checkAnswer() {
         );
 
 
-    // Doğru
+    // ================================================
+    // DOĞRU
+    // ================================================
+
     if (
         correctPlayer
     ) {
@@ -1244,7 +1363,7 @@ function checkAnswer() {
         answerInput.disabled =
             true;
 
-    answerButton.disabled =
+        answerButton.disabled =
             true;
 
 
@@ -1272,7 +1391,10 @@ function checkAnswer() {
     }
 
 
-    // Yanlış
+    // ================================================
+    // YANLIŞ
+    // ================================================
+
     result.textContent =
         "YANLIŞ! ❌";
 
@@ -1352,11 +1474,20 @@ function endGame() {
         "none";
 
 
-    team1.textContent =
+    team1Name.textContent =
         "";
 
-    team2.textContent =
+    team2Name.textContent =
         "";
+
+
+    team1Logo.removeAttribute(
+        "src"
+    );
+
+    team2Logo.removeAttribute(
+        "src"
+    );
 
 
     countdown.textContent =
@@ -1473,11 +1604,20 @@ function resetGame() {
         "block";
 
 
-    team1.textContent =
+    team1Name.textContent =
         "";
 
-    team2.textContent =
+    team2Name.textContent =
         "";
+
+
+    team1Logo.removeAttribute(
+        "src"
+    );
+
+    team2Logo.removeAttribute(
+        "src"
+    );
 
 
     team1.style.visibility =
@@ -1570,4 +1710,9 @@ console.log(
 console.log(
     "Geçerli soru sayısı:",
     validTeamPairs.length
+);
+
+console.log(
+    "Logo sayısı:",
+    Object.keys(teamLogos).length
 );
