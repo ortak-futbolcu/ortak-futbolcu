@@ -17,7 +17,1228 @@
         href="style.css"
     >
 
+    <!-- =====================================================
+         HTML TASARIM DÜZELTMELERİ
+         Mevcut style.css'in üzerine uygulanır.
+    ====================================================== -->
+
+    <style>
+
+        /* =================================================
+           ANA SAYFA
+        ================================================= */
+
+        #home-screen {
+
+            background-image: none !important;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center 48%,
+                    rgba(45, 210, 115, 0.12),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    ellipse at center bottom,
+                    rgba(20, 100, 60, 0.20),
+                    transparent 50%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #020705 0%,
+                    #06140e 48%,
+                    #081b12 100%
+                ) !important;
+
+            overflow: hidden;
+
+        }
+
+
+        /* =================================================
+           ANA SAYFA STADYUM ATMOSFERİ
+        ================================================= */
+
+        #home-screen::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.45),
+                    transparent 25%,
+                    transparent 75%,
+                    rgba(0, 0, 0, 0.45)
+                );
+
+            pointer-events: none;
+
+        }
+
+
+        #home-screen::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -18%;
+
+            transform: translateX(-50%);
+
+            width: 80%;
+
+            height: 45%;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    ellipse,
+                    rgba(49, 220, 120, 0.13),
+                    transparent 65%
+                );
+
+            filter: blur(12px);
+
+            pointer-events: none;
+
+        }
+
+
+        /* =================================================
+           ANA SAYFA İÇERİĞİ
+        ================================================= */
+
+        #home-screen h1 {
+
+            display: block !important;
+
+            position: relative;
+
+            z-index: 5;
+
+            margin: 0;
+
+            font-size: clamp(100px, 14vw, 220px);
+
+            line-height: 0.85;
+
+            font-weight: 1000;
+
+            font-style: italic;
+
+            letter-spacing: -8px;
+
+            color: #ffffff;
+
+            text-shadow:
+
+                0 8px 30px rgba(0, 0, 0, 0.7),
+
+                0 0 35px rgba(255, 255, 255, 0.05);
+
+        }
+
+
+        /* 2 rakamını yeşil yap */
+
+        #home-screen h1 {
+
+            background:
+
+                linear-gradient(
+                    90deg,
+                    #ffffff 0%,
+                    #ffffff 38%,
+                    #32dc7f 45%,
+                    #32dc7f 58%,
+                    #ffffff 65%,
+                    #ffffff 100%
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+        }
+
+
+        /* =================================================
+           ANA SAYFA ALT BAŞLIK
+        ================================================= */
+
+        #home-screen .home-subtitle {
+
+            display: block !important;
+
+            position: relative;
+
+            z-index: 5;
+
+            margin:
+
+                22px 0 0;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.58
+                );
+
+        }
+
+
+        /* =================================================
+           BAŞLA BUTONU
+        ================================================= */
+
+        #start-button {
+
+            position: absolute;
+
+            z-index: 10;
+
+            left: 50%;
+
+            top: 73%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: min(430px, 42vw);
+
+            height: 68px;
+
+            aspect-ratio: auto;
+
+            padding: 0 35px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 16px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #239c5a,
+                    #31d979
+                ) !important;
+
+            color: #ffffff !important;
+
+            font-size: 19px !important;
+
+            font-weight: 900 !important;
+
+            letter-spacing: 2px;
+
+            border:
+
+                1px solid
+                rgba(113, 255, 164, 0.7) !important;
+
+            border-radius: 14px;
+
+            box-shadow:
+
+                0 12px 35px
+                rgba(0, 0, 0, 0.45),
+
+                0 0 25px
+                rgba(46, 204, 113, 0.22),
+
+                inset 0 1px 0
+                rgba(255, 255, 255, 0.25);
+
+            text-indent: 0;
+
+            transition:
+
+                transform 0.2s ease,
+
+                box-shadow 0.2s ease,
+
+                filter 0.2s ease;
+
+            overflow: hidden;
+
+        }
+
+
+        #start-button::before {
+
+            content: "▶";
+
+            font-size: 20px;
+
+            line-height: 1;
+
+        }
+
+
+        #start-button:hover {
+
+            transform:
+                translate(-50%, -50%)
+                translateY(-3px);
+
+            filter: brightness(1.08);
+
+            box-shadow:
+
+                0 16px 40px
+                rgba(0, 0, 0, 0.5),
+
+                0 0 35px
+                rgba(46, 204, 113, 0.35),
+
+                inset 0 1px 0
+                rgba(255, 255, 255, 0.28);
+
+        }
+
+
+        #start-button:active {
+
+            transform:
+                translate(-50%, -50%)
+                scale(0.98);
+
+        }
+
+
+        /* =================================================
+           OYUN EKRANI
+        ================================================= */
+
+        #game-content {
+
+            position: relative;
+
+        }
+
+
+        /* =================================================
+           GERİ SAYIM
+           ÇİRKİN YUVARLAK KALDIRILDI
+        ================================================= */
+
+        #countdown {
+
+            width: 180px !important;
+
+            height: 150px !important;
+
+            background: transparent !important;
+
+            border: none !important;
+
+            border-radius: 0 !important;
+
+            box-shadow: none !important;
+
+            font-size: 94px !important;
+
+            font-weight: 1000 !important;
+
+            color: #ffffff !important;
+
+            text-shadow:
+
+                0 5px 15px
+                rgba(0, 0, 0, 0.8),
+
+                0 0 25px
+                rgba(255, 255, 255, 0.18);
+
+        }
+
+
+        #countdown.countdown-pop {
+
+            animation:
+                cleanCountdownPop
+                0.8s
+                cubic-bezier(
+                    0.2,
+                    0.8,
+                    0.25,
+                    1
+                );
+
+        }
+
+
+        @keyframes cleanCountdownPop {
+
+            0% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.55);
+
+                opacity: 0;
+
+            }
+
+            45% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+
+                opacity: 1;
+
+            }
+
+            100% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+
+                opacity: 1;
+
+            }
+
+        }
+
+
+        /* =================================================
+           VS
+        ================================================= */
+
+        #vs-text {
+
+            position: relative;
+
+            z-index: 5;
+
+            font-size: 30px;
+
+            font-weight: 1000;
+
+            letter-spacing: 1px;
+
+            color: #ffffff;
+
+            text-shadow:
+
+                0 4px 10px
+                rgba(0, 0, 0, 0.7),
+
+                0 0 20px
+                rgba(46, 204, 113, 0.18);
+
+        }
+
+
+        /* =================================================
+           CEVAP ALANI
+        ================================================= */
+
+        .answer-area {
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 12px;
+
+        }
+
+
+        /* =================================================
+           FUTBOLCU ADINI GİR
+        ================================================= */
+
+        .answer-input-wrapper {
+
+            width: 300px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            position: relative;
+
+        }
+
+
+        .answer-label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            color:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.55
+                );
+
+        }
+
+
+        /* =================================================
+           INPUT
+        ================================================= */
+
+        .answer-area input {
+
+            width: 300px !important;
+
+            height: 54px;
+
+            padding: 0 17px;
+
+            background:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.94
+                ) !important;
+
+            color: #10251b;
+
+            border:
+
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.12
+                );
+
+            border-radius: 10px;
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(0, 0, 0, 0.22);
+
+        }
+
+
+        .answer-area input:focus {
+
+            border-color:
+
+                rgba(
+                    46,
+                    204,
+                    113,
+                    0.75
+                );
+
+            box-shadow:
+
+                0 0 0 3px
+                rgba(
+                    46,
+                    204,
+                    113,
+                    0.10
+                ),
+
+                0 8px 25px
+                rgba(0, 0, 0, 0.22);
+
+        }
+
+
+        /* =================================================
+           AUTOCOMPLETE
+           INPUT ALTINDAKİ YEŞİL ÇİZGİ KALDIRILDI
+        ================================================= */
+
+        #player-suggestions {
+
+            width: 300px !important;
+
+            position: absolute;
+
+            left: 0;
+
+            top: 62px;
+
+            margin: 0 !important;
+
+            padding: 0;
+
+            border: none !important;
+
+            outline: none !important;
+
+            background: transparent !important;
+
+            box-shadow: none;
+
+            overflow: hidden;
+
+        }
+
+
+        #player-suggestions:empty {
+
+            display: none !important;
+
+        }
+
+
+        .player-suggestion {
+
+            background:
+
+                rgba(
+                    13,
+                    45,
+                    31,
+                    0.98
+                ) !important;
+
+            color: #ffffff;
+
+            padding: 13px 15px;
+
+            font-size: 16px;
+
+            border-bottom:
+
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.07
+                );
+
+            transition:
+
+                background 0.15s ease,
+
+                padding-left 0.15s ease;
+
+        }
+
+
+        .player-suggestion:hover {
+
+            background:
+
+                rgba(
+                    35,
+                    105,
+                    67,
+                    0.98
+                ) !important;
+
+            padding-left: 19px;
+
+        }
+
+
+        /* =================================================
+           CEVAPLA BUTONU
+        ================================================= */
+
+        .answer-area > #answerButton {
+
+            width: 126px;
+
+            height: 54px;
+
+            margin: 0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #e8eee9
+                );
+
+            color: #0a2118;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            font-weight: 1000;
+
+            letter-spacing: 0.5px;
+
+            box-shadow:
+
+                0 8px 22px
+                rgba(0, 0, 0, 0.20);
+
+        }
+
+
+        .answer-area > #answerButton:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =================================================
+           DESKTOP CEVAP SATIRI
+        ================================================= */
+
+        @media (min-width: 701px) {
+
+            .answer-area {
+
+                flex-direction: row;
+
+                align-items: flex-end;
+
+                justify-content: center;
+
+                gap: 10px;
+
+            }
+
+
+            .answer-input-wrapper {
+
+                align-items: stretch;
+
+            }
+
+
+            .answer-label {
+
+                text-align: center;
+
+            }
+
+        }
+
+
+        /* =================================================
+           SONUÇ
+        ================================================= */
+
+        #result {
+
+            border: none !important;
+
+        }
+
+
+        /* =================================================
+           OYUN BİTİŞ EKRANI
+        ================================================= */
+
+        .game-over {
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(29, 100, 61, 0.20),
+                    transparent 45%
+                ),
+
+                rgba(
+                    1,
+                    7,
+                    4,
+                    0.88
+                );
+
+            backdrop-filter: blur(8px);
+
+            -webkit-backdrop-filter: blur(8px);
+
+        }
+
+
+        .game-over-box {
+
+            width: 470px;
+
+            max-width: 88%;
+
+            padding: 42px 40px 38px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(24, 69, 49, 0.98),
+                    rgba(10, 34, 24, 0.98)
+                );
+
+            border:
+
+                1px solid
+                rgba(
+                    74,
+                    220,
+                    130,
+                    0.16
+                );
+
+            border-radius: 22px;
+
+            box-shadow:
+
+                0 30px 80px
+                rgba(0, 0, 0, 0.65),
+
+                0 0 35px
+                rgba(46, 204, 113, 0.07);
+
+        }
+
+
+        /* =================================================
+           KUPA
+        ================================================= */
+
+        .game-over-icon {
+
+            font-size: 58px;
+
+            margin-bottom: 8px;
+
+            filter:
+
+                drop-shadow(
+                    0 5px 12px
+                    rgba(0, 0, 0, 0.35)
+                );
+
+        }
+
+
+        /* =================================================
+           OYUN TAMAMLANDI
+        ================================================= */
+
+        .game-over h2 {
+
+            margin:
+
+                0 0 25px;
+
+            font-size: 34px;
+
+            font-weight: 1000;
+
+            letter-spacing: 1px;
+
+        }
+
+
+        /* =================================================
+           FİNAL SKOR LABEL
+        ================================================= */
+
+        .final-score-label {
+
+            margin-bottom: 2px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            color:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.48
+                );
+
+        }
+
+
+        /* =================================================
+           SKOR
+        ================================================= */
+
+        #final-score {
+
+            margin:
+
+                0 0 12px;
+
+            font-size: 64px;
+
+            line-height: 1;
+
+            font-weight: 1000;
+
+            color: #35df82;
+
+            text-shadow:
+
+                0 0 25px
+                rgba(
+                    46,
+                    204,
+                    113,
+                    0.22
+                );
+
+        }
+
+
+        /* =================================================
+           FİNAL MESAJI
+        ================================================= */
+
+        #final-message {
+
+            margin:
+
+                0 auto 30px;
+
+            padding-top: 18px;
+
+            border-top:
+
+                1px solid
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.10
+                );
+
+            font-size: 17px;
+
+            font-weight: 800;
+
+            color:
+
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.82
+                );
+
+        }
+
+
+        /* =================================================
+           TEKRAR OYNA
+        ================================================= */
+
+        #restart-button {
+
+            width: 190px;
+
+            height: 52px;
+
+            padding: 0;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #e7eee9
+                );
+
+            color: #0a2118;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            font-weight: 1000;
+
+            letter-spacing: 1px;
+
+            box-shadow:
+
+                0 8px 25px
+                rgba(0, 0, 0, 0.25);
+
+        }
+
+
+        #restart-button:hover {
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        /* =================================================
+           MOBİL
+        ================================================= */
+
+        @media (max-width: 700px) {
+
+
+            #home-screen h1 {
+
+                font-size: 26vw;
+
+                letter-spacing: -3px;
+
+            }
+
+
+            #home-screen .home-subtitle {
+
+                font-size: 10px;
+
+                letter-spacing: 2.5px;
+
+                margin-top: 18px;
+
+            }
+
+
+            #start-button {
+
+                width: 72vw;
+
+                max-width: none;
+
+                height: 58px;
+
+                top: 73%;
+
+                font-size: 15px !important;
+
+            }
+
+
+            #countdown {
+
+                width: 110px !important;
+
+                height: 110px !important;
+
+                font-size: 62px !important;
+
+            }
+
+
+            .answer-area {
+
+                margin-top: 48px;
+
+            }
+
+
+            .answer-input-wrapper {
+
+                width: 70%;
+
+            }
+
+
+            .answer-area input {
+
+                width: 100% !important;
+
+            }
+
+
+            #player-suggestions {
+
+                width: 100% !important;
+
+                top: 62px;
+
+            }
+
+
+            .answer-area > #answerButton {
+
+                width: 150px;
+
+                height: 50px;
+
+            }
+
+
+            .game-over-box {
+
+                padding:
+
+                    35px 25px 32px;
+
+            }
+
+
+            .game-over-icon {
+
+                font-size: 48px;
+
+            }
+
+
+            .game-over h2 {
+
+                font-size: 28px;
+
+            }
+
+
+            #final-score {
+
+                font-size: 52px;
+
+            }
+
+
+            #final-message {
+
+                font-size: 15px;
+
+            }
+
+        }
+
+
+        /* =================================================
+           ÇOK DAR TELEFON
+        ================================================= */
+
+        @media (max-width: 400px) {
+
+
+            #home-screen h1 {
+
+                font-size: 25vw;
+
+            }
+
+
+            #start-button {
+
+                width: 74vw;
+
+                top: 73%;
+
+            }
+
+
+            #countdown {
+
+                font-size: 55px !important;
+
+            }
+
+
+            .answer-input-wrapper {
+
+                width: 78%;
+
+            }
+
+        }
+
+
+        /* =================================================
+           YATAY TELEFON
+        ================================================= */
+
+        @media
+        (max-height: 600px)
+        and
+        (orientation: landscape) {
+
+
+            #home-screen h1 {
+
+                font-size: 20vh;
+
+            }
+
+
+            #home-screen .home-subtitle {
+
+                margin-top: 10px;
+
+            }
+
+
+            #start-button {
+
+                width: 300px;
+
+                height: 52px;
+
+                top: 78%;
+
+            }
+
+
+            #countdown {
+
+                font-size: 58px !important;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
@@ -28,11 +1249,16 @@
 
     <div id="home-screen">
 
-        <h1>3-2-1</h1>
+
+        <h1>
+            321
+        </h1>
+
 
         <p class="home-subtitle">
-            İki takım arasındaki ortak futbolcuyu bul!
+            ORTAK FUTBOLCUYU BUL
         </p>
+
 
         <button
             id="start-button"
@@ -40,6 +1266,7 @@
         >
             OYUNA BAŞLA
         </button>
+
 
     </div>
 
@@ -58,9 +1285,11 @@
 
         <header class="game-header">
 
+
             <h1>
                 ORTAK FUTBOLCU
             </h1>
+
 
             <div
                 class="score"
@@ -69,9 +1298,11 @@
                 Puan: 0
             </div>
 
+
             <div id="question-number">
                 Soru: 0 / 10
             </div>
+
 
         </header>
 
@@ -103,7 +1334,9 @@
                 id="team1"
             >
 
+
                 <div class="team-logo-wrapper">
+
 
                     <img
                         class="team-logo"
@@ -112,12 +1345,15 @@
                         alt=""
                     >
 
+
                 </div>
+
 
                 <span
                     class="team-name"
                     id="team1-name"
                 ></span>
+
 
             </div>
 
@@ -127,11 +1363,14 @@
 
             <div class="vs">
 
+
                 <div id="countdown"></div>
+
 
                 <div id="vs-text">
                     VS
                 </div>
+
 
             </div>
 
@@ -144,7 +1383,9 @@
                 id="team2"
             >
 
+
                 <div class="team-logo-wrapper">
+
 
                     <img
                         class="team-logo"
@@ -153,14 +1394,18 @@
                         alt=""
                     >
 
+
                 </div>
+
 
                 <span
                     class="team-name"
                     id="team2-name"
                 ></span>
 
+
             </div>
+
 
         </div>
 
@@ -175,6 +1420,15 @@
 
             <div class="answer-input-wrapper">
 
+
+                <label
+                    class="answer-label"
+                    for="answerInput"
+                >
+                    FUTBOLCU ADINI GİR
+                </label>
+
+
                 <input
                     type="text"
                     id="answerInput"
@@ -183,7 +1437,9 @@
                     spellcheck="false"
                 >
 
+
                 <div id="player-suggestions"></div>
+
 
             </div>
 
@@ -191,6 +1447,7 @@
             <button id="answerButton">
                 CEVAPLA
             </button>
+
 
         </div>
 
@@ -219,6 +1476,7 @@
         class="game-over"
     >
 
+
         <div class="game-over-box">
 
 
@@ -228,12 +1486,12 @@
 
 
             <h2>
-                OYUN BİTTİ
+                OYUN TAMAMLANDI
             </h2>
 
 
             <div class="final-score-label">
-                FİNAL SKORU
+                PUAN
             </div>
 
 
@@ -253,6 +1511,7 @@
 
 
         </div>
+
 
     </div>
 
