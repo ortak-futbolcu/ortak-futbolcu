@@ -7000,7 +7000,8 @@ const playerPool = {
     teams: [
         "ANKARAGUCU",
         "FENERBAHCE",
-        "MANCHESTER UNITED"
+        "MANCHESTER UNITED",
+        "GETAFE"
     ]
 },
 
@@ -7014,6 +7015,307 @@ const playerPool = {
         "LYON",
         "CHARLOTTE FC"
     ]
+},
+"Joselu": {
+
+    nationality: "ISPANYA",
+
+    teams: [
+        "CELTA VIGO",
+        "HOFFENHEIM",
+        "EINTRACHT FRANKFURT",
+        "HANNOVER 96",
+        "STOKE CITY",
+        "DEPORTIVO LA CORUNA",
+        "NEWCASTLE UNITED",
+        "STOKE CITY",
+        "DEPORTIVO ALAVES",
+        "ESPANYOL",
+        "REAL MADRID",
+        "AL-GHARAFA"
+    ]
+
+},
+
+"Pierre-Emerick Aubameyang": {
+
+    nationality: "GABON",
+
+    teams: [
+        "MILAN",
+        "DIJON",
+        "LILLE",
+        "MONACO",
+        "SAINT-ETIENNE",
+        "BORUSSIA DORTMUND",
+        "ARSENAL",
+        "BARCELONA",
+        "CHELSEA",
+        "MARSEILLE",
+        "AL-QADSIAH"
+    ]
+
+},
+
+"Amadou Onana": {
+
+    nationality: "BELCIKA",
+
+    teams: [
+        "HOFFENHEIM",
+        "HAMBURGER SV",
+        "LILLE",
+        "EVERTON",
+        "ASTON VILLA"
+    ]
+
+},
+
+"Aral Şimşir": {
+
+    nationality: "TURKIYE",
+
+    teams: [
+        "MIDTJYLLAND",
+        "JERV",
+        "LILLESTROM",
+        "TRABZONSPOR"
+    ]
+
+},
+
+"Cenk Özkacar": {
+
+    nationality: "TURKIYE",
+
+    teams: [
+        "ALTAY",
+        "KARACABEY BELEDIYESPOR",
+        "LYON",
+        "OH LEUVEN",
+        "VALENCIA",
+        "REAL VALLADOLID",
+        "1. FC KOLN",
+        "TRABZONSPOR"
+    ]
+
+},
+
+"Can Uzun": {
+
+    nationality: "TURKIYE",
+
+    teams: [
+        "1. FC NURNBERG",
+        "EINTRACHT FRANKFURT"
+    ]
+
+},
+
+"Ángel Correa": {
+
+    nationality: "ARJANTIN",
+
+    teams: [
+        "SAN LORENZO",
+        "ATLETICO MADRID",
+        "TIGRES",
+        "RIVER PLATE"
+    ]
+
+},
+
+"Uğurcan Çakır": {
+
+    nationality: "TURKIYE",
+
+    teams: [
+        "TRABZONSPOR",
+        "1461 TRABZON",
+        "GALATASARAY"
+    ]
+
+},
+
+"Donyell Malen": {
+
+    nationality: "HOLLANDA",
+
+    teams: [
+        "PSV",
+        "BORUSSIA DORTMUND",
+        "ASTON VILLA",
+        "ROMA"
+    ]
+
+},
+
+"Joe Willock": {
+
+    nationality: "INGILTERE",
+
+    teams: [
+        "ARSENAL",
+        "NEWCASTLE UNITED"
+    ]
+
+},
+
+"Noussair Mazraoui": {
+
+    nationality: "FAS",
+
+    teams: [
+        "AJAX",
+        "BAYERN MUNICH",
+        "MANCHESTER UNITED"
+    ]
+
+},
+
+"Benjamin Šeško": {
+
+    nationality: "SLOVENYA",
+
+    teams: [
+        "DOMZALE",
+        "FC LIEFERING",
+        "RED BULL SALZBURG",
+        "RB LEIPZIG",
+        "MANCHESTER UNITED"
+    ]
+
+},
+
+"Nico Paz": {
+
+    nationality: "ARJANTIN",
+
+    teams: [
+        "REAL MADRID",
+        "COMO"
+    ]
+
+},
+
+"Emirhan İlkhan": {
+
+    nationality: "TURKIYE",
+
+    teams: [
+        "BESIKTAS",
+        "TORINO",
+        "SAMPDORIA",
+        "ISTANBUL BASAKSEHIR"
+    ]
+
+},
+
+"Martin Škrtel": {
+
+    nationality: "SLOVAKYA",
+
+    teams: [
+        "AS TRENCIN",
+        "ZENIT ST PETERSBURG",
+        "LIVERPOOL",
+        "FENERBAHCE",
+        "ATALANTA",
+        "ISTANBUL BASAKSEHIR",
+        "SPARTAK TRNAVA"
+    ]
+
+},
+
+"Milan Škriniar": {
+
+    nationality: "SLOVAKYA",
+
+    teams: [
+        "ZILINA",
+        "VION ZLATE MORAVCE",
+        "SAMPDORIA",
+        "INTER",
+        "PSG",
+        "FENERBAHCE"
+    ]
+
+},
+
+"Doğan Alemdar": {
+
+    nationality: "TURKIYE",
+
+    teams: [
+        "KAYSERISPOR",
+        "RENNES",
+        "TROYES",
+        "ISTANBUL BASAKSEHIR"
+    ]
+
+},
+
+"Oh Hyeon-gyu": {
+
+    nationality: "GUNEY KORE",
+
+    teams: [
+        "SUWON SAMSUNG BLUEWINGS",
+        "GIMCHEON SANGMU",
+        "CELTIC",
+        "GENK",
+        "BESIKTAS"
+    ]
+
+},
+
+"Simon Kjær": {
+
+    nationality: "DANIMARKA",
+
+    teams: [
+        "FC MIDTJYLLAND",
+        "PALERMO",
+        "VFL WOLFSBURG",
+        "AS ROMA",
+        "LILLE",
+        "FENERBAHCE",
+        "SEVILLA",
+        "ATALANTA",
+        "MILAN"
+    ]
+
+},
+
+"Karim Adeyemi": {
+
+    nationality: "ALMANYA",
+
+    teams: [
+        "SPVGG UNTERHACHING",
+        "FC LIEFERING",
+        "RED BULL SALZBURG",
+        "BORUSSIA DORTMUND",
+        "BARCELONA"
+    ]
+
+},
+
+"Gary Medel": {
+
+    nationality: "SILI",
+
+    teams: [
+        "UNIVERSIDAD CATOLICA",
+        "BOCA JUNIORS",
+        "SEVILLA",
+        "CARDIFF CITY",
+        "INTER",
+        "BESIKTAS",
+        "BOLOGNA",
+        "VASCO DA GAMA"
+    ]
+
 },
 
 "Nihat Kahveci": {
