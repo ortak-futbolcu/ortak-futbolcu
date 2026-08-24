@@ -7,10 +7,10 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     >
 
-    <title>3-2-1</title>
+    <title>3-2-1 | Ortak Futbolcuyu Bul</title>
 
     <link
         rel="stylesheet"
@@ -20,40 +20,107 @@
     <style>
 
         /* =====================================================
+           GLOBAL RESET / VIEWPORT
+        ====================================================== */
+
+        html,
+        body {
+
+            width: 100%;
+            height: 100%;
+
+            margin: 0;
+            padding: 0;
+
+            overflow: hidden;
+
+            background: #020705;
+
+        }
+
+
+        body {
+
+            min-width: 100%;
+            min-height: 100%;
+
+        }
+
+
+        *,
+        *::before,
+        *::after {
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* =====================================================
            ANA SAYFA
         ====================================================== */
 
         #home-screen {
 
-            position: relative;
+            position: fixed !important;
 
-            background-image: none !important;
+            inset: 0 !important;
+
+            width: 100vw !important;
+            height: 100vh !important;
+
+            min-width: 100vw !important;
+            min-height: 100vh !important;
+
+            max-width: none !important;
+            max-height: none !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            transform: none !important;
+            scale: 1 !important;
+            zoom: 1 !important;
+
+            display: flex !important;
+
+            flex-direction: column;
+
+            align-items: center;
 
             background:
 
                 radial-gradient(
-                    ellipse at center 42%,
-                    rgba(45, 210, 115, 0.12),
-                    transparent 35%
+                    ellipse at 50% 34%,
+                    rgba(35, 190, 100, 0.16) 0%,
+                    rgba(20, 110, 60, 0.08) 22%,
+                    transparent 48%
                 ),
 
                 radial-gradient(
-                    ellipse at center bottom,
-                    rgba(20, 100, 60, 0.20),
-                    transparent 55%
+                    ellipse at 50% 100%,
+                    rgba(25, 120, 65, 0.28) 0%,
+                    transparent 58%
                 ),
 
                 linear-gradient(
                     180deg,
-                    #020705 0%,
-                    #06140e 50%,
-                    #081b12 100%
+                    #010504 0%,
+                    #03100a 45%,
+                    #061910 72%,
+                    #071d12 100%
                 ) !important;
 
-            overflow: hidden;
+            overflow: hidden !important;
+
+            z-index: 1;
 
         }
 
+
+        /* =====================================================
+           STADYUM ATMOSFERİ
+        ====================================================== */
 
         #home-screen::before {
 
@@ -63,23 +130,31 @@
 
             inset: 0;
 
+            pointer-events: none;
+
+            z-index: 0;
+
             background:
 
                 radial-gradient(
-                    ellipse at 50% 18%,
-                    rgba(255,255,255,0.055),
-                    transparent 28%
+                    ellipse at 8% 12%,
+                    rgba(100,255,170,0.22),
+                    transparent 14%
+                ),
+
+                radial-gradient(
+                    ellipse at 92% 12%,
+                    rgba(100,255,170,0.22),
+                    transparent 14%
                 ),
 
                 linear-gradient(
                     90deg,
-                    rgba(0,0,0,0.48),
-                    transparent 24%,
-                    transparent 76%,
-                    rgba(0,0,0,0.48)
+                    rgba(0,0,0,0.58) 0%,
+                    transparent 23%,
+                    transparent 77%,
+                    rgba(0,0,0,0.58) 100%
                 );
-
-            pointer-events: none;
 
         }
 
@@ -91,66 +166,87 @@
             position: absolute;
 
             left: 50%;
+            bottom: -13%;
 
-            bottom: -18%;
+            width: 88%;
+            height: 48%;
 
             transform: translateX(-50%);
 
-            width: 85%;
-
-            height: 48%;
-
             border-radius: 50%;
 
-            background:
-
-                radial-gradient(
-                    ellipse,
-                    rgba(49,220,120,0.16),
-                    transparent 67%
-                );
-
-            filter: blur(14px);
-
             pointer-events: none;
+
+            z-index: 0;
+
+            border:
+                1px solid
+                rgba(90,220,140,0.13);
+
+            box-shadow:
+
+                0 0 80px
+                rgba(40,190,100,0.10),
+
+                inset 0 0 70px
+                rgba(40,190,100,0.08);
 
         }
 
 
         /* =====================================================
-           ANA BAŞLIK
+           321 LOGO
         ====================================================== */
 
         #home-screen h1 {
 
-            display: block !important;
-
-            position: relative;
+            position: absolute !important;
 
             z-index: 5;
 
-            margin: 0;
+            top: 9vh !important;
+            left: 50% !important;
+
+            transform:
+                translateX(-50%)
+                none !important;
+
+            width: auto !important;
+            max-width: none !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            display: block !important;
 
             font-size:
-                clamp(100px, 15vw, 225px);
+                clamp(
+                    120px,
+                    16vw,
+                    250px
+                ) !important;
 
-            line-height: 0.82;
+            line-height: 0.78 !important;
 
-            font-weight: 1000;
+            font-weight: 1000 !important;
 
             font-style: italic;
 
-            letter-spacing: -9px;
+            letter-spacing: -0.065em;
+
+            white-space: nowrap;
+
+            text-align: center;
 
             background:
 
                 linear-gradient(
                     90deg,
                     #ffffff 0%,
-                    #ffffff 35%,
-                    #35dc82 45%,
-                    #35dc82 57%,
-                    #ffffff 67%,
+                    #e8ecea 28%,
+                    #42e889 44%,
+                    #17c967 56%,
+                    #eef2ef 72%,
                     #ffffff 100%
                 );
 
@@ -159,98 +255,191 @@
 
             -webkit-text-fill-color: transparent;
 
-            text-shadow:
+            filter:
+                drop-shadow(
+                    0 15px 15px
+                    rgba(0,0,0,0.65)
+                )
 
-                0 10px 35px
-                rgba(0,0,0,0.75);
-
-        }
-
-
-        #home-screen .home-subtitle {
-
-            display: block !important;
-
-            position: relative;
-
-            z-index: 5;
-
-            margin: 25px 0 0;
-
-            font-size: 15px;
-
-            font-weight: 800;
-
-            letter-spacing: 4px;
-
-            text-transform: uppercase;
-
-            color:
-                rgba(255,255,255,0.58);
+                drop-shadow(
+                    0 0 18px
+                    rgba(48,220,120,0.18)
+                );
 
         }
 
 
         /* =====================================================
-           ANA SAYFA BUTONLARI
+           ALT BAŞLIK
         ====================================================== */
 
-        .home-buttons {
+        #home-screen .home-subtitle {
 
-            position: absolute;
+            position: absolute !important;
 
-            z-index: 10;
+            z-index: 5;
 
-            left: 50%;
+            top: 39vh !important;
+            left: 50% !important;
 
-            top: 72%;
+            transform:
+                translateX(-50%)
+                none !important;
 
-            transform: translateX(-50%);
+            width: max-content !important;
 
-            display: flex;
+            margin: 0 !important;
+            padding: 0 !important;
 
-            flex-direction: column;
+            display: flex !important;
 
             align-items: center;
+            justify-content: center;
 
-            gap: 13px;
+            gap: 22px;
 
-            width: min(430px, 82vw);
+            font-size:
+                clamp(
+                    11px,
+                    1vw,
+                    16px
+                ) !important;
+
+            line-height: 1;
+
+            font-weight: 900 !important;
+
+            letter-spacing:
+                clamp(
+                    2px,
+                    0.32vw,
+                    5px
+                );
+
+            color:
+                rgba(255,255,255,0.92) !important;
+
+            white-space: nowrap;
 
         }
 
 
+        #home-screen .home-subtitle::before,
+        #home-screen .home-subtitle::after {
+
+            content: "";
+
+            display: block;
+
+            width:
+                clamp(
+                    28px,
+                    3.5vw,
+                    65px
+                );
+
+            height: 2px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    #35df82
+                );
+
+            box-shadow:
+                0 0 7px
+                rgba(53,223,130,0.35);
+
+        }
+
+
+        #home-screen .home-subtitle::after {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #35df82,
+                    transparent
+                );
+
+        }
+
+
+        /* =====================================================
+           BUTON KONTEYNERİ
+        ====================================================== */
+
+        .home-buttons {
+
+            position: absolute !important;
+
+            z-index: 20;
+
+            top: 61vh !important;
+            left: 50% !important;
+
+            transform:
+                translateX(-50%)
+                none !important;
+
+            width:
+                clamp(
+                    360px,
+                    39vw,
+                    600px
+                ) !important;
+
+            max-width: 600px !important;
+            min-width: 280px !important;
+
+            height: auto !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            display: flex !important;
+
+            flex-direction: column !important;
+
+            align-items: center !important;
+
+            justify-content: flex-start !important;
+
+            gap: 18px !important;
+
+        }
+
+
+        /* =====================================================
+           BUTONLAR
+        ====================================================== */
+
         #start-button,
         #daily-challenge-button {
 
-            position: relative;
+            position: relative !important;
 
-            width: 100%;
+            width: 100% !important;
 
-            height: 62px;
+            max-width: none !important;
+            min-width: 0 !important;
 
-            padding: 0 28px;
+            margin: 0 !important;
 
-            display: flex;
+            display: flex !important;
 
-            align-items: center;
+            align-items: center !important;
 
-            justify-content: center;
+            justify-content: center !important;
 
-            gap: 13px;
-
-            border-radius: 13px;
-
-            font-size: 17px;
-
-            font-weight: 900;
-
-            letter-spacing: 1.5px;
+            box-sizing: border-box !important;
 
             cursor: pointer;
 
-            transition:
+            font-family: inherit;
 
+            transition:
                 transform 0.2s ease,
                 filter 0.2s ease,
                 box-shadow 0.2s ease;
@@ -258,32 +447,72 @@
         }
 
 
+        /* =====================================================
+           OYUNA BAŞLA
+        ====================================================== */
+
         #start-button {
+
+            height:
+                clamp(
+                    72px,
+                    7vh,
+                    100px
+                ) !important;
+
+            padding:
+                0 40px !important;
+
+            border-radius:
+                clamp(
+                    12px,
+                    1vw,
+                    18px
+                ) !important;
+
+            gap: 18px !important;
+
+            font-size:
+                clamp(
+                    19px,
+                    1.45vw,
+                    27px
+                ) !important;
+
+            font-weight: 1000 !important;
+
+            letter-spacing:
+                clamp(
+                    1px,
+                    0.18vw,
+                    3px
+                ) !important;
+
+            color: #ffffff !important;
 
             background:
 
                 linear-gradient(
                     135deg,
-                    #239c5a,
-                    #31d979
+                    #159d56 0%,
+                    #25c96c 45%,
+                    #37e881 100%
                 ) !important;
-
-            color: #fff !important;
 
             border:
                 1px solid
-                rgba(113,255,164,0.7) !important;
+                rgba(113,255,164,0.85) !important;
 
             box-shadow:
 
-                0 12px 35px
+                0 14px 35px
                 rgba(0,0,0,0.45),
 
-                0 0 25px
-                rgba(46,204,113,0.22),
+                0 0 30px
+                rgba(46,204,113,0.25),
 
                 inset 0 1px 0
-                rgba(255,255,255,0.25);
+                rgba(255,255,255,0.32);
 
         }
 
@@ -292,31 +521,86 @@
 
             content: "▶";
 
-            font-size: 18px;
+            display: inline-block;
+
+            color: #ffffff;
+
+            font-size:
+                clamp(
+                    20px,
+                    1.5vw,
+                    28px
+                );
+
+            line-height: 1;
 
         }
 
 
+        /* =====================================================
+           GÜNLÜK CHALLENGE
+        ====================================================== */
+
         #daily-challenge-button {
 
-            background:
+            width:
+                82% !important;
 
-                rgba(255,255,255,0.08) !important;
+            height:
+                clamp(
+                    58px,
+                    5.8vh,
+                    78px
+                ) !important;
+
+            padding:
+                0 30px !important;
+
+            border-radius:
+                clamp(
+                    10px,
+                    0.9vw,
+                    15px
+                ) !important;
+
+            gap: 15px !important;
+
+            font-size:
+                clamp(
+                    15px,
+                    1.05vw,
+                    20px
+                ) !important;
+
+            font-weight: 900 !important;
+
+            letter-spacing:
+                clamp(
+                    1px,
+                    0.12vw,
+                    2px
+                ) !important;
 
             color: #ffffff !important;
 
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(18,51,37,0.96),
+                    rgba(10,32,23,0.96)
+                ) !important;
+
             border:
                 1px solid
-                rgba(255,255,255,0.20) !important;
-
-            backdrop-filter: blur(10px);
-
-            -webkit-backdrop-filter: blur(10px);
+                rgba(53,223,130,0.55) !important;
 
             box-shadow:
 
                 0 10px 30px
-                rgba(0,0,0,0.30);
+                rgba(0,0,0,0.32),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.08);
 
         }
 
@@ -325,19 +609,32 @@
 
             content: "★";
 
+            display: inline-block;
+
             color: #35df82;
 
-            font-size: 19px;
+            font-size:
+                clamp(
+                    18px,
+                    1.3vw,
+                    25px
+                );
 
         }
 
 
+        /* =====================================================
+           BUTON HOVER
+        ====================================================== */
+
         #start-button:hover,
         #daily-challenge-button:hover {
 
-            transform: translateY(-3px);
+            transform:
+                translateY(-3px) !important;
 
-            filter: brightness(1.08);
+            filter:
+                brightness(1.08);
 
         }
 
@@ -345,42 +642,71 @@
         #start-button:active,
         #daily-challenge-button:active {
 
-            transform: scale(0.98);
+            transform:
+                translateY(1px)
+                scale(0.99) !important;
+
+        }
+
+
+        #start-button:disabled,
+        #daily-challenge-button:disabled {
+
+            cursor: default;
+
+            opacity: 0.6;
 
         }
 
 
         /* =====================================================
-           GÜNLÜK CHALLENGE BİLGİSİ
+           DAILY STATUS
         ====================================================== */
 
         #daily-status {
 
-            position: relative;
+            position: relative !important;
 
-            z-index: 10;
+            z-index: 25;
 
-            margin-top: 8px;
+            width: 100%;
 
-            min-height: 18px;
+            min-height: 20px;
 
-            font-size: 11px;
+            margin:
+                -3px 0 0 !important;
 
-            font-weight: 700;
-
-            letter-spacing: 1px;
-
-            color:
-                rgba(255,255,255,0.48);
+            padding: 0;
 
             text-align: center;
+
+            font-size:
+                clamp(
+                    9px,
+                    0.65vw,
+                    13px
+                ) !important;
+
+            line-height: 1.2;
+
+            font-weight: 800 !important;
+
+            letter-spacing:
+                clamp(
+                    0.5px,
+                    0.08vw,
+                    1.5px
+                );
+
+            color:
+                rgba(255,255,255,0.45);
 
         }
 
 
         #daily-status.completed {
 
-            color: #35df82;
+            color: #35df82 !important;
 
         }
 
@@ -391,7 +717,27 @@
 
         #game-content {
 
-            position: relative;
+            position: fixed !important;
+
+            inset: 0 !important;
+
+            width: 100vw !important;
+            height: 100vh !important;
+
+            min-width: 100vw !important;
+            min-height: 100vh !important;
+
+            max-width: none !important;
+            max-height: none !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+
+            transform: none !important;
+            scale: 1 !important;
+            zoom: 1 !important;
+
+            overflow: hidden !important;
 
         }
 
@@ -403,7 +749,6 @@
         #countdown {
 
             width: 180px !important;
-
             height: 150px !important;
 
             background: transparent !important;
@@ -491,7 +836,7 @@
 
             font-weight: 1000;
 
-            color: #fff;
+            color: #ffffff;
 
             text-shadow:
                 0 4px 10px rgba(0,0,0,0.7);
@@ -605,6 +950,8 @@
 
             overflow: hidden;
 
+            z-index: 50;
+
         }
 
 
@@ -620,7 +967,7 @@
             background:
                 rgba(13,45,31,0.98) !important;
 
-            color: #fff;
+            color: #ffffff;
 
             padding: 13px 15px;
 
@@ -629,6 +976,8 @@
             border-bottom:
                 1px solid
                 rgba(255,255,255,0.07);
+
+            cursor: pointer;
 
         }
 
@@ -661,6 +1010,8 @@
             font-size: 15px;
 
             font-weight: 1000;
+
+            cursor: pointer;
 
         }
 
@@ -837,6 +1188,8 @@
 
             font-weight: 1000;
 
+            cursor: pointer;
+
         }
 
 
@@ -848,37 +1201,55 @@
 
             #home-screen h1 {
 
-                font-size: 26vw;
+                top: 12vh !important;
 
-                letter-spacing: -3px;
+                font-size: 27vw !important;
+
+                letter-spacing: -0.06em;
 
             }
 
 
             #home-screen .home-subtitle {
 
-                font-size: 10px;
+                top: 32vh !important;
+
+                font-size: 10px !important;
 
                 letter-spacing: 2.5px;
+
+                gap: 10px;
 
             }
 
 
             .home-buttons {
 
-                top: 70%;
+                top: 58vh !important;
 
-                width: 76vw;
+                width: 82vw !important;
+
+                min-width: 0 !important;
 
             }
 
 
-            #start-button,
+            #start-button {
+
+                height: 62px !important;
+
+                font-size: 17px !important;
+
+            }
+
+
             #daily-challenge-button {
 
-                height: 55px;
+                width: 86% !important;
 
-                font-size: 14px;
+                height: 54px !important;
+
+                font-size: 13px !important;
 
             }
 
@@ -954,49 +1325,35 @@
         }
 
 
-        @media (max-width: 400px) {
+        /* =====================================================
+           KISA EKRAN
+        ====================================================== */
+
+        @media (
+            max-height: 700px
+        ) and (
+            min-width: 701px
+        ) {
 
             #home-screen h1 {
 
-                font-size: 25vw;
+                top: 5vh !important;
+
+                font-size: 20vh !important;
+
+            }
+
+
+            #home-screen .home-subtitle {
+
+                top: 29vh !important;
 
             }
 
 
             .home-buttons {
 
-                width: 78vw;
-
-            }
-
-        }
-
-
-        @media
-        (max-height: 600px)
-        and
-        (orientation: landscape) {
-
-            #home-screen h1 {
-
-                font-size: 20vh;
-
-            }
-
-
-            .home-buttons {
-
-                top: 72%;
-
-                flex-direction: row;
-
-            }
-
-
-            #start-button,
-            #daily-challenge-button {
-
-                height: 50px;
+                top: 57vh !important;
 
             }
 
@@ -1018,6 +1375,7 @@
 
         <h1>321</h1>
 
+
         <p class="home-subtitle">
             ORTAK FUTBOLCUYU BUL
         </p>
@@ -1026,6 +1384,7 @@
         <div class="home-buttons">
 
             <button
+                type="button"
                 id="start-button"
                 aria-label="Oyuna Başla"
             >
@@ -1034,6 +1393,7 @@
 
 
             <button
+                type="button"
                 id="daily-challenge-button"
                 aria-label="Günlük Challenge"
             >
@@ -1058,9 +1418,11 @@
         <header class="game-header">
 
             <h1>
+
                 <span id="game-mode-title">
                     ORTAK FUTBOLCU
                 </span>
+
             </h1>
 
 
@@ -1088,7 +1450,6 @@
 
         <div class="game-area">
 
-
             <div
                 class="team"
                 id="team1"
@@ -1104,6 +1465,7 @@
                     >
 
                 </div>
+
 
                 <span
                     class="team-name"
@@ -1139,6 +1501,7 @@
                     >
 
                 </div>
+
 
                 <span
                     class="team-name"
@@ -1176,7 +1539,10 @@
             </div>
 
 
-            <button id="answerButton">
+            <button
+                type="button"
+                id="answerButton"
+            >
                 CEVAPLA
             </button>
 
@@ -1228,7 +1594,10 @@
             </div>
 
 
-            <button id="restart-button">
+            <button
+                type="button"
+                id="restart-button"
+            >
                 TEKRAR OYNA
             </button>
 

@@ -93,7 +93,7 @@ const teamLogos = {
 
 
 // =====================================================
-// PLAYERPOOL
+// PLAYERPOOL KONTROLÜ
 // =====================================================
 
 if (
@@ -103,7 +103,7 @@ if (
 ) {
 
     throw new Error(
-        "playerPool bulunamadı. players.js önce yüklenmelidir."
+        "playerPool bulunamadı. players.js dosyasının script.js'den önce yüklendiğinden emin ol."
     );
 
 }
@@ -150,6 +150,7 @@ function findCommonPlayers(teamA, teamB) {
 
         }
 
+
         if (
             playerData.teams.includes(teamA) &&
             playerData.teams.includes(teamB)
@@ -172,17 +173,31 @@ function findCommonPlayers(teamA, teamB) {
 
 const validTeamPairs = [];
 
-for (let i = 0; i < teams.length; i++) {
+for (
+    let i = 0;
+    i < teams.length;
+    i++
+) {
 
-    for (let j = i + 1; j < teams.length; j++) {
+    for (
+        let j = i + 1;
+        j < teams.length;
+        j++
+    ) {
 
         const teamA = teams[i];
         const teamB = teams[j];
 
         const commonPlayers =
-            findCommonPlayers(teamA, teamB);
+            findCommonPlayers(
+                teamA,
+                teamB
+            );
 
-        if (commonPlayers.length > 0) {
+
+        if (
+            commonPlayers.length > 0
+        ) {
 
             validTeamPairs.push({
 
@@ -200,11 +215,13 @@ for (let i = 0; i < teams.length; i++) {
 
 
 // =====================================================
-// HTML
+// HTML ELEMANLARI
 // =====================================================
 
 const startButton =
-    document.getElementById("start-button");
+    document.getElementById(
+        "start-button"
+    );
 
 const dailyChallengeButton =
     document.getElementById(
@@ -217,82 +234,211 @@ const dailyStatus =
     );
 
 const homeScreen =
-    document.getElementById("home-screen");
+    document.getElementById(
+        "home-screen"
+    );
 
 const gameContent =
-    document.getElementById("game-content");
+    document.getElementById(
+        "game-content"
+    );
 
 const countdown =
-    document.getElementById("countdown");
+    document.getElementById(
+        "countdown"
+    );
 
 const vsText =
-    document.getElementById("vs-text");
+    document.getElementById(
+        "vs-text"
+    );
 
 const team1 =
-    document.getElementById("team1");
+    document.getElementById(
+        "team1"
+    );
 
 const team2 =
-    document.getElementById("team2");
+    document.getElementById(
+        "team2"
+    );
 
 const team1Logo =
-    document.getElementById("team1-logo");
+    document.getElementById(
+        "team1-logo"
+    );
 
 const team2Logo =
-    document.getElementById("team2-logo");
+    document.getElementById(
+        "team2-logo"
+    );
 
 const team1Name =
-    document.getElementById("team1-name");
+    document.getElementById(
+        "team1-name"
+    );
 
 const team2Name =
-    document.getElementById("team2-name");
+    document.getElementById(
+        "team2-name"
+    );
 
 const answerInput =
-    document.getElementById("answerInput");
+    document.getElementById(
+        "answerInput"
+    );
 
 const answerButton =
-    document.getElementById("answerButton");
+    document.getElementById(
+        "answerButton"
+    );
 
 const scoreText =
-    document.getElementById("score");
+    document.getElementById(
+        "score"
+    );
 
 const result =
-    document.getElementById("result");
+    document.getElementById(
+        "result"
+    );
 
 const timerBar =
-    document.getElementById("timer-bar");
+    document.getElementById(
+        "timer-bar"
+    );
 
 const gameArea =
-    document.querySelector(".game-area");
+    document.querySelector(
+        ".game-area"
+    );
 
 const answerArea =
-    document.querySelector(".answer-area");
+    document.querySelector(
+        ".answer-area"
+    );
 
 const timerContainer =
-    document.querySelector(".timer-container");
+    document.querySelector(
+        ".timer-container"
+    );
 
 const gameOver =
-    document.getElementById("game-over");
+    document.getElementById(
+        "game-over"
+    );
 
 const finalScore =
-    document.getElementById("final-score");
+    document.getElementById(
+        "final-score"
+    );
 
 const finalMessage =
-    document.getElementById("final-message");
+    document.getElementById(
+        "final-message"
+    );
 
 const restartButton =
-    document.getElementById("restart-button");
+    document.getElementById(
+        "restart-button"
+    );
 
 const questionNumberText =
-    document.getElementById("question-number");
+    document.getElementById(
+        "question-number"
+    );
 
 const playerSuggestions =
-    document.getElementById("player-suggestions");
+    document.getElementById(
+        "player-suggestions"
+    );
 
 const gameModeTitle =
-    document.getElementById("game-mode-title");
+    document.getElementById(
+        "game-mode-title"
+    );
 
 const gameOverTitle =
-    document.getElementById("game-over-title");
+    document.getElementById(
+        "game-over-title"
+    );
+
+
+// =====================================================
+// ELEMENT KONTROLÜ
+// =====================================================
+
+const requiredElements = [
+
+    startButton,
+    dailyChallengeButton,
+    dailyStatus,
+    homeScreen,
+    gameContent,
+    countdown,
+    vsText,
+    team1,
+    team2,
+    team1Logo,
+    team2Logo,
+    team1Name,
+    team2Name,
+    answerInput,
+    answerButton,
+    scoreText,
+    result,
+    timerBar,
+    gameArea,
+    answerArea,
+    timerContainer,
+    gameOver,
+    finalScore,
+    finalMessage,
+    restartButton,
+    questionNumberText,
+    playerSuggestions,
+    gameModeTitle,
+    gameOverTitle
+
+];
+
+
+if (
+    requiredElements.some(
+        element => !element
+    )
+) {
+
+    console.error(
+        "3-2-1: HTML elemanlarından biri bulunamadı."
+    );
+
+}
+
+
+// =====================================================
+// GÖRÜNÜRLÜK YARDIMCISI
+// =====================================================
+
+function setDisplay(
+    element,
+    value
+) {
+
+    if (!element) {
+
+        return;
+
+    }
+
+
+    element.style.setProperty(
+        "display",
+        value,
+        "important"
+    );
+
+}
 
 
 // =====================================================
@@ -357,7 +503,13 @@ function getTodayKey() {
             now.getDate()
         ).padStart(2, "0");
 
-    return `${year}-${month}-${day}`;
+    return (
+        year +
+        "-" +
+        month +
+        "-" +
+        day
+    );
 
 }
 
@@ -397,22 +549,24 @@ function getDailySeed() {
 
 
 // =====================================================
-// SEEDLİ RANDOM
+// SEED RANDOM
 // =====================================================
 
 function seededRandom(seed) {
 
-    let value =
+    const value =
         Math.sin(seed) * 10000;
 
-    return value -
-        Math.floor(value);
+    return (
+        value -
+        Math.floor(value)
+    );
 
 }
 
 
 // =====================================================
-// GÜNLÜK SORULARI OLUŞTUR
+// GÜNLÜK SORULAR
 // =====================================================
 
 function generateDailyQuestions() {
@@ -434,11 +588,6 @@ function generateDailyQuestions() {
         getDailySeed();
 
 
-    /*
-       Aynı tarih + aynı playerPool
-       = aynı sıralama
-    */
-
     for (
         let i = pool.length - 1;
         i > 0;
@@ -449,6 +598,7 @@ function generateDailyQuestions() {
             seededRandom(
                 seed + i * 7919
             );
+
 
         const j =
             Math.floor(
@@ -495,7 +645,7 @@ function isDailyCompleted() {
 
 
 // =====================================================
-// GÜNLÜK DURUMU GÖSTER
+// GÜNLÜK DURUM
 // =====================================================
 
 function updateDailyStatus() {
@@ -507,7 +657,9 @@ function updateDailyStatus() {
     }
 
 
-    if (isDailyCompleted()) {
+    if (
+        isDailyCompleted()
+    ) {
 
         dailyStatus.textContent =
             "✓ BUGÜNKÜ CHALLENGE TAMAMLANDI";
@@ -532,29 +684,74 @@ function updateDailyStatus() {
 
 
 // =====================================================
-// BAŞLANGIÇ DURUMU
+// ANA SAYFA BAŞLANGIÇ DURUMU
 // =====================================================
 
-if (homeScreen) {
+function showHomeScreen() {
 
-    homeScreen.style.display =
-        "flex";
+    setDisplay(
+        homeScreen,
+        "flex"
+    );
+
+    setDisplay(
+        gameContent,
+        "none"
+    );
+
+    setDisplay(
+        gameOver,
+        "none"
+    );
+
+}
+
+
+function showGameScreen() {
+
+    setDisplay(
+        homeScreen,
+        "none"
+    );
+
+    setDisplay(
+        gameContent,
+        "block"
+    );
+
+    setDisplay(
+        gameOver,
+        "none"
+    );
 
 }
 
-if (gameContent) {
 
-    gameContent.style.display =
-        "none";
+function showGameOverScreen() {
+
+    setDisplay(
+        homeScreen,
+        "none"
+    );
+
+    setDisplay(
+        gameContent,
+        "none"
+    );
+
+    setDisplay(
+        gameOver,
+        "flex"
+    );
 
 }
 
-if (gameOver) {
 
-    gameOver.style.display =
-        "none";
+// =====================================================
+// BAŞLANGIÇ
+// =====================================================
 
-}
+showHomeScreen();
 
 updateDailyStatus();
 
@@ -625,17 +822,20 @@ function normalizeText(text) {
     let value =
         String(text || "")
             .trim()
-            .toLocaleLowerCase("tr-TR");
+            .toLocaleLowerCase(
+                "tr-TR"
+            );
 
 
-    value = value
-        .replace(/ı/g, "i")
-        .replace(/İ/g, "i")
-        .replace(/ğ/g, "g")
-        .replace(/ü/g, "u")
-        .replace(/ş/g, "s")
-        .replace(/ö/g, "o")
-        .replace(/ç/g, "c");
+    value =
+        value
+            .replace(/ı/g, "i")
+            .replace(/İ/g, "i")
+            .replace(/ğ/g, "g")
+            .replace(/ü/g, "u")
+            .replace(/ş/g, "s")
+            .replace(/ö/g, "o")
+            .replace(/ç/g, "c");
 
 
     value =
@@ -661,13 +861,15 @@ function normalizeText(text) {
 // OYUNCU KELİMELERİ
 // =====================================================
 
-function getPlayerNameWords(playerName) {
+function getPlayerNameWords(
+    playerName
+) {
 
     return normalizeText(
         playerName
     )
-    .split(" ")
-    .filter(Boolean);
+        .split(" ")
+        .filter(Boolean);
 
 }
 
@@ -685,8 +887,8 @@ function getQuestionKey(
         teamA,
         teamB
     ]
-    .sort()
-    .join("___");
+        .sort()
+        .join("___");
 
 }
 
@@ -697,7 +899,9 @@ function getQuestionKey(
 
 function clearPlayerSuggestions() {
 
-    if (playerSuggestions) {
+    if (
+        playerSuggestions
+    ) {
 
         playerSuggestions.innerHTML =
             "";
@@ -748,7 +952,9 @@ function showPlayerSuggestions() {
     }
 
 
-    if (answerInput.disabled) {
+    if (
+        answerInput.disabled
+    ) {
 
         clearPlayerSuggestions();
 
@@ -776,7 +982,9 @@ function showPlayerSuggestions() {
 
     const suggestionPool =
         new Set(
-            Object.keys(playerPool)
+            Object.keys(
+                playerPool
+            )
         );
 
 
@@ -793,13 +1001,13 @@ function showPlayerSuggestions() {
 
     const matchingPlayers =
         [...suggestionPool]
-        .filter(
-            playerName =>
-                playerNameStartsWithSearch(
-                    playerName,
-                    searchText
-                )
-        );
+            .filter(
+                playerName =>
+                    playerNameStartsWithSearch(
+                        playerName,
+                        searchText
+                    )
+            );
 
 
     clearPlayerSuggestions();
@@ -947,10 +1155,12 @@ function clearResult() {
 
 
 // =====================================================
-// 3 - 2 - 1
+// 3 - 2 - 1 GERİ SAYIM
 // =====================================================
 
-function startCountdown(version) {
+function startCountdown(
+    version
+) {
 
     return new Promise(
         resolve => {
@@ -986,7 +1196,9 @@ function startCountdown(version) {
                 }
 
 
-                if (count > 0) {
+                if (
+                    count > 0
+                ) {
 
                     countdown.textContent =
                         count;
@@ -1105,7 +1317,8 @@ async function newQuestion() {
 
 
     if (
-        questionNumber >= totalQuestions
+        questionNumber >=
+        totalQuestions
     ) {
 
         endGame();
@@ -1119,7 +1332,7 @@ async function newQuestion() {
 
 
     // =================================================
-    // GÜNLÜK MOD
+    // GÜNLÜK
     // =================================================
 
     if (
@@ -1147,7 +1360,7 @@ async function newQuestion() {
 
 
     // =================================================
-    // NORMAL MOD
+    // NORMAL
     // =================================================
 
     else {
@@ -1163,8 +1376,10 @@ async function newQuestion() {
                         );
 
 
-                    return !usedQuestions.includes(
-                        key
+                    return (
+                        !usedQuestions.includes(
+                            key
+                        )
                     );
 
                 }
@@ -1274,7 +1489,8 @@ async function newQuestion() {
 
 
     if (
-        currentVersion !== gameVersion
+        currentVersion !==
+        gameVersion
     ) {
 
         return;
@@ -1303,7 +1519,9 @@ async function newQuestion() {
 // TIMER
 // =====================================================
 
-function startTimer(version) {
+function startTimer(
+    version
+) {
 
     clearInterval(timer);
 
@@ -1321,7 +1539,8 @@ function startTimer(version) {
             () => {
 
                 if (
-                    version !== gameVersion
+                    version !==
+                    gameVersion
                 ) {
 
                     clearInterval(timer);
@@ -1379,7 +1598,8 @@ function startTimer(version) {
                         () => {
 
                             if (
-                                version === gameVersion
+                                version ===
+                                gameVersion
                             ) {
 
                                 newQuestion();
@@ -1400,14 +1620,16 @@ function startTimer(version) {
 
 
 // =====================================================
-// CEVAP KARŞILAŞTIRMA
+// CEVAP NORMALLEŞTİRME
 // =====================================================
 
 function normalizeAnswerForComparison(
     text
 ) {
 
-    return normalizeText(text)
+    return normalizeText(
+        text
+    )
         .replace(
             /\s+/g,
             " "
@@ -1416,6 +1638,10 @@ function normalizeAnswerForComparison(
 
 }
 
+
+// =====================================================
+// CEVAP DOĞRULAMA
+// =====================================================
 
 function isPlayerAnswerCorrect(
     userAnswer,
@@ -1501,10 +1727,6 @@ function checkAnswer() {
         );
 
 
-    // =================================================
-    // DOĞRU
-    // =================================================
-
     if (correctPlayer) {
 
         score += 10;
@@ -1553,10 +1775,6 @@ function checkAnswer() {
     }
 
 
-    // =================================================
-    // YANLIŞ
-    // =================================================
-
     showResult(
         "wrong",
         "✕  YANLIŞ!"
@@ -1566,14 +1784,22 @@ function checkAnswer() {
 
 
 // =====================================================
-// CEVAPLA
+// CEVAPLA BUTONU
 // =====================================================
 
 if (answerButton) {
 
     answerButton.addEventListener(
         "click",
-        checkAnswer
+        function(event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            checkAnswer();
+
+        }
     );
 
 }
@@ -1628,14 +1854,28 @@ function endGame() {
     clearPlayerSuggestions();
 
 
-    gameArea.style.display =
-        "none";
+    if (gameArea) {
 
-    answerArea.style.display =
-        "none";
+        gameArea.style.display =
+            "none";
 
-    timerContainer.style.display =
-        "none";
+    }
+
+
+    if (answerArea) {
+
+        answerArea.style.display =
+            "none";
+
+    }
+
+
+    if (timerContainer) {
+
+        timerContainer.style.display =
+            "none";
+
+    }
 
 
     team1Name.textContent =
@@ -1705,8 +1945,7 @@ function endGame() {
     }
 
 
-    gameOver.style.display =
-        "flex";
+    showGameOverScreen();
 
 }
 
@@ -1726,26 +1965,20 @@ function resetGame() {
     score =
         0;
 
-
     questionNumber =
         0;
-
 
     usedQuestions =
         [];
 
-
     currentQuestionPlayers =
         [];
-
 
     questionAnswered =
         false;
 
-
     timeLeft =
         questionTime;
-
 
     dailyQuestionIndex =
         0;
@@ -1763,10 +1996,8 @@ function resetGame() {
     answerInput.value =
         "";
 
-
     answerInput.disabled =
         true;
-
 
     answerButton.disabled =
         true;
@@ -1781,20 +2012,34 @@ function resetGame() {
         "100%";
 
 
-    gameOver.style.display =
-        "none";
+    setDisplay(
+        gameOver,
+        "none"
+    );
 
 
-    gameArea.style.display =
-        "flex";
+    if (gameArea) {
+
+        gameArea.style.display =
+            "flex";
+
+    }
 
 
-    answerArea.style.display =
-        "flex";
+    if (answerArea) {
+
+        answerArea.style.display =
+            "flex";
+
+    }
 
 
-    timerContainer.style.display =
-        "block";
+    if (timerContainer) {
+
+        timerContainer.style.display =
+            "block";
+
+    }
 
 
     team1Name.textContent =
@@ -1834,38 +2079,43 @@ function resetGame() {
 
 
 // =====================================================
-// NORMAL OYUN
+// NORMAL OYUNU BAŞLAT
+// =====================================================
+
+function startNormalGame() {
+
+    console.log(
+        "OYUNA BAŞLA tıklandı."
+    );
+
+
+    currentGameMode =
+        "normal";
+
+
+    gameModeTitle.textContent =
+        "ORTAK FUTBOLCU";
+
+
+    showGameScreen();
+
+
+    resetGame();
+
+
+    newQuestion();
+
+}
+
+
+// =====================================================
+// NORMAL OYUN BUTONU
 // =====================================================
 
 if (startButton) {
 
-    startButton.addEventListener(
-        "click",
-        () => {
-
-            currentGameMode =
-                "normal";
-
-
-            gameModeTitle.textContent =
-                "ORTAK FUTBOLCU";
-
-
-            homeScreen.style.display =
-                "none";
-
-
-            gameContent.style.display =
-                "block";
-
-
-            resetGame();
-
-
-            newQuestion();
-
-        }
-    );
+    startButton.onclick =
+        startNormalGame;
 
 }
 
@@ -1874,72 +2124,68 @@ if (startButton) {
 // GÜNLÜK CHALLENGE
 // =====================================================
 
-if (dailyChallengeButton) {
+function startDailyChallenge() {
 
-    dailyChallengeButton.addEventListener(
-        "click",
-        () => {
+    if (
+        isDailyCompleted()
+    ) {
 
-            if (
-                isDailyCompleted()
-            ) {
+        alert(
+            "Bugünkü Günlük Challenge'ı zaten tamamladın. Yarın tekrar gel!"
+        );
 
-                showResult;
+        return;
 
-                alert(
-                    "Bugünkü Günlük Challenge'ı zaten tamamladın. Yarın tekrar gel!"
-                );
-
-                return;
-
-            }
+    }
 
 
-            dailyQuestions =
-                generateDailyQuestions();
+    dailyQuestions =
+        generateDailyQuestions();
 
 
-            if (
-                dailyQuestions.length <
-                totalQuestions
-            ) {
+    if (
+        dailyQuestions.length <
+        totalQuestions
+    ) {
 
-                alert(
-                    "Günlük Challenge için yeterli soru bulunamadı."
-                );
+        alert(
+            "Günlük Challenge için yeterli soru bulunamadı."
+        );
 
-                return;
+        return;
 
-            }
-
-
-            currentGameMode =
-                "daily";
+    }
 
 
-            dailyQuestionIndex =
-                0;
+    currentGameMode =
+        "daily";
 
 
-            gameModeTitle.textContent =
-                "GÜNLÜK CHALLENGE";
+    dailyQuestionIndex =
+        0;
 
 
-            homeScreen.style.display =
-                "none";
+    gameModeTitle.textContent =
+        "GÜNLÜK CHALLENGE";
 
 
-            gameContent.style.display =
-                "block";
+    showGameScreen();
 
 
-            resetGame();
+    resetGame();
 
 
-            newQuestion();
+    newQuestion();
 
-        }
-    );
+}
+
+
+if (
+    dailyChallengeButton
+) {
+
+    dailyChallengeButton.onclick =
+        startDailyChallenge;
 
 }
 
@@ -1950,28 +2196,15 @@ if (dailyChallengeButton) {
 
 if (restartButton) {
 
-    restartButton.addEventListener(
-        "click",
-        () => {
-
-            /*
-               Günlük challenge bittiyse
-               tekrar oynatılmıyor.
-            */
+    restartButton.onclick =
+        function() {
 
             if (
                 currentGameMode === "daily" &&
                 isDailyCompleted()
             ) {
 
-                gameOver.style.display =
-                    "none";
-
-                gameContent.style.display =
-                    "none";
-
-                homeScreen.style.display =
-                    "flex";
+                showHomeScreen();
 
                 updateDailyStatus();
 
@@ -1980,14 +2213,39 @@ if (restartButton) {
             }
 
 
+            showGameScreen();
+
             resetGame();
 
             newQuestion();
 
-        }
-    );
+        };
 
 }
+
+
+// =====================================================
+// ESC İLE ANA SAYFAYA DÖNME
+// =====================================================
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (
+            event.key === "Escape" &&
+            gameContent &&
+            gameContent.style.display !== "none"
+        ) {
+
+            clearInterval(timer);
+
+            showHomeScreen();
+
+        }
+
+    }
+);
 
 
 // =====================================================
