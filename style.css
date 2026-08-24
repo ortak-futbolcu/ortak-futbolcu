@@ -2571,3 +2571,51 @@ and
 #game-over #home-button:active {
     transform: translateY(0);
 }
+/* =====================================================
+   OYUN SONU BUTONLARI
+   ===================================================== */
+
+#game-over .game-over-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Butonların bulunduğu alan */
+#game-over .game-over-box #restart-button,
+#game-over .game-over-box #home-button {
+    display: block !important;
+    width: 180px !important;
+    height: 44px !important;
+    margin: 6px auto !important;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Tekrar Oyna */
+#game-over .game-over-box #restart-button {
+    background: #ffffff;
+    color: #111111;
+    border: none;
+}
+
+/* Ana Sayfa */
+#game-over .game-over-box #home-button {
+    background: #1f8f5f !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
+/* Hover efektleri */
+#game-over .game-over-box #restart-button:hover {
+    transform: translateY(-1px);
+}
+
+#game-over .game-over-box #home-button:hover {
+    background: #27a86d !important;
+    transform: translateY(-1px);
+}
