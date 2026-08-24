@@ -7,10 +7,10 @@
 
     <meta
         name="viewport"
-        content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        content="width=device-width, initial-scale=1.0"
     >
 
-    <title>3-2-1 | Ortak Futbolcuyu Bul</title>
+    <title>3-2-1</title>
 
     <link
         rel="stylesheet"
@@ -20,107 +20,40 @@
     <style>
 
         /* =====================================================
-           GLOBAL RESET / VIEWPORT
-        ====================================================== */
-
-        html,
-        body {
-
-            width: 100%;
-            height: 100%;
-
-            margin: 0;
-            padding: 0;
-
-            overflow: hidden;
-
-            background: #020705;
-
-        }
-
-
-        body {
-
-            min-width: 100%;
-            min-height: 100%;
-
-        }
-
-
-        *,
-        *::before,
-        *::after {
-
-            box-sizing: border-box;
-
-        }
-
-
-        /* =====================================================
            ANA SAYFA
         ====================================================== */
 
         #home-screen {
 
-            position: fixed !important;
+            position: relative;
 
-            inset: 0 !important;
-
-            width: 100vw !important;
-            height: 100vh !important;
-
-            min-width: 100vw !important;
-            min-height: 100vh !important;
-
-            max-width: none !important;
-            max-height: none !important;
-
-            margin: 0 !important;
-            padding: 0 !important;
-
-            transform: none !important;
-            scale: 1 !important;
-            zoom: 1 !important;
-
-            display: flex !important;
-
-            flex-direction: column;
-
-            align-items: center;
+            background-image: none !important;
 
             background:
 
                 radial-gradient(
-                    ellipse at 50% 34%,
-                    rgba(35, 190, 100, 0.16) 0%,
-                    rgba(20, 110, 60, 0.08) 22%,
-                    transparent 48%
+                    ellipse at center 42%,
+                    rgba(45, 210, 115, 0.12),
+                    transparent 35%
                 ),
 
                 radial-gradient(
-                    ellipse at 50% 100%,
-                    rgba(25, 120, 65, 0.28) 0%,
-                    transparent 58%
+                    ellipse at center bottom,
+                    rgba(20, 100, 60, 0.20),
+                    transparent 55%
                 ),
 
                 linear-gradient(
                     180deg,
-                    #010504 0%,
-                    #03100a 45%,
-                    #061910 72%,
-                    #071d12 100%
+                    #020705 0%,
+                    #06140e 50%,
+                    #081b12 100%
                 ) !important;
 
-            overflow: hidden !important;
-
-            z-index: 1;
+            overflow: hidden;
 
         }
 
-
-        /* =====================================================
-           STADYUM ATMOSFERİ
-        ====================================================== */
 
         #home-screen::before {
 
@@ -130,31 +63,23 @@
 
             inset: 0;
 
-            pointer-events: none;
-
-            z-index: 0;
-
             background:
 
                 radial-gradient(
-                    ellipse at 8% 12%,
-                    rgba(100,255,170,0.22),
-                    transparent 14%
-                ),
-
-                radial-gradient(
-                    ellipse at 92% 12%,
-                    rgba(100,255,170,0.22),
-                    transparent 14%
+                    ellipse at 50% 18%,
+                    rgba(255,255,255,0.055),
+                    transparent 28%
                 ),
 
                 linear-gradient(
                     90deg,
-                    rgba(0,0,0,0.58) 0%,
-                    transparent 23%,
-                    transparent 77%,
-                    rgba(0,0,0,0.58) 100%
+                    rgba(0,0,0,0.48),
+                    transparent 24%,
+                    transparent 76%,
+                    rgba(0,0,0,0.48)
                 );
+
+            pointer-events: none;
 
         }
 
@@ -166,278 +91,175 @@
             position: absolute;
 
             left: 50%;
-            bottom: -13%;
 
-            width: 88%;
-            height: 48%;
+            bottom: -18%;
 
             transform: translateX(-50%);
 
+            width: 85%;
+
+            height: 48%;
+
             border-radius: 50%;
 
+            background:
+
+                radial-gradient(
+                    ellipse,
+                    rgba(49,220,120,0.16),
+                    transparent 67%
+                );
+
+            filter: blur(14px);
+
             pointer-events: none;
-
-            z-index: 0;
-
-            border:
-                1px solid
-                rgba(90,220,140,0.13);
-
-            box-shadow:
-
-                0 0 80px
-                rgba(40,190,100,0.10),
-
-                inset 0 0 70px
-                rgba(40,190,100,0.08);
 
         }
 
 
         /* =====================================================
-           321 LOGO
+           321
         ====================================================== */
 
         #home-screen h1 {
 
-            position: absolute !important;
+            display: block !important;
+
+            position: relative;
 
             z-index: 5;
 
-            top: 9vh !important;
-            left: 50% !important;
-
-            transform:
-                translateX(-50%)
-                none !important;
-
-            width: auto !important;
-            max-width: none !important;
-
-            margin: 0 !important;
-            padding: 0 !important;
-
-            display: block !important;
+            margin: 0;
 
             font-size:
-                clamp(
-                    120px,
-                    16vw,
-                    250px
-                ) !important;
+                clamp(100px, 15vw, 225px);
 
-            line-height: 0.78 !important;
+            line-height: 0.82;
 
-            font-weight: 1000 !important;
+            font-weight: 1000;
 
             font-style: italic;
 
-            letter-spacing: -0.065em;
-
-            white-space: nowrap;
-
-            text-align: center;
+            letter-spacing: -9px;
 
             background:
 
                 linear-gradient(
-                    90deg,
+                    100deg,
                     #ffffff 0%,
-                    #e8ecea 28%,
-                    #42e889 44%,
-                    #17c967 56%,
-                    #eef2ef 72%,
-                    #ffffff 100%
+                    #f4f7f5 22%,
+                    #5af39a 42%,
+                    #27d879 52%,
+                    #8af5b5 61%,
+                    #ffffff 78%,
+                    #f1f5f2 100%
                 );
 
             -webkit-background-clip: text;
+
             background-clip: text;
 
             -webkit-text-fill-color: transparent;
 
             filter:
                 drop-shadow(
-                    0 15px 15px
-                    rgba(0,0,0,0.65)
+                    0 8px 10px
+                    rgba(0,0,0,0.55)
                 )
-
                 drop-shadow(
                     0 0 18px
-                    rgba(48,220,120,0.18)
+                    rgba(49,220,120,0.18)
                 );
 
         }
 
-
-        /* =====================================================
-           ALT BAŞLIK
-        ====================================================== */
 
         #home-screen .home-subtitle {
 
-            position: absolute !important;
+            display: block !important;
+
+            position: relative;
 
             z-index: 5;
 
-            top: 39vh !important;
-            left: 50% !important;
+            margin: 25px 0 0;
 
-            transform:
-                translateX(-50%)
-                none !important;
+            font-size: 15px;
 
-            width: max-content !important;
+            font-weight: 800;
 
-            margin: 0 !important;
-            padding: 0 !important;
+            letter-spacing: 4px;
 
-            display: flex !important;
-
-            align-items: center;
-            justify-content: center;
-
-            gap: 22px;
-
-            font-size:
-                clamp(
-                    11px,
-                    1vw,
-                    16px
-                ) !important;
-
-            line-height: 1;
-
-            font-weight: 900 !important;
-
-            letter-spacing:
-                clamp(
-                    2px,
-                    0.32vw,
-                    5px
-                );
+            text-transform: uppercase;
 
             color:
-                rgba(255,255,255,0.92) !important;
+                rgba(235,255,243,0.72) !important;
 
-            white-space: nowrap;
-
-        }
-
-
-        #home-screen .home-subtitle::before,
-        #home-screen .home-subtitle::after {
-
-            content: "";
-
-            display: block;
-
-            width:
-                clamp(
-                    28px,
-                    3.5vw,
-                    65px
-                );
-
-            height: 2px;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    transparent,
-                    #35df82
-                );
-
-            box-shadow:
-                0 0 7px
-                rgba(53,223,130,0.35);
-
-        }
-
-
-        #home-screen .home-subtitle::after {
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #35df82,
-                    transparent
-                );
+            text-shadow:
+                0 2px 8px
+                rgba(0,0,0,0.65);
 
         }
 
 
         /* =====================================================
-           BUTON KONTEYNERİ
+           ANA SAYFA BUTONLARI
         ====================================================== */
 
         .home-buttons {
 
-            position: absolute !important;
+            position: absolute;
 
             z-index: 20;
 
-            top: 61vh !important;
-            left: 50% !important;
+            left: 50%;
 
-            transform:
-                translateX(-50%)
-                none !important;
+            top: 72%;
 
-            width:
-                clamp(
-                    360px,
-                    39vw,
-                    600px
-                ) !important;
+            transform: translateX(-50%);
 
-            max-width: 600px !important;
-            min-width: 280px !important;
+            display: flex;
 
-            height: auto !important;
+            flex-direction: column;
 
-            margin: 0 !important;
-            padding: 0 !important;
+            align-items: center;
 
-            display: flex !important;
+            gap: 13px;
 
-            flex-direction: column !important;
-
-            align-items: center !important;
-
-            justify-content: flex-start !important;
-
-            gap: 18px !important;
+            width: min(430px, 82vw);
 
         }
 
 
-        /* =====================================================
-           BUTONLAR
-        ====================================================== */
-
         #start-button,
-        #daily-challenge-button {
+        #daily-challenge-button,
+        #player-history-button {
 
-            position: relative !important;
+            position: relative;
 
-            width: 100% !important;
+            width: 100%;
 
-            max-width: none !important;
-            min-width: 0 !important;
+            height: 62px;
 
-            margin: 0 !important;
+            padding: 0 28px;
 
-            display: flex !important;
+            display: flex;
 
-            align-items: center !important;
+            align-items: center;
 
-            justify-content: center !important;
+            justify-content: center;
 
-            box-sizing: border-box !important;
+            gap: 13px;
+
+            border-radius: 13px;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
 
             cursor: pointer;
-
-            font-family: inherit;
 
             transition:
                 transform 0.2s ease,
@@ -447,72 +269,32 @@
         }
 
 
-        /* =====================================================
-           OYUNA BAŞLA
-        ====================================================== */
-
         #start-button {
-
-            height:
-                clamp(
-                    72px,
-                    7vh,
-                    100px
-                ) !important;
-
-            padding:
-                0 40px !important;
-
-            border-radius:
-                clamp(
-                    12px,
-                    1vw,
-                    18px
-                ) !important;
-
-            gap: 18px !important;
-
-            font-size:
-                clamp(
-                    19px,
-                    1.45vw,
-                    27px
-                ) !important;
-
-            font-weight: 1000 !important;
-
-            letter-spacing:
-                clamp(
-                    1px,
-                    0.18vw,
-                    3px
-                ) !important;
-
-            color: #ffffff !important;
 
             background:
 
                 linear-gradient(
                     135deg,
-                    #159d56 0%,
-                    #25c96c 45%,
-                    #37e881 100%
+                    #239c5a,
+                    #31d979
                 ) !important;
+
+            color: #fff !important;
 
             border:
                 1px solid
-                rgba(113,255,164,0.85) !important;
+                rgba(113,255,164,0.7) !important;
 
             box-shadow:
 
-                0 14px 35px
+                0 12px 35px
                 rgba(0,0,0,0.45),
 
-                0 0 30px
-                rgba(46,204,113,0.25),
+                0 0 25px
+                rgba(46,204,113,0.22),
 
                 inset 0 1px 0
-                rgba(255,255,255,0.32);
+                rgba(255,255,255,0.25);
 
         }
 
@@ -521,86 +303,29 @@
 
             content: "▶";
 
-            display: inline-block;
-
-            color: #ffffff;
-
-            font-size:
-                clamp(
-                    20px,
-                    1.5vw,
-                    28px
-                );
-
-            line-height: 1;
+            font-size: 18px;
 
         }
 
 
-        /* =====================================================
-           GÜNLÜK CHALLENGE
-        ====================================================== */
-
         #daily-challenge-button {
 
-            width:
-                82% !important;
-
-            height:
-                clamp(
-                    58px,
-                    5.8vh,
-                    78px
-                ) !important;
-
-            padding:
-                0 30px !important;
-
-            border-radius:
-                clamp(
-                    10px,
-                    0.9vw,
-                    15px
-                ) !important;
-
-            gap: 15px !important;
-
-            font-size:
-                clamp(
-                    15px,
-                    1.05vw,
-                    20px
-                ) !important;
-
-            font-weight: 900 !important;
-
-            letter-spacing:
-                clamp(
-                    1px,
-                    0.12vw,
-                    2px
-                ) !important;
+            background:
+                rgba(255,255,255,0.08) !important;
 
             color: #ffffff !important;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(18,51,37,0.96),
-                    rgba(10,32,23,0.96)
-                ) !important;
-
             border:
                 1px solid
-                rgba(53,223,130,0.55) !important;
+                rgba(255,255,255,0.20) !important;
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
 
             box-shadow:
-
                 0 10px 30px
-                rgba(0,0,0,0.32),
-
-                inset 0 1px 0
-                rgba(255,255,255,0.08);
+                rgba(0,0,0,0.30);
 
         }
 
@@ -609,29 +334,57 @@
 
             content: "★";
 
-            display: inline-block;
-
             color: #35df82;
 
-            font-size:
-                clamp(
-                    18px,
-                    1.3vw,
-                    25px
-                );
+            font-size: 19px;
 
         }
 
 
         /* =====================================================
-           BUTON HOVER
+           FUTBOLCU ARŞİVİ BUTONU
         ====================================================== */
 
+        #player-history-button {
+
+            height: 50px;
+
+            background:
+                rgba(25,82,56,0.72) !important;
+
+            color:
+                rgba(235,255,243,0.92) !important;
+
+            border:
+                1px solid
+                rgba(74,205,128,0.28) !important;
+
+            font-size: 13px;
+
+            letter-spacing: 1.2px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.25);
+
+        }
+
+
+        #player-history-button::before {
+
+            content: "⚽";
+
+            font-size: 17px;
+
+        }
+
+
         #start-button:hover,
-        #daily-challenge-button:hover {
+        #daily-challenge-button:hover,
+        #player-history-button:hover {
 
             transform:
-                translateY(-3px) !important;
+                translateY(-3px);
 
             filter:
                 brightness(1.08);
@@ -640,73 +393,141 @@
 
 
         #start-button:active,
-        #daily-challenge-button:active {
+        #daily-challenge-button:active,
+        #player-history-button:active {
 
             transform:
-                translateY(1px)
-                scale(0.99) !important;
-
-        }
-
-
-        #start-button:disabled,
-        #daily-challenge-button:disabled {
-
-            cursor: default;
-
-            opacity: 0.6;
+                scale(0.98);
 
         }
 
 
         /* =====================================================
-           DAILY STATUS
+           GÜNLÜK DURUM
         ====================================================== */
 
         #daily-status {
 
-            position: relative !important;
+            position: relative;
 
-            z-index: 25;
+            z-index: 10;
 
-            width: 100%;
+            margin-top: 2px;
 
-            min-height: 20px;
+            min-height: 18px;
 
-            margin:
-                -3px 0 0 !important;
+            font-size: 10px;
 
-            padding: 0;
+            font-weight: 700;
 
-            text-align: center;
-
-            font-size:
-                clamp(
-                    9px,
-                    0.65vw,
-                    13px
-                ) !important;
-
-            line-height: 1.2;
-
-            font-weight: 800 !important;
-
-            letter-spacing:
-                clamp(
-                    0.5px,
-                    0.08vw,
-                    1.5px
-                );
+            letter-spacing: 1px;
 
             color:
-                rgba(255,255,255,0.45);
+                rgba(255,255,255,0.48);
+
+            text-align: center;
 
         }
 
 
         #daily-status.completed {
 
-            color: #35df82 !important;
+            color:
+                #35df82;
+
+        }
+
+
+        /* =====================================================
+           İSTATİSTİK ÖZETİ
+        ====================================================== */
+
+        #home-stats {
+
+            position: absolute;
+
+            z-index: 15;
+
+            top: 8%;
+
+            right: 4%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(105px, 1fr));
+
+            gap: 8px;
+
+            width: 245px;
+
+        }
+
+
+        .home-stat {
+
+            padding:
+                11px 12px;
+
+            background:
+                rgba(16,52,36,0.68);
+
+            border:
+                1px solid
+                rgba(76,200,125,0.18);
+
+            border-radius:
+                10px;
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0,0,0,0.20);
+
+        }
+
+
+        .home-stat-label {
+
+            display: block;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.2px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            margin-bottom: 3px;
+
+        }
+
+
+        .home-stat-value {
+
+            display: block;
+
+            font-size: 17px;
+
+            font-weight: 1000;
+
+            color:
+                #eafff1;
+
+        }
+
+
+        .home-stat-value.green {
+
+            color:
+                #45e88a;
 
         }
 
@@ -717,27 +538,7 @@
 
         #game-content {
 
-            position: fixed !important;
-
-            inset: 0 !important;
-
-            width: 100vw !important;
-            height: 100vh !important;
-
-            min-width: 100vw !important;
-            min-height: 100vh !important;
-
-            max-width: none !important;
-            max-height: none !important;
-
-            margin: 0 !important;
-            padding: 0 !important;
-
-            transform: none !important;
-            scale: 1 !important;
-            zoom: 1 !important;
-
-            overflow: hidden !important;
+            position: relative;
 
         }
 
@@ -749,6 +550,7 @@
         #countdown {
 
             width: 180px !important;
+
             height: 150px !important;
 
             background: transparent !important;
@@ -836,10 +638,103 @@
 
             font-weight: 1000;
 
-            color: #ffffff;
+            color: #fff;
 
             text-shadow:
-                0 4px 10px rgba(0,0,0,0.7);
+                0 4px 10px
+                rgba(0,0,0,0.7);
+
+            background:
+                rgba(25,78,53,0.94) !important;
+
+            border:
+                1px solid
+                rgba(76,204,126,0.30);
+
+            border-radius:
+                50%;
+
+            padding:
+                10px 12px;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.32),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.06);
+
+        }
+
+
+        /* =====================================================
+           TAKIM KUTULARI
+        ====================================================== */
+
+        .team {
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(28,82,57,0.94),
+                    rgba(17,61,42,0.94)
+                ) !important;
+
+            border:
+                1px solid
+                rgba(75,205,125,0.34) !important;
+
+            box-shadow:
+
+                0 15px 35px
+                rgba(0,0,0,0.32),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.07) !important;
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+
+        }
+
+
+        .team:hover {
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(34,96,65,0.97),
+                    rgba(20,70,48,0.97)
+                ) !important;
+
+            border-color:
+                rgba(79,225,132,0.48) !important;
+
+            transform:
+                translateY(-2px);
+
+        }
+
+
+        .team-name {
+
+            color:
+                #ffffff !important;
+
+            text-shadow:
+                0 3px 8px
+                rgba(0,0,0,0.50);
 
         }
 
@@ -950,7 +845,7 @@
 
             overflow: hidden;
 
-            z-index: 50;
+            z-index: 100;
 
         }
 
@@ -967,7 +862,7 @@
             background:
                 rgba(13,45,31,0.98) !important;
 
-            color: #ffffff;
+            color: #fff;
 
             padding: 13px 15px;
 
@@ -1010,8 +905,6 @@
             font-size: 15px;
 
             font-weight: 1000;
-
-            cursor: pointer;
 
         }
 
@@ -1068,7 +961,8 @@
 
                 rgba(1,7,4,0.88);
 
-            backdrop-filter: blur(8px);
+            backdrop-filter:
+                blur(8px);
 
         }
 
@@ -1188,7 +1082,350 @@
 
             font-weight: 1000;
 
+        }
+
+
+        /* =====================================================
+           FUTBOLCU ARŞİVİ MODALI
+        ====================================================== */
+
+        #player-history-modal {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
+
+            background:
+                rgba(0,0,0,0.72);
+
+            backdrop-filter:
+                blur(9px);
+
+            -webkit-backdrop-filter:
+                blur(9px);
+
+        }
+
+
+        #player-history-modal.active {
+
+            display: flex;
+
+        }
+
+
+        .player-history-box {
+
+            width: 600px;
+
+            max-width: 95vw;
+
+            max-height: 82vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(24,74,51,0.98),
+                    rgba(8,30,20,0.99)
+                );
+
+            border:
+                1px solid
+                rgba(78,211,132,0.28);
+
+            border-radius:
+                20px;
+
+            box-shadow:
+                0 30px 90px
+                rgba(0,0,0,0.70);
+
+            overflow: hidden;
+
+        }
+
+
+        .player-history-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                22px 24px 18px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+
+        }
+
+
+        .player-history-title {
+
+            margin: 0;
+
+            font-size: 22px;
+
+            font-weight: 1000;
+
+            color:
+                #ffffff;
+
+        }
+
+
+        .player-history-subtitle {
+
+            margin:
+                5px 0 0;
+
+            font-size: 11px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            letter-spacing:
+                0.8px;
+
+        }
+
+
+        #close-player-history {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            background:
+                rgba(255,255,255,0.07);
+
+            color:
+                #ffffff;
+
+            font-size: 20px;
+
             cursor: pointer;
+
+        }
+
+
+        #close-player-history:hover {
+
+            background:
+                rgba(255,255,255,0.13);
+
+        }
+
+
+        .player-history-summary {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 8px;
+
+            padding:
+                14px 20px;
+
+        }
+
+
+        .history-summary-card {
+
+            padding:
+                10px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border-radius:
+                10px;
+
+        }
+
+
+        .history-summary-label {
+
+            display: block;
+
+            font-size: 8px;
+
+            color:
+                rgba(255,255,255,0.40);
+
+            letter-spacing:
+                1px;
+
+        }
+
+
+        .history-summary-value {
+
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 19px;
+
+            font-weight: 1000;
+
+            color:
+                #45e88a;
+
+        }
+
+
+        #player-history-list {
+
+            overflow-y: auto;
+
+            padding:
+                4px 20px 20px;
+
+        }
+
+
+        .history-player {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                13px 15px;
+
+            margin-bottom: 7px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.045);
+
+            border-radius:
+                10px;
+
+        }
+
+
+        .history-player-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            min-width: 0;
+
+        }
+
+
+        .history-player-rank {
+
+            width: 27px;
+
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(53,223,130,0.12);
+
+            color:
+                #45e88a;
+
+            font-size: 11px;
+
+            font-weight: 1000;
+
+            flex-shrink: 0;
+
+        }
+
+
+        .history-player-name {
+
+            color:
+                #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+
+        }
+
+
+        .history-player-count {
+
+            color:
+                #45e88a;
+
+            font-size: 13px;
+
+            font-weight: 1000;
+
+            white-space: nowrap;
+
+        }
+
+
+        .history-empty {
+
+            padding:
+                50px 20px;
+
+            text-align: center;
+
+            color:
+                rgba(255,255,255,0.42);
+
+            font-size: 13px;
+
+            line-height: 1.7;
 
         }
 
@@ -1201,55 +1438,84 @@
 
             #home-screen h1 {
 
-                top: 12vh !important;
+                font-size: 26vw;
 
-                font-size: 27vw !important;
-
-                letter-spacing: -0.06em;
+                letter-spacing: -3px;
 
             }
 
 
             #home-screen .home-subtitle {
 
-                top: 32vh !important;
-
-                font-size: 10px !important;
+                font-size: 10px;
 
                 letter-spacing: 2.5px;
-
-                gap: 10px;
 
             }
 
 
             .home-buttons {
 
-                top: 58vh !important;
+                top: 67%;
 
-                width: 82vw !important;
-
-                min-width: 0 !important;
+                width: 76vw;
 
             }
 
 
-            #start-button {
-
-                height: 62px !important;
-
-                font-size: 17px !important;
-
-            }
-
-
+            #start-button,
             #daily-challenge-button {
 
-                width: 86% !important;
+                height: 55px;
 
-                height: 54px !important;
+                font-size: 14px;
 
-                font-size: 13px !important;
+            }
+
+
+            #player-history-button {
+
+                height: 48px;
+
+                font-size: 12px;
+
+            }
+
+
+            #home-stats {
+
+                top: 5%;
+
+                right: 50%;
+
+                transform:
+                    translateX(50%);
+
+                width: 82vw;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+
+            .home-stat {
+
+                padding: 8px;
+
+            }
+
+
+            .home-stat-label {
+
+                font-size: 7px;
+
+            }
+
+
+            .home-stat-value {
+
+                font-size: 14px;
 
             }
 
@@ -1322,38 +1588,50 @@
 
             }
 
-        }
 
+            .player-history-summary {
 
-        /* =====================================================
-           KISA EKRAN
-        ====================================================== */
-
-        @media (
-            max-height: 700px
-        ) and (
-            min-width: 701px
-        ) {
-
-            #home-screen h1 {
-
-                top: 5vh !important;
-
-                font-size: 20vh !important;
+                grid-template-columns:
+                    repeat(2, 1fr);
 
             }
 
+        }
 
-            #home-screen .home-subtitle {
 
-                top: 29vh !important;
+        @media (max-width: 400px) {
+
+            #home-screen h1 {
+
+                font-size: 25vw;
 
             }
 
 
             .home-buttons {
 
-                top: 57vh !important;
+                width: 78vw;
+
+            }
+
+        }
+
+
+        @media
+        (max-height: 600px)
+        and
+        (orientation: landscape) {
+
+            #home-screen h1 {
+
+                font-size: 20vh;
+
+            }
+
+
+            .home-buttons {
+
+                top: 70%;
 
             }
 
@@ -1373,6 +1651,76 @@
 
     <div id="home-screen">
 
+        <!-- İSTATİSTİKLER -->
+
+        <div id="home-stats">
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    EN YÜKSEK SKOR
+                </span>
+
+                <span
+                    class="home-stat-value green"
+                    id="home-high-score"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    OYNANAN OYUN
+                </span>
+
+                <span
+                    class="home-stat-value"
+                    id="home-games-played"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    DOĞRU SERİ
+                </span>
+
+                <span
+                    class="home-stat-value green"
+                    id="home-correct-streak"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    GÜN SERİSİ
+                </span>
+
+                <span
+                    class="home-stat-value green"
+                    id="home-day-streak"
+                >
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+
         <h1>321</h1>
 
 
@@ -1384,7 +1732,6 @@
         <div class="home-buttons">
 
             <button
-                type="button"
                 id="start-button"
                 aria-label="Oyuna Başla"
             >
@@ -1393,11 +1740,18 @@
 
 
             <button
-                type="button"
                 id="daily-challenge-button"
                 aria-label="Günlük Challenge"
             >
                 GÜNLÜK CHALLENGE
+            </button>
+
+
+            <button
+                id="player-history-button"
+                aria-label="Futbolcu Arşivi"
+            >
+                FUTBOLCU ARŞİVİ
             </button>
 
 
@@ -1407,6 +1761,100 @@
 
     </div>
 
+
+    <!-- =====================================================
+         FUTBOLCU ARŞİVİ
+    ====================================================== -->
+
+    <div
+        id="player-history-modal"
+        aria-hidden="true"
+    >
+
+        <div class="player-history-box">
+
+            <div class="player-history-header">
+
+                <div>
+
+                    <h2 class="player-history-title">
+                        FUTBOLCU ARŞİVİ
+                    </h2>
+
+                    <p class="player-history-subtitle">
+                        Daha önce yazdığın futbolcular
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="close-player-history"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="player-history-summary">
+
+                <div class="history-summary-card">
+
+                    <span class="history-summary-label">
+                        FARKLI FUTBOLCU
+                    </span>
+
+                    <span
+                        class="history-summary-value"
+                        id="history-unique-count"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="history-summary-card">
+
+                    <span class="history-summary-label">
+                        TOPLAM YAZIM
+                    </span>
+
+                    <span
+                        class="history-summary-value"
+                        id="history-total-entries"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="history-summary-card">
+
+                    <span class="history-summary-label">
+                        EN ÇOK YAZILAN
+                    </span>
+
+                    <span
+                        class="history-summary-value"
+                        id="history-most-written"
+                    >
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div id="player-history-list"></div>
+
+        </div>
+
+    </div>
 
 
     <!-- =====================================================
@@ -1466,7 +1914,6 @@
 
                 </div>
 
-
                 <span
                     class="team-name"
                     id="team1-name"
@@ -1501,7 +1948,6 @@
                     >
 
                 </div>
-
 
                 <span
                     class="team-name"
@@ -1539,10 +1985,7 @@
             </div>
 
 
-            <button
-                type="button"
-                id="answerButton"
-            >
+            <button id="answerButton">
                 CEVAPLA
             </button>
 
@@ -1555,7 +1998,6 @@
         ></div>
 
     </div>
-
 
 
     <!-- =====================================================
@@ -1594,17 +2036,13 @@
             </div>
 
 
-            <button
-                type="button"
-                id="restart-button"
-            >
+            <button id="restart-button">
                 TEKRAR OYNA
             </button>
 
         </div>
 
     </div>
-
 
 
     <!-- =====================================================
