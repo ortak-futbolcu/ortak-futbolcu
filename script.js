@@ -7,6 +7,13 @@
 
 
 // =====================================================
+// DOM HAZIR OLDUĞUNDA BAŞLAT
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+// =====================================================
 // TAKIMLAR
 // =====================================================
 
@@ -104,9 +111,15 @@ if (
     typeof playerPool !== "object"
 ) {
 
-    throw new Error(
-        "playerPool bulunamadı. players.js önce yüklenmelidir."
+    console.error(
+        "playerPool bulunamadı. players.js script.js'den önce yüklenmeli."
     );
+
+    alert(
+        "Oyuncu verileri yüklenemedi. players.js dosyasının script.js'den önce yüklendiğinden emin ol."
+    );
+
+    return;
 
 }
 
@@ -140,8 +153,7 @@ function findCommonPlayers(teamA, teamB) {
 
     for (const playerName in playerPool) {
 
-        const playerData =
-            playerPool[playerName];
+        const playerData = playerPool[playerName];
 
         if (
             !playerData ||
@@ -179,7 +191,6 @@ for (let i = 0; i < teams.length; i++) {
     for (let j = i + 1; j < teams.length; j++) {
 
         const teamA = teams[i];
-
         const teamB = teams[j];
 
         const commonPlayers =
@@ -210,230 +221,121 @@ const startButton =
     document.getElementById("start-button");
 
 const dailyChallengeButton =
-    document.getElementById(
-        "daily-challenge-button"
-    );
+    document.getElementById("daily-challenge-button");
 
-const playerHistoryButton =
-    document.getElementById(
-        "player-history-button"
-    );
+let playerHistoryButton =
+    document.getElementById("player-history-button");
 
-const playerHistoryModal =
-    document.getElementById(
-        "player-history-modal"
-    );
+let playerHistoryModal =
+    document.getElementById("player-history-modal");
 
-const closePlayerHistory =
-    document.getElementById(
-        "close-player-history"
-    );
+let closePlayerHistory =
+    document.getElementById("close-player-history");
 
-const playerHistoryList =
-    document.getElementById(
-        "player-history-list"
-    );
+let playerHistoryList =
+    document.getElementById("player-history-list");
 
-const historyUniqueCount =
-    document.getElementById(
-        "history-unique-count"
-    );
+let historyUniqueCount =
+    document.getElementById("history-unique-count");
 
-const historyTotalEntries =
-    document.getElementById(
-        "history-total-entries"
-    );
+let historyTotalEntries =
+    document.getElementById("history-total-entries");
 
-const historyMostWritten =
-    document.getElementById(
-        "history-most-written"
-    );
+let historyMostWritten =
+    document.getElementById("history-most-written");
 
 const homeHighScore =
-    document.getElementById(
-        "home-high-score"
-    );
+    document.getElementById("home-high-score");
 
 const homeGamesPlayed =
-    document.getElementById(
-        "home-games-played"
-    );
+    document.getElementById("home-games-played");
 
 const homeCorrectStreak =
-    document.getElementById(
-        "home-correct-streak"
-    );
+    document.getElementById("home-correct-streak");
 
 const homeDayStreak =
-    document.getElementById(
-        "home-day-streak"
-    );
+    document.getElementById("home-day-streak");
 
 const dailyStatus =
-    document.getElementById(
-        "daily-status"
-    );
+    document.getElementById("daily-status");
 
 const homeScreen =
-    document.getElementById(
-        "home-screen"
-    );
+    document.getElementById("home-screen");
 
 const gameContent =
-    document.getElementById(
-        "game-content"
-    );
+    document.getElementById("game-content");
 
 const countdown =
-    document.getElementById(
-        "countdown"
-    );
+    document.getElementById("countdown");
 
 const vsText =
-    document.getElementById(
-        "vs-text"
-    );
+    document.getElementById("vs-text");
 
 const team1 =
-    document.getElementById(
-        "team1"
-    );
+    document.getElementById("team1");
 
 const team2 =
-    document.getElementById(
-        "team2"
-    );
+    document.getElementById("team2");
 
 const team1Logo =
-    document.getElementById(
-        "team1-logo"
-    );
+    document.getElementById("team1-logo");
 
 const team2Logo =
-    document.getElementById(
-        "team2-logo"
-    );
+    document.getElementById("team2-logo");
 
 const team1Name =
-    document.getElementById(
-        "team1-name"
-    );
+    document.getElementById("team1-name");
 
 const team2Name =
-    document.getElementById(
-        "team2-name"
-    );
+    document.getElementById("team2-name");
 
 const answerInput =
-    document.getElementById(
-        "answerInput"
-    );
+    document.getElementById("answerInput");
 
 const answerButton =
-    document.getElementById(
-        "answerButton"
-    );
+    document.getElementById("answerButton");
 
 const scoreText =
-    document.getElementById(
-        "score"
-    );
+    document.getElementById("score");
 
 const result =
-    document.getElementById(
-        "result"
-    );
+    document.getElementById("result");
 
 const timerBar =
-    document.getElementById(
-        "timer-bar"
-    );
+    document.getElementById("timer-bar");
 
 const gameArea =
-    document.querySelector(
-        ".game-area"
-    );
+    document.querySelector(".game-area");
 
 const answerArea =
-    document.querySelector(
-        ".answer-area"
-    );
+    document.querySelector(".answer-area");
 
 const timerContainer =
-    document.querySelector(
-        ".timer-container"
-    );
+    document.querySelector(".timer-container");
 
 const gameOver =
-    document.getElementById(
-        "game-over"
-    );
+    document.getElementById("game-over");
 
 const finalScore =
-    document.getElementById(
-        "final-score"
-    );
+    document.getElementById("final-score");
 
 const finalMessage =
-    document.getElementById(
-        "final-message"
-    );
+    document.getElementById("final-message");
 
 const restartButton =
-    document.getElementById(
-        "restart-button"
-    );
+    document.getElementById("restart-button");
 
 const questionNumberText =
-    document.getElementById(
-        "question-number"
-    );
+    document.getElementById("question-number");
 
 const playerSuggestions =
-    document.getElementById(
-        "player-suggestions"
-    );
+    document.getElementById("player-suggestions");
 
 const gameModeTitle =
-    document.getElementById(
-        "game-mode-title"
-    );
+    document.getElementById("game-mode-title");
 
 const gameOverTitle =
-    document.getElementById(
-        "game-over-title"
-    );
-
-
-// =====================================================
-// OYUN DEĞİŞKENLERİ
-// =====================================================
-
-let score = 0;
-
-let currentQuestionPlayers = [];
-
-let questionAnswered = false;
-
-let timer = null;
-
-let timeLeft = 15;
-
-const questionTime = 15;
-
-let questionNumber = 0;
-
-const totalQuestions = 10;
-
-let usedQuestions = [];
-
-let gameVersion = 0;
-
-let currentGameMode = "normal";
-
-let dailyQuestions = [];
-
-let dailyQuestionIndex = 0;
+    document.getElementById("game-over-title");
 
 
 // =====================================================
@@ -441,7 +343,7 @@ let dailyQuestionIndex = 0;
 // =====================================================
 
 const STATS_STORAGE_KEY =
-    "321_game_statistics_v1";
+    "321_game_statistics_v2";
 
 
 function getDefaultStats() {
@@ -488,7 +390,9 @@ function loadStats() {
         return {
 
             ...getDefaultStats(),
+
             ...parsed,
+
             playerCounts:
                 parsed.playerCounts || {}
 
@@ -509,9 +413,12 @@ function loadStats() {
 }
 
 
-let stats =
-    loadStats();
+let stats = loadStats();
 
+
+// =====================================================
+// İSTATİSTİKLERİ KAYDET
+// =====================================================
 
 function saveStats() {
 
@@ -541,8 +448,7 @@ function saveStats() {
 
 function getTodayKey() {
 
-    const now =
-        new Date();
+    const now = new Date();
 
     const year =
         now.getFullYear();
@@ -563,13 +469,12 @@ function getTodayKey() {
 
 
 // =====================================================
-// TARİHİ BİR GÜN GERİ AL
+// DÜNÜN TARİHİ
 // =====================================================
 
 function getYesterdayKey() {
 
-    const date =
-        new Date();
+    const date = new Date();
 
     date.setDate(
         date.getDate() - 1
@@ -594,7 +499,7 @@ function getYesterdayKey() {
 
 
 // =====================================================
-// GÜN SERİSİNİ GÜNCELLE
+// GÜN SERİSİ
 // =====================================================
 
 function updateDayStreak() {
@@ -644,7 +549,7 @@ function updateDayStreak() {
 
 
 // =====================================================
-// ANA SAYFA İSTATİSTİKLERİNİ GÜNCELLE
+// ANA SAYFA İSTATİSTİKLERİ
 // =====================================================
 
 function updateHomeStats() {
@@ -656,7 +561,6 @@ function updateHomeStats() {
 
     }
 
-
     if (homeGamesPlayed) {
 
         homeGamesPlayed.textContent =
@@ -664,14 +568,12 @@ function updateHomeStats() {
 
     }
 
-
     if (homeCorrectStreak) {
 
         homeCorrectStreak.textContent =
             stats.currentCorrectStreak;
 
     }
-
 
     if (homeDayStreak) {
 
@@ -684,7 +586,7 @@ function updateHomeStats() {
 
 
 // =====================================================
-// FUTBOLCU ADINI NORMALLEŞTİR
+// NORMALLEŞTİRME
 // =====================================================
 
 function normalizeText(text) {
@@ -741,17 +643,13 @@ function getPlayerNameWords(playerName) {
 
 
 // =====================================================
-// YAZILAN FUTBOLCUYU BUL
+// FUTBOLCU BUL
 // =====================================================
 
-function findRecognizedPlayer(
-    userAnswer
-) {
+function findRecognizedPlayer(userAnswer) {
 
     const normalizedAnswer =
-        normalizeText(
-            userAnswer
-        );
+        normalizeText(userAnswer);
 
 
     if (!normalizedAnswer) {
@@ -765,14 +663,11 @@ function findRecognizedPlayer(
         Object.keys(playerPool);
 
 
-    // Tam isim eşleşmesi
-
     const exactMatch =
         allPlayers.find(
             playerName =>
-                normalizeText(
-                    playerName
-                ) === normalizedAnswer
+                normalizeText(playerName) ===
+                normalizedAnswer
         );
 
 
@@ -783,30 +678,20 @@ function findRecognizedPlayer(
     }
 
 
-    // Tek kelimelik isim/soyisim eşleşmesi
-
     const candidates =
-        allPlayers.filter(
-            playerName => {
+        allPlayers.filter(playerName => {
 
-                const words =
-                    getPlayerNameWords(
-                        playerName
-                    );
-
-                return words.includes(
-                    normalizedAnswer
+            const words =
+                getPlayerNameWords(
+                    playerName
                 );
 
-            }
-        );
+            return words.includes(
+                normalizedAnswer
+            );
 
+        });
 
-    /*
-       Birden fazla futbolcuda aynı
-       isim/soyisim varsa yanlış kişiye
-       yazılmaması için kayıt etmiyoruz.
-    */
 
     if (
         candidates.length === 1
@@ -823,12 +708,10 @@ function findRecognizedPlayer(
 
 
 // =====================================================
-// FUTBOLCU YAZIM SAYISINI KAYDET
+// FUTBOLCU YAZILMA SAYISI
 // =====================================================
 
-function recordPlayerWritten(
-    userAnswer
-) {
+function recordPlayerWritten(userAnswer) {
 
     const recognizedPlayer =
         findRecognizedPlayer(
@@ -867,12 +750,13 @@ function recordPlayerWritten(
 
 
 // =====================================================
-// DOĞRU SERİ
+// DOĞRU CEVAP SERİSİ
 // =====================================================
 
 function recordCorrectAnswer() {
 
     stats.currentCorrectStreak++;
+
 
     if (
         stats.currentCorrectStreak >
@@ -893,7 +777,7 @@ function recordCorrectAnswer() {
 
 
 // =====================================================
-// YANLIŞ CEVAP SERİYİ SIFIRLAR
+// YANLIŞ CEVAP
 // =====================================================
 
 function resetCorrectStreak() {
@@ -909,12 +793,26 @@ function resetCorrectStreak() {
 
 
 // =====================================================
-// OYUN TAMAMLANDIĞINDA İSTATİSTİKLER
+// OYUN TAMAMLANDI
 // =====================================================
+
+let currentGameRecorded = false;
+
 
 function recordCompletedGame() {
 
+    if (currentGameRecorded) {
+
+        return;
+
+    }
+
+
+    currentGameRecorded = true;
+
+
     stats.gamesPlayed++;
+
 
     if (
         score > stats.highScore
@@ -928,6 +826,7 @@ function recordCompletedGame() {
 
     updateDayStreak();
 
+
     saveStats();
 
     updateHomeStats();
@@ -936,7 +835,344 @@ function recordCompletedGame() {
 
 
 // =====================================================
-// FUTBOLCU ARŞİVİNİ GÖSTER
+// HTML GÜVENLİĞİ
+// =====================================================
+
+function escapeHtml(text) {
+
+    return String(text)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+// =====================================================
+// ARŞİV MODALINI OTOMATİK OLUŞTUR
+// =====================================================
+
+function createPlayerHistoryModal() {
+
+    if (document.getElementById("player-history-modal")) {
+
+        playerHistoryModal =
+            document.getElementById(
+                "player-history-modal"
+            );
+
+        playerHistoryList =
+            document.getElementById(
+                "player-history-list"
+            );
+
+        historyUniqueCount =
+            document.getElementById(
+                "history-unique-count"
+            );
+
+        historyTotalEntries =
+            document.getElementById(
+                "history-total-entries"
+            );
+
+        historyMostWritten =
+            document.getElementById(
+                "history-most-written"
+            );
+
+        closePlayerHistory =
+            document.getElementById(
+                "close-player-history"
+            );
+
+        return;
+
+    }
+
+
+    const modal =
+        document.createElement("div");
+
+
+    modal.id =
+        "player-history-modal";
+
+
+    modal.setAttribute(
+        "aria-hidden",
+        "true"
+    );
+
+
+    modal.innerHTML = `
+
+        <div class="player-history-overlay">
+
+            <div class="player-history-box">
+
+                <button
+                    id="close-player-history"
+                    class="player-history-close"
+                    type="button"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+                <div class="player-history-title">
+                    FUTBOLCU ARŞİVİ
+                </div>
+
+                <div class="player-history-stats">
+
+                    <div class="history-stat">
+                        <span>FUTBOLCU</span>
+                        <strong id="history-unique-count">0</strong>
+                    </div>
+
+                    <div class="history-stat">
+                        <span>TOPLAM YAZIM</span>
+                        <strong id="history-total-entries">0</strong>
+                    </div>
+
+                    <div class="history-stat">
+                        <span>EN ÇOK YAZILAN</span>
+                        <strong id="history-most-written">-</strong>
+                    </div>
+
+                </div>
+
+                <div
+                    id="player-history-list"
+                    class="player-history-list"
+                ></div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    document.body.appendChild(modal);
+
+
+    playerHistoryModal =
+        modal;
+
+    closePlayerHistory =
+        document.getElementById(
+            "close-player-history"
+        );
+
+    playerHistoryList =
+        document.getElementById(
+            "player-history-list"
+        );
+
+    historyUniqueCount =
+        document.getElementById(
+            "history-unique-count"
+        );
+
+    historyTotalEntries =
+        document.getElementById(
+            "history-total-entries"
+        );
+
+    historyMostWritten =
+        document.getElementById(
+            "history-most-written"
+        );
+
+
+    // Basit ve güvenli stil
+
+    if (!document.getElementById("history-auto-style")) {
+
+        const style =
+            document.createElement("style");
+
+
+        style.id =
+            "history-auto-style";
+
+
+        style.textContent = `
+
+            #player-history-modal {
+                position: fixed;
+                inset: 0;
+                z-index: 99999;
+                display: none;
+            }
+
+            #player-history-modal.active {
+                display: flex;
+            }
+
+            .player-history-overlay {
+                position: absolute;
+                inset: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 20px;
+                background: rgba(0,0,0,.72);
+                backdrop-filter: blur(8px);
+            }
+
+            .player-history-box {
+                position: relative;
+                width: min(620px, 94vw);
+                max-height: 85vh;
+                overflow: hidden;
+                border-radius: 22px;
+                padding: 28px;
+                background:
+                    linear-gradient(
+                        145deg,
+                        #123c2d,
+                        #08251c
+                    );
+                border: 1px solid rgba(40,220,130,.35);
+                box-shadow:
+                    0 25px 80px rgba(0,0,0,.55);
+                color: white;
+            }
+
+            .player-history-title {
+                text-align: center;
+                font-size: 26px;
+                font-weight: 900;
+                letter-spacing: 2px;
+                margin-bottom: 22px;
+            }
+
+            .player-history-close {
+                position: absolute;
+                top: 12px;
+                right: 16px;
+                width: 38px;
+                height: 38px;
+                border: 0;
+                border-radius: 50%;
+                background: rgba(255,255,255,.1);
+                color: white;
+                font-size: 28px;
+                cursor: pointer;
+            }
+
+            .player-history-stats {
+                display: grid;
+                grid-template-columns:
+                    repeat(3, 1fr);
+                gap: 10px;
+                margin-bottom: 18px;
+            }
+
+            .history-stat {
+                padding: 14px 8px;
+                text-align: center;
+                border-radius: 13px;
+                background: rgba(255,255,255,.06);
+                border: 1px solid rgba(255,255,255,.08);
+            }
+
+            .history-stat span {
+                display: block;
+                font-size: 10px;
+                font-weight: 800;
+                opacity: .65;
+                margin-bottom: 6px;
+            }
+
+            .history-stat strong {
+                display: block;
+                font-size: 17px;
+                color: #32df8a;
+            }
+
+            .player-history-list {
+                max-height: 50vh;
+                overflow-y: auto;
+                padding-right: 4px;
+            }
+
+            .history-player {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 13px 15px;
+                margin-bottom: 8px;
+                border-radius: 12px;
+                background: rgba(255,255,255,.055);
+                border: 1px solid rgba(255,255,255,.07);
+            }
+
+            .history-player-left {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .history-player-rank {
+                width: 28px;
+                height: 28px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(45,220,135,.14);
+                color: #32df8a;
+                font-weight: 900;
+                font-size: 12px;
+            }
+
+            .history-player-name {
+                font-weight: 800;
+            }
+
+            .history-player-count {
+                color: #32df8a;
+                font-weight: 900;
+                font-size: 16px;
+            }
+
+            .history-empty {
+                text-align: center;
+                padding: 35px 15px;
+                line-height: 1.7;
+                opacity: .7;
+            }
+
+            @media (max-width: 600px) {
+
+                .player-history-stats {
+                    grid-template-columns: 1fr;
+                }
+
+                .player-history-box {
+                    padding: 22px 16px;
+                }
+
+            }
+
+        `;
+
+
+        document.head.appendChild(style);
+
+    }
+
+}
+
+
+// =====================================================
+// ARŞİVİ GÜNCELLE
 // =====================================================
 
 function updatePlayerHistory() {
@@ -979,36 +1215,34 @@ function updatePlayerHistory() {
 
 
     entries.sort(
-        (a, b) =>
-            b[1] - a[1] ||
-            a[0].localeCompare(
+        (a, b) => {
+
+            if (b[1] !== a[1]) {
+
+                return b[1] - a[1];
+
+            }
+
+            return a[0].localeCompare(
                 b[0],
                 "tr"
-            )
+            );
+
+        }
     );
 
 
     if (historyMostWritten) {
 
-        if (entries.length > 0) {
-
-            historyMostWritten.textContent =
-                entries[0][0];
-
-        }
-        else {
-
-            historyMostWritten.textContent =
-                "-";
-
-        }
+        historyMostWritten.textContent =
+            entries.length
+                ? entries[0][0]
+                : "-";
 
     }
 
 
-    if (
-        entries.length === 0
-    ) {
+    if (!entries.length) {
 
         playerHistoryList.innerHTML = `
 
@@ -1028,17 +1262,14 @@ function updatePlayerHistory() {
     }
 
 
-    playerHistoryList.innerHTML =
-        "";
+    playerHistoryList.innerHTML = "";
 
 
     entries.forEach(
         ([playerName, count], index) => {
 
             const row =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
 
             row.className =
@@ -1077,47 +1308,31 @@ function updatePlayerHistory() {
 
 
 // =====================================================
-// HTML GÜVENLİĞİ
-// =====================================================
-
-function escapeHtml(text) {
-
-    return String(text)
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-// =====================================================
 // ARŞİVİ AÇ
 // =====================================================
 
 function openPlayerHistory() {
 
+    createPlayerHistoryModal();
+
     updatePlayerHistory();
+
+
+    if (!playerHistoryModal) {
+
+        console.error(
+            "Futbolcu arşiv modalı oluşturulamadı."
+        );
+
+        return;
+
+    }
+
 
     playerHistoryModal.classList.add(
         "active"
     );
+
 
     playerHistoryModal.setAttribute(
         "aria-hidden",
@@ -1133,9 +1348,17 @@ function openPlayerHistory() {
 
 function closePlayerHistoryModal() {
 
+    if (!playerHistoryModal) {
+
+        return;
+
+    }
+
+
     playerHistoryModal.classList.remove(
         "active"
     );
+
 
     playerHistoryModal.setAttribute(
         "aria-hidden",
@@ -1146,14 +1369,23 @@ function closePlayerHistoryModal() {
 
 
 // =====================================================
-// ARŞİV BUTONLARI
+// ARŞİV BUTONU
 // =====================================================
+
+createPlayerHistoryModal();
+
 
 if (playerHistoryButton) {
 
     playerHistoryButton.addEventListener(
         "click",
-        openPlayerHistory
+        event => {
+
+            event.preventDefault();
+
+            openPlayerHistory();
+
+        }
     );
 
 }
@@ -1217,6 +1449,7 @@ function getDailySeed() {
 
     let hash = 0;
 
+
     for (
         let i = 0;
         i < date.length;
@@ -1235,18 +1468,19 @@ function getDailySeed() {
 
     }
 
+
     return Math.abs(hash);
 
 }
 
 
 // =====================================================
-// SEEDLİ RANDOM
+// SEED RANDOM
 // =====================================================
 
 function seededRandom(seed) {
 
-    let value =
+    const value =
         Math.sin(seed) * 10000;
 
     return value -
@@ -1289,6 +1523,7 @@ function generateDailyQuestions() {
                 seed + i * 7919
             );
 
+
         const j =
             Math.floor(
                 random * (i + 1)
@@ -1327,7 +1562,8 @@ function isDailyCompleted() {
     return (
         localStorage.getItem(
             "321_daily_completed"
-        ) === getTodayKey()
+        ) ===
+        getTodayKey()
     );
 
 }
@@ -1351,6 +1587,7 @@ function updateDailyStatus() {
         dailyStatus.textContent =
             "✓ BUGÜNKÜ CHALLENGE TAMAMLANDI";
 
+
         dailyStatus.classList.add(
             "completed"
         );
@@ -1360,6 +1597,7 @@ function updateDailyStatus() {
 
         dailyStatus.textContent =
             "BUGÜNÜN 10 SORUSU HAZIR";
+
 
         dailyStatus.classList.remove(
             "completed"
@@ -1371,7 +1609,38 @@ function updateDailyStatus() {
 
 
 // =====================================================
-// BAŞLANGIÇ DURUMU
+// OYUN DEĞİŞKENLERİ
+// =====================================================
+
+let score = 0;
+
+let currentQuestionPlayers = [];
+
+let questionAnswered = false;
+
+let timer = null;
+
+let timeLeft = 15;
+
+const questionTime = 15;
+
+let questionNumber = 0;
+
+const totalQuestions = 10;
+
+let usedQuestions = [];
+
+let gameVersion = 0;
+
+let currentGameMode = "normal";
+
+let dailyQuestions = [];
+
+let dailyQuestionIndex = 0;
+
+
+// =====================================================
+// BAŞLANGIÇ
 // =====================================================
 
 if (homeScreen) {
@@ -1381,12 +1650,14 @@ if (homeScreen) {
 
 }
 
+
 if (gameContent) {
 
     gameContent.style.display =
         "none";
 
 }
+
 
 if (gameOver) {
 
@@ -1579,13 +1850,13 @@ function showPlayerSuggestions() {
 
     const matchingPlayers =
         [...suggestionPool]
-        .filter(
-            playerName =>
-                playerNameStartsWithSearch(
-                    playerName,
-                    searchText
-                )
-        );
+            .filter(
+                playerName =>
+                    playerNameStartsWithSearch(
+                        playerName,
+                        searchText
+                    )
+            );
 
 
     clearPlayerSuggestions();
@@ -1616,10 +1887,13 @@ function showPlayerSuggestions() {
 
                         event.preventDefault();
 
+
                         answerInput.value =
                             playerName;
 
+
                         clearPlayerSuggestions();
+
 
                         answerInput.focus();
 
@@ -1638,7 +1912,7 @@ function showPlayerSuggestions() {
 
 
 // =====================================================
-// INPUT EVENTLERİ
+// INPUT
 // =====================================================
 
 if (answerInput) {
@@ -1738,41 +2012,59 @@ function clearResult() {
 
 function startCountdown(version) {
 
-    return new Promise(
-        resolve => {
+    return new Promise(resolve => {
 
-            let count = 3;
+        let count = 3;
 
+
+        if (countdown) {
 
             countdown.style.display =
                 "flex";
 
+        }
+
+
+        if (vsText) {
 
             vsText.style.display =
                 "none";
 
+        }
+
+
+        if (team1) {
 
             team1.style.visibility =
                 "hidden";
 
+        }
+
+
+        if (team2) {
+
             team2.style.visibility =
                 "hidden";
 
-
-            function showNumber() {
-
-                if (
-                    version !== gameVersion
-                ) {
-
-                    resolve();
-
-                    return;
-
-                }
+        }
 
 
-                if (count > 0) {
+        function showNumber() {
+
+            if (
+                version !== gameVersion
+            ) {
+
+                resolve();
+
+                return;
+
+            }
+
+
+            if (count > 0) {
+
+                if (countdown) {
 
                     countdown.textContent =
                         count;
@@ -1790,20 +2082,24 @@ function startCountdown(version) {
                         "countdown-pop"
                     );
 
-
-                    count--;
-
-
-                    setTimeout(
-                        showNumber,
-                        1000
-                    );
-
-
-                    return;
-
                 }
 
+
+                count--;
+
+
+                setTimeout(
+                    showNumber,
+                    1000
+                );
+
+
+                return;
+
+            }
+
+
+            if (countdown) {
 
                 countdown.textContent =
                     "";
@@ -1813,43 +2109,58 @@ function startCountdown(version) {
                     "countdown-pop"
                 );
 
+            }
+
+
+            if (team1) {
 
                 team1.style.visibility =
                     "visible";
 
+            }
+
+
+            if (team2) {
+
                 team2.style.visibility =
                     "visible";
-
-
-                vsText.textContent =
-                    "VS";
-
-                vsText.style.display =
-                    "block";
-
-
-                setTimeout(
-                    () => {
-
-                        if (
-                            version === gameVersion
-                        ) {
-
-                            resolve();
-
-                        }
-
-                    },
-                    300
-                );
 
             }
 
 
-            showNumber();
+            if (vsText) {
+
+                vsText.textContent =
+                    "VS";
+
+
+                vsText.style.display =
+                    "block";
+
+            }
+
+
+            setTimeout(
+                () => {
+
+                    if (
+                        version === gameVersion
+                    ) {
+
+                        resolve();
+
+                    }
+
+                },
+                300
+            );
 
         }
-    );
+
+
+        showNumber();
+
+    });
 
 }
 
@@ -1874,15 +2185,23 @@ async function newQuestion() {
         false;
 
 
-    answerInput.disabled =
-        true;
+    if (answerInput) {
 
-    answerButton.disabled =
-        true;
+        answerInput.disabled =
+            true;
+
+        answerInput.value =
+            "";
+
+    }
 
 
-    answerInput.value =
-        "";
+    if (answerButton) {
+
+        answerButton.disabled =
+            true;
+
+    }
 
 
     clearResult();
@@ -1939,22 +2258,20 @@ async function newQuestion() {
     else {
 
         let availableQuestions =
-            validTeamPairs.filter(
-                pair => {
+            validTeamPairs.filter(pair => {
 
-                    const key =
-                        getQuestionKey(
-                            pair.teamA,
-                            pair.teamB
-                        );
-
-
-                    return !usedQuestions.includes(
-                        key
+                const key =
+                    getQuestionKey(
+                        pair.teamA,
+                        pair.teamB
                     );
 
-                }
-            );
+
+                return !usedQuestions.includes(
+                    key
+                );
+
+            });
 
 
         if (
@@ -2008,17 +2325,19 @@ async function newQuestion() {
     questionNumber++;
 
 
-    questionNumberText.textContent =
-        "Soru: " +
-        questionNumber +
-        " / " +
-        totalQuestions;
+    if (questionNumberText) {
+
+        questionNumberText.textContent =
+            "Soru: " +
+            questionNumber +
+            " / " +
+            totalQuestions;
+
+    }
 
 
     currentQuestionPlayers =
-        [
-            ...selectedPair.players
-        ];
+        [...selectedPair.players];
 
 
     updateTeamDisplay(
@@ -2035,23 +2354,44 @@ async function newQuestion() {
     );
 
 
-    team1.style.visibility =
-        "hidden";
+    if (team1) {
 
-    team2.style.visibility =
-        "hidden";
+        team1.style.visibility =
+            "hidden";
 
-
-    vsText.style.display =
-        "none";
+    }
 
 
-    countdown.textContent =
-        "";
+    if (team2) {
+
+        team2.style.visibility =
+            "hidden";
+
+    }
 
 
-    timerBar.style.width =
-        "100%";
+    if (vsText) {
+
+        vsText.style.display =
+            "none";
+
+    }
+
+
+    if (countdown) {
+
+        countdown.textContent =
+            "";
+
+    }
+
+
+    if (timerBar) {
+
+        timerBar.style.width =
+            "100%";
+
+    }
 
 
     await startCountdown(
@@ -2068,14 +2408,22 @@ async function newQuestion() {
     }
 
 
-    answerInput.disabled =
-        false;
+    if (answerInput) {
 
-    answerButton.disabled =
-        false;
+        answerInput.disabled =
+            false;
+
+        answerInput.focus();
+
+    }
 
 
-    answerInput.focus();
+    if (answerButton) {
+
+        answerButton.disabled =
+            false;
+
+    }
 
 
     startTimer(
@@ -2098,8 +2446,12 @@ function startTimer(version) {
         questionTime;
 
 
-    timerBar.style.width =
-        "100%";
+    if (timerBar) {
+
+        timerBar.style.width =
+            "100%";
+
+    }
 
 
     timer =
@@ -2130,8 +2482,12 @@ function startTimer(version) {
                     );
 
 
-                timerBar.style.width =
-                    percentage + "%";
+                if (timerBar) {
+
+                    timerBar.style.width =
+                        percentage + "%";
+
+                }
 
 
                 if (
@@ -2145,11 +2501,20 @@ function startTimer(version) {
                         true;
 
 
-                    answerInput.disabled =
-                        true;
+                    if (answerInput) {
 
-                    answerButton.disabled =
-                        true;
+                        answerInput.disabled =
+                            true;
+
+                    }
+
+
+                    if (answerButton) {
+
+                        answerButton.disabled =
+                            true;
+
+                    }
 
 
                     clearPlayerSuggestions();
@@ -2168,7 +2533,8 @@ function startTimer(version) {
                         () => {
 
                             if (
-                                version === gameVersion
+                                version ===
+                                gameVersion
                             ) {
 
                                 newQuestion();
@@ -2192,9 +2558,7 @@ function startTimer(version) {
 // CEVAP KARŞILAŞTIRMA
 // =====================================================
 
-function normalizeAnswerForComparison(
-    text
-) {
+function normalizeAnswerForComparison(text) {
 
     return normalizeText(text)
         .replace(
@@ -2254,6 +2618,7 @@ function checkAnswer() {
 
     if (
         questionAnswered ||
+        !answerInput ||
         answerInput.disabled
     ) {
 
@@ -2280,9 +2645,7 @@ function checkAnswer() {
     }
 
 
-    // =================================================
-    // FUTBOLCU YAZIM SAYISINI KAYDET
-    // =================================================
+    // Futbolcu yazımını kaydet
 
     recordPlayerWritten(
         userAnswer
@@ -2308,9 +2671,13 @@ function checkAnswer() {
         score += 10;
 
 
-        scoreText.textContent =
-            "Puan: " +
-            score;
+        if (scoreText) {
+
+            scoreText.textContent =
+                "Puan: " +
+                score;
+
+        }
 
 
         questionAnswered =
@@ -2320,11 +2687,20 @@ function checkAnswer() {
         clearInterval(timer);
 
 
-        answerInput.disabled =
-            true;
+        if (answerInput) {
 
-        answerButton.disabled =
-            true;
+            answerInput.disabled =
+                true;
+
+        }
+
+
+        if (answerButton) {
+
+            answerButton.disabled =
+                true;
+
+        }
 
 
         clearPlayerSuggestions();
@@ -2377,7 +2753,13 @@ if (answerButton) {
 
     answerButton.addEventListener(
         "click",
-        checkAnswer
+        event => {
+
+            event.preventDefault();
+
+            checkAnswer();
+
+        }
     );
 
 }
@@ -2422,77 +2804,141 @@ function endGame() {
         true;
 
 
-    answerInput.disabled =
-        true;
+    if (answerInput) {
 
-    answerButton.disabled =
-        true;
+        answerInput.disabled =
+            true;
+
+    }
+
+
+    if (answerButton) {
+
+        answerButton.disabled =
+            true;
+
+    }
 
 
     clearPlayerSuggestions();
 
 
-    // =================================================
-    // OYUN İSTATİSTİKLERİ
-    // =================================================
+    // Oyunu sadece bir kere istatistiklere yaz
 
     recordCompletedGame();
 
 
-    gameArea.style.display =
-        "none";
+    if (gameArea) {
 
-    answerArea.style.display =
-        "none";
+        gameArea.style.display =
+            "none";
 
-    timerContainer.style.display =
-        "none";
+    }
 
 
-    team1Name.textContent =
-        "";
+    if (answerArea) {
 
-    team2Name.textContent =
-        "";
+        answerArea.style.display =
+            "none";
 
-
-    team1Logo.removeAttribute(
-        "src"
-    );
-
-    team2Logo.removeAttribute(
-        "src"
-    );
+    }
 
 
-    countdown.textContent =
-        "";
+    if (timerContainer) {
 
-    vsText.textContent =
-        "";
+        timerContainer.style.display =
+            "none";
+
+    }
+
+
+    if (team1Name) {
+
+        team1Name.textContent =
+            "";
+
+    }
+
+
+    if (team2Name) {
+
+        team2Name.textContent =
+            "";
+
+    }
+
+
+    if (team1Logo) {
+
+        team1Logo.removeAttribute(
+            "src"
+        );
+
+    }
+
+
+    if (team2Logo) {
+
+        team2Logo.removeAttribute(
+            "src"
+        );
+
+    }
+
+
+    if (countdown) {
+
+        countdown.textContent =
+            "";
+
+    }
+
+
+    if (vsText) {
+
+        vsText.textContent =
+            "";
+
+    }
 
 
     clearResult();
 
 
-    timerBar.style.width =
-        "0%";
+    if (timerBar) {
+
+        timerBar.style.width =
+            "0%";
+
+    }
 
 
-    finalScore.textContent =
-        score;
+    if (finalScore) {
+
+        finalScore.textContent =
+            score;
+
+    }
 
 
     if (
         currentGameMode === "daily"
     ) {
 
-        finalMessage.textContent =
-            "Bugünün challenge'ını tamamladın!";
+        if (finalMessage) {
+
+            finalMessage.textContent =
+                "Bugünün challenge'ını tamamladın!";
+
+        }
 
 
-        gameOverTitle.textContent =
-            "GÜNLÜK CHALLENGE TAMAMLANDI";
+        if (gameOverTitle) {
+
+            gameOverTitle.textContent =
+                "GÜNLÜK CHALLENGE TAMAMLANDI";
+
+        }
 
 
         localStorage.setItem(
@@ -2506,18 +2952,30 @@ function endGame() {
     }
     else {
 
-        finalMessage.textContent =
-            "10 soruyu tamamladın!";
+        if (finalMessage) {
+
+            finalMessage.textContent =
+                "10 soruyu tamamladın!";
+
+        }
 
 
-        gameOverTitle.textContent =
-            "OYUN TAMAMLANDI";
+        if (gameOverTitle) {
+
+            gameOverTitle.textContent =
+                "OYUN TAMAMLANDI";
+
+        }
 
     }
 
 
-    gameOver.style.display =
-        "flex";
+    if (gameOver) {
+
+        gameOver.style.display =
+            "flex";
+
+    }
 
 }
 
@@ -2554,6 +3012,10 @@ function resetGame() {
         false;
 
 
+    currentGameRecorded =
+        false;
+
+
     timeLeft =
         questionTime;
 
@@ -2562,25 +3024,40 @@ function resetGame() {
         0;
 
 
-    scoreText.textContent =
-        "Puan: 0";
+    if (scoreText) {
+
+        scoreText.textContent =
+            "Puan: 0";
+
+    }
 
 
-    questionNumberText.textContent =
-        "Soru: 0 / " +
-        totalQuestions;
+    if (questionNumberText) {
+
+        questionNumberText.textContent =
+            "Soru: 0 / " +
+            totalQuestions;
+
+    }
 
 
-    answerInput.value =
-        "";
+    if (answerInput) {
+
+        answerInput.value =
+            "";
+
+        answerInput.disabled =
+            true;
+
+    }
 
 
-    answerInput.disabled =
-        true;
+    if (answerButton) {
 
+        answerButton.disabled =
+            true;
 
-    answerButton.disabled =
-        true;
+    }
 
 
     clearPlayerSuggestions();
@@ -2588,58 +3065,113 @@ function resetGame() {
     clearResult();
 
 
-    timerBar.style.width =
-        "100%";
+    if (timerBar) {
+
+        timerBar.style.width =
+            "100%";
+
+    }
 
 
-    gameOver.style.display =
-        "none";
+    if (gameOver) {
+
+        gameOver.style.display =
+            "none";
+
+    }
 
 
-    gameArea.style.display =
-        "flex";
+    if (gameArea) {
+
+        gameArea.style.display =
+            "flex";
+
+    }
 
 
-    answerArea.style.display =
-        "flex";
+    if (answerArea) {
+
+        answerArea.style.display =
+            "flex";
+
+    }
 
 
-    timerContainer.style.display =
-        "block";
+    if (timerContainer) {
+
+        timerContainer.style.display =
+            "block";
+
+    }
 
 
-    team1Name.textContent =
-        "";
+    if (team1Name) {
 
-    team2Name.textContent =
-        "";
+        team1Name.textContent =
+            "";
 
-
-    team1Logo.removeAttribute(
-        "src"
-    );
-
-    team2Logo.removeAttribute(
-        "src"
-    );
+    }
 
 
-    team1.style.visibility =
-        "hidden";
+    if (team2Name) {
 
-    team2.style.visibility =
-        "hidden";
+        team2Name.textContent =
+            "";
 
-
-    countdown.textContent =
-        "";
+    }
 
 
-    vsText.textContent =
-        "VS";
+    if (team1Logo) {
 
-    vsText.style.display =
-        "none";
+        team1Logo.removeAttribute(
+            "src"
+        );
+
+    }
+
+
+    if (team2Logo) {
+
+        team2Logo.removeAttribute(
+            "src"
+        );
+
+    }
+
+
+    if (team1) {
+
+        team1.style.visibility =
+            "hidden";
+
+    }
+
+
+    if (team2) {
+
+        team2.style.visibility =
+            "hidden";
+
+    }
+
+
+    if (countdown) {
+
+        countdown.textContent =
+            "";
+
+    }
+
+
+    if (vsText) {
+
+        vsText.textContent =
+            "VS";
+
+        vsText.style.display =
+            "none";
+
+    }
 
 }
 
@@ -2652,22 +3184,37 @@ if (startButton) {
 
     startButton.addEventListener(
         "click",
-        () => {
+        event => {
+
+            event.preventDefault();
+
 
             currentGameMode =
                 "normal";
 
 
-            gameModeTitle.textContent =
-                "ORTAK FUTBOLCU";
+            if (gameModeTitle) {
+
+                gameModeTitle.textContent =
+                    "ORTAK FUTBOLCU";
+
+            }
 
 
-            homeScreen.style.display =
-                "none";
+            if (homeScreen) {
+
+                homeScreen.style.display =
+                    "none";
+
+            }
 
 
-            gameContent.style.display =
-                "block";
+            if (gameContent) {
+
+                gameContent.style.display =
+                    "block";
+
+            }
 
 
             resetGame();
@@ -2689,7 +3236,10 @@ if (dailyChallengeButton) {
 
     dailyChallengeButton.addEventListener(
         "click",
-        () => {
+        event => {
+
+            event.preventDefault();
+
 
             if (
                 isDailyCompleted()
@@ -2730,16 +3280,28 @@ if (dailyChallengeButton) {
                 0;
 
 
-            gameModeTitle.textContent =
-                "GÜNLÜK CHALLENGE";
+            if (gameModeTitle) {
+
+                gameModeTitle.textContent =
+                    "GÜNLÜK CHALLENGE";
+
+            }
 
 
-            homeScreen.style.display =
-                "none";
+            if (homeScreen) {
+
+                homeScreen.style.display =
+                    "none";
+
+            }
 
 
-            gameContent.style.display =
-                "block";
+            if (gameContent) {
+
+                gameContent.style.display =
+                    "block";
+
+            }
 
 
             resetGame();
@@ -2761,25 +3323,44 @@ if (restartButton) {
 
     restartButton.addEventListener(
         "click",
-        () => {
+        event => {
+
+            event.preventDefault();
+
 
             if (
                 currentGameMode === "daily" &&
                 isDailyCompleted()
             ) {
 
-                gameOver.style.display =
-                    "none";
+                if (gameOver) {
 
-                gameContent.style.display =
-                    "none";
+                    gameOver.style.display =
+                        "none";
 
-                homeScreen.style.display =
-                    "flex";
+                }
+
+
+                if (gameContent) {
+
+                    gameContent.style.display =
+                        "none";
+
+                }
+
+
+                if (homeScreen) {
+
+                    homeScreen.style.display =
+                        "flex";
+
+                }
+
 
                 updateDailyStatus();
 
                 updateHomeStats();
+
 
                 return;
 
@@ -2801,7 +3382,11 @@ if (restartButton) {
 // =====================================================
 
 console.log(
-    "3-2-1 oyunu hazır."
+    "======================================"
+);
+
+console.log(
+    "3-2-1 ORTAK FUTBOLCU HAZIR"
 );
 
 console.log(
@@ -2833,3 +3418,10 @@ console.log(
     "İstatistikler:",
     stats
 );
+
+console.log(
+    "======================================"
+);
+
+
+});
