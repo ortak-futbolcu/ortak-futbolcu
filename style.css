@@ -2395,3 +2395,179 @@ and
         font-size: 14px;
     }
 }
+/* =====================================================
+   OYUN BİTİŞ EKRANI - ANA SAYFA BUTONU
+===================================================== */
+
+#home-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 12px;
+
+    padding: 0 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.2px;
+
+    border:
+        1px solid
+        rgba(79,255,133,0.55);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #176c46,
+            #20945c
+        );
+
+    box-shadow:
+
+        0 7px 20px
+        rgba(0,0,0,0.22),
+
+        0 0 12px
+        rgba(46,204,113,0.08),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.10);
+
+    transition:
+
+        transform 0.18s ease,
+
+        box-shadow 0.18s ease,
+
+        background 0.18s ease;
+}
+
+
+#home-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b8052,
+            #27ad6b
+        );
+
+    box-shadow:
+
+        0 10px 24px
+        rgba(0,0,0,0.30),
+
+        0 0 18px
+        rgba(46,204,113,0.18),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.14);
+}
+
+
+#home-button:active {
+
+    transform:
+        scale(0.98);
+}
+
+
+/* =====================================================
+   OYUN BİTİŞ KUTUSU
+   İKİ BUTON ALT ALTA
+===================================================== */
+
+.game-over-box #restart-button,
+.game-over-box #home-button {
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+}
+
+
+/* =====================================================
+   MOBİL
+===================================================== */
+
+@media (max-width: 700px) {
+
+    #home-button {
+
+        height: 50px;
+
+        margin-top: 10px;
+
+        font-size: 15px;
+    }
+
+}   
+/* OYUN SONU BUTONLARI */
+#game-over .game-over-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+#game-over #restart-button,
+#game-over #home-button {
+    width: 180px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#game-over #restart-button {
+    background: #ffffff;
+    color: #123d2c;
+}
+
+#game-over #home-button {
+    background: #25d98a;
+    color: #07351f;
+}
+
+#game-over #restart-button:hover,
+#game-over #home-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+#game-over #restart-button:active,
+#game-over #home-button:active {
+    transform: translateY(0);
+}

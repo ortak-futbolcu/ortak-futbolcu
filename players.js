@@ -808,7 +808,8 @@ const playerPool = {
             "ARSENAL",
             "CHELSEA",
             "MILAN",
-            "LOS ANGELES FC"
+            "LOS ANGELES FC",
+            "LILLE"
         ]
     },
 
@@ -1413,7 +1414,8 @@ const playerPool = {
     teams: [
         "RIO AVE",
         "BENFICA",
-        "MANCHESTER CITY"
+        "MANCHESTER CITY",
+        "FENERBAHCE"
     ]
 },
 
@@ -1425,7 +1427,8 @@ const playerPool = {
         "READING",
         "WATFORD",
         "BOURNEMOUTH",
-        "MANCHESTER CITY"
+        "MANCHESTER CITY",
+        "FENERBAHCE"
     ]
 },
 
@@ -1437,7 +1440,8 @@ const playerPool = {
         "ARSENAL",
         "HERTHA BERLIN",
         "MARSEILLE",
-        "LAZIO"
+        "LAZIO",
+        "FENERBAHCE"
     ]
 },
 
@@ -1446,7 +1450,8 @@ const playerPool = {
     teams: [
         "MANCHESTER UNITED",
         "GETAFE",
-        "MARSEILLE"
+        "MARSEILLE",
+        "FENERBAHCE"
     ]
 },
 
@@ -2161,16 +2166,6 @@ const playerPool = {
         ]
     },
 
-    "Kolo Toure": {
-        nationality: "FILDISI SAHILI",
-        teams: [
-            "ASEC MIMOSAS",
-            "ARSENAL",
-            "MANCHESTER CITY",
-            "LIVERPOOL"
-        ]
-    },
-
     "Bacary Sagna": {
         nationality: "FRANSA",
         teams: [
@@ -2220,18 +2215,6 @@ const playerPool = {
             "CHELSEA",
             "WERDER BREMEN",
             "WOLFSBURG",
-            "MANCHESTER CITY"
-        ]
-    },
-
-    "Nathan Ake": {
-        nationality: "HOLLANDA",
-        teams: [
-            "FEYENOORD",
-            "CHELSEA",
-            "READING",
-            "WATFORD",
-            "BOURNEMOUTH",
             "MANCHESTER CITY"
         ]
     },
@@ -3949,7 +3932,8 @@ const playerPool = {
             "MANCHESTER CITY",
             "ROMA",
             "INTER",
-            "FENERBAHCE"
+            "FENERBAHCE",
+            "SCHALKE"
         ]
     },
 
@@ -5013,7 +4997,12 @@ const playerPool = {
             "CHELSEA",
             "MANCHESTER UNITED",
             "INTER",
-            "FENERBAHCE"
+            "FENERBAHCE",
+            "NAPOLI",
+            "EVERTON",
+            "ROMA",
+            "ANDERLECHT",
+            "WEST BROMWICH"
         ]
     },
 
@@ -5046,15 +5035,6 @@ const playerPool = {
         teams: [
             "ARSENAL",
             "MANCHESTER CITY"
-        ]
-    },
-
-    "Kolo Toure": {
-        nationality: "FILDISI SAHILI",
-        teams: [
-            "ARSENAL",
-            "MANCHESTER CITY",
-            "LIVERPOOL"
         ]
     },
 
@@ -5149,17 +5129,6 @@ const playerPool = {
             "CHELSEA",
             "ATLETICO MADRID",
             "MILAN"
-        ]
-    },
-
-    "Romelu Lukaku": {
-        nationality: "BELCIKA",
-        teams: [
-            "ANDERLECHT",
-            "CHELSEA",
-            "MANCHESTER UNITED",
-            "INTER",
-            "ROMA"
         ]
     },
 
@@ -5629,7 +5598,8 @@ const playerPool = {
         "TWENTE",
         "SOUTHAMPTON",
         "AJAX",
-        "FENERBAHCE"
+        "FENERBAHCE",
+        "NEC NIJMEGEN"
     ]
 },
 
@@ -6675,7 +6645,8 @@ const playerPool = {
         "NANTES",
         "EINTRACHT FRANKFURT",
         "PSG",
-        "JUVENTUS"
+        "JUVENTUS",
+        "TOTTENHAM"
     ]
 },
 
@@ -7061,7 +7032,8 @@ const playerPool = {
         "KARACABEYSPOR",
         "ISTANBULSPOR",
         "LILLE",
-        "ROMA"
+        "ROMA",
+        "JUVENTUS"
     ]
 },
 
