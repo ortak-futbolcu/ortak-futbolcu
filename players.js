@@ -5286,7 +5286,7 @@ const playerPool = {
     teams: [
         "CORINTHIANS",
         "ROMA",
-        "PARIS SAINT GERMAIN"
+        "PSG"
     ]
 },
 
@@ -5298,7 +5298,7 @@ const playerPool = {
         "DYNAMO MOSCOW",
         "FLUMINENSE",
         "MILAN",
-        "PARIS SAINT GERMAIN",
+        "PSG",
         "CHELSEA"
     ]
 },
@@ -5324,7 +5324,7 @@ const playerPool = {
         "SEVILLA",
         "BARCELONA",
         "JUVENTUS",
-        "PARIS SAINT GERMAIN",
+        "PSG",
         "SAO PAULO",
         "UNAM PUMAS"
     ]
@@ -5719,7 +5719,7 @@ const playerPool = {
     nationality: "ITALYA",
     teams: [
         "PESCARA",
-        "PARIS SAINT GERMAIN",
+        "PSG",
         "AL ARABI"
     ]
 },
@@ -5729,7 +5729,7 @@ const playerPool = {
     teams: [
         "CRETEIL",
         "MANCHESTER CITY",
-        "PARIS SAINT GERMAIN",
+        "PSG",
         "JUVENTUS",
         "MARSEILLE"
     ]
@@ -5781,7 +5781,7 @@ const playerPool = {
         "DANUBIO",
         "PALERMO",
         "NAPOLI",
-        "PARIS SAINT GERMAIN",
+        "PSG",
         "MANCHESTER UNITED",
         "VALENCIA",
         "BOCA JUNIORS"
@@ -5842,7 +5842,7 @@ const playerPool = {
         "INTER",
         "BARCELONA",
         "MILAN",
-        "PARIS SAINT GERMAIN",
+        "PSG",
         "MANCHESTER UNITED",
         "LA GALAXY"
     ]
