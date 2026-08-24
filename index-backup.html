@@ -1,0 +1,5380 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>3-2-1 | Ortak Futbolcu</title>
+
+    <style>
+
+        /* =====================================================
+           TEMEL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+
+            min-height: 100vh;
+
+            font-family:
+                Inter,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #020705;
+
+            color: #ffffff;
+
+            overflow-x: hidden;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        button {
+            border: none;
+        }
+
+
+        /* =====================================================
+           ANA SAYFA
+        ===================================================== */
+
+        #home-screen {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center 42%,
+                    rgba(45, 210, 115, 0.12),
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    ellipse at center bottom,
+                    rgba(20, 100, 60, 0.20),
+                    transparent 55%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #020705 0%,
+                    #06140e 50%,
+                    #081b12 100%
+                );
+
+            overflow: hidden;
+
+            z-index: 1;
+        }
+
+
+        #home-screen::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+
+                radial-gradient(
+                    ellipse at 50% 18%,
+                    rgba(255,255,255,0.055),
+                    transparent 28%
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.48),
+                    transparent 24%,
+                    transparent 76%,
+                    rgba(0,0,0,0.48)
+                );
+
+            pointer-events: none;
+        }
+
+
+        #home-screen::after {
+
+            content: "";
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: -18%;
+
+            transform: translateX(-50%);
+
+            width: 85%;
+
+            height: 48%;
+
+            border-radius: 50%;
+
+            background:
+
+                radial-gradient(
+                    ellipse,
+                    rgba(49,220,120,0.16),
+                    transparent 67%
+                );
+
+            filter: blur(14px);
+
+            pointer-events: none;
+        }
+
+
+        /* =====================================================
+           LOGO 321
+        ===================================================== */
+
+        #home-screen h1 {
+
+            display: block;
+
+            position: relative;
+
+            z-index: 5;
+
+            margin: -100px 0 0;
+
+            font-size:
+                clamp(100px, 15vw, 225px);
+
+            line-height: 0.82;
+
+            font-weight: 1000;
+
+            font-style: italic;
+
+            letter-spacing: -9px;
+
+            background:
+
+                linear-gradient(
+                    100deg,
+                    #ffffff 0%,
+                    #f4f7f5 22%,
+                    #5af39a 42%,
+                    #27d879 52%,
+                    #8af5b5 61%,
+                    #ffffff 78%,
+                    #f1f5f2 100%
+                );
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            filter:
+                drop-shadow(
+                    0 8px 10px
+                    rgba(0,0,0,0.55)
+                )
+                drop-shadow(
+                    0 0 18px
+                    rgba(49,220,120,0.18)
+                );
+        }
+
+
+        #home-screen .home-subtitle {
+
+            display: block;
+
+            position: relative;
+
+            z-index: 5;
+
+            margin: 25px 0 0;
+
+            font-size: 15px;
+
+            font-weight: 800;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            color:
+                rgba(235,255,243,0.72);
+
+            text-shadow:
+                0 2px 8px
+                rgba(0,0,0,0.65);
+        }
+
+
+        /* =====================================================
+           ANA SAYFA BUTONLARI
+        ===================================================== */
+
+        .home-buttons {
+
+            position: absolute;
+
+            z-index: 20;
+
+            left: 50%;
+
+            top: 72%;
+
+            transform: translateX(-50%);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 13px;
+
+            width: min(430px, 82vw);
+        }
+
+
+        #start-button,
+        #daily-challenge-button,
+        #player-history-button {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 62px;
+
+            padding: 0 28px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 13px;
+
+            border-radius: 13px;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                filter 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        #start-button {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #239c5a,
+                    #31d979
+                );
+
+            color: #fff;
+
+            border:
+                1px solid
+                rgba(113,255,164,0.7);
+
+            box-shadow:
+
+                0 12px 35px
+                rgba(0,0,0,0.45),
+
+                0 0 25px
+                rgba(46,204,113,0.22),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.25);
+        }
+
+
+        #start-button::before {
+            content: "▶";
+            font-size: 18px;
+        }
+
+
+        #daily-challenge-button {
+
+            background:
+                rgba(255,255,255,0.08);
+
+            color: #ffffff;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.20);
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0,0,0,0.30);
+        }
+
+
+        #daily-challenge-button::before {
+
+            content: "★";
+
+            color: #35df82;
+
+            font-size: 19px;
+        }
+
+
+        #player-history-button {
+
+            height: 50px;
+
+            background:
+                rgba(25,82,56,0.72);
+
+            color:
+                rgba(235,255,243,0.92);
+
+            border:
+                1px solid
+                rgba(74,205,128,0.28);
+
+            font-size: 13px;
+
+            letter-spacing: 1.2px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.25);
+        }
+
+
+        #player-history-button::before {
+
+            content: "⚽";
+
+            font-size: 17px;
+        }
+
+
+        #start-button:hover,
+        #daily-challenge-button:hover,
+        #player-history-button:hover {
+
+            transform: translateY(-3px);
+
+            filter: brightness(1.08);
+        }
+
+
+        #start-button:active,
+        #daily-challenge-button:active,
+        #player-history-button:active {
+
+            transform: scale(0.98);
+        }
+
+
+        button:disabled {
+
+            opacity: 0.55;
+
+            cursor: not-allowed;
+        }
+
+
+        /* =====================================================
+           GÜNLÜK DURUM
+        ===================================================== */
+
+        #daily-status {
+
+            position: relative;
+
+            z-index: 10;
+
+            margin-top: 2px;
+
+            min-height: 18px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            color:
+                rgba(255,255,255,0.48);
+
+            text-align: center;
+        }
+
+
+        #daily-status.completed {
+
+            color: #35df82;
+        }
+
+
+        /* =====================================================
+           ANA SAYFA İSTATİSTİKLERİ
+        ===================================================== */
+
+        #home-stats {
+
+            position: absolute;
+
+            z-index: 15;
+
+            top: 8%;
+
+            right: 4%;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(105px, 1fr));
+
+            gap: 8px;
+
+            width: 245px;
+        }
+
+
+        .home-stat {
+
+            padding:
+                11px 12px;
+
+            background:
+                rgba(16,52,36,0.68);
+
+            border:
+                1px solid
+                rgba(76,200,125,0.18);
+
+            border-radius:
+                10px;
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            box-shadow:
+                0 8px 22px
+                rgba(0,0,0,0.20);
+        }
+
+
+        .home-stat-label {
+
+            display: block;
+
+            font-size: 8px;
+
+            font-weight: 800;
+
+            letter-spacing: 1.2px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            margin-bottom: 3px;
+        }
+
+
+        .home-stat-value {
+
+            display: block;
+
+            font-size: 17px;
+
+            font-weight: 1000;
+
+            color:
+                #eafff1;
+        }
+
+
+        .home-stat-value.green {
+
+            color:
+                #45e88a;
+        }
+
+
+        /* =====================================================
+           OYUN
+        ===================================================== */
+
+        #game-content {
+
+            position: fixed;
+
+            inset: 0;
+
+            display: none;
+
+            background:
+
+                radial-gradient(
+                    ellipse at center 42%,
+                    rgba(45, 210, 115, 0.09),
+                    transparent 38%
+                ),
+
+                linear-gradient(
+                    180deg,
+                    #020705 0%,
+                    #06140e 55%,
+                    #081b12 100%
+                );
+
+            z-index: 2;
+
+            overflow: hidden;
+        }
+
+
+        .game-header {
+
+            width: 100%;
+
+            padding:
+                28px 30px 0;
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 10;
+        }
+
+
+        .game-header h1 {
+
+            margin: 0;
+
+            font-size: 22px;
+
+            font-weight: 1000;
+
+            letter-spacing: 2px;
+        }
+
+
+        .score {
+
+            margin-top: 8px;
+
+            color: #45e88a;
+
+            font-size: 17px;
+
+            font-weight: 900;
+        }
+
+
+        #question-number {
+
+            margin-top: 5px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            font-size: 11px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           TIMER
+        ===================================================== */
+
+        .timer-container {
+
+            position: absolute;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 5px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            z-index: 50;
+        }
+
+
+        #timer-bar {
+
+            width: 100%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #1fa85f,
+                    #45e88a
+                );
+
+            transition:
+                width 1s linear;
+        }
+
+
+        /* =====================================================
+           OYUN ALANI
+        ===================================================== */
+
+        .game-area {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 48%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: min(900px, 90vw);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 35px;
+        }
+
+
+        .team {
+
+            width: 310px;
+
+            min-height: 220px;
+
+            padding: 25px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(28,82,57,0.94),
+                    rgba(17,61,42,0.94)
+                );
+
+            border:
+                1px solid
+                rgba(75,205,125,0.34);
+
+            border-radius: 20px;
+
+            box-shadow:
+
+                0 15px 35px
+                rgba(0,0,0,0.32),
+
+                inset 0 1px 0
+                rgba(255,255,255,0.07);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+
+            transition:
+                background 0.25s ease,
+                border-color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+
+        .team:hover {
+
+            transform:
+                translateY(-2px);
+
+            border-color:
+                rgba(79,225,132,0.48);
+        }
+
+
+        .team-logo-wrapper {
+
+            width: 105px;
+
+            height: 105px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .team-logo {
+
+            max-width: 100%;
+
+            max-height: 100%;
+
+            object-fit: contain;
+        }
+
+
+        .team-name {
+
+            color: #ffffff;
+
+            font-size: 19px;
+
+            font-weight: 1000;
+
+            text-align: center;
+
+            text-shadow:
+                0 3px 8px
+                rgba(0,0,0,0.50);
+        }
+
+
+        /* =====================================================
+           VS
+        ===================================================== */
+
+        .vs {
+
+            width: 80px;
+
+            height: 160px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            flex-shrink: 0;
+        }
+
+
+        #vs-text {
+
+            position: relative;
+
+            z-index: 5;
+
+            display: none;
+
+            font-size: 26px;
+
+            font-weight: 1000;
+
+            color: #fff;
+
+            text-shadow:
+                0 4px 10px
+                rgba(0,0,0,0.7);
+
+            background:
+                rgba(25,78,53,0.94);
+
+            border:
+                1px solid
+                rgba(76,204,126,0.30);
+
+            border-radius: 50%;
+
+            width: 65px;
+
+            height: 65px;
+
+            align-items: center;
+
+            justify-content: center;
+
+            box-shadow:
+                0 8px 20px
+                rgba(0,0,0,0.32);
+        }
+
+
+        /* =====================================================
+           GERİ SAYIM
+        ===================================================== */
+
+        #countdown {
+
+            position: absolute;
+
+            left: 50%;
+
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+
+            width: 180px;
+
+            height: 150px;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: transparent;
+
+            border: none;
+
+            font-size: 94px;
+
+            font-weight: 1000;
+
+            color: #ffffff;
+
+            text-shadow:
+
+                0 5px 15px
+                rgba(0,0,0,0.8),
+
+                0 0 25px
+                rgba(255,255,255,0.18);
+
+            z-index: 20;
+        }
+
+
+        #countdown.countdown-pop {
+
+            animation:
+                cleanCountdownPop
+                0.8s
+                cubic-bezier(
+                    0.2,
+                    0.8,
+                    0.25,
+                    1
+                );
+        }
+
+
+        @keyframes cleanCountdownPop {
+
+            0% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(0.55);
+
+                opacity: 0;
+            }
+
+            45% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1.15);
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translate(-50%, -50%)
+                    scale(1);
+
+                opacity: 1;
+            }
+        }
+
+
+        /* =====================================================
+           CEVAP
+        ===================================================== */
+
+        .answer-area {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 7%;
+
+            transform:
+                translateX(-50%);
+
+            display: flex;
+
+            flex-direction: row;
+
+            align-items: flex-end;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            z-index: 30;
+        }
+
+
+        .answer-input-wrapper {
+
+            width: 300px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: stretch;
+
+            position: relative;
+        }
+
+
+        .answer-label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 2px;
+
+            color:
+                rgba(255,255,255,0.55);
+
+            text-align: center;
+        }
+
+
+        .answer-area input {
+
+            width: 300px;
+
+            height: 54px;
+
+            padding: 0 17px;
+
+            background:
+                rgba(255,255,255,0.94);
+
+            color: #10251b;
+
+            border-radius: 10px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 8px 25px
+                rgba(0,0,0,0.22);
+
+            font-size: 16px;
+        }
+
+
+        .answer-area input:focus {
+
+            outline: none;
+
+            border-color:
+                rgba(46,204,113,0.75);
+        }
+
+
+        .answer-area input:disabled {
+
+            opacity: 0.65;
+
+            cursor: not-allowed;
+        }
+
+
+        #player-suggestions {
+
+            width: 300px;
+
+            position: absolute;
+
+            left: 0;
+
+            top: 62px;
+
+            margin: 0;
+
+            padding: 0;
+
+            border: none;
+
+            background: transparent;
+
+            overflow: hidden;
+
+            z-index: 100;
+        }
+
+
+        #player-suggestions:empty {
+
+            display: none;
+        }
+
+
+        .player-suggestion {
+
+            background:
+                rgba(13,45,31,0.98);
+
+            color: #fff;
+
+            padding: 13px 15px;
+
+            font-size: 16px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.07);
+
+            cursor: pointer;
+        }
+
+
+        .player-suggestion:hover {
+
+            background:
+                rgba(35,105,67,0.98);
+        }
+
+
+        #answerButton {
+
+            width: 126px;
+
+            height: 54px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #e8eee9
+                );
+
+            color: #0a2118;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            font-weight: 1000;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.2s ease,
+                filter 0.2s ease;
+        }
+
+
+        #answerButton:hover:not(:disabled) {
+
+            transform:
+                translateY(-2px);
+
+            filter:
+                brightness(1.05);
+        }
+
+
+        /* =====================================================
+           SONUÇ
+        ===================================================== */
+
+        #result {
+
+            position: absolute;
+
+            left: 50%;
+
+            bottom: 2%;
+
+            transform:
+                translateX(-50%);
+
+            min-height: 25px;
+
+            font-size: 15px;
+
+            font-weight: 1000;
+
+            letter-spacing: 1px;
+
+            z-index: 40;
+
+            pointer-events: none;
+        }
+
+
+        #result.correct {
+
+            color: #45e88a;
+        }
+
+
+        #result.wrong {
+
+            color: #ff6b6b;
+        }
+
+
+        #result.timeout {
+
+            color: #ffc857;
+        }
+
+
+        #result.result-visible {
+
+            animation:
+                resultPop
+                0.25s
+                ease-out;
+        }
+
+
+        @keyframes resultPop {
+
+            0% {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-50%)
+                    translateY(8px)
+                    scale(0.95);
+            }
+
+            100% {
+
+                opacity: 1;
+
+                transform:
+                    translateX(-50%)
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        /* =====================================================
+           OYUN BİTİŞ
+        ===================================================== */
+
+        #game-over {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            align-items: center;
+
+            justify-content: center;
+
+            z-index: 500;
+
+            padding: 20px;
+
+            background:
+
+                radial-gradient(
+                    circle at center,
+                    rgba(29,100,61,0.20),
+                    transparent 45%
+                ),
+
+                rgba(1,7,4,0.88);
+
+            backdrop-filter:
+                blur(8px);
+
+            -webkit-backdrop-filter:
+                blur(8px);
+        }
+
+
+        .game-over-box {
+
+            width: 470px;
+
+            max-width: 88%;
+
+            padding: 42px 40px 38px;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(24,69,49,0.98),
+                    rgba(10,34,24,0.98)
+                );
+
+            border:
+                1px solid
+                rgba(74,220,130,0.16);
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 30px 80px
+                rgba(0,0,0,0.65);
+        }
+
+
+        .game-over-icon {
+
+            font-size: 58px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .game-over h2 {
+
+            margin: 0 0 25px;
+
+            font-size: 34px;
+
+            font-weight: 1000;
+        }
+
+
+        .final-score-label {
+
+            margin-bottom: 2px;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            letter-spacing: 3px;
+
+            color:
+                rgba(255,255,255,0.48);
+        }
+
+
+        #final-score {
+
+            margin: 0 0 12px;
+
+            font-size: 64px;
+
+            font-weight: 1000;
+
+            color: #35df82;
+        }
+
+
+        #final-message {
+
+            margin: 0 auto 30px;
+
+            padding-top: 18px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            font-size: 17px;
+
+            font-weight: 800;
+        }
+
+
+        #restart-button {
+
+            width: 190px;
+
+            height: 52px;
+
+            background:
+
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #e7eee9
+                );
+
+            color: #0a2118;
+
+            border-radius: 10px;
+
+            font-weight: 1000;
+
+            cursor: pointer;
+        }
+
+
+        /* =====================================================
+           FUTBOLCU ARŞİVİ
+        ===================================================== */
+
+        #player-history-modal {
+
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 9999;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 25px;
+
+            background:
+                rgba(0,0,0,0.72);
+
+            backdrop-filter:
+                blur(9px);
+
+            -webkit-backdrop-filter:
+                blur(9px);
+        }
+
+
+        #player-history-modal.active {
+
+            display: flex;
+        }
+
+
+        .player-history-box {
+
+            width: 600px;
+
+            max-width: 95vw;
+
+            max-height: 82vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            background:
+
+                linear-gradient(
+                    145deg,
+                    rgba(24,74,51,0.98),
+                    rgba(8,30,20,0.99)
+                );
+
+            border:
+                1px solid
+                rgba(78,211,132,0.28);
+
+            border-radius:
+                20px;
+
+            box-shadow:
+                0 30px 90px
+                rgba(0,0,0,0.70);
+
+            overflow: hidden;
+        }
+
+
+        .player-history-header {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                22px 24px 18px;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.08);
+        }
+
+
+        .player-history-title {
+
+            margin: 0;
+
+            font-size: 22px;
+
+            font-weight: 1000;
+        }
+
+
+        .player-history-subtitle {
+
+            margin:
+                5px 0 0;
+
+            font-size: 11px;
+
+            color:
+                rgba(255,255,255,0.45);
+
+            letter-spacing:
+                0.8px;
+        }
+
+
+        #close-player-history {
+
+            width: 38px;
+
+            height: 38px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            background:
+                rgba(255,255,255,0.07);
+
+            color:
+                #ffffff;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        #close-player-history:hover {
+
+            background:
+                rgba(255,255,255,0.13);
+        }
+
+
+        .player-history-summary {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 8px;
+
+            padding:
+                14px 20px;
+        }
+
+
+        .history-summary-card {
+
+            padding:
+                10px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border-radius:
+                10px;
+        }
+
+
+        .history-summary-label {
+
+            display: block;
+
+            font-size: 8px;
+
+            color:
+                rgba(255,255,255,0.40);
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .history-summary-value {
+
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 19px;
+
+            font-weight: 1000;
+
+            color:
+                #45e88a;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+        }
+
+
+        #player-history-list {
+
+            overflow-y: auto;
+
+            padding:
+                4px 20px 20px;
+        }
+
+
+        .history-player {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding:
+                13px 15px;
+
+            margin-bottom: 7px;
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.045);
+
+            border-radius:
+                10px;
+        }
+
+
+        .history-player-left {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            min-width: 0;
+        }
+
+
+        .history-player-rank {
+
+            width: 27px;
+
+            height: 27px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background:
+                rgba(53,223,130,0.12);
+
+            color:
+                #45e88a;
+
+            font-size: 11px;
+
+            font-weight: 1000;
+
+            flex-shrink: 0;
+        }
+
+
+        .history-player-name {
+
+            color:
+                #ffffff;
+
+            font-size: 14px;
+
+            font-weight: 800;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+
+            white-space: nowrap;
+        }
+
+
+        .history-player-count {
+
+            color:
+                #45e88a;
+
+            font-size: 13px;
+
+            font-weight: 1000;
+
+            white-space: nowrap;
+        }
+
+
+        .history-empty {
+
+            padding:
+                50px 20px;
+
+            text-align: center;
+
+            color:
+                rgba(255,255,255,0.42);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =====================================================
+           MOBİL
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            #home-screen h1 {
+
+                margin-top: -80px;
+
+                font-size: 26vw;
+
+                letter-spacing: -3px;
+            }
+
+
+            #home-screen .home-subtitle {
+
+                font-size: 10px;
+
+                letter-spacing: 2.5px;
+            }
+
+
+            .home-buttons {
+
+                top: 67%;
+
+                width: 76vw;
+            }
+
+
+            #start-button,
+            #daily-challenge-button {
+
+                height: 55px;
+
+                font-size: 14px;
+            }
+
+
+            #player-history-button {
+
+                height: 48px;
+
+                font-size: 12px;
+            }
+
+
+            #home-stats {
+
+                top: 5%;
+
+                right: 50%;
+
+                transform:
+                    translateX(50%);
+
+                width: 82vw;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .home-stat {
+
+                padding: 8px;
+            }
+
+
+            .home-stat-label {
+
+                font-size: 7px;
+            }
+
+
+            .home-stat-value {
+
+                font-size: 14px;
+            }
+
+
+            .game-header {
+
+                padding-top: 22px;
+            }
+
+
+            .game-header h1 {
+
+                font-size: 17px;
+            }
+
+
+            .game-area {
+
+                top: 42%;
+
+                width: 94vw;
+
+                gap: 8px;
+            }
+
+
+            .team {
+
+                width: 40vw;
+
+                min-height: 165px;
+
+                padding: 15px;
+
+                border-radius: 15px;
+
+                gap: 10px;
+            }
+
+
+            .team-logo-wrapper {
+
+                width: 70px;
+
+                height: 70px;
+            }
+
+
+            .team-name {
+
+                font-size: 13px;
+            }
+
+
+            .vs {
+
+                width: 45px;
+
+                height: 100px;
+            }
+
+
+            #vs-text {
+
+                width: 48px;
+
+                height: 48px;
+
+                font-size: 17px;
+            }
+
+
+            #countdown {
+
+                width: 110px;
+
+                height: 110px;
+
+                font-size: 62px;
+            }
+
+
+            .answer-area {
+
+                width: 100%;
+
+                bottom: 7%;
+
+                flex-direction: column;
+
+                align-items: center;
+
+                gap: 10px;
+            }
+
+
+            .answer-input-wrapper {
+
+                width: 70vw;
+
+            }
+
+
+            .answer-area input {
+
+                width: 100%;
+            }
+
+
+            #player-suggestions {
+
+                width: 100%;
+            }
+
+
+            #answerButton {
+
+                width: 150px;
+
+                height: 50px;
+            }
+
+
+            #result {
+
+                bottom: 1%;
+            }
+
+
+            .game-over-box {
+
+                padding:
+                    35px 25px 32px;
+            }
+
+
+            .game-over h2 {
+
+                font-size: 28px;
+            }
+
+
+            #final-score {
+
+                font-size: 52px;
+            }
+
+
+            .player-history-summary {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .player-history-summary
+            .history-summary-card:last-child {
+
+                grid-column:
+                    1 / -1;
+            }
+
+        }
+
+
+        @media (max-width: 400px) {
+
+            #home-screen h1 {
+
+                font-size: 25vw;
+            }
+
+
+            .home-buttons {
+
+                width: 78vw;
+            }
+
+
+            .team {
+
+                min-height: 145px;
+            }
+
+
+            .team-logo-wrapper {
+
+                width: 60px;
+
+                height: 60px;
+            }
+
+
+            .team-name {
+
+                font-size: 11px;
+            }
+
+        }
+
+
+        @media
+        (max-height: 600px)
+        and
+        (orientation: landscape) {
+
+            #home-screen h1 {
+
+                margin-top: -20px;
+
+                font-size: 20vh;
+            }
+
+
+            .home-buttons {
+
+                top: 70%;
+            }
+
+
+            #home-stats {
+
+                top: 3%;
+
+                transform:
+                    scale(0.75);
+
+                transform-origin:
+                    top right;
+            }
+
+
+            .game-area {
+
+                top: 45%;
+            }
+
+
+            .team {
+
+                min-height: 130px;
+
+                padding: 10px;
+            }
+
+
+            .team-logo-wrapper {
+
+                width: 55px;
+
+                height: 55px;
+            }
+
+
+            .answer-area {
+
+                bottom: 3%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ANA SAYFA
+    ===================================================== -->
+
+    <div id="home-screen">
+
+        <div id="home-stats">
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    EN YÜKSEK SKOR
+                </span>
+
+                <span
+                    class="home-stat-value green"
+                    id="home-high-score"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    OYNANAN OYUN
+                </span>
+
+                <span
+                    class="home-stat-value"
+                    id="home-games-played"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    DOĞRU SERİ
+                </span>
+
+                <span
+                    class="home-stat-value green"
+                    id="home-correct-streak"
+                >
+                    0
+                </span>
+
+            </div>
+
+
+            <div class="home-stat">
+
+                <span class="home-stat-label">
+                    GÜN SERİSİ
+                </span>
+
+                <span
+                    class="home-stat-value green"
+                    id="home-day-streak"
+                >
+                    0
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <h1>321</h1>
+
+
+        <p class="home-subtitle">
+            ORTAK FUTBOLCUYU BUL
+        </p>
+
+
+        <div class="home-buttons">
+
+            <button
+                id="start-button"
+                type="button"
+            >
+                OYUNA BAŞLA
+            </button>
+
+
+            <button
+                id="daily-challenge-button"
+                type="button"
+            >
+                GÜNLÜK CHALLENGE
+            </button>
+
+
+            <button
+                id="player-history-button"
+                type="button"
+            >
+                FUTBOLCU ARŞİVİ
+            </button>
+
+
+            <div id="daily-status"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FUTBOLCU ARŞİVİ
+    ===================================================== -->
+
+    <div
+        id="player-history-modal"
+        aria-hidden="true"
+    >
+
+        <div class="player-history-box">
+
+            <div class="player-history-header">
+
+                <div>
+
+                    <h2 class="player-history-title">
+                        FUTBOLCU ARŞİVİ
+                    </h2>
+
+                    <p class="player-history-subtitle">
+                        Daha önce yazdığın futbolcular
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="close-player-history"
+                    type="button"
+                    aria-label="Kapat"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="player-history-summary">
+
+                <div class="history-summary-card">
+
+                    <span class="history-summary-label">
+                        FARKLI FUTBOLCU
+                    </span>
+
+                    <span
+                        class="history-summary-value"
+                        id="history-unique-count"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="history-summary-card">
+
+                    <span class="history-summary-label">
+                        TOPLAM YAZIM
+                    </span>
+
+                    <span
+                        class="history-summary-value"
+                        id="history-total-entries"
+                    >
+                        0
+                    </span>
+
+                </div>
+
+
+                <div class="history-summary-card">
+
+                    <span class="history-summary-label">
+                        EN ÇOK YAZILAN
+                    </span>
+
+                    <span
+                        class="history-summary-value"
+                        id="history-most-written"
+                    >
+                        -
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div id="player-history-list"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OYUN
+    ===================================================== -->
+
+    <div id="game-content">
+
+        <header class="game-header">
+
+            <h1>
+
+                <span id="game-mode-title">
+                    ORTAK FUTBOLCU
+                </span>
+
+            </h1>
+
+
+            <div
+                class="score"
+                id="score"
+            >
+                Puan: 0
+            </div>
+
+
+            <div id="question-number">
+                Soru: 0 / 10
+            </div>
+
+        </header>
+
+
+        <div class="timer-container">
+
+            <div id="timer-bar"></div>
+
+        </div>
+
+
+        <div class="game-area">
+
+            <div
+                class="team"
+                id="team1"
+            >
+
+                <div class="team-logo-wrapper">
+
+                    <img
+                        class="team-logo"
+                        id="team1-logo"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+                <span
+                    class="team-name"
+                    id="team1-name"
+                ></span>
+
+            </div>
+
+
+            <div class="vs">
+
+                <div id="countdown"></div>
+
+                <div id="vs-text">
+                    VS
+                </div>
+
+            </div>
+
+
+            <div
+                class="team"
+                id="team2"
+            >
+
+                <div class="team-logo-wrapper">
+
+                    <img
+                        class="team-logo"
+                        id="team2-logo"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+                <span
+                    class="team-name"
+                    id="team2-name"
+                ></span>
+
+            </div>
+
+        </div>
+
+
+        <div class="answer-area">
+
+            <div class="answer-input-wrapper">
+
+                <label
+                    class="answer-label"
+                    for="answerInput"
+                >
+                    FUTBOLCU ADINI GİR
+                </label>
+
+
+                <input
+                    type="text"
+                    id="answerInput"
+                    placeholder="Ortak futbolcuyu yaz"
+                    autocomplete="off"
+                    spellcheck="false"
+                    disabled
+                >
+
+
+                <div id="player-suggestions"></div>
+
+            </div>
+
+
+            <button
+                id="answerButton"
+                type="button"
+                disabled
+            >
+                CEVAPLA
+            </button>
+
+        </div>
+
+
+        <div
+            id="result"
+            aria-live="polite"
+        ></div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OYUN BİTİŞ
+    ===================================================== -->
+
+    <div
+        id="game-over"
+        class="game-over"
+    >
+
+        <div class="game-over-box">
+
+            <div class="game-over-icon">
+                🏆
+            </div>
+
+
+            <h2 id="game-over-title">
+                OYUN TAMAMLANDI
+            </h2>
+
+
+            <div class="final-score-label">
+                PUAN
+            </div>
+
+
+            <div id="final-score">
+                0
+            </div>
+
+
+            <div id="final-message">
+                10 soruyu tamamladın!
+            </div>
+
+
+            <button
+                id="restart-button"
+                type="button"
+            >
+                TEKRAR OYNA
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         PLAYERS.JS
+    ===================================================== -->
+
+    <script src="players.js"></script>
+
+
+    <!-- =====================================================
+         OYUN JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+    "use strict";
+
+
+    /* =====================================================
+       TAKIMLAR
+    ===================================================== */
+
+    const playableTeams = [
+
+        "BESIKTAS",
+        "FENERBAHCE",
+        "GALATASARAY",
+        "ISTANBUL BASAKSEHIR",
+        "TRABZONSPOR",
+
+        "PSG",
+        "LILLE",
+        "LYON",
+        "MARSEILLE",
+
+        "LIVERPOOL",
+        "MANCHESTER CITY",
+        "MANCHESTER UNITED",
+        "TOTTENHAM",
+        "CHELSEA",
+        "ARSENAL",
+
+        "BARCELONA",
+        "REAL MADRID",
+        "ATLETICO MADRID",
+
+        "BAYERN MUNIH",
+        "BORUSSIA DORTMUND",
+
+        "INTER",
+        "NAPOLI",
+        "MILAN",
+        "JUVENTUS",
+        "ROMA",
+
+        "PORTO",
+        "SPORTING CP",
+        "BENFICA"
+
+    ];
+
+
+    /* =====================================================
+       LOGOLAR
+    ===================================================== */
+
+    const teamLogos = {
+
+        "BESIKTAS":
+            "logos/besiktas.svg",
+
+        "FENERBAHCE":
+            "logos/fenerbahce.svg",
+
+        "GALATASARAY":
+            "logos/galatasaray.svg",
+
+        "ISTANBUL BASAKSEHIR":
+            "logos/istanbul-basaksehir.svg",
+
+        "TRABZONSPOR":
+            "logos/trabzonspor.svg",
+
+        "PSG":
+            "logos/psg.svg",
+
+        "LILLE":
+            "logos/lille.svg",
+
+        "LYON":
+            "logos/lyon.svg",
+
+        "MARSEILLE":
+            "logos/marseille.svg",
+
+        "LIVERPOOL":
+            "logos/liverpool.svg",
+
+        "MANCHESTER CITY":
+            "logos/manchester-city.svg",
+
+        "MANCHESTER UNITED":
+            "logos/manchester-united.svg",
+
+        "TOTTENHAM":
+            "logos/tottenham.svg",
+
+        "CHELSEA":
+            "logos/chelsea.svg",
+
+        "ARSENAL":
+            "logos/arsenal.svg",
+
+        "BARCELONA":
+            "logos/barcelona.svg",
+
+        "REAL MADRID":
+            "logos/real-madrid.svg",
+
+        "ATLETICO MADRID":
+            "logos/atletico-madrid.svg",
+
+        "BAYERN MUNIH":
+            "logos/bayern-munich.svg",
+
+        "BORUSSIA DORTMUND":
+            "logos/borussia-dortmund.svg",
+
+        "INTER":
+            "logos/inter.svg",
+
+        "NAPOLI":
+            "logos/napoli.svg",
+
+        "MILAN":
+            "logos/milan.svg",
+
+        "JUVENTUS":
+            "logos/juventus.svg",
+
+        "ROMA":
+            "logos/roma.svg",
+
+        "PORTO":
+            "logos/porto.svg",
+
+        "SPORTING CP":
+            "logos/sporting-cp.svg",
+
+        "BENFICA":
+            "logos/benfica.svg"
+
+    };
+
+
+    /* =====================================================
+       PLAYERPOOL KONTROLÜ
+    ===================================================== */
+
+    if (
+        typeof playerPool === "undefined" ||
+        !playerPool ||
+        typeof playerPool !== "object"
+    ) {
+
+        throw new Error(
+            "playerPool bulunamadı. players.js dosyasının index.html'den önce yüklenmesi gerekiyor."
+        );
+
+    }
+
+
+    /* =====================================================
+       DOM
+    ===================================================== */
+
+    const $ = id =>
+        document.getElementById(id);
+
+
+    const startButton =
+        $("start-button");
+
+    const dailyChallengeButton =
+        $("daily-challenge-button");
+
+    const playerHistoryButton =
+        $("player-history-button");
+
+    const playerHistoryModal =
+        $("player-history-modal");
+
+    const closePlayerHistory =
+        $("close-player-history");
+
+    const playerHistoryList =
+        $("player-history-list");
+
+    const historyUniqueCount =
+        $("history-unique-count");
+
+    const historyTotalEntries =
+        $("history-total-entries");
+
+    const historyMostWritten =
+        $("history-most-written");
+
+    const homeHighScore =
+        $("home-high-score");
+
+    const homeGamesPlayed =
+        $("home-games-played");
+
+    const homeCorrectStreak =
+        $("home-correct-streak");
+
+    const homeDayStreak =
+        $("home-day-streak");
+
+    const dailyStatus =
+        $("daily-status");
+
+    const homeScreen =
+        $("home-screen");
+
+    const gameContent =
+        $("game-content");
+
+    const countdown =
+        $("countdown");
+
+    const vsText =
+        $("vs-text");
+
+    const team1 =
+        $("team1");
+
+    const team2 =
+        $("team2");
+
+    const team1Logo =
+        $("team1-logo");
+
+    const team2Logo =
+        $("team2-logo");
+
+    const team1Name =
+        $("team1-name");
+
+    const team2Name =
+        $("team2-name");
+
+    const answerInput =
+        $("answerInput");
+
+    const answerButton =
+        $("answerButton");
+
+    const scoreText =
+        $("score");
+
+    const result =
+        $("result");
+
+    const timerBar =
+        $("timer-bar");
+
+    const gameArea =
+        document.querySelector(".game-area");
+
+    const answerArea =
+        document.querySelector(".answer-area");
+
+    const timerContainer =
+        document.querySelector(".timer-container");
+
+    const gameOver =
+        $("game-over");
+
+    const finalScore =
+        $("final-score");
+
+    const finalMessage =
+        $("final-message");
+
+    const restartButton =
+        $("restart-button");
+
+    const questionNumberText =
+        $("question-number");
+
+    const playerSuggestions =
+        $("player-suggestions");
+
+    const gameModeTitle =
+        $("game-mode-title");
+
+
+    /* =====================================================
+       OYUN DEĞİŞKENLERİ
+    ===================================================== */
+
+    let score = 0;
+
+    let currentQuestionPlayers = [];
+
+    let questionAnswered = false;
+
+    let timer = null;
+
+    let countdownTimeouts = [];
+
+    let timeLeft = 15;
+
+    const questionTime = 15;
+
+    let questionNumber = 0;
+
+    const totalQuestions = 10;
+
+    let usedQuestions = [];
+
+    let gameVersion = 0;
+
+    let currentGameMode = "normal";
+
+    let dailyQuestions = [];
+
+    let dailyQuestionIndex = 0;
+
+    let gameCompleted = false;
+
+
+    /* =====================================================
+       İSTATİSTİK
+    ===================================================== */
+
+    const STATS_STORAGE_KEY =
+        "321_game_statistics_v1";
+
+    const DAILY_STORAGE_KEY =
+        "321_daily_completed";
+
+
+    function getDefaultStats() {
+
+        return {
+
+            highScore: 0,
+
+            gamesPlayed: 0,
+
+            currentCorrectStreak: 0,
+
+            bestCorrectStreak: 0,
+
+            dayStreak: 0,
+
+            lastPlayedDate: null,
+
+            playerCounts: {}
+
+        };
+
+    }
+
+
+    function loadStats() {
+
+        try {
+
+            const saved =
+                localStorage.getItem(
+                    STATS_STORAGE_KEY
+                );
+
+
+            if (!saved) {
+
+                return getDefaultStats();
+
+            }
+
+
+            const parsed =
+                JSON.parse(saved);
+
+
+            if (
+                !parsed ||
+                typeof parsed !== "object"
+            ) {
+
+                return getDefaultStats();
+
+            }
+
+
+            return {
+
+                ...getDefaultStats(),
+
+                ...parsed,
+
+                playerCounts:
+                    (
+                        parsed.playerCounts &&
+                        typeof parsed.playerCounts === "object"
+                    )
+                        ? parsed.playerCounts
+                        : {}
+
+            };
+
+        }
+        catch (error) {
+
+            console.error(
+                "İstatistikler okunamadı:",
+                error
+            );
+
+            return getDefaultStats();
+
+        }
+
+    }
+
+
+    let stats =
+        loadStats();
+
+
+    function saveStats() {
+
+        try {
+
+            localStorage.setItem(
+                STATS_STORAGE_KEY,
+                JSON.stringify(stats)
+            );
+
+        }
+        catch (error) {
+
+            console.error(
+                "İstatistikler kaydedilemedi:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TARİH
+    ===================================================== */
+
+    function getDateKey(date = new Date()) {
+
+        const year =
+            date.getFullYear();
+
+        const month =
+            String(
+                date.getMonth() + 1
+            ).padStart(2, "0");
+
+        const day =
+            String(
+                date.getDate()
+            ).padStart(2, "0");
+
+        return `${year}-${month}-${day}`;
+
+    }
+
+
+    function getTodayKey() {
+
+        return getDateKey();
+
+    }
+
+
+    function getYesterdayKey() {
+
+        const date =
+            new Date();
+
+        date.setDate(
+            date.getDate() - 1
+        );
+
+        return getDateKey(date);
+
+    }
+
+
+    /* =====================================================
+       GÜN SERİSİ
+    ===================================================== */
+
+    function updateDayStreak() {
+
+        const today =
+            getTodayKey();
+
+        const yesterday =
+            getYesterdayKey();
+
+
+        if (
+            stats.lastPlayedDate === today
+        ) {
+
+            return;
+
+        }
+
+
+        if (
+            stats.lastPlayedDate === yesterday
+        ) {
+
+            stats.dayStreak =
+                Math.max(
+                    1,
+                    Number(stats.dayStreak || 0) + 1
+                );
+
+        }
+        else {
+
+            stats.dayStreak = 1;
+
+        }
+
+
+        stats.lastPlayedDate =
+            today;
+
+
+        saveStats();
+
+    }
+
+
+    /* =====================================================
+       ANA SAYFA İSTATİSTİKLERİ
+    ===================================================== */
+
+    function updateHomeStats() {
+
+        if (homeHighScore) {
+
+            homeHighScore.textContent =
+                Number(stats.highScore || 0);
+
+        }
+
+
+        if (homeGamesPlayed) {
+
+            homeGamesPlayed.textContent =
+                Number(stats.gamesPlayed || 0);
+
+        }
+
+
+        if (homeCorrectStreak) {
+
+            homeCorrectStreak.textContent =
+                Number(
+                    stats.currentCorrectStreak || 0
+                );
+
+        }
+
+
+        if (homeDayStreak) {
+
+            homeDayStreak.textContent =
+                Number(stats.dayStreak || 0);
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TEXT NORMALİZASYONU
+    ===================================================== */
+
+    function normalizeText(text) {
+
+        let value =
+            String(text ?? "")
+                .trim()
+                .toLocaleLowerCase("tr-TR");
+
+
+        value =
+            value
+                .replace(/ı/g, "i")
+                .replace(/ğ/g, "g")
+                .replace(/ü/g, "u")
+                .replace(/ş/g, "s")
+                .replace(/ö/g, "o")
+                .replace(/ç/g, "c");
+
+
+        value =
+            value.replace(
+                /[.'’`-]/g,
+                " "
+            );
+
+
+        value =
+            value.replace(
+                /\s+/g,
+                " "
+            );
+
+
+        return value.trim();
+
+    }
+
+
+    function getPlayerNameWords(playerName) {
+
+        return normalizeText(playerName)
+            .split(" ")
+            .filter(Boolean);
+
+    }
+
+
+    /* =====================================================
+       OYUNCU TANIMA
+    ===================================================== */
+
+    function findRecognizedPlayer(userAnswer) {
+
+        const normalizedAnswer =
+            normalizeText(userAnswer);
+
+
+        if (!normalizedAnswer) {
+
+            return null;
+
+        }
+
+
+        const allPlayers =
+            Object.keys(playerPool);
+
+
+        const exactMatch =
+            allPlayers.find(
+                playerName =>
+                    normalizeText(playerName) ===
+                    normalizedAnswer
+            );
+
+
+        if (exactMatch) {
+
+            return exactMatch;
+
+        }
+
+
+        const candidates =
+            allPlayers.filter(
+                playerName => {
+
+                    const words =
+                        getPlayerNameWords(
+                            playerName
+                        );
+
+
+                    return words.includes(
+                        normalizedAnswer
+                    );
+
+                }
+            );
+
+
+        if (
+            candidates.length === 1
+        ) {
+
+            return candidates[0];
+
+        }
+
+
+        return null;
+
+    }
+
+
+    /* =====================================================
+       OYUNCU ARŞİVİ
+    ===================================================== */
+
+    function recordPlayerWritten(userAnswer) {
+
+        const recognizedPlayer =
+            findRecognizedPlayer(
+                userAnswer
+            );
+
+
+        if (!recognizedPlayer) {
+
+            return;
+
+        }
+
+
+        if (
+            typeof stats.playerCounts[
+                recognizedPlayer
+            ] !== "number"
+        ) {
+
+            stats.playerCounts[
+                recognizedPlayer
+            ] = 0;
+
+        }
+
+
+        stats.playerCounts[
+            recognizedPlayer
+        ]++;
+
+
+        saveStats();
+
+    }
+
+
+    function updatePlayerHistory() {
+
+        if (!playerHistoryList) {
+
+            return;
+
+        }
+
+
+        const entries =
+            Object.entries(
+                stats.playerCounts || {}
+            );
+
+
+        const totalEntries =
+            entries.reduce(
+                (sum, [, count]) =>
+                    sum + Number(count || 0),
+                0
+            );
+
+
+        if (historyUniqueCount) {
+
+            historyUniqueCount.textContent =
+                entries.length;
+
+        }
+
+
+        if (historyTotalEntries) {
+
+            historyTotalEntries.textContent =
+                totalEntries;
+
+        }
+
+
+        entries.sort(
+            (a, b) =>
+                Number(b[1]) - Number(a[1]) ||
+                a[0].localeCompare(
+                    b[0],
+                    "tr"
+                )
+        );
+
+
+        if (historyMostWritten) {
+
+            historyMostWritten.textContent =
+                entries.length
+                    ? entries[0][0]
+                    : "-";
+
+        }
+
+
+        if (!entries.length) {
+
+            playerHistoryList.innerHTML = `
+
+                <div class="history-empty">
+
+                    Henüz bir futbolcu yazmadın.<br>
+
+                    Oyun oynadıkça futbolcu arşivin
+                    burada oluşacak.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        playerHistoryList.innerHTML = "";
+
+
+        entries.forEach(
+            ([playerName, count], index) => {
+
+                const row =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                row.className =
+                    "history-player";
+
+
+                row.innerHTML = `
+
+                    <div class="history-player-left">
+
+                        <div class="history-player-rank">
+                            ${index + 1}
+                        </div>
+
+                        <div class="history-player-name">
+                            ${escapeHtml(playerName)}
+                        </div>
+
+                    </div>
+
+                    <div class="history-player-count">
+                        ×${Number(count)}
+                    </div>
+
+                `;
+
+
+                playerHistoryList.appendChild(
+                    row
+                );
+
+            }
+        );
+
+    }
+
+
+    function escapeHtml(text) {
+
+        return String(text)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    /* =====================================================
+       ARŞİV MODAL
+    ===================================================== */
+
+    function openPlayerHistory() {
+
+        updatePlayerHistory();
+
+        playerHistoryModal.classList.add(
+            "active"
+        );
+
+        playerHistoryModal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+    }
+
+
+    function closePlayerHistoryModal() {
+
+        playerHistoryModal.classList.remove(
+            "active"
+        );
+
+        playerHistoryModal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+    }
+
+
+    playerHistoryButton?.addEventListener(
+        "click",
+        openPlayerHistory
+    );
+
+
+    closePlayerHistory?.addEventListener(
+        "click",
+        closePlayerHistoryModal
+    );
+
+
+    playerHistoryModal?.addEventListener(
+        "click",
+        event => {
+
+            if (
+                event.target ===
+                playerHistoryModal
+            ) {
+
+                closePlayerHistoryModal();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closePlayerHistoryModal();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       TAKIMLAR
+    ===================================================== */
+
+    const teams =
+        playableTeams.filter(
+            team => {
+
+                return Object.values(
+                    playerPool
+                ).some(
+                    player => {
+
+                        return (
+                            player &&
+                            Array.isArray(player.teams) &&
+                            player.teams.includes(team)
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+    /* =====================================================
+       ORTAK FUTBOLCULAR
+    ===================================================== */
+
+    function findCommonPlayers(
+        teamA,
+        teamB
+    ) {
+
+        const commonPlayers = [];
+
+
+        for (
+            const playerName in playerPool
+        ) {
+
+            const playerData =
+                playerPool[playerName];
+
+
+            if (
+                !playerData ||
+                !Array.isArray(playerData.teams)
+            ) {
+
+                continue;
+
+            }
+
+
+            if (
+                playerData.teams.includes(teamA) &&
+                playerData.teams.includes(teamB)
+            ) {
+
+                commonPlayers.push(
+                    playerName
+                );
+
+            }
+
+        }
+
+
+        return commonPlayers;
+
+    }
+
+
+    /* =====================================================
+       GEÇERLİ EŞLEŞMELER
+    ===================================================== */
+
+    const validTeamPairs = [];
+
+
+    for (
+        let i = 0;
+        i < teams.length;
+        i++
+    ) {
+
+        for (
+            let j = i + 1;
+            j < teams.length;
+            j++
+        ) {
+
+            const teamA =
+                teams[i];
+
+            const teamB =
+                teams[j];
+
+
+            const commonPlayers =
+                findCommonPlayers(
+                    teamA,
+                    teamB
+                );
+
+
+            if (
+                commonPlayers.length > 0
+            ) {
+
+                validTeamPairs.push({
+
+                    teamA,
+
+                    teamB,
+
+                    players:
+                        commonPlayers
+
+                });
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SORU KEY
+    ===================================================== */
+
+    function getQuestionKey(
+        teamA,
+        teamB
+    ) {
+
+        return [
+            teamA,
+            teamB
+        ]
+        .sort()
+        .join("___");
+
+    }
+
+
+    /* =====================================================
+       GÜNLÜK SEED
+    ===================================================== */
+
+    function getDailySeed() {
+
+        const date =
+            getTodayKey();
+
+        let hash = 0;
+
+
+        for (
+            let i = 0;
+            i < date.length;
+            i++
+        ) {
+
+            hash =
+                (
+                    (
+                        hash << 5
+                    ) -
+                    hash +
+                    date.charCodeAt(i)
+                ) |
+                0;
+
+        }
+
+
+        return Math.abs(hash);
+
+    }
+
+
+    function seededRandom(seed) {
+
+        const value =
+            Math.sin(seed) * 10000;
+
+        return value -
+            Math.floor(value);
+
+    }
+
+
+    /* =====================================================
+       GÜNLÜK SORULAR
+    ===================================================== */
+
+    function generateDailyQuestions() {
+
+        if (
+            validTeamPairs.length <
+            totalQuestions
+        ) {
+
+            return [];
+
+        }
+
+
+        const pool =
+            [...validTeamPairs];
+
+
+        const seed =
+            getDailySeed();
+
+
+        for (
+            let i = pool.length - 1;
+            i > 0;
+            i--
+        ) {
+
+            const random =
+                seededRandom(
+                    seed + i * 7919
+                );
+
+
+            const j =
+                Math.floor(
+                    random * (i + 1)
+                );
+
+
+            [
+                pool[i],
+                pool[j]
+            ] =
+            [
+                pool[j],
+                pool[i]
+            ];
+
+        }
+
+
+        return pool.slice(
+            0,
+            totalQuestions
+        );
+
+    }
+
+
+    /* =====================================================
+       GÜNLÜK TAMAMLANDI
+    ===================================================== */
+
+    function isDailyCompleted() {
+
+        try {
+
+            return (
+                localStorage.getItem(
+                    DAILY_STORAGE_KEY
+                ) ===
+                getTodayKey()
+            );
+
+        }
+        catch {
+
+            return false;
+
+        }
+
+    }
+
+
+    function markDailyCompleted() {
+
+        try {
+
+            localStorage.setItem(
+                DAILY_STORAGE_KEY,
+                getTodayKey()
+            );
+
+        }
+        catch (error) {
+
+            console.error(
+                "Günlük challenge kaydedilemedi:",
+                error
+            );
+
+        }
+
+    }
+
+
+    function updateDailyStatus() {
+
+        if (!dailyStatus) {
+
+            return;
+
+        }
+
+
+        if (isDailyCompleted()) {
+
+            dailyStatus.textContent =
+                "✓ BUGÜNKÜ CHALLENGE TAMAMLANDI";
+
+            dailyStatus.classList.add(
+                "completed"
+            );
+
+        }
+        else {
+
+            dailyStatus.textContent =
+                "BUGÜNÜN 10 SORUSU HAZIR";
+
+            dailyStatus.classList.remove(
+                "completed"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       TAKIM GÖRÜNTÜLEME
+    ===================================================== */
+
+    function updateTeamDisplay(
+        team,
+        logoElement,
+        nameElement
+    ) {
+
+        if (
+            !logoElement ||
+            !nameElement
+        ) {
+
+            return;
+
+        }
+
+
+        const logoPath =
+            teamLogos[team];
+
+
+        if (logoPath) {
+
+            logoElement.src =
+                logoPath;
+
+            logoElement.alt =
+                team;
+
+            logoElement.style.display =
+                "block";
+
+        }
+        else {
+
+            logoElement.removeAttribute(
+                "src"
+            );
+
+            logoElement.alt =
+                "";
+
+            logoElement.style.display =
+                "none";
+
+        }
+
+
+        nameElement.textContent =
+            team;
+
+    }
+
+
+    /* =====================================================
+       ÖNERİLER
+    ===================================================== */
+
+    function clearPlayerSuggestions() {
+
+        if (playerSuggestions) {
+
+            playerSuggestions.innerHTML = "";
+
+        }
+
+    }
+
+
+    function playerNameStartsWithSearch(
+        playerName,
+        searchText
+    ) {
+
+        const words =
+            getPlayerNameWords(
+                playerName
+            );
+
+
+        return words.some(
+            word =>
+                word.startsWith(
+                    searchText
+                )
+        );
+
+    }
+
+
+    function showPlayerSuggestions() {
+
+        if (
+            !playerSuggestions ||
+            !answerInput ||
+            answerInput.disabled
+        ) {
+
+            clearPlayerSuggestions();
+
+            return;
+
+        }
+
+
+        const searchText =
+            normalizeText(
+                answerInput.value
+            );
+
+
+        if (
+            searchText.length < 2
+        ) {
+
+            clearPlayerSuggestions();
+
+            return;
+
+        }
+
+
+        const suggestionPool =
+            new Set(
+                Object.keys(playerPool)
+            );
+
+
+        currentQuestionPlayers.forEach(
+            playerName =>
+                suggestionPool.add(
+                    playerName
+                )
+        );
+
+
+        const matchingPlayers =
+            [...suggestionPool]
+                .filter(
+                    playerName =>
+                        playerNameStartsWithSearch(
+                            playerName,
+                            searchText
+                        )
+                )
+                .slice(0, 8);
+
+
+        clearPlayerSuggestions();
+
+
+        matchingPlayers.forEach(
+            playerName => {
+
+                const suggestion =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                suggestion.className =
+                    "player-suggestion";
+
+
+                suggestion.textContent =
+                    playerName;
+
+
+                suggestion.addEventListener(
+                    "mousedown",
+                    event => {
+
+                        event.preventDefault();
+
+                        answerInput.value =
+                            playerName;
+
+                        clearPlayerSuggestions();
+
+                        answerInput.focus();
+
+                    }
+                );
+
+
+                playerSuggestions.appendChild(
+                    suggestion
+                );
+
+            }
+        );
+
+    }
+
+
+    answerInput.addEventListener(
+        "input",
+        showPlayerSuggestions
+    );
+
+
+    answerInput.addEventListener(
+        "focus",
+        showPlayerSuggestions
+    );
+
+
+    answerInput.addEventListener(
+        "blur",
+        () => {
+
+            setTimeout(
+                clearPlayerSuggestions,
+                200
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       SONUÇ
+    ===================================================== */
+
+    function showResult(
+        type,
+        message
+    ) {
+
+        result.classList.remove(
+            "correct",
+            "wrong",
+            "timeout",
+            "result-visible"
+        );
+
+
+        void result.offsetWidth;
+
+
+        result.textContent =
+            message;
+
+
+        result.classList.add(
+            type,
+            "result-visible"
+        );
+
+    }
+
+
+    function clearResult() {
+
+        result.classList.remove(
+            "correct",
+            "wrong",
+            "timeout",
+            "result-visible"
+        );
+
+
+        result.textContent = "";
+
+    }
+
+
+    /* =====================================================
+       TIMER TEMİZLE
+    ===================================================== */
+
+    function clearAllTimers() {
+
+        clearInterval(timer);
+
+        timer = null;
+
+
+        countdownTimeouts.forEach(
+            timeoutId =>
+                clearTimeout(timeoutId)
+        );
+
+
+        countdownTimeouts = [];
+
+    }
+
+
+    /* =====================================================
+       COUNTDOWN
+    ===================================================== */
+
+    function startCountdown(version) {
+
+        return new Promise(
+            resolve => {
+
+                let count = 3;
+
+                countdown.style.display =
+                    "flex";
+
+
+                vsText.style.display =
+                    "none";
+
+
+                team1.style.visibility =
+                    "hidden";
+
+
+                team2.style.visibility =
+                    "hidden";
+
+
+                const showNumber =
+                    () => {
+
+                        if (
+                            version !== gameVersion
+                        ) {
+
+                            resolve(false);
+
+                            return;
+
+                        }
+
+
+                        if (count > 0) {
+
+                            countdown.textContent =
+                                count;
+
+
+                            countdown.classList.remove(
+                                "countdown-pop"
+                            );
+
+
+                            void countdown.offsetWidth;
+
+
+                            countdown.classList.add(
+                                "countdown-pop"
+                            );
+
+
+                            count--;
+
+
+                            const timeoutId =
+                                setTimeout(
+                                    showNumber,
+                                    1000
+                                );
+
+
+                            countdownTimeouts.push(
+                                timeoutId
+                            );
+
+
+                            return;
+
+                        }
+
+
+                        countdown.textContent =
+                            "";
+
+
+                        countdown.classList.remove(
+                            "countdown-pop"
+                        );
+
+
+                        countdown.style.display =
+                            "none";
+
+
+                        team1.style.visibility =
+                            "visible";
+
+
+                        team2.style.visibility =
+                            "visible";
+
+
+                        vsText.textContent =
+                            "VS";
+
+
+                        vsText.style.display =
+                            "flex";
+
+
+                        const timeoutId =
+                            setTimeout(
+                                () => {
+
+                                    if (
+                                        version ===
+                                        gameVersion
+                                    ) {
+
+                                        resolve(true);
+
+                                    }
+
+                                },
+                                300
+                            );
+
+
+                        countdownTimeouts.push(
+                            timeoutId
+                        );
+
+                    };
+
+
+                showNumber();
+
+            }
+        );
+
+    }
+
+
+    /* =====================================================
+       YENİ SORU
+    ===================================================== */
+
+    async function newQuestion() {
+
+        if (gameCompleted) {
+
+            return;
+
+        }
+
+
+        gameVersion++;
+
+        const currentVersion =
+            gameVersion;
+
+
+        clearAllTimers();
+
+
+        questionAnswered =
+            false;
+
+
+        answerInput.disabled =
+            true;
+
+
+        answerButton.disabled =
+            true;
+
+
+        answerInput.value =
+            "";
+
+
+        clearResult();
+
+        clearPlayerSuggestions();
+
+
+        if (
+            questionNumber >=
+            totalQuestions
+        ) {
+
+            endGame();
+
+            return;
+
+        }
+
+
+        let selectedPair = null;
+
+
+        /* =================================================
+           GÜNLÜK
+        ================================================= */
+
+        if (
+            currentGameMode === "daily"
+        ) {
+
+            selectedPair =
+                dailyQuestions[
+                    dailyQuestionIndex
+                ];
+
+
+            if (!selectedPair) {
+
+                endGame();
+
+                return;
+
+            }
+
+
+            dailyQuestionIndex++;
+
+        }
+
+
+        /* =================================================
+           NORMAL
+        ================================================= */
+
+        else {
+
+            let availableQuestions =
+                validTeamPairs.filter(
+                    pair => {
+
+                        const key =
+                            getQuestionKey(
+                                pair.teamA,
+                                pair.teamB
+                            );
+
+
+                        return !usedQuestions.includes(
+                            key
+                        );
+
+                    }
+                );
+
+
+            if (
+                availableQuestions.length === 0
+            ) {
+
+                usedQuestions = [];
+
+                availableQuestions =
+                    [...validTeamPairs];
+
+            }
+
+
+            if (
+                availableQuestions.length === 0
+            ) {
+
+                alert(
+                    "Yeterli ortak futbolcu içeren takım çifti bulunamadı."
+                );
+
+                return;
+
+            }
+
+
+            const randomIndex =
+                Math.floor(
+                    Math.random() *
+                    availableQuestions.length
+                );
+
+
+            selectedPair =
+                availableQuestions[
+                    randomIndex
+                ];
+
+
+            usedQuestions.push(
+                getQuestionKey(
+                    selectedPair.teamA,
+                    selectedPair.teamB
+                )
+            );
+
+        }
+
+
+        questionNumber++;
+
+
+        questionNumberText.textContent =
+            `Soru: ${questionNumber} / ${totalQuestions}`;
+
+
+        currentQuestionPlayers =
+            [...selectedPair.players];
+
+
+        updateTeamDisplay(
+            selectedPair.teamA,
+            team1Logo,
+            team1Name
+        );
+
+
+        updateTeamDisplay(
+            selectedPair.teamB,
+            team2Logo,
+            team2Name
+        );
+
+
+        team1.style.visibility =
+            "hidden";
+
+
+        team2.style.visibility =
+            "hidden";
+
+
+        vsText.style.display =
+            "none";
+
+
+        countdown.textContent =
+            "";
+
+
+        countdown.style.display =
+            "none";
+
+
+        timerBar.style.width =
+            "100%";
+
+
+        const countdownFinished =
+            await startCountdown(
+                currentVersion
+            );
+
+
+        if (
+            !countdownFinished ||
+            currentVersion !== gameVersion ||
+            gameCompleted
+        ) {
+
+            return;
+
+        }
+
+
+        answerInput.disabled =
+            false;
+
+
+        answerButton.disabled =
+            false;
+
+
+        answerInput.focus();
+
+
+        startTimer(
+            currentVersion
+        );
+
+    }
+
+
+    /* =====================================================
+       TIMER
+    ===================================================== */
+
+    function startTimer(version) {
+
+        clearInterval(timer);
+
+
+        timeLeft =
+            questionTime;
+
+
+        timerBar.style.width =
+            "100%";
+
+
+        timer =
+            setInterval(
+                () => {
+
+                    if (
+                        version !== gameVersion ||
+                        gameCompleted
+                    ) {
+
+                        clearInterval(timer);
+
+                        return;
+
+                    }
+
+
+                    timeLeft =
+                        Math.max(
+                            0,
+                            timeLeft - 1
+                        );
+
+
+                    const percentage =
+                        (
+                            timeLeft /
+                            questionTime
+                        ) * 100;
+
+
+                    timerBar.style.width =
+                        `${percentage}%`;
+
+
+                    if (
+                        timeLeft <= 0
+                    ) {
+
+                        clearInterval(timer);
+
+                        timer = null;
+
+
+                        questionAnswered =
+                            true;
+
+
+                        answerInput.disabled =
+                            true;
+
+
+                        answerButton.disabled =
+                            true;
+
+
+                        clearPlayerSuggestions();
+
+
+                        resetCorrectStreak();
+
+
+                        showResult(
+                            "timeout",
+                            "SÜRE DOLDU"
+                        );
+
+
+                        const timeoutId =
+                            setTimeout(
+                                () => {
+
+                                    if (
+                                        version ===
+                                        gameVersion &&
+                                        !gameCompleted
+                                    ) {
+
+                                        newQuestion();
+
+                                    }
+
+                                },
+                                1100
+                            );
+
+
+                        countdownTimeouts.push(
+                            timeoutId
+                        );
+
+                    }
+
+                },
+                1000
+            );
+
+    }
+
+
+    /* =====================================================
+       CEVAP KARŞILAŞTIRMA
+    ===================================================== */
+
+    function normalizeAnswerForComparison(
+        text
+    ) {
+
+        return normalizeText(text);
+
+    }
+
+
+    function isPlayerAnswerCorrect(
+        userAnswer,
+        playerName
+    ) {
+
+        const user =
+            normalizeAnswerForComparison(
+                userAnswer
+            );
+
+
+        const correct =
+            normalizeAnswerForComparison(
+                playerName
+            );
+
+
+        if (
+            user === correct
+        ) {
+
+            return true;
+
+        }
+
+
+        const playerWords =
+            getPlayerNameWords(
+                playerName
+            );
+
+
+        return playerWords.some(
+            word =>
+                user === word
+        );
+
+    }
+
+
+    /* =====================================================
+       DOĞRU / YANLIŞ SERİ
+    ===================================================== */
+
+    function recordCorrectAnswer() {
+
+        stats.currentCorrectStreak =
+            Number(
+                stats.currentCorrectStreak || 0
+            ) + 1;
+
+
+        if (
+            stats.currentCorrectStreak >
+            Number(
+                stats.bestCorrectStreak || 0
+            )
+        ) {
+
+            stats.bestCorrectStreak =
+                stats.currentCorrectStreak;
+
+        }
+
+
+        saveStats();
+
+        updateHomeStats();
+
+    }
+
+
+    function resetCorrectStreak() {
+
+        stats.currentCorrectStreak =
+            0;
+
+
+        saveStats();
+
+        updateHomeStats();
+
+    }
+
+
+    /* =====================================================
+       CEVAP KONTROL
+    ===================================================== */
+
+    function checkAnswer() {
+
+        if (
+            questionAnswered ||
+            answerInput.disabled ||
+            gameCompleted
+        ) {
+
+            return;
+
+        }
+
+
+        const userAnswer =
+            normalizeAnswerForComparison(
+                answerInput.value
+            );
+
+
+        if (!userAnswer) {
+
+            showResult(
+                "wrong",
+                "✕  BİR FUTBOLCU ADI YAZ"
+            );
+
+            return;
+
+        }
+
+
+        recordPlayerWritten(
+            userAnswer
+        );
+
+
+        const correctPlayer =
+            currentQuestionPlayers.find(
+                playerName =>
+                    isPlayerAnswerCorrect(
+                        userAnswer,
+                        playerName
+                    )
+            );
+
+
+        /* =================================================
+           DOĞRU
+        ================================================= */
+
+        if (correctPlayer) {
+
+            score += 10;
+
+
+            scoreText.textContent =
+                `Puan: ${score}`;
+
+
+            questionAnswered =
+                true;
+
+
+            clearAllTimers();
+
+
+            answerInput.disabled =
+                true;
+
+
+            answerButton.disabled =
+                true;
+
+
+            clearPlayerSuggestions();
+
+
+            recordCorrectAnswer();
+
+
+            showResult(
+                "correct",
+                "✓  DOĞRU!"
+            );
+
+
+            const version =
+                gameVersion;
+
+
+            const timeoutId =
+                setTimeout(
+                    () => {
+
+                        if (
+                            version === gameVersion &&
+                            !gameCompleted
+                        ) {
+
+                            newQuestion();
+
+                        }
+
+                    },
+                    1000
+                );
+
+
+            countdownTimeouts.push(
+                timeoutId
+            );
+
+
+            return;
+
+        }
+
+
+        /* =================================================
+           YANLIŞ
+        ================================================= */
+
+        resetCorrectStreak();
+
+
+        showResult(
+            "wrong",
+            "✕  YANLIŞ!"
+        );
+
+    }
+
+
+    answerButton.addEventListener(
+        "click",
+        checkAnswer
+    );
+
+
+    answerInput.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                event.preventDefault();
+
+                checkAnswer();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       OYUN İSTATİSTİĞİ
+    ===================================================== */
+
+    function recordCompletedGame() {
+
+        if (gameCompleted) {
+
+            return;
+
+        }
+
+
+        stats.gamesPlayed =
+            Number(
+                stats.gamesPlayed || 0
+            ) + 1;
+
+
+        if (
+            score >
+            Number(stats.highScore || 0)
+        ) {
+
+            stats.highScore =
+                score;
+
+        }
+
+
+        updateDayStreak();
+
+        saveStats();
+
+        updateHomeStats();
+
+    }
+
+
+    /* =====================================================
+       OYUN BİTİŞ
+    ===================================================== */
+
+    function endGame() {
+
+        if (gameCompleted) {
+
+            return;
+
+        }
+
+
+        gameCompleted =
+            true;
+
+
+        clearAllTimers();
+
+
+        questionAnswered =
+            true;
+
+
+        answerInput.disabled =
+            true;
+
+
+        answerButton.disabled =
+            true;
+
+
+        clearPlayerSuggestions();
+
+
+        recordCompletedGame();
+
+
+        gameArea.style.display =
+            "none";
+
+
+        answerArea.style.display =
+            "none";
+
+
+        timerContainer.style.display =
+            "none";
+
+
+        team1Name.textContent =
+            "";
+
+
+        team2Name.textContent =
+            "";
+
+
+        team1Logo.removeAttribute(
+            "src"
+        );
+
+
+        team2Logo.removeAttribute(
+            "src"
+        );
+
+
+        countdown.textContent =
+            "";
+
+
+        countdown.style.display =
+            "none";
+
+
+        vsText.textContent =
+            "";
+
+
+        vsText.style.display =
+            "none";
+
+
+        clearResult();
+
+
+        timerBar.style.width =
+            "0%";
+
+
+        finalScore.textContent =
+            score;
+
+
+        if (
+            currentGameMode === "daily"
+        ) {
+
+            finalMessage.textContent =
+                "Bugünün challenge'ını tamamladın!";
+
+
+            gameOver.querySelector(
+                "#game-over-title"
+            ).textContent =
+                "GÜNLÜK CHALLENGE TAMAMLANDI";
+
+
+            markDailyCompleted();
+
+
+            updateDailyStatus();
+
+        }
+        else {
+
+            finalMessage.textContent =
+                "10 soruyu tamamladın!";
+
+
+            gameOver.querySelector(
+                "#game-over-title"
+            ).textContent =
+                "OYUN TAMAMLANDI";
+
+        }
+
+
+        gameOver.style.display =
+            "flex";
+
+    }
+
+
+    /* =====================================================
+       OYUNU SIFIRLA
+    ===================================================== */
+
+    function resetGame() {
+
+        gameVersion++;
+
+
+        clearAllTimers();
+
+
+        score =
+            0;
+
+
+        questionNumber =
+            0;
+
+
+        usedQuestions =
+            [];
+
+
+        currentQuestionPlayers =
+            [];
+
+
+        questionAnswered =
+            false;
+
+
+        gameCompleted =
+            false;
+
+
+        timeLeft =
+            questionTime;
+
+
+        dailyQuestionIndex =
+            0;
+
+
+        scoreText.textContent =
+            "Puan: 0";
+
+
+        questionNumberText.textContent =
+            `Soru: 0 / ${totalQuestions}`;
+
+
+        answerInput.value =
+            "";
+
+
+        answerInput.disabled =
+            true;
+
+
+        answerButton.disabled =
+            true;
+
+
+        clearPlayerSuggestions();
+
+        clearResult();
+
+
+        timerBar.style.width =
+            "100%";
+
+
+        gameOver.style.display =
+            "none";
+
+
+        gameArea.style.display =
+            "flex";
+
+
+        answerArea.style.display =
+            "flex";
+
+
+        timerContainer.style.display =
+            "block";
+
+
+        team1Name.textContent =
+            "";
+
+
+        team2Name.textContent =
+            "";
+
+
+        team1Logo.removeAttribute(
+            "src"
+        );
+
+
+        team2Logo.removeAttribute(
+            "src"
+        );
+
+
+        team1.style.visibility =
+            "hidden";
+
+
+        team2.style.visibility =
+            "hidden";
+
+
+        countdown.textContent =
+            "";
+
+
+        countdown.style.display =
+            "none";
+
+
+        vsText.textContent =
+            "VS";
+
+
+        vsText.style.display =
+            "none";
+
+    }
+
+
+    /* =====================================================
+       NORMAL OYUN
+    ===================================================== */
+
+    startButton.addEventListener(
+        "click",
+        () => {
+
+            if (
+                validTeamPairs.length === 0
+            ) {
+
+                alert(
+                    "Oyunda kullanılabilecek geçerli takım eşleşmesi bulunamadı."
+                );
+
+                return;
+
+            }
+
+
+            currentGameMode =
+                "normal";
+
+
+            gameModeTitle.textContent =
+                "ORTAK FUTBOLCU";
+
+
+            homeScreen.style.display =
+                "none";
+
+
+            gameContent.style.display =
+                "block";
+
+
+            resetGame();
+
+
+            newQuestion();
+
+        }
+    );
+
+
+    /* =====================================================
+       GÜNLÜK CHALLENGE
+    ===================================================== */
+
+    dailyChallengeButton.addEventListener(
+        "click",
+        () => {
+
+            if (
+                isDailyCompleted()
+            ) {
+
+                alert(
+                    "Bugünkü Günlük Challenge'ı zaten tamamladın. Yarın tekrar gel!"
+                );
+
+                return;
+
+            }
+
+
+            dailyQuestions =
+                generateDailyQuestions();
+
+
+            if (
+                dailyQuestions.length !==
+                totalQuestions
+            ) {
+
+                alert(
+                    "Günlük Challenge için yeterli soru bulunamadı."
+                );
+
+                return;
+
+            }
+
+
+            currentGameMode =
+                "daily";
+
+
+            dailyQuestionIndex =
+                0;
+
+
+            gameModeTitle.textContent =
+                "GÜNLÜK CHALLENGE";
+
+
+            homeScreen.style.display =
+                "none";
+
+
+            gameContent.style.display =
+                "block";
+
+
+            resetGame();
+
+
+            newQuestion();
+
+        }
+    );
+
+
+    /* =====================================================
+       TEKRAR OYNA
+    ===================================================== */
+
+    restartButton.addEventListener(
+        "click",
+        () => {
+
+            if (
+                currentGameMode === "daily" &&
+                isDailyCompleted()
+            ) {
+
+                gameOver.style.display =
+                    "none";
+
+
+                gameContent.style.display =
+                    "none";
+
+
+                homeScreen.style.display =
+                    "flex";
+
+
+                updateDailyStatus();
+
+                updateHomeStats();
+
+                return;
+
+            }
+
+
+            resetGame();
+
+            newQuestion();
+
+        }
+    );
+
+
+    /* =====================================================
+       BAŞLANGIÇ
+    ===================================================== */
+
+    homeScreen.style.display =
+        "flex";
+
+
+    gameContent.style.display =
+        "none";
+
+
+    gameOver.style.display =
+        "none";
+
+
+    updateDailyStatus();
+
+    updateHomeStats();
+
+
+    /* =====================================================
+       DEBUG
+    ===================================================== */
+
+    console.log(
+        "================================="
+    );
+
+    console.log(
+        "3-2-1 ORTAK FUTBOLCU HAZIR"
+    );
+
+    console.log(
+        "Oyuncu sayısı:",
+        Object.keys(playerPool).length
+    );
+
+    console.log(
+        "Aktif takım sayısı:",
+        teams.length
+    );
+
+    console.log(
+        "Geçerli soru sayısı:",
+        validTeamPairs.length
+    );
+
+    console.log(
+        "Günlük soru sayısı:",
+        generateDailyQuestions().length
+    );
+
+    console.log(
+        "Bugünün tarihi:",
+        getTodayKey()
+    );
+
+    console.log(
+        "İstatistikler:",
+        stats
+    );
+
+    console.log(
+        "================================="
+    );
+
+    </script>
+
+</body>
+
+</html>

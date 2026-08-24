@@ -1958,23 +1958,15 @@ function showResult(
         return;
 
     }
-
-
     result.classList.remove(
         "correct",
         "wrong",
         "timeout",
         "result-visible"
     );
-
-
     void result.offsetWidth;
-
-
     result.textContent =
         message;
-
-
     result.classList.add(
         type,
         "result-visible"
@@ -1982,15 +1974,10 @@ function showResult(
 
 }
 
-
 function clearResult() {
-
     if (!result) {
-
         return;
-
     }
-
 
     result.classList.remove(
         "correct",
@@ -1998,7 +1985,7 @@ function clearResult() {
         "timeout",
         "result-visible"
     );
-
+}
 
  // =====================================================
 // 3-2-1 ORTAK FUTBOLCU
