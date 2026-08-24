@@ -1,8 +1,7 @@
 /* =========================================================
    321 - ORTAK FUTBOLCUYU BUL
    PREMIUM STADIUM UI
-   ANA SAYFA + OYUN EKRANI
-   GÜNCEL TAM CSS
+   ANA SAYFA + OYUN EKRANI + SONUÇ EKRANI
 ========================================================= */
 
 * {
@@ -204,7 +203,6 @@ body {
     pointer-events: none;
 
     background:
-
         radial-gradient(
             circle at center,
             rgba(255,255,255,0.98) 0 5px,
@@ -389,6 +387,8 @@ body {
 
     -webkit-background-clip: text;
     background-clip: text;
+
+    -webkit-text-fill-color: transparent;
 
     filter:
         drop-shadow(
@@ -778,13 +778,12 @@ body {
 
 
 /* =========================================================
-   GÜNLÜK CHALLENGE DURUM
+   GÜNLÜK CHALLENGE TAMAMLANDI
 ========================================================= */
 
 #home-screen .daily-status,
 #home-screen .challenge-status,
-#home-screen .daily-challenge-status,
-#home-screen > p {
+#home-screen .daily-challenge-status {
     position: relative;
 
     flex-shrink: 0;
@@ -804,6 +803,32 @@ body {
         clamp(1px, 0.12vw, 2px);
 
     line-height: 1.2;
+
+    text-align: center;
+
+    text-shadow:
+        0 0 8px
+        rgba(46,255,115,0.25);
+}
+
+#home-screen > p {
+    flex-shrink: 0;
+
+    margin:
+        clamp(13px, 1.5vh, 22px)
+        auto
+        0;
+
+    color:
+        #35f47f;
+
+    font-size:
+        clamp(10px, 0.75vw, 14px);
+
+    font-weight: 900;
+
+    letter-spacing:
+        1.5px;
 
     text-align: center;
 
@@ -859,6 +884,7 @@ body {
 .game-header {
     position: relative;
     z-index: 5;
+
     margin-top: 48px;
 }
 
@@ -875,6 +901,11 @@ body {
         0 4px 15px
         rgba(0,0,0,0.45);
 }
+
+
+/* =========================================================
+   SKOR
+========================================================= */
 
 .score {
     margin-top: 18px;
@@ -950,7 +981,6 @@ body {
 
 /* =========================================================
    OYUN ALANI
-   FUTBOLCU KUTULARINI VE GİRİŞİ YUKARI TAŞIMA
 ========================================================= */
 
 .game-area {
@@ -961,7 +991,7 @@ body {
 
     gap: 40px;
 
-    margin-top: 72px;
+    margin-top: 92px;
 
     position: relative;
 
@@ -997,18 +1027,18 @@ body {
             145deg,
             rgba(28,82,57,0.94),
             rgba(17,61,42,0.94)
-        ) !important;
+        );
 
     border:
         1px solid
-        rgba(75,205,125,0.34) !important;
+        rgba(75,205,125,0.34);
 
     box-shadow:
         0 15px 35px
         rgba(0,0,0,0.32),
 
         inset 0 1px 0
-        rgba(255,255,255,0.07) !important;
+        rgba(255,255,255,0.07);
 
     backdrop-filter:
         blur(8px);
@@ -1047,10 +1077,10 @@ body {
             145deg,
             rgba(34,96,65,0.97),
             rgba(20,70,48,0.97)
-        ) !important;
+        );
 
     border-color:
-        rgba(79,225,132,0.48) !important;
+        rgba(79,225,132,0.48);
 
     box-shadow:
         0 18px 40px
@@ -1060,7 +1090,7 @@ body {
         rgba(46,204,113,0.09),
 
         inset 0 1px 0
-        rgba(255,255,255,0.09) !important;
+        rgba(255,255,255,0.09);
 
     transform:
         translateY(-2px);
@@ -1124,8 +1154,7 @@ body {
 
     letter-spacing: 0.2px;
 
-    color:
-        #ffffff !important;
+    color: #ffffff !important;
 
     text-shadow:
         0 3px 8px
@@ -1166,10 +1195,10 @@ body {
 
     border:
         1px solid
-        rgba(76,204,126,0.30) !important;
+        rgba(76,204,126,0.30);
 
     background:
-        rgba(25,78,53,0.94) !important;
+        rgba(25,78,53,0.94);
 
     font-size: 25px;
 
@@ -1178,8 +1207,12 @@ body {
     color: #ffffff;
 
     box-shadow:
+
         0 8px 20px
         rgba(0,0,0,0.32),
+
+        0 0 20px
+        rgba(46,204,113,0.08),
 
         inset 0 1px 0
         rgba(255,255,255,0.06);
@@ -1272,11 +1305,11 @@ body {
 
 /* =========================================================
    CEVAP ALANI
-   TAKIM KUTULARINA DAHA YAKIN
+   DAHA YUKARI TAŞINDI
 ========================================================= */
 
 .answer-area {
-    margin-top: 50px;
+    margin-top: 38px;
 
     position: relative;
 
@@ -1292,6 +1325,7 @@ body {
 
 .answer-input-wrapper {
     width: 300px;
+
     position: relative;
 }
 
@@ -1346,6 +1380,11 @@ body {
         0 7px 20px
         rgba(0,0,0,0.18);
 }
+
+
+/* =========================================================
+   CEVAP BUTONU
+========================================================= */
 
 .answer-area button {
     height: 54px;
@@ -1462,6 +1501,7 @@ body {
 
 .player-suggestion:hover {
     background: #245c43;
+
     padding-left: 19px;
 }
 
@@ -1615,6 +1655,11 @@ body {
     align-items: center;
 }
 
+
+/* =========================================================
+   OYUN BİTİŞ KUTUSU
+========================================================= */
+
 .game-over-box {
     width: 500px;
 
@@ -1668,6 +1713,11 @@ body {
     }
 }
 
+
+/* =========================================================
+   OYUN BİTİŞ İKONU
+========================================================= */
+
 .game-over-icon {
     font-size: 60px;
 
@@ -1680,6 +1730,11 @@ body {
         );
 }
 
+
+/* =========================================================
+   OYUN BİTİŞ BAŞLIK
+========================================================= */
+
 .game-over h2 {
     margin: 0 0 25px;
 
@@ -1687,6 +1742,11 @@ body {
 
     font-weight: 900;
 }
+
+
+/* =========================================================
+   PUAN
+========================================================= */
 
 .final-score-label {
     font-size: 13px;
@@ -1726,16 +1786,33 @@ body {
 
 
 /* =========================================================
-   TEKRAR OYNA + ANA SAYFA BUTONLARI
+   OYUN BİTİŞ BUTON ALANI
 ========================================================= */
 
-#restart-button,
-#home-button,
-#home-screen-button,
-#back-home-button {
+.game-over-buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    width: 100%;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================================
+   TEKRAR OYNA
+========================================================= */
+
+#restart-button {
     height: 52px;
 
-    padding: 0 32px;
+    min-width: 145px;
+
+    padding: 0 28px;
 
     font-size: 16px;
 
@@ -1747,8 +1824,6 @@ body {
 
     cursor: pointer;
 
-    color: #0b2419;
-
     background:
         linear-gradient(
             135deg,
@@ -1756,62 +1831,57 @@ body {
             #dff8e9
         );
 
+    color: #0b2419;
+
     transition:
         transform 0.18s ease,
-        box-shadow 0.18s ease,
-        filter 0.18s ease;
+        box-shadow 0.18s ease;
 }
 
-
-/* Tekrar Oyna */
-
-#restart-button {
-    margin: 0 5px;
-}
-
-#restart-button:hover,
-#home-button:hover,
-#home-screen-button:hover,
-#back-home-button:hover {
+#restart-button:hover {
     transform: translateY(-2px);
 
     box-shadow:
         0 9px 22px
         rgba(0,0,0,0.3);
-
-    filter:
-        brightness(1.04);
 }
 
-#restart-button:active,
-#home-button:active,
-#home-screen-button:active,
-#back-home-button:active {
+#restart-button:active {
     transform: scale(0.98);
 }
 
 
 /* =========================================================
-   ANA SAYFAYA DÖN BUTONU
+   ANA SAYFAYA DÖN
 ========================================================= */
 
-#home-button,
-#home-screen-button,
-#back-home-button {
-    margin: 0 5px;
+#home-button {
+    height: 52px;
+
+    min-width: 145px;
+
+    padding: 0 28px;
+
+    font-size: 16px;
+
+    font-weight: 900;
+
+    border:
+        1px solid
+        rgba(69,220,132,0.35);
+
+    border-radius: 10px;
+
+    cursor: pointer;
 
     color: #ffffff;
 
     background:
         linear-gradient(
             135deg,
-            #1b7148,
-            #279e63
+            #15583a,
+            #1d7b50
         );
-
-    border:
-        1px solid
-        rgba(79,255,133,0.28);
 
     box-shadow:
         0 7px 20px
@@ -1819,243 +1889,35 @@ body {
 
         0 0 12px
         rgba(46,204,113,0.08);
-}
-
-
-/* Eğer JS butonları bir container içine koyarsa */
-
-.game-over-buttons {
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-
-    margin-top: 10px;
-}
-
-
-/* =========================================================
-   SAĞ ÜST İSTATİSTİK KARTLARI
-========================================================= */
-
-/*
-   Olası mevcut class/id isimlerinin tamamını
-   yakalayacak şekilde tasarlanmıştır.
-*/
-
-#home-screen .stats,
-#home-screen .statistics,
-#home-screen .home-stats,
-#home-screen .stats-container,
-#home-screen .stat-container,
-#home-screen .score-stats {
-    position: absolute;
-
-    top: 36px;
-    right: 38px;
-
-    display: grid;
-
-    grid-template-columns: repeat(2, minmax(130px, 1fr));
-
-    gap: 9px;
-
-    width: 220px;
-
-    z-index: 100;
-
-    text-align: left;
-}
-
-
-/* Tek tek kartlar */
-
-#home-screen .stat-card,
-#home-screen .stat,
-#home-screen .stat-box,
-#home-screen .score-card,
-#home-screen .stat-item {
-    position: relative;
-
-    min-height: 66px;
-
-    padding: 10px 13px;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(11,45,30,0.94),
-            rgba(5,27,18,0.96)
-        );
-
-    border:
-        1px solid
-        rgba(68,220,128,0.28);
-
-    box-shadow:
-
-        0 8px 22px
-        rgba(0,0,0,0.38),
-
-        inset 0 1px 0
-        rgba(255,255,255,0.055),
-
-        0 0 14px
-        rgba(38,210,108,0.035);
-
-    backdrop-filter:
-        blur(8px);
-
-    -webkit-backdrop-filter:
-        blur(8px);
-
-    overflow: hidden;
 
     transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
 }
 
-#home-screen .stat-card::before,
-#home-screen .stat::before,
-#home-screen .stat-box::before,
-#home-screen .score-card::before,
-#home-screen .stat-item::before {
-    content: "";
-
-    position: absolute;
-
-    left: 10px;
-    right: 10px;
-
-    top: 0;
-
-    height: 1px;
+#home-button:hover {
+    transform: translateY(-2px);
 
     background:
         linear-gradient(
-            90deg,
-            transparent,
-            rgba(84,255,145,0.45),
-            transparent
+            135deg,
+            #1a6a45,
+            #259661
         );
 
-    pointer-events: none;
-}
-
-#home-screen .stat-card:hover,
-#home-screen .stat:hover,
-#home-screen .stat-box:hover,
-#home-screen .score-card:hover,
-#home-screen .stat-item:hover {
-    transform: translateY(-2px);
-
-    border-color:
-        rgba(73,240,137,0.46);
-
     box-shadow:
-
-        0 11px 26px
-        rgba(0,0,0,0.44),
+        0 9px 24px
+        rgba(0,0,0,0.32),
 
         0 0 18px
-        rgba(38,220,108,0.08),
-
-        inset 0 1px 0
-        rgba(255,255,255,0.07);
+        rgba(46,204,113,0.18);
 }
 
-
-/* Kart başlığı */
-
-#home-screen .stat-card .stat-label,
-#home-screen .stat .stat-label,
-#home-screen .stat-box .stat-label,
-#home-screen .score-card .stat-label,
-#home-screen .stat-item .stat-label,
-#home-screen .stat-title {
-    display: block;
-
-    margin-bottom: 5px;
-
-    color:
-        rgba(213,255,229,0.58);
-
-    font-size: 9px;
-
-    line-height: 1.1;
-
-    font-weight: 900;
-
-    letter-spacing: 0.8px;
-
-    text-transform: uppercase;
-}
-
-
-/* Kart değeri */
-
-#home-screen .stat-card .stat-value,
-#home-screen .stat .stat-value,
-#home-screen .stat-box .stat-value,
-#home-screen .score-card .stat-value,
-#home-screen .stat-item .stat-value {
-    display: block;
-
-    color:
-        #42ed91;
-
-    font-size: 20px;
-
-    line-height: 1;
-
-    font-weight: 1000;
-
-    letter-spacing: 0.2px;
-
-    text-shadow:
-        0 0 12px
-        rgba(48,239,132,0.16);
-}
-
-
-/* =========================================================
-   GENEL İSTATİSTİK ELEMANLARI
-   Eğer HTML'de farklı class yapısı varsa
-========================================================= */
-
-.stat-label,
-.stat-title {
-    color:
-        rgba(213,255,229,0.58);
-
-    font-size: 9px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.8px;
-
-    text-transform: uppercase;
-}
-
-.stat-value {
-    color:
-        #42ed91;
-
-    font-size: 20px;
-
-    font-weight: 1000;
-
-    text-shadow:
-        0 0 12px
-        rgba(48,239,132,0.16);
+#home-button:active {
+    transform:
+        translateY(0)
+        scale(0.98);
 }
 
 
@@ -2078,42 +1940,8 @@ body {
             clamp(70px, 7vw, 90px) !important;
     }
 
-    #home-screen .stats,
-    #home-screen .statistics,
-    #home-screen .home-stats,
-    #home-screen .stats-container,
-    #home-screen .stat-container,
-    #home-screen .score-stats {
-        top: 24px;
-        right: 24px;
-
-        width: 205px;
-    }
-
-    #home-screen .stat-card,
-    #home-screen .stat,
-    #home-screen .stat-box,
-    #home-screen .score-card,
-    #home-screen .stat-item {
-        min-height: 61px;
-
-        padding: 9px 11px;
-    }
-
-    #home-screen .stat-card .stat-value,
-    #home-screen .stat .stat-value,
-    #home-screen .stat-box .stat-value,
-    #home-screen .score-card .stat-value,
-    #home-screen .stat-item .stat-value {
-        font-size: 18px;
-    }
-
-    .game-area {
-        margin-top: 65px;
-    }
-
-    .answer-area {
-        margin-top: 44px;
+    .game-over-box {
+        max-width: 75%;
     }
 }
 
@@ -2181,6 +2009,7 @@ body {
 
     #home-screen button:not(#start-button)::before {
         font-size: 18px;
+
         margin-right: 11px;
     }
 
@@ -2191,57 +2020,9 @@ body {
     }
 
 
-    /* Mobil istatistikler */
-
-    #home-screen .stats,
-    #home-screen .statistics,
-    #home-screen .home-stats,
-    #home-screen .stats-container,
-    #home-screen .stat-container,
-    #home-screen .score-stats {
-        top: 15px;
-        right: 15px;
-
-        width: 165px;
-
-        gap: 6px;
-    }
-
-    #home-screen .stat-card,
-    #home-screen .stat,
-    #home-screen .stat-box,
-    #home-screen .score-card,
-    #home-screen .stat-item {
-        min-height: 53px;
-
-        padding: 7px 9px;
-
-        border-radius: 9px;
-    }
-
-    #home-screen .stat-card .stat-label,
-    #home-screen .stat .stat-label,
-    #home-screen .stat-box .stat-label,
-    #home-screen .score-card .stat-label,
-    #home-screen .stat-item .stat-label,
-    #home-screen .stat-title {
-        font-size: 7px;
-
-        letter-spacing: 0.5px;
-
-        margin-bottom: 4px;
-    }
-
-    #home-screen .stat-card .stat-value,
-    #home-screen .stat .stat-value,
-    #home-screen .stat-box .stat-value,
-    #home-screen .score-card .stat-value,
-    #home-screen .stat-item .stat-value {
-        font-size: 16px;
-    }
-
-
-    /* Oyun */
+    /* =========================
+       OYUN
+    ========================= */
 
     .game-header {
         margin-top: 35px;
@@ -2253,6 +2034,7 @@ body {
 
     .score {
         font-size: 19px;
+
         margin-top: 15px;
     }
 
@@ -2262,6 +2044,7 @@ body {
 
     .timer-container {
         width: 78%;
+
         max-width: none;
 
         height: 11px;
@@ -2272,13 +2055,14 @@ body {
     .game-area {
         gap: 7px;
 
-        margin-top: 45px;
+        margin-top: 58px;
 
         min-height: 170px;
     }
 
     .team {
         width: 145px;
+
         min-height: 165px;
 
         padding: 18px 10px;
@@ -2304,12 +2088,15 @@ body {
 
     .vs {
         width: 48px;
+
         min-width: 48px;
+
         height: 100px;
     }
 
     #countdown {
         width: 90px;
+
         height: 90px;
 
         font-size: 58px;
@@ -2320,16 +2107,19 @@ body {
     }
 
 
-    /* Mobil cevap alanı */
+    /* =========================
+       CEVAP ALANI
+       YUKARI TAŞINDI
+    ========================= */
 
     .answer-area {
-        margin-top: 38px;
+        margin-top: 28px;
 
         flex-direction: column;
 
         align-items: center;
 
-        gap: 12px;
+        gap: 10px;
     }
 
     .answer-input-wrapper {
@@ -2338,55 +2128,74 @@ body {
 
     .answer-area input {
         width: 100%;
+
         height: 52px;
     }
 
     #player-suggestions {
         width: 100%;
+
         top: 58px;
     }
 
     .answer-area button {
         height: 50px;
+
         padding: 0 27px;
     }
 
     #result {
-        margin-top: 20px;
+        margin-top: 18px;
+
         font-size: 16px;
     }
 
 
-    /* Oyun bitiş */
+    /* =========================
+       OYUN BİTİŞ
+    ========================= */
 
     .game-over-box {
         padding: 38px 25px;
+
         max-width: 88%;
+
+        border-radius: 20px;
+    }
+
+    .game-over-icon {
+        font-size: 52px;
     }
 
     .game-over h2 {
         font-size: 32px;
+
+        margin-bottom: 22px;
     }
 
     #final-score {
         font-size: 42px;
     }
 
+    #final-message {
+        font-size: 16px;
+
+        margin-bottom: 24px;
+    }
+
     .game-over-buttons {
         flex-direction: column;
-
-        width: 100%;
 
         gap: 10px;
     }
 
     #restart-button,
-    #home-button,
-    #home-screen-button,
-    #back-home-button {
+    #home-button {
         width: 100%;
 
-        margin: 0;
+        height: 52px;
+
+        min-width: 0;
     }
 }
 
@@ -2409,44 +2218,13 @@ body {
         width: 76vw;
     }
 
-    #home-screen .stats,
-    #home-screen .statistics,
-    #home-screen .home-stats,
-    #home-screen .stats-container,
-    #home-screen .stat-container,
-    #home-screen .score-stats {
-        width: 150px;
-
-        top: 11px;
-        right: 11px;
-
-        gap: 5px;
-    }
-
-    #home-screen .stat-card,
-    #home-screen .stat,
-    #home-screen .stat-box,
-    #home-screen .score-card,
-    #home-screen .stat-item {
-        min-height: 48px;
-
-        padding: 6px 8px;
-    }
-
-    #home-screen .stat-card .stat-value,
-    #home-screen .stat .stat-value,
-    #home-screen .stat-box .stat-value,
-    #home-screen .score-card .stat-value,
-    #home-screen .stat-item .stat-value {
-        font-size: 14px;
-    }
-
     .game-area {
         gap: 4px;
     }
 
     .team {
         width: 125px;
+
         min-height: 150px;
 
         padding: 15px 7px;
@@ -2468,6 +2246,7 @@ body {
 
     .vs {
         width: 40px;
+
         min-width: 40px;
     }
 
@@ -2477,6 +2256,13 @@ body {
 
     .answer-input-wrapper {
         width: 78%;
+    }
+
+    .game-over-box {
+        max-width: 92%;
+
+        padding:
+            32px 18px;
     }
 }
 
@@ -2525,38 +2311,9 @@ and
 
     #home-screen > p {
         margin-top: 8px;
+
         font-size: 8px;
     }
-
-
-    /* Yatay ekran istatistikleri */
-
-    #home-screen .stats,
-    #home-screen .statistics,
-    #home-screen .home-stats,
-    #home-screen .stats-container,
-    #home-screen .stat-container,
-    #home-screen .score-stats {
-        top: 12px;
-        right: 15px;
-
-        width: 180px;
-
-        gap: 5px;
-    }
-
-    #home-screen .stat-card,
-    #home-screen .stat,
-    #home-screen .stat-box,
-    #home-screen .score-card,
-    #home-screen .stat-item {
-        min-height: 48px;
-
-        padding: 6px 9px;
-    }
-
-
-    /* Oyun */
 
     .game-header {
         margin-top: 20px;
@@ -2567,7 +2324,7 @@ and
     }
 
     .game-area {
-        margin-top: 28px;
+        margin-top: 30px;
     }
 
     .team {
@@ -2595,69 +2352,46 @@ and
     .answer-area {
         margin-top: 20px;
     }
-}
 
+    .game-over-box {
+        padding:
+            25px 30px;
+    }
 
-/* =========================================================
-   SON GÖRSEL DOKUNUŞLAR
-========================================================= */
+    .game-over-icon {
+        font-size: 38px;
 
-/* Kartların genel üst hizası */
+        margin-bottom: 5px;
+    }
 
-#home-screen .stats-container,
-#home-screen .stats,
-#home-screen .statistics,
-#home-screen .home-stats,
-#home-screen .stat-container,
-#home-screen .score-stats {
-    user-select: none;
-}
+    .game-over h2 {
+        font-size: 27px;
 
+        margin-bottom: 12px;
+    }
 
-/* Sayı değiştiğinde daha canlı görünüm */
+    #final-score {
+        font-size: 38px;
+    }
 
-#home-screen .stat-value {
-    transition:
-        transform 0.2s ease,
-        color 0.2s ease,
-        text-shadow 0.2s ease;
-}
+    #final-message {
+        margin-bottom: 15px;
+    }
 
+    .game-over-buttons {
+        flex-direction: row;
 
-/* Ana sayfa istatistikleri arşiv/tasarım alanına taşmasın */
+        gap: 10px;
+    }
 
-@media (min-width: 701px) {
+    #restart-button,
+    #home-button {
+        width: auto;
 
-    #home-screen .stats,
-    #home-screen .statistics,
-    #home-screen .home-stats,
-    #home-screen .stats-container,
-    #home-screen .stat-container,
-    #home-screen .score-stats {
-        pointer-events: auto;
+        min-width: 135px;
+
+        height: 45px;
+
+        font-size: 14px;
     }
 }
-
-
-/* =========================================================
-   ERİŞİLEBİLİRLİK / SEÇİM
-========================================================= */
-
-button,
-input {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button:focus-visible,
-input:focus-visible {
-    outline:
-        2px solid
-        rgba(64,255,132,0.65);
-
-    outline-offset: 2px;
-}
-
-
-/* =========================================================
-   SON
-========================================================= */
