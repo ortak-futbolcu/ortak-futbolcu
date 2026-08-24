@@ -65,7 +65,6 @@ body {
     isolation: isolate;
 
     background:
-
         radial-gradient(
             ellipse at 50% 38%,
             transparent 0%,
@@ -107,7 +106,6 @@ body {
     pointer-events: none;
 
     background:
-
         radial-gradient(
             ellipse 42% 30% at 0% 48%,
             rgba(13, 75, 46, 0.72),
@@ -151,7 +149,6 @@ body {
     pointer-events: none;
 
     background:
-
         radial-gradient(
             ellipse 12% 30% at 3% 18%,
             rgba(255,255,255,0.95) 0%,
@@ -539,7 +536,6 @@ body {
         ) !important;
 
     box-shadow:
-
         0 0 0 1px
         rgba(46,255,112,0.18),
 
@@ -597,8 +593,6 @@ body {
     margin:
         0 24px 0 0 !important;
 
-    vertical-align: middle;
-
     filter:
         drop-shadow(
             0 0 6px
@@ -640,7 +634,6 @@ body {
         brightness(1.08);
 
     box-shadow:
-
         0 0 0 1px
         rgba(105,255,145,0.42),
 
@@ -659,9 +652,7 @@ body {
 
 #start-button:active {
     transform: scale(0.985) !important;
-
-    filter:
-        brightness(0.96);
+    filter: brightness(0.96);
 }
 
 
@@ -713,7 +704,6 @@ body {
         );
 
     box-shadow:
-
         0 8px 25px
         rgba(0,0,0,0.45),
 
@@ -750,7 +740,6 @@ body {
         );
 
     box-shadow:
-
         0 10px 30px
         rgba(0,0,0,0.52),
 
@@ -851,7 +840,6 @@ body {
     position: relative;
 
     background:
-
         radial-gradient(
             circle at 50% 10%,
             rgba(34,110,77,0.22),
@@ -1207,7 +1195,6 @@ body {
     color: #ffffff;
 
     box-shadow:
-
         0 8px 20px
         rgba(0,0,0,0.32),
 
@@ -1258,7 +1245,6 @@ body {
     text-align: center;
 
     text-shadow:
-
         0 5px 12px
         rgba(0,0,0,0.75),
 
@@ -1305,7 +1291,6 @@ body {
 
 /* =========================================================
    CEVAP ALANI
-   DAHA YUKARI TAŞINDI
 ========================================================= */
 
 .answer-area {
@@ -1373,7 +1358,6 @@ body {
         rgba(46,204,113,0.65);
 
     box-shadow:
-
         0 0 0 3px
         rgba(46,204,113,0.1),
 
@@ -1681,7 +1665,6 @@ body {
         rgba(72,220,130,0.16);
 
     box-shadow:
-
         0 25px 70px
         rgba(0,0,0,0.65),
 
@@ -1786,138 +1769,240 @@ body {
 
 
 /* =========================================================
-   OYUN BİTİŞ BUTON ALANI
+   OYUN BİTİŞ BUTONLARI
+   DİKKAT:
+   HTML'de butonlar doğrudan .game-over-box içindedir.
+   Bu nedenle .game-over-buttons kullanılmıyor.
 ========================================================= */
 
-.game-over-buttons {
-    display: flex;
+#game-over .game-over-box {
+    display: flex !important;
 
-    align-items: center;
-    justify-content: center;
+    flex-direction: column !important;
 
-    gap: 12px;
+    align-items: center !important;
 
-    width: 100%;
+    justify-content: center !important;
 
-    margin-top: 8px;
+    gap: 12px !important;
 }
 
 
 /* =========================================================
-   TEKRAR OYNA
+   TEKRAR OYNA BUTONU
 ========================================================= */
 
-#restart-button {
-    height: 52px;
+#game-over .game-over-box > #restart-button {
 
-    min-width: 145px;
+    position: relative !important;
 
-    padding: 0 28px;
+    display: flex !important;
 
-    font-size: 16px;
+    align-items: center !important;
 
-    font-weight: 900;
+    justify-content: center !important;
 
-    border: none;
+    flex-shrink: 0 !important;
 
-    border-radius: 10px;
+    width: 220px !important;
 
-    cursor: pointer;
+    min-width: 220px !important;
+
+    max-width: 220px !important;
+
+    height: 52px !important;
+
+    min-height: 52px !important;
+
+    max-height: 52px !important;
+
+    margin: 0 !important;
+
+    padding: 0 25px !important;
+
+    box-sizing: border-box !important;
+
+    appearance: none !important;
+
+    -webkit-appearance: none !important;
+
+    border: none !important;
+
+    outline: none !important;
+
+    border-radius: 12px !important;
+
+    cursor: pointer !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    font-size: 15px !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: 0.3px !important;
+
+    line-height: 1 !important;
+
+    text-align: center !important;
+
+    color: #0b2419 !important;
 
     background:
         linear-gradient(
             135deg,
-            #ffffff,
-            #dff8e9
-        );
-
-    color: #0b2419;
-
-    transition:
-        transform 0.18s ease,
-        box-shadow 0.18s ease;
-}
-
-#restart-button:hover {
-    transform: translateY(-2px);
+            #ffffff 0%,
+            #f3fff8 50%,
+            #dff8e9 100%
+        ) !important;
 
     box-shadow:
-        0 9px 22px
-        rgba(0,0,0,0.3);
-}
+        0 8px 20px
+        rgba(0,0,0,0.30),
 
-#restart-button:active {
-    transform: scale(0.98);
-}
-
-
-/* =========================================================
-   ANA SAYFAYA DÖN
-========================================================= */
-
-#home-button {
-    height: 52px;
-
-    min-width: 145px;
-
-    padding: 0 28px;
-
-    font-size: 16px;
-
-    font-weight: 900;
-
-    border:
-        1px solid
-        rgba(69,220,132,0.35);
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #15583a,
-            #1d7b50
-        );
-
-    box-shadow:
-        0 7px 20px
-        rgba(0,0,0,0.22),
-
-        0 0 12px
-        rgba(46,204,113,0.08);
+        inset 0 1px 0
+        rgba(255,255,255,0.90) !important;
 
     transition:
         transform 0.18s ease,
         box-shadow 0.18s ease,
-        background 0.18s ease;
+        filter 0.18s ease !important;
 }
 
-#home-button:hover {
-    transform: translateY(-2px);
+#game-over .game-over-box > #restart-button:hover {
+
+    transform: translateY(-2px) !important;
+
+    filter: brightness(1.04) !important;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35),
+
+        0 0 18px
+        rgba(255,255,255,0.10) !important;
+}
+
+#game-over .game-over-box > #restart-button:active {
+
+    transform: translateY(0) scale(0.98) !important;
+}
+
+
+/* =========================================================
+   ANA SAYFA BUTONU
+   TAMAMEN YENİDEN TANIMLANDI
+========================================================= */
+
+#game-over .game-over-box > #home-button {
+
+    position: relative !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    flex-shrink: 0 !important;
+
+    width: 220px !important;
+
+    min-width: 220px !important;
+
+    max-width: 220px !important;
+
+    height: 52px !important;
+
+    min-height: 52px !important;
+
+    max-height: 52px !important;
+
+    margin: 0 !important;
+
+    padding: 0 25px !important;
+
+    box-sizing: border-box !important;
+
+    appearance: none !important;
+
+    -webkit-appearance: none !important;
+
+    border: 1px solid rgba(79,255,133,0.55) !important;
+
+    outline: none !important;
+
+    border-radius: 12px !important;
+
+    cursor: pointer !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    font-size: 15px !important;
+
+    font-weight: 900 !important;
+
+    letter-spacing: 0.3px !important;
+
+    line-height: 1 !important;
+
+    text-align: center !important;
+
+    color: #ffffff !important;
 
     background:
         linear-gradient(
             135deg,
-            #1a6a45,
-            #259661
-        );
+            #176c46 0%,
+            #20945c 50%,
+            #25aa68 100%
+        ) !important;
 
     box-shadow:
-        0 9px 24px
-        rgba(0,0,0,0.32),
+        0 8px 20px
+        rgba(0,0,0,0.28),
 
-        0 0 18px
-        rgba(46,204,113,0.18);
+        0 0 14px
+        rgba(46,204,113,0.10),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.10) !important;
+
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        filter 0.18s ease,
+        background 0.18s ease !important;
 }
 
-#home-button:active {
-    transform:
-        translateY(0)
-        scale(0.98);
+#game-over .game-over-box > #home-button:hover {
+
+    transform: translateY(-2px) !important;
+
+    filter: brightness(1.08) !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b8052 0%,
+            #27ad6b 50%,
+            #2bc277 100%
+        ) !important;
+
+    box-shadow:
+        0 12px 25px
+        rgba(0,0,0,0.35),
+
+        0 0 20px
+        rgba(46,204,113,0.20),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.14) !important;
+}
+
+#game-over .game-over-box > #home-button:active {
+
+    transform: translateY(0) scale(0.98) !important;
 }
 
 
@@ -2109,7 +2194,6 @@ body {
 
     /* =========================
        CEVAP ALANI
-       YUKARI TAŞINDI
     ========================= */
 
     .answer-area {
@@ -2183,19 +2267,19 @@ body {
         margin-bottom: 24px;
     }
 
-    .game-over-buttons {
-        flex-direction: column;
+    #game-over .game-over-box > #restart-button,
+    #game-over .game-over-box > #home-button {
+        width: 100% !important;
 
-        gap: 10px;
-    }
+        min-width: 0 !important;
 
-    #restart-button,
-    #home-button {
-        width: 100%;
+        max-width: 100% !important;
 
-        height: 52px;
+        height: 52px !important;
 
-        min-width: 0;
+        min-height: 52px !important;
+
+        max-height: 52px !important;
     }
 }
 
@@ -2378,244 +2462,132 @@ and
         margin-bottom: 15px;
     }
 
-    .game-over-buttons {
-        flex-direction: row;
+    #game-over .game-over-box > #restart-button,
+    #game-over .game-over-box > #home-button {
+        width: 220px !important;
 
-        gap: 10px;
+        min-width: 220px !important;
+
+        max-width: 220px !important;
+
+        height: 45px !important;
+
+        min-height: 45px !important;
+
+        max-height: 45px !important;
+
+        font-size: 14px !important;
     }
-
-    #restart-button,
-    #home-button {
-        width: auto;
-
-        min-width: 135px;
-
-        height: 45px;
-
-        font-size: 14px;
-    }
-}
-/* =====================================================
-   OYUN BİTİŞ EKRANI - ANA SAYFA BUTONU
-===================================================== */
-
-#home-button {
-
-    width: 100%;
-
-    height: 52px;
-
-    margin-top: 12px;
-
-    padding: 0 32px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    box-sizing: border-box;
-
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-    font-size: 16px;
-
-    font-weight: 900;
-
-    letter-spacing: 0.2px;
-
-    border:
-        1px solid
-        rgba(79,255,133,0.55);
-
-    border-radius: 10px;
-
-    outline: none;
-
-    cursor: pointer;
-
-    color: #ffffff;
-
-    background:
-        linear-gradient(
-            135deg,
-            #176c46,
-            #20945c
-        );
-
-    box-shadow:
-
-        0 7px 20px
-        rgba(0,0,0,0.22),
-
-        0 0 12px
-        rgba(46,204,113,0.08),
-
-        inset 0 1px 0
-        rgba(255,255,255,0.10);
-
-    transition:
-
-        transform 0.18s ease,
-
-        box-shadow 0.18s ease,
-
-        background 0.18s ease;
 }
 
 
-#home-button:hover {
+/* =========================================================
+   SON VE EN GÜÇLÜ OVERRIDE
+   ANA SAYFA BUTONUNUN TARAYICI DEFAULT STİLİNE
+   DÜŞMESİNİ KESİNLİKLE ENGELLER
+========================================================= */
 
-    transform:
-        translateY(-2px);
-
-    background:
-        linear-gradient(
-            135deg,
-            #1b8052,
-            #27ad6b
-        );
-
-    box-shadow:
-
-        0 10px 24px
-        rgba(0,0,0,0.30),
-
-        0 0 18px
-        rgba(46,204,113,0.18),
-
-        inset 0 1px 0
-        rgba(255,255,255,0.14);
-}
-
-
-#home-button:active {
-
-    transform:
-        scale(0.98);
-}
-
-
-/* =====================================================
-   OYUN BİTİŞ KUTUSU
-   İKİ BUTON ALT ALTA
-===================================================== */
-
-.game-over-box #restart-button,
-.game-over-box #home-button {
-
-    box-sizing: border-box;
-
-    flex-shrink: 0;
-}
-
-
-/* =====================================================
-   MOBİL
-===================================================== */
-
-@media (max-width: 700px) {
-
-    #home-button {
-
-        height: 50px;
-
-        margin-top: 10px;
-
-        font-size: 15px;
-    }
-
-}   
-/* OYUN SONU BUTONLARI */
-#game-over .game-over-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-}
-
-#game-over #restart-button,
-#game-over #home-button {
-    width: 180px;
-    min-height: 48px;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-#game-over #restart-button {
-    background: #ffffff;
-    color: #123d2c;
-}
-
-#game-over #home-button {
-    background: #25d98a;
-    color: #07351f;
-}
-
-#game-over #restart-button:hover,
-#game-over #home-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-
-#game-over #restart-button:active,
-#game-over #home-button:active {
-    transform: translateY(0);
-}
-/* =====================================================
-   OYUN SONU BUTONLARI
-   ===================================================== */
-
-#game-over .game-over-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Butonların bulunduğu alan */
-#game-over .game-over-box #restart-button,
+#game-over #home-button,
 #game-over .game-over-box #home-button {
-    display: block !important;
-    width: 180px !important;
-    height: 44px !important;
-    margin: 6px auto !important;
-    box-sizing: border-box;
-    border-radius: 8px;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-}
 
-/* Tekrar Oyna */
-#game-over .game-over-box #restart-button {
-    background: #ffffff;
-    color: #111111;
-    border: none;
-}
+    display: flex !important;
 
-/* Ana Sayfa */
-#game-over .game-over-box #home-button {
-    background: #1f8f5f !important;
+    position: relative !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 220px !important;
+    min-width: 220px !important;
+    max-width: 220px !important;
+
+    height: 52px !important;
+    min-height: 52px !important;
+    max-height: 52px !important;
+
+    margin: 0 !important;
+
+    padding: 0 25px !important;
+
+    box-sizing: border-box !important;
+
+    border: 1px solid rgba(79,255,133,0.55) !important;
+
+    border-radius: 12px !important;
+
+    outline: none !important;
+
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
+    font-family: Arial, Helvetica, sans-serif !important;
+
+    font-size: 15px !important;
+
+    font-weight: 900 !important;
+
+    line-height: 1 !important;
+
+    letter-spacing: 0.3px !important;
+
+    text-align: center !important;
+
+    cursor: pointer !important;
+
     color: #ffffff !important;
-    border: none !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #176c46 0%,
+            #20945c 50%,
+            #25aa68 100%
+        ) !important;
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,0.28),
+        0 0 14px rgba(46,204,113,0.10),
+        inset 0 1px 0 rgba(255,255,255,0.10) !important;
 }
 
-/* Hover efektleri */
-#game-over .game-over-box #restart-button:hover {
-    transform: translateY(-1px);
-}
-
+#game-over #home-button:hover,
 #game-over .game-over-box #home-button:hover {
-    background: #27a86d !important;
-    transform: translateY(-1px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #1b8052 0%,
+            #27ad6b 50%,
+            #2bc277 100%
+        ) !important;
+
+    transform: translateY(-2px) !important;
+
+    box-shadow:
+        0 12px 25px rgba(0,0,0,0.35),
+        0 0 20px rgba(46,204,113,0.20),
+        inset 0 1px 0 rgba(255,255,255,0.14) !important;
+}
+
+#game-over #home-button:active,
+#game-over .game-over-box #home-button:active {
+
+    transform: translateY(0) scale(0.98) !important;
+}
+
+
+/* =========================================================
+   BUTONLARIN KESİN OLARAK ALT ALTA DURMASI
+========================================================= */
+
+#game-over .game-over-box > #restart-button,
+#game-over .game-over-box > #home-button {
+
+    align-self: center !important;
+
+    flex: 0 0 auto !important;
+}
+
+#game-over .game-over-box > #home-button {
+    margin-top: 0 !important;
 }
