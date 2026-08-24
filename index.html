@@ -55,10 +55,6 @@
         }
 
 
-        /* =====================================================
-           STADYUM ATMOSFERİ
-        ====================================================== */
-
         #home-screen::before {
 
             content: "";
@@ -88,10 +84,6 @@
         }
 
 
-        /* =====================================================
-           SAHA IŞIĞI
-        ====================================================== */
-
         #home-screen::after {
 
             content: "";
@@ -99,11 +91,13 @@
             position: absolute;
 
             left: 50%;
+
             bottom: -18%;
 
             transform: translateX(-50%);
 
             width: 85%;
+
             height: 48%;
 
             border-radius: 50%;
@@ -148,8 +142,6 @@
 
             letter-spacing: -9px;
 
-            color: #ffffff;
-
             background:
 
                 linear-gradient(
@@ -175,10 +167,6 @@
         }
 
 
-        /* =====================================================
-           ALT BAŞLIK
-        ====================================================== */
-
         #home-screen .home-subtitle {
 
             display: block !important;
@@ -187,8 +175,7 @@
 
             z-index: 5;
 
-            margin:
-                25px 0 0;
+            margin: 25px 0 0;
 
             font-size: 15px;
 
@@ -205,34 +192,73 @@
 
 
         /* =====================================================
-           OYUNA BAŞLA
+           ANA SAYFA BUTONLARI
         ====================================================== */
 
-        #start-button {
+        .home-buttons {
 
             position: absolute;
 
             z-index: 10;
 
             left: 50%;
-            top: 73%;
 
-            transform:
-                translate(-50%, -50%);
+            top: 72%;
 
-            width:
-                min(430px, 42vw);
+            transform: translateX(-50%);
 
-            height: 68px;
+            display: flex;
 
-            padding: 0 35px;
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 13px;
+
+            width: min(430px, 82vw);
+
+        }
+
+
+        #start-button,
+        #daily-challenge-button {
+
+            position: relative;
+
+            width: 100%;
+
+            height: 62px;
+
+            padding: 0 28px;
 
             display: flex;
 
             align-items: center;
+
             justify-content: center;
 
-            gap: 16px;
+            gap: 13px;
+
+            border-radius: 13px;
+
+            font-size: 17px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            cursor: pointer;
+
+            transition:
+
+                transform 0.2s ease,
+                filter 0.2s ease,
+                box-shadow 0.2s ease;
+
+        }
+
+
+        #start-button {
 
             background:
 
@@ -242,19 +268,11 @@
                     #31d979
                 ) !important;
 
-            color: #ffffff !important;
-
-            font-size: 19px !important;
-
-            font-weight: 900 !important;
-
-            letter-spacing: 2px;
+            color: #fff !important;
 
             border:
                 1px solid
                 rgba(113,255,164,0.7) !important;
-
-            border-radius: 14px;
 
             box-shadow:
 
@@ -267,12 +285,6 @@
                 inset 0 1px 0
                 rgba(255,255,255,0.25);
 
-            transition:
-
-                transform 0.2s ease,
-                box-shadow 0.2s ease,
-                filter 0.2s ease;
-
         }
 
 
@@ -280,40 +292,95 @@
 
             content: "▶";
 
-            font-size: 20px;
-
-            line-height: 1;
+            font-size: 18px;
 
         }
 
 
-        #start-button:hover {
+        #daily-challenge-button {
 
-            transform:
-                translate(-50%, -50%)
-                translateY(-3px);
+            background:
 
-            filter: brightness(1.08);
+                rgba(255,255,255,0.08) !important;
+
+            color: #ffffff !important;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.20) !important;
+
+            backdrop-filter: blur(10px);
+
+            -webkit-backdrop-filter: blur(10px);
 
             box-shadow:
 
-                0 16px 40px
-                rgba(0,0,0,0.5),
-
-                0 0 35px
-                rgba(46,204,113,0.35),
-
-                inset 0 1px 0
-                rgba(255,255,255,0.28);
+                0 10px 30px
+                rgba(0,0,0,0.30);
 
         }
 
 
-        #start-button:active {
+        #daily-challenge-button::before {
 
-            transform:
-                translate(-50%, -50%)
-                scale(0.98);
+            content: "★";
+
+            color: #35df82;
+
+            font-size: 19px;
+
+        }
+
+
+        #start-button:hover,
+        #daily-challenge-button:hover {
+
+            transform: translateY(-3px);
+
+            filter: brightness(1.08);
+
+        }
+
+
+        #start-button:active,
+        #daily-challenge-button:active {
+
+            transform: scale(0.98);
+
+        }
+
+
+        /* =====================================================
+           GÜNLÜK CHALLENGE BİLGİSİ
+        ====================================================== */
+
+        #daily-status {
+
+            position: relative;
+
+            z-index: 10;
+
+            margin-top: 8px;
+
+            min-height: 18px;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            color:
+                rgba(255,255,255,0.48);
+
+            text-align: center;
+
+        }
+
+
+        #daily-status.completed {
+
+            color: #35df82;
 
         }
 
@@ -331,12 +398,12 @@
 
         /* =====================================================
            GERİ SAYIM
-           ÇİRKİN YUVARLAK TAMAMEN KALDIRILDI
         ====================================================== */
 
         #countdown {
 
             width: 180px !important;
+
             height: 150px !important;
 
             background: transparent !important;
@@ -414,10 +481,6 @@
         }
 
 
-        /* =====================================================
-           VS
-        ====================================================== */
-
         #vs-text {
 
             position: relative;
@@ -428,17 +491,10 @@
 
             font-weight: 1000;
 
-            letter-spacing: 1px;
-
-            color: #ffffff;
+            color: #fff;
 
             text-shadow:
-
-                0 4px 10px
-                rgba(0,0,0,0.7),
-
-                0 0 20px
-                rgba(46,204,113,0.18);
+                0 4px 10px rgba(0,0,0,0.7);
 
         }
 
@@ -473,10 +529,6 @@
         }
 
 
-        /* =====================================================
-           FUTBOLCU ADINI GİR
-        ====================================================== */
-
         .answer-label {
 
             display: block;
@@ -495,10 +547,6 @@
         }
 
 
-        /* =====================================================
-           INPUT
-        ====================================================== */
-
         .answer-area input {
 
             width: 300px !important;
@@ -512,11 +560,11 @@
 
             color: #10251b;
 
+            border-radius: 10px;
+
             border:
                 1px solid
                 rgba(255,255,255,0.12);
-
-            border-radius: 10px;
 
             box-shadow:
                 0 8px 25px
@@ -527,25 +575,13 @@
 
         .answer-area input:focus {
 
+            outline: none;
+
             border-color:
                 rgba(46,204,113,0.75);
 
-            outline: none;
-
-            box-shadow:
-
-                0 0 0 3px
-                rgba(46,204,113,0.10),
-
-                0 8px 25px
-                rgba(0,0,0,0.22);
-
         }
 
-
-        /* =====================================================
-           OYUNCU ÖNERİLERİ
-        ====================================================== */
 
         #player-suggestions {
 
@@ -562,8 +598,6 @@
             padding: 0;
 
             border: none !important;
-
-            outline: none !important;
 
             background: transparent !important;
 
@@ -586,7 +620,7 @@
             background:
                 rgba(13,45,31,0.98) !important;
 
-            color: #ffffff;
+            color: #fff;
 
             padding: 13px 15px;
 
@@ -596,10 +630,6 @@
                 1px solid
                 rgba(255,255,255,0.07);
 
-            transition:
-                background 0.15s ease,
-                padding-left 0.15s ease;
-
         }
 
 
@@ -608,14 +638,8 @@
             background:
                 rgba(35,105,67,0.98) !important;
 
-            padding-left: 19px;
-
         }
 
-
-        /* =====================================================
-           CEVAPLA
-        ====================================================== */
 
         .answer-area > #answerButton {
 
@@ -623,10 +647,7 @@
 
             height: 54px;
 
-            margin: 0;
-
             background:
-
                 linear-gradient(
                     135deg,
                     #ffffff,
@@ -641,26 +662,8 @@
 
             font-weight: 1000;
 
-            letter-spacing: 0.5px;
-
-            box-shadow:
-                0 8px 22px
-                rgba(0,0,0,0.20);
-
         }
 
-
-        .answer-area > #answerButton:hover {
-
-            transform:
-                translateY(-2px);
-
-        }
-
-
-        /* =====================================================
-           MASAÜSTÜ CEVAP SATIRI
-        ====================================================== */
 
         @media (min-width: 701px) {
 
@@ -676,13 +679,11 @@
 
             }
 
-
             .answer-input-wrapper {
 
                 align-items: stretch;
 
             }
-
 
             .answer-label {
 
@@ -692,10 +693,6 @@
 
         }
 
-
-        /* =====================================================
-           SONUÇ
-        ====================================================== */
 
         #result {
 
@@ -722,8 +719,6 @@
 
             backdrop-filter: blur(8px);
 
-            -webkit-backdrop-filter: blur(8px);
-
         }
 
 
@@ -733,8 +728,7 @@
 
             max-width: 88%;
 
-            padding:
-                42px 40px 38px;
+            padding: 42px 40px 38px;
 
             background:
 
@@ -751,12 +745,8 @@
             border-radius: 22px;
 
             box-shadow:
-
                 0 30px 80px
-                rgba(0,0,0,0.65),
-
-                0 0 35px
-                rgba(46,204,113,0.07);
+                rgba(0,0,0,0.65);
 
         }
 
@@ -767,25 +757,16 @@
 
             margin-bottom: 8px;
 
-            filter:
-                drop-shadow(
-                    0 5px 12px
-                    rgba(0,0,0,0.35)
-                );
-
         }
 
 
         .game-over h2 {
 
-            margin:
-                0 0 25px;
+            margin: 0 0 25px;
 
             font-size: 34px;
 
             font-weight: 1000;
-
-            letter-spacing: 1px;
 
         }
 
@@ -808,28 +789,20 @@
 
         #final-score {
 
-            margin:
-                0 0 12px;
+            margin: 0 0 12px;
 
             font-size: 64px;
-
-            line-height: 1;
 
             font-weight: 1000;
 
             color: #35df82;
-
-            text-shadow:
-                0 0 25px
-                rgba(46,204,113,0.22);
 
         }
 
 
         #final-message {
 
-            margin:
-                0 auto 30px;
+            margin: 0 auto 30px;
 
             padding-top: 18px;
 
@@ -841,9 +814,6 @@
 
             font-weight: 800;
 
-            color:
-                rgba(255,255,255,0.82);
-
         }
 
 
@@ -852,8 +822,6 @@
             width: 190px;
 
             height: 52px;
-
-            padding: 0;
 
             background:
 
@@ -867,23 +835,7 @@
 
             border-radius: 10px;
 
-            font-size: 15px;
-
             font-weight: 1000;
-
-            letter-spacing: 1px;
-
-            box-shadow:
-                0 8px 25px
-                rgba(0,0,0,0.25);
-
-        }
-
-
-        #restart-button:hover {
-
-            transform:
-                translateY(-2px);
 
         }
 
@@ -909,20 +861,24 @@
 
                 letter-spacing: 2.5px;
 
-                margin-top: 18px;
+            }
+
+
+            .home-buttons {
+
+                top: 70%;
+
+                width: 76vw;
 
             }
 
 
-            #start-button {
+            #start-button,
+            #daily-challenge-button {
 
-                width: 72vw;
+                height: 55px;
 
-                height: 58px;
-
-                top: 73%;
-
-                font-size: 15px !important;
+                font-size: 14px;
 
             }
 
@@ -963,8 +919,6 @@
 
                 width: 100% !important;
 
-                top: 62px;
-
             }
 
 
@@ -979,15 +933,7 @@
 
             .game-over-box {
 
-                padding:
-                    35px 25px 32px;
-
-            }
-
-
-            .game-over-icon {
-
-                font-size: 48px;
+                padding: 35px 25px 32px;
 
             }
 
@@ -1005,19 +951,8 @@
 
             }
 
-
-            #final-message {
-
-                font-size: 15px;
-
-            }
-
         }
 
-
-        /* =====================================================
-           ÇOK DAR TELEFON
-        ====================================================== */
 
         @media (max-width: 400px) {
 
@@ -1028,34 +963,14 @@
             }
 
 
-            #start-button {
+            .home-buttons {
 
-                width: 74vw;
-
-                top: 73%;
-
-            }
-
-
-            #countdown {
-
-                font-size: 55px !important;
-
-            }
-
-
-            .answer-input-wrapper {
-
-                width: 78%;
+                width: 78vw;
 
             }
 
         }
 
-
-        /* =====================================================
-           YATAY TELEFON
-        ====================================================== */
 
         @media
         (max-height: 600px)
@@ -1069,27 +984,19 @@
             }
 
 
-            #home-screen .home-subtitle {
+            .home-buttons {
 
-                margin-top: 10px;
+                top: 72%;
 
-            }
-
-
-            #start-button {
-
-                width: 300px;
-
-                height: 52px;
-
-                top: 78%;
+                flex-direction: row;
 
             }
 
 
-            #countdown {
+            #start-button,
+            #daily-challenge-button {
 
-                font-size: 58px !important;
+                height: 50px;
 
             }
 
@@ -1115,12 +1022,28 @@
             ORTAK FUTBOLCUYU BUL
         </p>
 
-        <button
-            id="start-button"
-            aria-label="Oyuna Başla"
-        >
-            OYUNA BAŞLA
-        </button>
+
+        <div class="home-buttons">
+
+            <button
+                id="start-button"
+                aria-label="Oyuna Başla"
+            >
+                OYUNA BAŞLA
+            </button>
+
+
+            <button
+                id="daily-challenge-button"
+                aria-label="Günlük Challenge"
+            >
+                GÜNLÜK CHALLENGE
+            </button>
+
+
+            <div id="daily-status"></div>
+
+        </div>
 
     </div>
 
@@ -1135,8 +1058,11 @@
         <header class="game-header">
 
             <h1>
-                ORTAK FUTBOLCU
+                <span id="game-mode-title">
+                    ORTAK FUTBOLCU
+                </span>
             </h1>
+
 
             <div
                 class="score"
@@ -1144,6 +1070,7 @@
             >
                 Puan: 0
             </div>
+
 
             <div id="question-number">
                 Soru: 0 / 10
@@ -1223,10 +1150,6 @@
         </div>
 
 
-        <!-- =================================================
-             CEVAP ALANI
-        ================================================== -->
-
         <div class="answer-area">
 
             <div class="answer-input-wrapper">
@@ -1238,6 +1161,7 @@
                     FUTBOLCU ADINI GİR
                 </label>
 
+
                 <input
                     type="text"
                     id="answerInput"
@@ -1245,6 +1169,7 @@
                     autocomplete="off"
                     spellcheck="false"
                 >
+
 
                 <div id="player-suggestions"></div>
 
@@ -1268,7 +1193,7 @@
 
 
     <!-- =====================================================
-         OYUN BİTİŞ EKRANI
+         OYUN BİTİŞ
     ====================================================== -->
 
     <div
@@ -1282,21 +1207,26 @@
                 🏆
             </div>
 
-            <h2>
+
+            <h2 id="game-over-title">
                 OYUN TAMAMLANDI
             </h2>
+
 
             <div class="final-score-label">
                 PUAN
             </div>
 
+
             <div id="final-score">
                 0
             </div>
 
+
             <div id="final-message">
                 10 soruyu tamamladın!
             </div>
+
 
             <button id="restart-button">
                 TEKRAR OYNA

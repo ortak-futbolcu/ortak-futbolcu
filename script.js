@@ -1,28 +1,26 @@
 // =====================================================
-// 3-2-1 ORTAK FUTBOLCU OYUNU
+// 3-2-1 ORTAK FUTBOLCU
+// NORMAL OYUN + GÜNLÜK CHALLENGE
 // =====================================================
 
 
 // =====================================================
-// OYUNDA KULLANILACAK TAKIMLAR
+// TAKIMLAR
 // =====================================================
 
 const playableTeams = [
 
-    // TÜRKİYE
     "BESIKTAS",
     "FENERBAHCE",
     "GALATASARAY",
     "ISTANBUL BASAKSEHIR",
     "TRABZONSPOR",
 
-    // FRANSA
     "PSG",
     "LILLE",
     "LYON",
     "MARSEILLE",
 
-    // İNGİLTERE
     "LIVERPOOL",
     "MANCHESTER CITY",
     "MANCHESTER UNITED",
@@ -30,23 +28,19 @@ const playableTeams = [
     "CHELSEA",
     "ARSENAL",
 
-    // İSPANYA
     "BARCELONA",
     "REAL MADRID",
     "ATLETICO MADRID",
 
-    // ALMANYA
     "BAYERN MUNIH",
     "BORUSSIA DORTMUND",
 
-    // İTALYA
     "INTER",
     "NAPOLI",
     "MILAN",
     "JUVENTUS",
     "ROMA",
 
-    // PORTEKİZ
     "PORTO",
     "SPORTING CP",
     "BENFICA"
@@ -55,100 +49,51 @@ const playableTeams = [
 
 
 // =====================================================
-// TAKIM LOGOLARI
+// LOGOLAR
 // =====================================================
 
 const teamLogos = {
 
-    "BESIKTAS":
-        "logos/besiktas.svg",
+    "BESIKTAS": "logos/besiktas.svg",
+    "FENERBAHCE": "logos/fenerbahce.svg",
+    "GALATASARAY": "logos/galatasaray.svg",
+    "ISTANBUL BASAKSEHIR": "logos/istanbul-basaksehir.svg",
+    "TRABZONSPOR": "logos/trabzonspor.svg",
 
-    "FENERBAHCE":
-        "logos/fenerbahce.svg",
+    "PSG": "logos/psg.svg",
+    "LILLE": "logos/lille.svg",
+    "LYON": "logos/lyon.svg",
+    "MARSEILLE": "logos/marseille.svg",
 
-    "GALATASARAY":
-        "logos/galatasaray.svg",
+    "LIVERPOOL": "logos/liverpool.svg",
+    "MANCHESTER CITY": "logos/manchester-city.svg",
+    "MANCHESTER UNITED": "logos/manchester-united.svg",
+    "TOTTENHAM": "logos/tottenham.svg",
+    "CHELSEA": "logos/chelsea.svg",
+    "ARSENAL": "logos/arsenal.svg",
 
-    "ISTANBUL BASAKSEHIR":
-        "logos/istanbul-basaksehir.svg",
+    "BARCELONA": "logos/barcelona.svg",
+    "REAL MADRID": "logos/real-madrid.svg",
+    "ATLETICO MADRID": "logos/atletico-madrid.svg",
 
-    "TRABZONSPOR":
-        "logos/trabzonspor.svg",
+    "BAYERN MUNIH": "logos/bayern-munich.svg",
+    "BORUSSIA DORTMUND": "logos/borussia-dortmund.svg",
 
-    "PSG":
-        "logos/psg.svg",
+    "INTER": "logos/inter.svg",
+    "NAPOLI": "logos/napoli.svg",
+    "MILAN": "logos/milan.svg",
+    "JUVENTUS": "logos/juventus.svg",
+    "ROMA": "logos/roma.svg",
 
-    "LILLE":
-        "logos/lille.svg",
-
-    "LYON":
-        "logos/lyon.svg",
-
-    "MARSEILLE":
-        "logos/marseille.svg",
-
-    "LIVERPOOL":
-        "logos/liverpool.svg",
-
-    "MANCHESTER CITY":
-        "logos/manchester-city.svg",
-
-    "MANCHESTER UNITED":
-        "logos/manchester-united.svg",
-
-    "TOTTENHAM":
-        "logos/tottenham.svg",
-
-    "CHELSEA":
-        "logos/chelsea.svg",
-
-    "ARSENAL":
-        "logos/arsenal.svg",
-
-    "BARCELONA":
-        "logos/barcelona.svg",
-
-    "REAL MADRID":
-        "logos/real-madrid.svg",
-
-    "ATLETICO MADRID":
-        "logos/atletico-madrid.svg",
-
-    "BAYERN MUNIH":
-        "logos/bayern-munich.svg",
-
-    "BORUSSIA DORTMUND":
-        "logos/borussia-dortmund.svg",
-
-    "INTER":
-        "logos/inter.svg",
-
-    "NAPOLI":
-        "logos/napoli.svg",
-
-    "MILAN":
-        "logos/milan.svg",
-
-    "JUVENTUS":
-        "logos/juventus.svg",
-
-    "ROMA":
-        "logos/roma.svg",
-
-    "PORTO":
-        "logos/porto.svg",
-
-    "SPORTING CP":
-        "logos/sporting-cp.svg",
-
-    "BENFICA":
-        "logos/benfica.svg"
+    "PORTO": "logos/porto.svg",
+    "SPORTING CP": "logos/sporting-cp.svg",
+    "BENFICA": "logos/benfica.svg"
 
 };
 
 
 // =====================================================
-// PLAYERPOOL KONTROLÜ
+// PLAYERPOOL
 // =====================================================
 
 if (
@@ -158,7 +103,7 @@ if (
 ) {
 
     throw new Error(
-        "playerPool bulunamadı. index.html içinde önce players.js, sonra script.js yüklenmelidir."
+        "playerPool bulunamadı. players.js önce yüklenmelidir."
     );
 
 }
@@ -168,20 +113,19 @@ if (
 // AKTİF TAKIMLAR
 // =====================================================
 
-const teams =
-    playableTeams.filter(team => {
+const teams = playableTeams.filter(team => {
 
-        return Object.values(playerPool).some(player => {
+    return Object.values(playerPool).some(player => {
 
-            return (
-                player &&
-                Array.isArray(player.teams) &&
-                player.teams.includes(team)
-            );
-
-        });
+        return (
+            player &&
+            Array.isArray(player.teams) &&
+            player.teams.includes(team)
+        );
 
     });
+
+});
 
 
 // =====================================================
@@ -192,12 +136,10 @@ function findCommonPlayers(teamA, teamB) {
 
     const commonPlayers = [];
 
-
     for (const playerName in playerPool) {
 
         const playerData =
             playerPool[playerName];
-
 
         if (
             !playerData ||
@@ -207,7 +149,6 @@ function findCommonPlayers(teamA, teamB) {
             continue;
 
         }
-
 
         if (
             playerData.teams.includes(teamA) &&
@@ -220,55 +161,33 @@ function findCommonPlayers(teamA, teamB) {
 
     }
 
-
     return commonPlayers;
 
 }
 
 
 // =====================================================
-// GEÇERLİ TAKIM ÇİFTLERİ
+// GEÇERLİ EŞLEŞMELER
 // =====================================================
 
 const validTeamPairs = [];
 
+for (let i = 0; i < teams.length; i++) {
 
-for (
-    let i = 0;
-    i < teams.length;
-    i++
-) {
+    for (let j = i + 1; j < teams.length; j++) {
 
-    for (
-        let j = i + 1;
-        j < teams.length;
-        j++
-    ) {
-
-        const teamA =
-            teams[i];
-
-        const teamB =
-            teams[j];
-
+        const teamA = teams[i];
+        const teamB = teams[j];
 
         const commonPlayers =
-            findCommonPlayers(
-                teamA,
-                teamB
-            );
+            findCommonPlayers(teamA, teamB);
 
-
-        if (
-            commonPlayers.length > 0
-        ) {
+        if (commonPlayers.length > 0) {
 
             validTeamPairs.push({
 
-                teamA: teamA,
-
-                teamB: teamB,
-
+                teamA,
+                teamB,
                 players: commonPlayers
 
             });
@@ -281,111 +200,99 @@ for (
 
 
 // =====================================================
-// HTML ELEMANLARI
+// HTML
 // =====================================================
 
 const startButton =
     document.getElementById("start-button");
 
+const dailyChallengeButton =
+    document.getElementById(
+        "daily-challenge-button"
+    );
 
-const dailyButton =
-    document.getElementById("daily-button");
-
+const dailyStatus =
+    document.getElementById(
+        "daily-status"
+    );
 
 const homeScreen =
     document.getElementById("home-screen");
 
-
 const gameContent =
     document.getElementById("game-content");
-
 
 const countdown =
     document.getElementById("countdown");
 
-
 const vsText =
     document.getElementById("vs-text");
-
 
 const team1 =
     document.getElementById("team1");
 
-
 const team2 =
     document.getElementById("team2");
-
 
 const team1Logo =
     document.getElementById("team1-logo");
 
-
 const team2Logo =
     document.getElementById("team2-logo");
-
 
 const team1Name =
     document.getElementById("team1-name");
 
-
 const team2Name =
     document.getElementById("team2-name");
-
 
 const answerInput =
     document.getElementById("answerInput");
 
-
 const answerButton =
     document.getElementById("answerButton");
-
 
 const scoreText =
     document.getElementById("score");
 
-
 const result =
     document.getElementById("result");
-
 
 const timerBar =
     document.getElementById("timer-bar");
 
-
 const gameArea =
     document.querySelector(".game-area");
-
 
 const answerArea =
     document.querySelector(".answer-area");
 
-
 const timerContainer =
     document.querySelector(".timer-container");
-
 
 const gameOver =
     document.getElementById("game-over");
 
-
 const finalScore =
     document.getElementById("final-score");
-
 
 const finalMessage =
     document.getElementById("final-message");
 
-
 const restartButton =
     document.getElementById("restart-button");
-
 
 const questionNumberText =
     document.getElementById("question-number");
 
-
 const playerSuggestions =
     document.getElementById("player-suggestions");
+
+const gameModeTitle =
+    document.getElementById("game-mode-title");
+
+const gameOverTitle =
+    document.getElementById("game-over-title");
 
 
 // =====================================================
@@ -414,48 +321,242 @@ let gameVersion = 0;
 
 
 // =====================================================
-// OYUN MODU
-// normal = normal oyun
-// daily  = günlük challenge
+// MOD
 // =====================================================
 
-let gameMode = "normal";
+let currentGameMode = "normal";
 
 
 // =====================================================
-// GÜNLÜK CHALLENGE DEĞİŞKENLERİ
+// GÜNLÜK CHALLENGE
 // =====================================================
 
 let dailyQuestions = [];
 
 let dailyQuestionIndex = 0;
 
-let dailyCompleted = false;
 
-const DAILY_TOTAL_QUESTIONS = 10;
+// =====================================================
+// BUGÜNÜN TARİHİ
+// =====================================================
+
+function getTodayKey() {
+
+    const now = new Date();
+
+    const year =
+        now.getFullYear();
+
+    const month =
+        String(
+            now.getMonth() + 1
+        ).padStart(2, "0");
+
+    const day =
+        String(
+            now.getDate()
+        ).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+
+}
 
 
 // =====================================================
-// BAŞLANGIÇ
+// GÜNLÜK SEED
+// =====================================================
+
+function getDailySeed() {
+
+    const date =
+        getTodayKey();
+
+    let hash = 0;
+
+    for (
+        let i = 0;
+        i < date.length;
+        i++
+    ) {
+
+        hash =
+            (
+                (
+                    hash << 5
+                ) -
+                hash +
+                date.charCodeAt(i)
+            ) |
+            0;
+
+    }
+
+    return Math.abs(hash);
+
+}
+
+
+// =====================================================
+// SEEDLİ RANDOM
+// =====================================================
+
+function seededRandom(seed) {
+
+    let value =
+        Math.sin(seed) * 10000;
+
+    return value -
+        Math.floor(value);
+
+}
+
+
+// =====================================================
+// GÜNLÜK SORULARI OLUŞTUR
+// =====================================================
+
+function generateDailyQuestions() {
+
+    if (
+        validTeamPairs.length === 0
+    ) {
+
+        return [];
+
+    }
+
+
+    const pool =
+        [...validTeamPairs];
+
+
+    const seed =
+        getDailySeed();
+
+
+    /*
+       Aynı tarih + aynı playerPool
+       = aynı sıralama
+    */
+
+    for (
+        let i = pool.length - 1;
+        i > 0;
+        i--
+    ) {
+
+        const random =
+            seededRandom(
+                seed + i * 7919
+            );
+
+        const j =
+            Math.floor(
+                random * (i + 1)
+            );
+
+
+        [
+            pool[i],
+            pool[j]
+        ] =
+        [
+            pool[j],
+            pool[i]
+        ];
+
+    }
+
+
+    return pool.slice(
+        0,
+        Math.min(
+            totalQuestions,
+            pool.length
+        )
+    );
+
+}
+
+
+// =====================================================
+// GÜNLÜK TAMAMLANDI MI?
+// =====================================================
+
+function isDailyCompleted() {
+
+    return (
+        localStorage.getItem(
+            "321_daily_completed"
+        ) === getTodayKey()
+    );
+
+}
+
+
+// =====================================================
+// GÜNLÜK DURUMU GÖSTER
+// =====================================================
+
+function updateDailyStatus() {
+
+    if (!dailyStatus) {
+
+        return;
+
+    }
+
+
+    if (isDailyCompleted()) {
+
+        dailyStatus.textContent =
+            "✓ BUGÜNKÜ CHALLENGE TAMAMLANDI";
+
+        dailyStatus.classList.add(
+            "completed"
+        );
+
+    }
+    else {
+
+        dailyStatus.textContent =
+            "BUGÜNÜN 10 SORUSU HAZIR";
+
+        dailyStatus.classList.remove(
+            "completed"
+        );
+
+    }
+
+}
+
+
+// =====================================================
+// BAŞLANGIÇ DURUMU
 // =====================================================
 
 if (homeScreen) {
 
-    homeScreen.style.display = "flex";
+    homeScreen.style.display =
+        "flex";
 
 }
 
 if (gameContent) {
 
-    gameContent.style.display = "none";
+    gameContent.style.display =
+        "none";
 
 }
 
 if (gameOver) {
 
-    gameOver.style.display = "none";
+    gameOver.style.display =
+        "none";
 
 }
+
+updateDailyStatus();
 
 
 // =====================================================
@@ -496,9 +597,12 @@ function updateTeamDisplay(
     }
     else {
 
-        logoElement.removeAttribute("src");
+        logoElement.removeAttribute(
+            "src"
+        );
 
-        logoElement.alt = "";
+        logoElement.alt =
+            "";
 
         logoElement.style.display =
             "none";
@@ -554,14 +658,16 @@ function normalizeText(text) {
 
 
 // =====================================================
-// OYUNCU İSMİ
+// OYUNCU KELİMELERİ
 // =====================================================
 
 function getPlayerNameWords(playerName) {
 
-    return normalizeText(playerName)
-        .split(" ")
-        .filter(Boolean);
+    return normalizeText(
+        playerName
+    )
+    .split(" ")
+    .filter(Boolean);
 
 }
 
@@ -579,14 +685,14 @@ function getQuestionKey(
         teamA,
         teamB
     ]
-        .sort()
-        .join("___");
+    .sort()
+    .join("___");
 
 }
 
 
 // =====================================================
-// ÖNERİLERİ TEMİZLE
+// ÖNERİ TEMİZLE
 // =====================================================
 
 function clearPlayerSuggestions() {
@@ -627,7 +733,7 @@ function playerNameStartsWithSearch(
 
 
 // =====================================================
-// OYUNCU ÖNERİLERİ
+// ÖNERİLER
 // =====================================================
 
 function showPlayerSuggestions() {
@@ -642,9 +748,7 @@ function showPlayerSuggestions() {
     }
 
 
-    if (
-        answerInput.disabled
-    ) {
+    if (answerInput.disabled) {
 
         clearPlayerSuggestions();
 
@@ -689,25 +793,16 @@ function showPlayerSuggestions() {
 
     const matchingPlayers =
         [...suggestionPool]
-            .filter(
-                playerName =>
-                    playerNameStartsWithSearch(
-                        playerName,
-                        searchText
-                    )
-            );
+        .filter(
+            playerName =>
+                playerNameStartsWithSearch(
+                    playerName,
+                    searchText
+                )
+        );
 
 
     clearPlayerSuggestions();
-
-
-    if (
-        matchingPlayers.length === 0
-    ) {
-
-        return;
-
-    }
 
 
     matchingPlayers
@@ -757,7 +852,7 @@ function showPlayerSuggestions() {
 
 
 // =====================================================
-// ARAMA EVENTLERİ
+// INPUT EVENTLERİ
 // =====================================================
 
 if (answerInput) {
@@ -790,7 +885,7 @@ if (answerInput) {
 
 
 // =====================================================
-// SONUÇ MESAJINI GÖSTER
+// SONUÇ
 // =====================================================
 
 function showResult(
@@ -828,10 +923,6 @@ function showResult(
 }
 
 
-// =====================================================
-// SONUÇ MESAJINI TEMİZLE
-// =====================================================
-
 function clearResult() {
 
     if (!result) {
@@ -849,7 +940,8 @@ function clearResult() {
     );
 
 
-    result.textContent = "";
+    result.textContent =
+        "";
 
 }
 
@@ -881,11 +973,6 @@ function startCountdown(version) {
                 "hidden";
 
 
-            countdown.classList.remove(
-                "start-text"
-            );
-
-
             function showNumber() {
 
                 if (
@@ -899,9 +986,7 @@ function startCountdown(version) {
                 }
 
 
-                if (
-                    count > 0
-                ) {
+                if (count > 0) {
 
                     countdown.textContent =
                         count;
@@ -937,6 +1022,7 @@ function startCountdown(version) {
                 countdown.textContent =
                     "";
 
+
                 countdown.classList.remove(
                     "countdown-pop"
                 );
@@ -960,17 +1046,12 @@ function startCountdown(version) {
                     () => {
 
                         if (
-                            version !== gameVersion
+                            version === gameVersion
                         ) {
 
                             resolve();
 
-                            return;
-
                         }
-
-
-                        resolve();
 
                     },
                     300
@@ -988,7 +1069,7 @@ function startCountdown(version) {
 
 
 // =====================================================
-// NORMAL OYUN - YENİ SORU
+// YENİ SORU
 // =====================================================
 
 async function newQuestion() {
@@ -1020,7 +1101,6 @@ async function newQuestion() {
 
     clearResult();
 
-
     clearPlayerSuggestions();
 
 
@@ -1035,73 +1115,108 @@ async function newQuestion() {
     }
 
 
-    let availableQuestions =
-        validTeamPairs.filter(
-            pair => {
+    let selectedPair;
 
-                const key =
-                    getQuestionKey(
-                        pair.teamA,
-                        pair.teamB
+
+    // =================================================
+    // GÜNLÜK MOD
+    // =================================================
+
+    if (
+        currentGameMode === "daily"
+    ) {
+
+        selectedPair =
+            dailyQuestions[
+                dailyQuestionIndex
+            ];
+
+
+        if (!selectedPair) {
+
+            endGame();
+
+            return;
+
+        }
+
+
+        dailyQuestionIndex++;
+
+    }
+
+
+    // =================================================
+    // NORMAL MOD
+    // =================================================
+
+    else {
+
+        let availableQuestions =
+            validTeamPairs.filter(
+                pair => {
+
+                    const key =
+                        getQuestionKey(
+                            pair.teamA,
+                            pair.teamB
+                        );
+
+
+                    return !usedQuestions.includes(
+                        key
                     );
 
+                }
+            );
 
-                return !usedQuestions.includes(
-                    key
-                );
 
-            }
+        if (
+            availableQuestions.length === 0
+        ) {
+
+            usedQuestions = [];
+
+            availableQuestions =
+                validTeamPairs;
+
+        }
+
+
+        if (
+            availableQuestions.length === 0
+        ) {
+
+            alert(
+                "Yeterli ortak futbolcu içeren takım çifti bulunamadı."
+            );
+
+            return;
+
+        }
+
+
+        const randomIndex =
+            Math.floor(
+                Math.random() *
+                availableQuestions.length
+            );
+
+
+        selectedPair =
+            availableQuestions[
+                randomIndex
+            ];
+
+
+        usedQuestions.push(
+            getQuestionKey(
+                selectedPair.teamA,
+                selectedPair.teamB
+            )
         );
-
-
-    if (
-        availableQuestions.length === 0
-    ) {
-
-        usedQuestions = [];
-
-        availableQuestions =
-            validTeamPairs;
 
     }
-
-
-    if (
-        availableQuestions.length === 0
-    ) {
-
-        alert(
-            "Yeterli ortak futbolcu içeren takım çifti bulunamadı."
-        );
-
-        return;
-
-    }
-
-
-    const randomIndex =
-        Math.floor(
-            Math.random() *
-            availableQuestions.length
-        );
-
-
-    const selectedPair =
-        availableQuestions[
-            randomIndex
-        ];
-
-
-    const questionKey =
-        getQuestionKey(
-            selectedPair.teamA,
-            selectedPair.teamB
-        );
-
-
-    usedQuestions.push(
-        questionKey
-    );
 
 
     questionNumber++;
@@ -1185,370 +1300,7 @@ async function newQuestion() {
 
 
 // =====================================================
-// GÜNLÜK TARİH ANAHTARI
-// =====================================================
-
-function getDailyDateKey() {
-
-    const now =
-        new Date();
-
-
-    const year =
-        now.getFullYear();
-
-
-    const month =
-        String(
-            now.getMonth() + 1
-        ).padStart(
-            2,
-            "0"
-        );
-
-
-    const day =
-        String(
-            now.getDate()
-        ).padStart(
-            2,
-            "0"
-        );
-
-
-    return (
-        year +
-        "-" +
-        month +
-        "-" +
-        day
-    );
-
-}
-
-
-// =====================================================
-// GÜNLÜK SEED
-// =====================================================
-
-function createDailySeed(
-    dateString
-) {
-
-    let hash = 0;
-
-
-    for (
-        let i = 0;
-        i < dateString.length;
-        i++
-    ) {
-
-        hash =
-            (
-                (
-                    hash << 5
-                ) -
-                hash
-            ) +
-            dateString.charCodeAt(i);
-
-
-        hash |= 0;
-
-    }
-
-
-    return Math.abs(hash);
-
-}
-
-
-// =====================================================
-// GÜNLÜK SORULARI OLUŞTUR
-// =====================================================
-
-function generateDailyQuestions() {
-
-    const dateKey =
-        getDailyDateKey();
-
-
-    const seed =
-        createDailySeed(
-            dateKey
-        );
-
-
-    const questions = [];
-
-
-    const available =
-        [...validTeamPairs];
-
-
-    let currentSeed =
-        seed;
-
-
-    function seededRandom() {
-
-        currentSeed =
-            (
-                currentSeed * 9301 +
-                49297
-            ) % 233280;
-
-
-        return (
-            currentSeed /
-            233280
-        );
-
-    }
-
-
-    while (
-        questions.length <
-            DAILY_TOTAL_QUESTIONS &&
-        available.length > 0
-    ) {
-
-        const randomIndex =
-            Math.floor(
-                seededRandom() *
-                available.length
-            );
-
-
-        const selected =
-            available.splice(
-                randomIndex,
-                1
-            )[0];
-
-
-        questions.push(
-            selected
-        );
-
-    }
-
-
-    return questions;
-
-}
-
-
-// =====================================================
-// GÜNLÜK CHALLENGE BAŞLAT
-// =====================================================
-
-function startDailyChallenge() {
-
-    gameMode =
-        "daily";
-
-
-    dailyQuestions =
-        generateDailyQuestions();
-
-
-    dailyQuestionIndex =
-        0;
-
-
-    dailyCompleted =
-        false;
-
-
-    if (
-        dailyQuestions.length <
-        DAILY_TOTAL_QUESTIONS
-    ) {
-
-        alert(
-            "Günlük Challenge için yeterli soru bulunamadı."
-        );
-
-
-        gameMode =
-            "normal";
-
-
-        return;
-
-    }
-
-
-    if (homeScreen) {
-
-        homeScreen.style.display =
-            "none";
-
-    }
-
-
-    if (gameContent) {
-
-        gameContent.style.display =
-            "block";
-
-    }
-
-
-    resetGame();
-
-
-    gameMode =
-        "daily";
-
-
-    newDailyQuestion();
-
-}
-
-
-// =====================================================
-// GÜNLÜK CHALLENGE - YENİ SORU
-// =====================================================
-
-async function newDailyQuestion() {
-
-    gameVersion++;
-
-
-    const currentVersion =
-        gameVersion;
-
-
-    clearInterval(timer);
-
-
-    questionAnswered =
-        false;
-
-
-    answerInput.disabled =
-        true;
-
-    answerButton.disabled =
-        true;
-
-
-    answerInput.value =
-        "";
-
-
-    clearResult();
-
-    clearPlayerSuggestions();
-
-
-    if (
-        dailyQuestionIndex >=
-        dailyQuestions.length
-    ) {
-
-        endDailyChallenge();
-
-        return;
-
-    }
-
-
-    const selectedPair =
-        dailyQuestions[
-            dailyQuestionIndex
-        ];
-
-
-    dailyQuestionIndex++;
-
-
-    questionNumber =
-        dailyQuestionIndex;
-
-
-    questionNumberText.textContent =
-        "Günlük: " +
-        questionNumber +
-        " / " +
-        DAILY_TOTAL_QUESTIONS;
-
-
-    currentQuestionPlayers =
-        [
-            ...selectedPair.players
-        ];
-
-
-    updateTeamDisplay(
-        selectedPair.teamA,
-        team1Logo,
-        team1Name
-    );
-
-
-    updateTeamDisplay(
-        selectedPair.teamB,
-        team2Logo,
-        team2Name
-    );
-
-
-    team1.style.visibility =
-        "hidden";
-
-    team2.style.visibility =
-        "hidden";
-
-
-    vsText.style.display =
-        "none";
-
-
-    countdown.textContent =
-        "";
-
-
-    timerBar.style.width =
-        "100%";
-
-
-    await startCountdown(
-        currentVersion
-    );
-
-
-    if (
-        currentVersion !== gameVersion
-    ) {
-
-        return;
-
-    }
-
-
-    answerInput.disabled =
-        false;
-
-    answerButton.disabled =
-        false;
-
-
-    answerInput.focus();
-
-
-    startTimer(
-        currentVersion
-    );
-
-}
-
-
-// =====================================================
-// 15 SANİYELİK SÜRE
+// TIMER
 // =====================================================
 
 function startTimer(version) {
@@ -1630,19 +1382,7 @@ function startTimer(version) {
                                 version === gameVersion
                             ) {
 
-                                if (
-                                    gameMode ===
-                                    "daily"
-                                ) {
-
-                                    newDailyQuestion();
-
-                                }
-                                else {
-
-                                    newQuestion();
-
-                                }
+                                newQuestion();
 
                             }
 
@@ -1660,7 +1400,7 @@ function startTimer(version) {
 
 
 // =====================================================
-// CEVAP NORMALLEŞTİRME
+// CEVAP KARŞILAŞTIRMA
 // =====================================================
 
 function normalizeAnswerForComparison(
@@ -1676,10 +1416,6 @@ function normalizeAnswerForComparison(
 
 }
 
-
-// =====================================================
-// CEVAP DOĞRU MU?
-// =====================================================
 
 function isPlayerAnswerCorrect(
     userAnswer,
@@ -1722,7 +1458,7 @@ function isPlayerAnswerCorrect(
 
 
 // =====================================================
-// CEVAP KONTROLÜ
+// CEVAP KONTROL
 // =====================================================
 
 function checkAnswer() {
@@ -1805,19 +1541,7 @@ function checkAnswer() {
         setTimeout(
             () => {
 
-                if (
-                    gameMode ===
-                    "daily"
-                ) {
-
-                    newDailyQuestion();
-
-                }
-                else {
-
-                    newQuestion();
-
-                }
+                newQuestion();
 
             },
             1000
@@ -1882,7 +1606,7 @@ if (answerInput) {
 
 
 // =====================================================
-// NORMAL OYUN BİTİŞİ
+// OYUN BİTİŞ
 // =====================================================
 
 function endGame() {
@@ -1948,106 +1672,41 @@ function endGame() {
         score;
 
 
-    finalMessage.textContent =
-        "10 soruyu tamamladın!";
+    if (
+        currentGameMode === "daily"
+    ) {
+
+        finalMessage.textContent =
+            "Bugünün challenge'ını tamamladın!";
+
+
+        gameOverTitle.textContent =
+            "GÜNLÜK CHALLENGE TAMAMLANDI";
+
+
+        localStorage.setItem(
+            "321_daily_completed",
+            getTodayKey()
+        );
+
+
+        updateDailyStatus();
+
+    }
+    else {
+
+        finalMessage.textContent =
+            "10 soruyu tamamladın!";
+
+
+        gameOverTitle.textContent =
+            "OYUN TAMAMLANDI";
+
+    }
 
 
     gameOver.style.display =
         "flex";
-
-}
-
-
-// =====================================================
-// GÜNLÜK CHALLENGE BİTİŞİ
-// =====================================================
-
-function endDailyChallenge() {
-
-    clearInterval(timer);
-
-
-    questionAnswered =
-        true;
-
-
-    answerInput.disabled =
-        true;
-
-    answerButton.disabled =
-        true;
-
-
-    clearPlayerSuggestions();
-
-
-    gameArea.style.display =
-        "none";
-
-    answerArea.style.display =
-        "none";
-
-    timerContainer.style.display =
-        "none";
-
-
-    team1Name.textContent =
-        "";
-
-    team2Name.textContent =
-        "";
-
-
-    team1Logo.removeAttribute(
-        "src"
-    );
-
-    team2Logo.removeAttribute(
-        "src"
-    );
-
-
-    countdown.textContent =
-        "";
-
-    vsText.textContent =
-        "";
-
-
-    clearResult();
-
-
-    timerBar.style.width =
-        "0%";
-
-
-    finalScore.textContent =
-        score;
-
-
-    finalMessage.textContent =
-        "Günlük Challenge tamamlandı!";
-
-
-    gameOver.style.display =
-        "flex";
-
-
-    dailyCompleted =
-        true;
-
-
-    localStorage.setItem(
-        "dailyChallenge_" +
-        getDailyDateKey(),
-        JSON.stringify({
-
-            completed: true,
-
-            score: score
-
-        })
-    );
 
 }
 
@@ -2088,26 +1747,17 @@ function resetGame() {
         questionTime;
 
 
+    dailyQuestionIndex =
+        0;
+
+
     scoreText.textContent =
         "Puan: 0";
 
 
-    if (
-        gameMode === "daily"
-    ) {
-
-        questionNumberText.textContent =
-            "Günlük: 0 / " +
-            DAILY_TOTAL_QUESTIONS;
-
-    }
-    else {
-
-        questionNumberText.textContent =
-            "Soru: 0 / " +
-            totalQuestions;
-
-    }
+    questionNumberText.textContent =
+        "Soru: 0 / " +
+        totalQuestions;
 
 
     answerInput.value =
@@ -2184,60 +1834,7 @@ function resetGame() {
 
 
 // =====================================================
-// TEKRAR OYNA
-// =====================================================
-
-if (restartButton) {
-
-    restartButton.addEventListener(
-        "click",
-        () => {
-
-            // =========================================
-            // GÜNLÜK CHALLENGE
-            // =========================================
-
-            if (
-                gameMode === "daily"
-            ) {
-
-                // Günlük challenge aynı gün
-                // ikinci kez oynanmasın.
-
-                homeScreen.style.display =
-                    "flex";
-
-
-                gameContent.style.display =
-                    "none";
-
-
-                gameOver.style.display =
-                    "none";
-
-
-                return;
-
-            }
-
-
-            // =========================================
-            // NORMAL OYUN
-            // =========================================
-
-            resetGame();
-
-
-            newQuestion();
-
-        }
-    );
-
-}
-
-
-// =====================================================
-// ANA SAYFA → NORMAL OYUN
+// NORMAL OYUN
 // =====================================================
 
 if (startButton) {
@@ -2246,8 +1843,12 @@ if (startButton) {
         "click",
         () => {
 
-            gameMode =
+            currentGameMode =
                 "normal";
+
+
+            gameModeTitle.textContent =
+                "ORTAK FUTBOLCU";
 
 
             homeScreen.style.display =
@@ -2270,68 +1871,118 @@ if (startButton) {
 
 
 // =====================================================
-// ANA SAYFA → GÜNLÜK CHALLENGE
+// GÜNLÜK CHALLENGE
 // =====================================================
 
-if (dailyButton) {
+if (dailyChallengeButton) {
 
-    dailyButton.addEventListener(
+    dailyChallengeButton.addEventListener(
         "click",
         () => {
 
-            const todayKey =
-                "dailyChallenge_" +
-                getDailyDateKey();
-
-
-            const completedToday =
-                localStorage.getItem(
-                    todayKey
-                );
-
-
-            // =====================================
-            // BUGÜN ZATEN OYNANDI
-            // =====================================
-
             if (
-                completedToday
+                isDailyCompleted()
             ) {
 
-                try {
+                showResult;
 
-                    const data =
-                        JSON.parse(
-                            completedToday
-                        );
-
-
-                    alert(
-                        "⚡ Bugünkü Challenge'ı zaten tamamladın!\n\n" +
-                        "Skorun: " +
-                        data.score
-                    );
-
-                }
-                catch (error) {
-
-                    alert(
-                        "⚡ Bugünkü Challenge'ı zaten tamamladın!"
-                    );
-
-                }
-
+                alert(
+                    "Bugünkü Günlük Challenge'ı zaten tamamladın. Yarın tekrar gel!"
+                );
 
                 return;
 
             }
 
 
-            // =====================================
-            // GÜNLÜK CHALLENGE BAŞLAT
-            // =====================================
+            dailyQuestions =
+                generateDailyQuestions();
 
-            startDailyChallenge();
+
+            if (
+                dailyQuestions.length <
+                totalQuestions
+            ) {
+
+                alert(
+                    "Günlük Challenge için yeterli soru bulunamadı."
+                );
+
+                return;
+
+            }
+
+
+            currentGameMode =
+                "daily";
+
+
+            dailyQuestionIndex =
+                0;
+
+
+            gameModeTitle.textContent =
+                "GÜNLÜK CHALLENGE";
+
+
+            homeScreen.style.display =
+                "none";
+
+
+            gameContent.style.display =
+                "block";
+
+
+            resetGame();
+
+
+            newQuestion();
+
+        }
+    );
+
+}
+
+
+// =====================================================
+// TEKRAR OYNA
+// =====================================================
+
+if (restartButton) {
+
+    restartButton.addEventListener(
+        "click",
+        () => {
+
+            /*
+               Günlük challenge bittiyse
+               tekrar oynatılmıyor.
+            */
+
+            if (
+                currentGameMode === "daily" &&
+                isDailyCompleted()
+            ) {
+
+                gameOver.style.display =
+                    "none";
+
+                gameContent.style.display =
+                    "none";
+
+                homeScreen.style.display =
+                    "flex";
+
+                updateDailyStatus();
+
+                return;
+
+            }
+
+
+            resetGame();
+
+            newQuestion();
 
         }
     );
@@ -2347,38 +1998,27 @@ console.log(
     "3-2-1 oyunu hazır."
 );
 
-
 console.log(
     "Oyuncu sayısı:",
     Object.keys(playerPool).length
 );
-
 
 console.log(
     "Aktif takım sayısı:",
     teams.length
 );
 
-
 console.log(
     "Geçerli soru sayısı:",
     validTeamPairs.length
 );
 
-
 console.log(
-    "Logo sayısı:",
-    Object.keys(teamLogos).length
+    "Bugünün tarihi:",
+    getTodayKey()
 );
-
-
-console.log(
-    "Günlük Challenge:",
-    getDailyDateKey()
-);
-
 
 console.log(
     "Günlük soru sayısı:",
-    DAILY_TOTAL_QUESTIONS
+    generateDailyQuestions().length
 );
